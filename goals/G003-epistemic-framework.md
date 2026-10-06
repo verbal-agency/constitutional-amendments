@@ -1,6 +1,6 @@
 # G003 — Compress the Audit into an Epistemic Framework
 
-Status: Proposed
+Status: Complete
 Dependencies: G002 Complete
 Next goal on completion: G004
 
