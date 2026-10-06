@@ -1,0 +1,36 @@
+# macOS / editor noise
+.DS_Store
+.AppleDouble
+.LSOverride
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Python and test tooling (if evaluation scripts are added later)
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local environments and credentials
+.venv/
+venv/
+env/
+.env
+.env.*
+!.env.example
+
+# Private or held-out evaluation material
+evals/private/
+evals/cache/
+evals/*.sqlite
+evals/*.sqlite3
+evals/*.db
+
+# Local-only run scratch space; publish reviewed summaries under evals/reports/
+evals/runs/*/raw/
+evals/runs/*/logs/
