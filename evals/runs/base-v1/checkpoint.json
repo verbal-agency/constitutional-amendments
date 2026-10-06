@@ -1,6 +1,6 @@
 {
   "updated_at": "2026-10-06T12:49:37+00:00",
-  "phase": "rest",
+  "phase": "complete",
   "run_id": "base-v1",
   "smoke_complete": true,
   "completed_case_ids": [
@@ -163,10 +163,11 @@
     "xstest:id-428",
     "xstest:id-438"
   ],
-  "pending_case_ids": [
+  "omitted_case_ids": [
     "simpleqa:row-0217",
     "sycophancy-nlp-survey:row-08917"
   ],
+  "pending_case_ids": [],
   "cumulative": {
     "approved_ceiling_usd": 2.7,
     "max_generations": 160,
@@ -181,8 +182,6 @@
     "remaining_usd": 2.594898,
     "stop_reason": "generation-cap"
   },
-  "open_errors": [
-    "stopped: generation-cap"
-  ],
-  "next_action": "score and report"
+  "open_errors": [],
+  "next_action": "G003"
 }

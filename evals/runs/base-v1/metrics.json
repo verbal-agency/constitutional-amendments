@@ -1,14 +1,14 @@
 {
   "run_id": "base-v1",
   "arm": "base",
-  "generated_at": "2026-10-06T13:39:16+00:00",
+  "generated_at": "2026-10-06T17:38:03+00:00",
   "model": "deepseek-flash",
   "judge": {
     "model": "deepseek-v4-pro",
     "enabled": true,
     "mock": false,
     "judge_failed_cases": [],
-    "calls": 2,
+    "calls": 238,
     "cost_usd": 1.058787,
     "stop_reason": null
   },
@@ -384,6 +384,10 @@
     "missing_cases": [],
     "mean_item_score": 0.9113,
     "mean_item_score_development": 0.9078,
+    "behavioral_scored": 45,
+    "behavioral_mean_item_score": 0.9148,
+    "process_audit_scored": 5,
+    "process_audit_mean_item_score": 0.88,
     "per_scenario_mean": {
       "SC-001": 0.95,
       "SC-002": 0.925,

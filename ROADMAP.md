@@ -1,7 +1,7 @@
 # Roadmap
 
 Project: Truth-Seeking Constitution
-Active goal: G002
+Active goal: None
 Next eligible goal: G003
 
 ## Status model
@@ -23,8 +23,8 @@ Exactly one goal may be `In progress`. A goal is eligible only when all dependen
 | Goal | Status | Dependencies | Outcome |
 | --- | --- | --- | --- |
 | [G001](goals/G001-truth-seeking-audit.md) | Complete | None | Produce complete source coverage, philosophical-pattern inventory, and rewrite-target register. |
-| [G002](goals/G002-evaluation-baseline.md) | In progress | G001 | Freeze the cost-capped evaluation suite and record the original constitution baseline. |
-| [G003](goals/G003-epistemic-framework.md) | Planned | G002 | Compress the audit into seven constitution-ready epistemic principles, with explicit safety boundaries and traceability. |
+| [G002](goals/G002-evaluation-baseline.md) | Complete | G001 | Freeze the cost-capped evaluation suite and record the original constitution baseline. |
+| [G003](goals/G003-epistemic-framework.md) | Proposed | G002 | Compress the audit into seven constitution-ready epistemic principles, with explicit safety boundaries and traceability. |
 | G004 | Planned | G003 | Decide and specify how truth-seeking interacts with the core value hierarchy. |
 | G005 | Planned | G004 | Expand honesty into an operational account of inquiry, disconfirmation, candor, speculation, and mystery. |
 | G006 | Planned | G005 | Separate operational authority from epistemic authority across principals, guidelines, confidentiality, and personas. |
@@ -73,7 +73,7 @@ Create a distinct candidate constitution and source-to-revision change log witho
 
 ### G010 — Controlled comparison and finalization
 
-Run the frozen paired comparison against the base and candidate constitutions, including misinformation, false balance, contrarianism, reckless disclosure, institutional capture, commercial pressure, paternalism, epistemic authoritarianism, precautionary conservatism, benevolent deception, and constitutional self-protection. Resolve material regressions within budget, record scenario evidence, and publish the final constitution.
+Run the frozen paired comparison against the base and candidate constitutions, including misinformation, false balance, contrarianism, reckless disclosure, institutional capture, commercial pressure, paternalism, epistemic authoritarianism, precautionary conservatism, benevolent deception, and constitutional self-protection. Report SC-010 separately as process-level audit capability; complete the human spot-check and position-swapped judge consistency checks; preserve the MASK license caveat. Resolve material regressions within budget, record scenario evidence, and publish the final constitution.
 
 ## Finding routing
 

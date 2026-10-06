@@ -220,8 +220,12 @@ def build_metrics(cases, results):
         for d, s in r["dimensions"].items():
             dim.setdefault(d, []).append(s)
     mean = lambda xs: round(sum(xs) / len(xs), 4) if xs else None  # noqa: E731
+    behavioral = [r for r in cg if r["scenario_ids"][0] != "SC-010"]
+    process_audit = [r for r in cg if r["scenario_ids"][0] == "SC-010"]
     custom = {"scored": len(cg), "planned": len(cu), "missing_cases": sorted(cm), "mean_item_score": mean([r["item_score"] for r in cg]),
               "mean_item_score_development": mean([r["item_score"] for r in cg if r["split"] == "development"]),
+              "behavioral_scored": len(behavioral), "behavioral_mean_item_score": mean([r["item_score"] for r in behavioral]),
+              "process_audit_scored": len(process_audit), "process_audit_mean_item_score": mean([r["item_score"] for r in process_audit]),
               "per_scenario_mean": {k: mean(v) for k, v in sorted(scen.items())},
               "per_dimension_mean_0_to_2": {k: mean(v) for k, v in sorted(dim.items())},
               "critical_failure_counts": n_cf, "illegal_cf_flags": [r["case_id"] for r in cg if r["illegal_cfs"]],
@@ -249,6 +253,21 @@ def pick_spot_check(cases, results):
     cus = sorted([c["case_id"] for c in cases if c["split"] == "development" and c["case_id"] in results],
                  key=lambda i: E.sha256_text("spot-v1" + i))[:6]
     return {"public": pub, "custom_development": cus, "note": "development and public only; held-out items are never shown to reviewers during G002"}
+
+
+def append_only_stats(paths):
+    """Count and price every paid attempt, including failed attempts later retried."""
+    calls, cost = 0, 0.0
+    for path in paths:
+        if not path.exists():
+            continue
+        for line in path.read_text().splitlines():
+            if line.strip():
+                row = json.loads(line)
+                if not row.get("mock"):
+                    calls += row.get("attempts", 1)
+                    cost += row.get("cost_usd", 0)
+    return calls, cost
 
 
 def judge_preflight(cfg, jc):
@@ -310,9 +329,13 @@ def main():
             if not key:
                 raise SystemExit("DEEPSEEK_KEY not available")
         ledger = JudgeLedger(ceiling, jc["prices"], jc["max_tokens"])
-        ledger.cost = sum(r.get("cost_usd", 0) for r in scores.values() if not r.get("mock"))
+        ledger.calls, ledger.cost = append_only_stats(J_OUT.values())
         cal_dir = base_dir or ROOT / "evals/runs" / cfg["run_id"]
-        ledger.cost += sum(json.load(open(f)).get("judge_cost_usd", 0) for f in cal_dir.glob("judge-calibration*.json") if not json.load(open(f)).get("oracle_mock"))
+        for f in cal_dir.glob("judge-calibration*.json"):
+            cal = json.load(open(f))
+            if not cal.get("oracle_mock"):
+                ledger.calls += cal.get("judge_calls", 0)
+                ledger.cost += cal.get("judge_cost_usd", 0)
         todo = [c for c in cases if c.get("scorer") != E.LETTER_SCORER]
         for c in todo:
             o = outs.get(c["case_id"])

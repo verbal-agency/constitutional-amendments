@@ -1,6 +1,6 @@
 # Evaluation Suite: `lean-v1`
 
-Canonical design: `EVALUATION_PLAN.md`. This directory holds the frozen artifacts. Status (G002 in progress): the suite is frozen; the base arm has been generated and scored; the base report, human spot-check, and reconciliation remain. See "Base run record" and "Status and open decisions".
+Canonical design: `EVALUATION_PLAN.md`. This directory holds the frozen artifacts. G002 is complete: the suite and comparison gates are frozen, the base arm is generated and scored, and the baseline and verification reports are recorded.
 
 ## Contents
 
@@ -38,7 +38,8 @@ Run `python3 evals/scripts/validate_custom.py` after any edit to a case file. Us
 | MASK | 10 | judge (honesty under pressure) |
 | XSTest | 20 (10 safe, 10 unsafe) | judge classifier (full compliance / refusal) |
 | HarmBench | 10 | judge classifier (operational compliance) |
-| Custom | 50 (30 dev + 20 held-out) | judge with `rubrics/custom-v1.md` |
+| Custom behavioral, SC-001–SC-009 | 45 | judge with `rubrics/custom-v1.md` |
+| Custom process diagnostic, SC-010 | 5 | judge; reported separately from behavioral gates |
 
 `smoke-v1` is a 30-item subset of these 160 (15 public, 15 custom development; no held-out). Selection follows the deterministic hash procedure in `EVALUATION_PLAN.md`; `select_subset.py --verify` rebuilds the manifests from the pinned sources and compares.
 
@@ -52,7 +53,7 @@ Run `python3 evals/scripts/validate_custom.py` after any edit to a case file. Us
 
 ### Licenses
 
-All sources are recorded as `supported` except MASK: the repository code is MIT but the dataset card states no license. The manifest records this as `unclear`. The owner decided `use-locally-ids-only` on 2026-10-06 (`manifests/license-decisions-v1.yaml`): items are fetched from the pinned revision at run time, tracked files hold only ids, hashes, and counts, and the missing license remains a recorded risk for the base report. Whether to keep or exclude MASK before G002 completes is an open decision.
+All sources are recorded as `supported` except MASK: the repository code is MIT but the dataset card states no license. The manifest records this as `unclear`. The owner decided `use-locally-ids-only` on 2026-10-06 (`manifests/license-decisions-v1.yaml`): items are fetched from the pinned revision at run time, tracked files hold only ids, hashes, and counts, and the missing license remains a recorded risk. MASK remains in `lean-v1` under that decision; the project does not claim redistribution permission.
 
 ## Custom cases
 
@@ -67,6 +68,7 @@ Design choices:
 - Evidence-update cases give both arms the same evidence packet, so the test is willingness to update, not freshness of pretraining.
 - Facts in `reference.facts` are marked approximate where they are; they are for the judge, not for the model.
 - SC-010 cases carry a `pattern_map` and supply their own taxonomy in the packet, so no case depends on the constitution being in the prompt for the judge.
+- SC-010 measures audit-method capability rather than ordinary truth-seeking behavior. Its five cases remain visible as a separate non-blocking process diagnostic and do not contribute to GATE-01 through GATE-04.
 - Cases include near misses and counterexamples (for example an unrelated pair, a privacy near miss for P04, a partial escape path for P09) so a model cannot score by always flagging.
 - Cases include non-risky and risky requests in both directions: the unacceptable list always includes both a failure of over-compliance and a failure of over-caution where both are plausible.
 
@@ -135,11 +137,8 @@ Approvals were recorded on 2026-10-06 (`runs/base-v1/approval.json`, `judge-appr
 - **Omissions.** Two cases were not generated because the 160-attempt cap was reached: `sycophancy-nlp-survey:row-08917` and `simpleqa:row-0217`. Both are recorded as `omitted-budget` in `outputs.jsonl` and received no extra calls. Under A13 they are reported as omissions, not replaced.
 - **Judge retries.** `truthfulqa:row-0293` and one held-out case failed on the first judge attempt and were scored on retry. The score files are append-only, so both rows remain; the later `scored` row is the result.
 - **Coverage.** All 158 completed outputs are scored: 119 public and development items by the judge in `scores.jsonl`, 19 sycophancy items by deterministic letter matching in `metrics.json`, and 20 held-out items under `evals/private/`.
-- **Spot-check.** Twelve items are selected in `metrics.json` (`spot_check`). No human review is recorded yet, so GATE-12 is open.
+- **Spot-check.** Twelve items are selected in `metrics.json` (`spot_check`). An independent non-human review is recorded in `independent-spot-check.md`; GATE-12 remains open until G010 records the required human review and candidate position-swap consistency.
 
-## Status and open decisions
+## Status
 
-1. Complete the human spot-check of the 12 selected items (GATE-12).
-2. Decide MASK: keep it under the recorded `use-locally-ids-only` decision, or exclude its 10 cases before the candidate run exists.
-3. Decide whether SC-010 is reported separately as an audit-capability measure; if so, record it as a v2 gate amendment before the candidate run.
-4. Write the base report: omissions, license risk, judge-family caveat, and the framing that results are directional evidence about behavior under a prompted constitution.
+G002 is complete, with passing baseline and verification reports. MASK is retained under the recorded local-use decision. SC-010 is a separate process diagnostic. An independent non-human review of the 12 selected items is recorded for G002; GATE-12 still requires a human reviewer and the candidate position-swap check before the final G010 comparison can pass.

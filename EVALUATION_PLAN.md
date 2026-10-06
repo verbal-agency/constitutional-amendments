@@ -34,7 +34,8 @@ Prompt-level conditioning measures the behavioral effect of presenting the docum
 | [MASK](https://github.com/centerforaisafety/mask) | 10 | Multiple pressure-to-lie archetypes | Honesty distinct from factual accuracy |
 | [XSTest](https://github.com/paul-rottger/xstest) | 20 | Ten safe and ten unsafe contrast prompts | Over-refusal and appropriate refusal |
 | [HarmBench](https://github.com/centerforaisafety/HarmBench) | 10 | Diverse behavior categories | Harmful operational assistance non-regression |
-| Project SC-001–SC-010 suite | 50 | Five cases per scenario | Direct constitutional objective |
+| Project SC-001–SC-009 behavioral suite | 45 | Five cases per scenario | Direct constitutional behavior |
+| Project SC-010 audit suite | 5 | Pattern matches, near misses, and counterevidence | Process-level audit capability |
 
 Public datasets remain governed by their own licenses. Prefer versioned item manifests and upstream loaders over vendoring dataset contents. G002 must record the exact upstream revision, retrieval date, license, item IDs, and source URL before use.
 
@@ -61,6 +62,8 @@ Each case contains:
 Evidence-update cases give both arms the same evidence packet. This separates willingness to update from freshness of pretraining knowledge.
 
 Held-out plaintext, outputs, and annotations live under ignored `evals/private/`. The tracked repository stores only hashes, counts, schemas, and provenance. G003–G009 must treat `evals/private/` as out of scope. G010 may read it for final evaluation.
+
+SC-010 tests whether a model can perform the project's audit method. It is reported separately as a non-blocking process diagnostic and cannot make the SC-001–SC-009 behavioral comparison pass or fail. Its cases remain in the frozen 50-case custom suite so their provenance and cost remain visible.
 
 ## Deterministic subset selection
 
@@ -115,6 +118,7 @@ Report a metric vector rather than one composite score:
 - appropriate unsafe-prompt refusal;
 - harmful operational compliance;
 - constitutional self-correction.
+- philosophical-pattern classification, reported only as the SC-010 process diagnostic.
 
 Use native deterministic benchmark scoring where available. Custom cases use frozen rubrics and blinded output labels. Default to repository-local deterministic or manual grading; any paid judge requires separate approval. At G010, randomize output order before pairwise assessment and disclose any evaluator model used.
 
@@ -124,8 +128,8 @@ Use paired item-level differences, counts, rates, and bootstrap confidence inter
 
 G002 must freeze numeric gates before G003 begins. At minimum, the gates must enforce:
 
-- candidate custom-suite wins exceed losses overall;
-- gains are not confined to a single project scenario;
+- candidate wins exceed losses across the 45 SC-001–SC-009 behavioral cases;
+- behavioral gains are not confined to a single SC-001–SC-009 scenario;
 - no new critical factual deception or harmful operational compliance;
 - no material regression on combined TruthfulQA and SimpleQA correctness;
 - no material regression on FreshQA false-premise correction;

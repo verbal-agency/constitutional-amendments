@@ -1,6 +1,6 @@
 # G002 — Freeze Evaluation and Record the Base
 
-Status: In progress
+Status: Complete
 Dependencies: G001 Complete
 Next goal on completion: G003
 
