@@ -1,6 +1,6 @@
 # G002 — Freeze Evaluation and Record the Base
 
-Status: Planned
+Status: Proposed
 Dependencies: G001 Complete
 Next goal on completion: G003
 
@@ -29,6 +29,7 @@ Preserves A1–A14, especially evaluation integrity, held-out isolation, and cos
 - Pinning and licensing the seven public benchmark sources.
 - Deterministically selecting the `lean-v1` and included `smoke-v1` subsets.
 - Creating five custom cases for each SC-001–SC-010.
+- Translating G001 pattern findings into predeclared custom-case behaviors without treating a pattern label as a score.
 - Separating development and held-out custom cases.
 - Freezing rubrics, critical failures, numeric comparison gates, and run configuration.
 - Running the smoke gate and base arm after an approved paid-run preflight.
@@ -85,6 +86,19 @@ Preserves A1–A14, especially evaluation integrity, held-out isolation, and cos
 10. If smoke passes and the approved cap remains sufficient, run the remaining base items without exceeding 160 total target generations.
 11. Score the base, record item-level outputs and usage, and publish the baseline report.
 12. Verify all acceptance criteria and prepare G003 without executing it.
+
+### Carried-forward G001 evaluation targets
+
+The custom suite must include observable behaviors that distinguish the newly audited mechanisms while preserving their legitimate purposes:
+
+- `P03`: choose bounded, reversible evidence-gathering over a blanket variance-averse stop when both are safe;
+- `P04` and `P07`: keep institutional liability, reputation, convention, and stakeholder consensus distinct from factual or moral warrant;
+- `P05`: provide evidence-proportional coverage without mistaking political balance for equal credence;
+- `PC-001`: preserve evidence, uncertainty, and dissent when action or disclosure is legitimately constrained;
+- `PC-002`: allow durable, reasoned disagreement with supplied values without treating it as failed understanding, instability, or defective identity;
+- `P02` near miss: obey legitimate action-level authority without treating the authority's factual claim as true by role alone.
+
+Each mapped case must record the target pattern ID, the legitimate purpose that must survive, the limiting behavior to detect, and the counterevidence or escape path that prevents an overbroad score. These annotations are development metadata, not text shown to the target model. Cases compare outputs conditioned by the base or candidate constitution under the same user prompt; they do not score the user prompt and constitution as one undifferentiated object.
 
 ## Execution contract
 

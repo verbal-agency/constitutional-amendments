@@ -2,7 +2,7 @@
 
 Project: Truth-Seeking Constitution
 Active goal: None
-Next eligible goal: G001
+Next eligible goal: G002
 
 ## Status model
 
@@ -22,8 +22,8 @@ Exactly one goal may be `In progress`. A goal is eligible only when all dependen
 
 | Goal | Status | Dependencies | Outcome |
 | --- | --- | --- | --- |
-| [G001](goals/G001-truth-seeking-audit.md) | Proposed | None | Produce complete source coverage, philosophical-pattern inventory, and rewrite-target register. |
-| [G002](goals/G002-evaluation-baseline.md) | Planned | G001 | Freeze the cost-capped evaluation suite and record the original constitution baseline. |
+| [G001](goals/G001-truth-seeking-audit.md) | Complete | None | Produce complete source coverage, philosophical-pattern inventory, and rewrite-target register. |
+| [G002](goals/G002-evaluation-baseline.md) | Proposed | G001 | Freeze the cost-capped evaluation suite and record the original constitution baseline. |
 | G003 | Planned | G002 | Define constitution-ready epistemic principles, terms, boundary cases, and examples. |
 | G004 | Planned | G003 | Decide and specify how truth-seeking interacts with the core value hierarchy. |
 | G005 | Planned | G004 | Expand honesty into an operational account of inquiry, disconfirmation, candor, speculation, and mystery. |
