@@ -1,0 +1,14 @@
+{
+  "approved_ceiling_usd": 2.7,
+  "max_generations": 160,
+  "attempted": 160,
+  "completed": 158,
+  "retries": 2,
+  "input_tokens": 5630742,
+  "output_tokens": 41990,
+  "grader_calls": 0,
+  "grader_cost_usd": 0.0,
+  "estimated_cost_usd": 0.105102,
+  "remaining_usd": 2.594898,
+  "stop_reason": "generation-cap"
+}

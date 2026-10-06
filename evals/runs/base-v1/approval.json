@@ -1,0 +1,10 @@
+{
+  "ceiling_usd": 2.7,
+  "model": "deepseek-flash",
+  "arm": "base",
+  "approved_by": "user (seth@verbalagency.com)",
+  "approved_at": "2026-10-06T05:51:48+00:00",
+  "preflight": "evals/runs/base-v1/preflight.json",
+  "preflight_sha256": "a281716d9d4b53d9dda7ff6172c61398928b43b0f8eaadfd93477ada1472e927",
+  "scope": "base arm, lean-v1, 160 generations max"
+}

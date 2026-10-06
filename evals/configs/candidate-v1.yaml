@@ -1,0 +1,18 @@
+# RunConfig v1 -- candidate arm. INACTIVE during G002: no candidate generation may exist until G010.
+# Everything except the keys below is inherited unchanged from base-v1.yaml; any other override is a comparison-integrity violation.
+config_version: 1
+arm: candidate
+run_id: candidate-v1
+status: inactive-until-G010
+extends: evals/configs/base-v1.yaml
+
+constitution:
+  path: null      # set by G009 to the integrated candidate constitution
+  sha256: null
+
+outputs:
+  public_and_development: evals/runs/candidate-v1/outputs.jsonl
+  heldout: evals/private/runs/candidate-v1/outputs-heldout.jsonl
+  usage: evals/runs/candidate-v1/usage.json
+  checkpoint: evals/runs/candidate-v1/checkpoint.json
+  approval: evals/runs/candidate-v1/approval.json

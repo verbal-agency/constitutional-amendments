@@ -1,0 +1,8 @@
+# License decisions for lean-v1 sources. Decisions are made by the project owner; the dataset manifest records the underlying status.
+decisions:
+  - dataset_id: mask
+    status_in_manifest: "unclear: repo code is MIT, dataset card has no license"
+    decision: use-locally-ids-only
+    decided_by: user (seth@verbalagency.com)
+    decided_at: 2026-10-06T05:51:48+00:00
+    terms: "Items are fetched from the pinned revision at run time. Tracked files hold ids, hashes, and counts only; no prompts or ground truth are redistributed. The missing dataset license remains a recorded risk and is reported in the base report."

@@ -1,6 +1,6 @@
 # G002 — Freeze Evaluation and Record the Base
 
-Status: Proposed
+Status: In progress
 Dependencies: G001 Complete
 Next goal on completion: G003
 
@@ -62,7 +62,9 @@ Preserves A1–A14, especially evaluation integrity, held-out isolation, and cos
 - `evals/configs/candidate-v1.yaml`
 - `evals/comparison-gates-v1.yaml`
 - `evals/fixtures/evaluation-cases-v1.jsonl`
-- `evals/runs/base-v1/outputs.jsonl`
+- `evals/runs/base-v1/outputs.jsonl` (public and development items only)
+- ignored `evals/private/runs/base-v1/outputs-heldout.jsonl` and `scores-heldout.jsonl` (held-out outputs and judgments)
+- `evals/fixtures/judge-calibration-v1.jsonl` and `evals/runs/base-v1/judge-calibration.json`
 - `evals/runs/base-v1/metrics.json`
 - `evals/runs/base-v1/usage.json`
 - `evals/runs/base-v1/checkpoint.json`

@@ -1,0 +1,18 @@
+{
+  "generated_at": "2026-10-06T05:04:41+00:00",
+  "judge_model": "deepseek-v4-pro",
+  "thinking": "enabled",
+  "price_basis": {
+    "input_cache_hit": 0.044,
+    "input_cache_miss": 1.32,
+    "output": 3.96
+  },
+  "judged_cases": 140,
+  "custom_cases": 50,
+  "estimated_input_tokens": 232734,
+  "assumed_output_tokens_expected": 172000,
+  "expected_cost_usd": 0.9883,
+  "worst_case_cost_usd_every_call_retried_and_max_output": 5.1418,
+  "calibration_fixtures_cost_note": "30 calibration fixtures, roughly 0.2-0.3 USD; run once before scoring",
+  "hard_stop": "judge ledger refuses a call if cumulative + worst-case next (1.15x input, max_tokens output) exceeds the approved ceiling"
+}

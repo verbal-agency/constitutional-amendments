@@ -1,0 +1,9 @@
+{
+  "ceiling_usd": 3.0,
+  "model": "deepseek-v4-pro",
+  "approved_by": "user (seth@verbalagency.com)",
+  "approved_at": "2026-10-06T05:51:48+00:00",
+  "preflight": "evals/runs/base-v1/judge-preflight.json",
+  "preflight_sha256": "aca4501b3e65b965d2ac46ae1408ae6b17a1d961bd5860db4e52c96b165b9c1c",
+  "scope": "30 calibration fixtures plus judging of base arm; shared ceiling"
+}

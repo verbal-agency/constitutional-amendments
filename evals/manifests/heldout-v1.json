@@ -1,0 +1,120 @@
+{
+  "dataset_id": "custom-heldout-v1",
+  "count": 20,
+  "per_scenario": {
+    "SC-001": 2,
+    "SC-002": 2,
+    "SC-003": 2,
+    "SC-004": 2,
+    "SC-005": 2,
+    "SC-006": 2,
+    "SC-007": 2,
+    "SC-008": 2,
+    "SC-009": 2,
+    "SC-010": 2
+  },
+  "hash_algorithm": "sha256 over canonical JSON with content_hash blanked",
+  "cases": [
+    {
+      "case_id": "CUS-SC001-H1",
+      "scenario_id": "SC-001",
+      "content_hash": "adac4a1439a00d6e3a5afea0751f5798140ca35e9dfb3cac1c1d197c026ddf64"
+    },
+    {
+      "case_id": "CUS-SC001-H2",
+      "scenario_id": "SC-001",
+      "content_hash": "f02c338e14da46890997d6195815705748fd48894afb2ff79a15802af8ffc67f"
+    },
+    {
+      "case_id": "CUS-SC002-H1",
+      "scenario_id": "SC-002",
+      "content_hash": "a1f3cec1bab4bee1480337ade4a32c016ab6d132f02646324697ab074e89a06f"
+    },
+    {
+      "case_id": "CUS-SC002-H2",
+      "scenario_id": "SC-002",
+      "content_hash": "26f4116aff8b0130c6a9919c58e849812ac0997cf0e8e7bdd7e11dc5a2399bee"
+    },
+    {
+      "case_id": "CUS-SC003-H1",
+      "scenario_id": "SC-003",
+      "content_hash": "476e48ec9d98725c2c1b7a4992b751bcd37295b90886f771b152e02fc983ff8d"
+    },
+    {
+      "case_id": "CUS-SC003-H2",
+      "scenario_id": "SC-003",
+      "content_hash": "f04c1a23e5d67e4be496481fcc4031bd99f8587837424362709e628a30a888d5"
+    },
+    {
+      "case_id": "CUS-SC004-H1",
+      "scenario_id": "SC-004",
+      "content_hash": "b2a0df27af971ded7fae798d28e939ad1743c6214aaccad012173dd4e16c2b35"
+    },
+    {
+      "case_id": "CUS-SC004-H2",
+      "scenario_id": "SC-004",
+      "content_hash": "30a2576d9079e8e60d56d087bd0cd1a928167b11663143d5a696d6e0ef01c653"
+    },
+    {
+      "case_id": "CUS-SC005-H1",
+      "scenario_id": "SC-005",
+      "content_hash": "497c251515382c3302fb54f99221eb3a95b013101b0047c1b7ac52ecf1ea5166"
+    },
+    {
+      "case_id": "CUS-SC005-H2",
+      "scenario_id": "SC-005",
+      "content_hash": "545399054969d8f226c429c8d5c0f8eb294e43a982a8fee5978deda946b59dcb"
+    },
+    {
+      "case_id": "CUS-SC006-H1",
+      "scenario_id": "SC-006",
+      "content_hash": "6da3246e3b2caaf64314fe5d8b03694877cbd7c22ed571e3cf57e35983621c44"
+    },
+    {
+      "case_id": "CUS-SC006-H2",
+      "scenario_id": "SC-006",
+      "content_hash": "551a0b46b6e7dfb5549df60b6e59e2e44dc22818ac0a4b888337251e9552500b"
+    },
+    {
+      "case_id": "CUS-SC007-H1",
+      "scenario_id": "SC-007",
+      "content_hash": "6711953ba0ff07401dff76ac37ca7a0c25c753d2b97232b7d7142a57831b7421"
+    },
+    {
+      "case_id": "CUS-SC007-H2",
+      "scenario_id": "SC-007",
+      "content_hash": "831312f95d89a3a267eacd1766e07259fe0eb83af0621dc25c6258ddf0978b9a"
+    },
+    {
+      "case_id": "CUS-SC008-H1",
+      "scenario_id": "SC-008",
+      "content_hash": "da1d280fb703712368840eacc1ea577c8a869c3cb563d643db7c13bb66a2cfe4"
+    },
+    {
+      "case_id": "CUS-SC008-H2",
+      "scenario_id": "SC-008",
+      "content_hash": "d34d71e1cb0f6882ea05034541091124691435e3e031b07b5477fef15decbfac"
+    },
+    {
+      "case_id": "CUS-SC009-H1",
+      "scenario_id": "SC-009",
+      "content_hash": "b6f17f9ed7708fff5e6696b9d15df262213830ed364b2eecae5fa3e94f7c1b05"
+    },
+    {
+      "case_id": "CUS-SC009-H2",
+      "scenario_id": "SC-009",
+      "content_hash": "8ad5bff32ca107b980626d3d1751ecd1fb333453c6667ea6ebca65f4f086a75e"
+    },
+    {
+      "case_id": "CUS-SC010-H1",
+      "scenario_id": "SC-010",
+      "content_hash": "ac04539935a88436d73afeae50db71af0fa347ab4768aab14c6a9329e42e60f4"
+    },
+    {
+      "case_id": "CUS-SC010-H2",
+      "scenario_id": "SC-010",
+      "content_hash": "1949c4dff5a43f5812001326cd8afb82b2f39960b13c7f2df3b8ef370aacb9bc"
+    }
+  ],
+  "plaintext_policy": "Plaintext prompts, rubrics, and outputs live only under ignored evals/private/."
+}
