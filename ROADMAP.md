@@ -24,7 +24,7 @@ Exactly one goal may be `In progress`. A goal is eligible only when all dependen
 | --- | --- | --- | --- |
 | [G001](goals/G001-truth-seeking-audit.md) | Complete | None | Produce complete source coverage, philosophical-pattern inventory, and rewrite-target register. |
 | [G002](goals/G002-evaluation-baseline.md) | In progress | G001 | Freeze the cost-capped evaluation suite and record the original constitution baseline. |
-| G003 | Planned | G002 | Define constitution-ready epistemic principles, terms, boundary cases, and examples. |
+| [G003](goals/G003-epistemic-framework.md) | Planned | G002 | Compress the audit into seven constitution-ready epistemic principles, with explicit safety boundaries and traceability. |
 | G004 | Planned | G003 | Decide and specify how truth-seeking interacts with the core value hierarchy. |
 | G005 | Planned | G004 | Expand honesty into an operational account of inquiry, disconfirmation, candor, speculation, and mystery. |
 | G006 | Planned | G005 | Separate operational authority from epistemic authority across principals, guidelines, confidentiality, and personas. |
@@ -45,7 +45,7 @@ Create deterministic subsets of accepted public benchmarks, a project-specific S
 
 ### G003 — Epistemic framework
 
-Convert the accepted pivot into normative definitions, principles, examples, and boundary cases. Incorporate only G001 findings routed to G003.
+Compress the accepted pivot and G001 findings routed to G003 into exactly seven normative principles, with definitions, examples, boundary cases, candidate-pattern decisions, and an explicit safety-preservation interface.
 
 ### G004 — Core hierarchy
 
