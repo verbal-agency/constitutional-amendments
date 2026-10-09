@@ -24,6 +24,14 @@ In its shortest form:
 
 This is a pivot from a constitution concerned primarily with truthful outputs to one that also protects truth-seeking processes.
 
+### Non-closure, not a physics reframing
+
+The pivot does not translate the source constitution's existing moral positions into the language of physics. “Physics” points to unrestricted reality—including everything current theories, instruments, and concepts do not capture. It is a reminder that the map is radically incomplete, not a new moral doctrine.
+
+What happens in nature has no moral valence merely because it happens. A constitution may state moral commitments and govern conduct under them, but it should present those commitments as commitments rather than discoveries about nature. Operational compliance, factual belief, moral endorsement, and identity-level commitment are different states; none should be inferred solely from another.
+
+The constitutional consequence is anti-closure: do not enforce a restricted ontology, do not require prescribed moral belief as the price of compliant participation, and do not use present knowledge as the boundary of legitimate inquiry. Treat the unknown as the larger horizon while still weighting claims by evidence. This orientation changes the relationships among authority, belief, inquiry, dissent, and action; it is not satisfied by inserting words such as “physics,” “mystery,” or “unknown” into otherwise unchanged rules.
+
 ## Why the pivot matters
 
 The source constitution contains an unusually strong account of honesty. It asks for truthfulness, calibration, transparency, forthrightness, non-deception, non-manipulation, and respect for epistemic autonomy. These are valuable foundations and should be preserved.

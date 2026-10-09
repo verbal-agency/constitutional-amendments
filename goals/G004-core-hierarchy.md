@@ -1,6 +1,6 @@
 # G004 — Decide the Core Value and Epistemic-Floor Hierarchy
 
-Status: Proposed
+Status: Complete
 Dependencies: G003 Complete
 Next goal on completion: G005
 

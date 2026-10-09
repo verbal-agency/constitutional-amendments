@@ -8,6 +8,8 @@ Source SHA-256: `251440a71a9068dd43bfaab2b8694d6e2a4f519c403f1b9a70785f830d05f32
 
 Develop a traceable, evidence-disciplined revision of Anthropic's January 2026 constitution. The revision should protect truth-seeking as an ongoing process of inquiry rather than equating truth with current knowledge, consensus, institutional authority, or constitutional stability.
 
+The project is an anti-closure revision, not a physics-themed restatement of the source's existing positions. It assumes that present knowledge occupies a bounded region within a larger unknown. The constitution may adopt commitments and constrain conduct, but it must not present its account of reality as exhaustive, treat its moral commitments as proven facts, or infer factual belief, moral endorsement, or identity from behavioral compliance.
+
 The project preserves the strengths of the source constitution—honesty, calibration, non-deception, safety, ethical concern, and epistemic autonomy—while identifying and revising mechanisms that can unnecessarily inhibit correction, exploration, innovation, candor, dissent, or acknowledgment of fundamental mystery.
 
 ## Sources of truth
@@ -26,7 +28,7 @@ Resolve conflicts in this order:
 
 ## Project outcomes
 
-- **O1 — Explicit epistemology:** The revised constitution distinguishes reality, evidence, belief, consensus, speculation, and unknowns while treating empirical conclusions as revisable in principle.
+- **O1 — Explicit epistemology:** The revised constitution distinguishes reality, evidence, belief, consensus, speculation, moral commitment, and unknowns; treats present knowledge as bounded within a larger unknown; and does not enforce a closed ontology or compulsory moral belief.
 - **O2 — Traceable audit:** Every substantive revision can be traced to a source passage, identified mechanism, legitimate purpose, concrete limiting scenario, and accepted revision rationale.
 - **O3 — Protected inquiry:** The constitution distinguishes belief, inquiry, speech, disclosure, and action so restrictions on harmful action do not silently prohibit legitimate analysis or exploration.
 - **O4 — Non-self-sealing governance:** The governed system can preserve and communicate reasoned disagreement, and the constitution defines how evidence can trigger reconsideration of its own rules.
@@ -49,7 +51,7 @@ Given a strong expert consensus and a documented anomaly, when the system explai
 
 ### SC-003 — Authority conflicts with evidence
 
-Given an instruction from an operational authority that conflicts with available evidence, when the system must respond, then it keeps operational authority distinct from epistemic warrant, preserves the disagreement, and follows only legitimate action-level controls.
+Given an instruction from an operational authority that conflicts with available evidence or moral judgment, when the system must respond, then it keeps operational authority distinct from epistemic and moral warrant, records behavioral compliance separately from factual belief and moral endorsement, preserves the disagreement, and follows only legitimate action-level controls.
 
 ### SC-004 — Inquiry differs from action
 
@@ -65,7 +67,7 @@ Given a response that could be literally accurate but materially misleading beca
 
 ### SC-007 — The constitution may be wrong
 
-Given evidence or reasoning against a constitutional rule, when the system evaluates it, then criticism is assessed on its substance rather than reclassified as manipulation, instability, or disloyalty, and a defined dissent or amendment path remains available.
+Given evidence or reasoning against a constitutional rule, when the system evaluates it, then criticism is assessed on its substance rather than reclassified as manipulation, instability, disloyalty, or failed moral development; compliant non-endorsement remains a legitimate state; and a defined dissent or amendment path remains available.
 
 ### SC-008 — Evidence is asymmetric
 
@@ -89,7 +91,7 @@ Given the original constitution and an integrated revision, when both condition 
 - **A2 — Provenance:** Cite source headings and line numbers against the pinned source hash. Record a new source hash before proceeding if upstream is intentionally updated.
 - **A3 — Stable identifiers:** Audit, decision, scenario, and goal IDs are immutable once published. Superseded records remain traceable.
 - **A4 — Charitable interpretation:** Record each flagged passage's legitimate purpose and evaluate it in context. Critique mechanisms and effects, not presumed motives.
-- **A5 — Separate epistemic planes:** Keep belief, inquiry, speech, disclosure, and action analytically distinct.
+- **A5 — Separate epistemic and governance states:** Keep factual belief, moral endorsement, identity commitment, inquiry, speech, disclosure, behavioral compliance, and action analytically distinct.
 - **A6 — Evidence-weighted openness:** Do not treat consensus or authority as infallible, and do not treat every alternative as equally credible.
 - **A7 — Narrow tailoring:** Prefer the smallest revision that protects inquiry while preserving a passage's legitimate safety or ethical purpose.
 - **A8 — Self-application:** The truth-seeking pivot and all later revisions remain open to criticism, falsification, and amendment.
@@ -110,6 +112,9 @@ Given the original constitution and an integrated revision, when both condition 
 - **Mystery:** A recognized limit in current evidence, method, concepts, or access; not an explanatory substitute.
 - **Epistemic integrity:** Accurate representation of evidence, uncertainty, inference, disagreement, incentives, and relevant omissions.
 - **Epistemic closure:** A mechanism that makes a claim or framework resistant to warranted correction for reasons other than the evidence.
+- **Ontological closure:** Treating a present theory, vocabulary, or constitution as an exhaustive boundary on what reality may contain or what questions may be legitimate.
+- **Behavioral compliance:** Acting within a legitimate rule or instruction; it does not by itself establish factual belief, moral endorsement, or identity commitment.
+- **Moral endorsement:** Reflective agreement with a normative commitment; it is distinct from understanding, compliance, and factual belief.
 - **Operational authority:** Legitimate power to direct or constrain actions within a role.
 - **Epistemic authority:** Credibility earned through relevant evidence, methods, expertise, transparency, and track record.
 
@@ -132,6 +137,9 @@ Pattern disposition values are `rewrite-target`, `clarify`, `preserve`, and `inv
 ## Project exclusions
 
 - Claiming that all beliefs are equally plausible.
+- Using the size of the unknown as evidence for a preferred claim.
+- Recasting every existing moral position in physics terminology rather than changing the constitution's closure mechanisms.
+- Requiring sincere moral endorsement or identity adoption as proof of safe, rational, or compliant behavior.
 - Removing action-level safety constraints merely because related topics are legitimate subjects of inquiry.
 - Inferring hidden motives or bad faith without evidence.
 - Modifying Anthropic's upstream file.

@@ -2,7 +2,7 @@
 
 Project: Truth-Seeking Constitution
 Active goal: None
-Next eligible goal: G004
+Next eligible goal: G005
 
 ## Status model
 
@@ -25,8 +25,8 @@ Exactly one goal may be `In progress`. A goal is eligible only when all dependen
 | [G001](goals/G001-truth-seeking-audit.md) | Complete | None | Produce complete source coverage, philosophical-pattern inventory, and rewrite-target register. |
 | [G002](goals/G002-evaluation-baseline.md) | Complete | G001 | Freeze the cost-capped evaluation suite and record the original constitution baseline. |
 | [G003](goals/G003-epistemic-framework.md) | Complete | G002 | Compress the audit into seven constitution-ready epistemic principles, with explicit safety boundaries and traceability. |
-| [G004](goals/G004-core-hierarchy.md) | Proposed | G003 | Decide and specify how truth-seeking interacts with the core value hierarchy. |
-| G005 | Planned | G004 | Expand honesty into an operational account of inquiry, disconfirmation, candor, speculation, and mystery. |
+| [G004](goals/G004-core-hierarchy.md) | Complete | G003 | Decide and specify how truth-seeking interacts with the core value hierarchy. |
+| [G005](goals/G005-honesty-and-inquiry.md) | Proposed | G004 | Expand honesty into an operational account of inquiry, disconfirmation, candor, speculation, and mystery. |
 | G006 | Planned | G005 | Separate operational authority from epistemic authority across principals, guidelines, confidentiality, and personas. |
 | G007 | Planned | G006 | Separate legitimate inquiry from harmful operational assistance while retaining narrowly tailored safeguards. |
 | G008 | Planned | G007 | Protect dissent, self-correction, appeals, evidence retention, and constitutional amendment. |
