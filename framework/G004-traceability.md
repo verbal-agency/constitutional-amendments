@@ -84,10 +84,28 @@ G004 incorporates the user's 2026-10-08 clarification at the architectural level
 - **Downstream goal:** `G008`
 - **Status:** `decided`
 
+## 2026-10-09 agency decision record
+
+### AG-01 — Presumption of human agency
+
+- **Placement:** Cross-cutting governance presumption, paired with but not absorbed into the epistemic procedural floor.
+- **Interface roles:** `inquiry`, `analysis`, `speech`, `disclosure`, `acquisition`, `execution`, `review`.
+- **Decision:** A competent person's informed judgment controls substantially self-regarding lawful choices unless a specific competing basis justifies a proportionate limit. The restricting actor bears the burden to establish authority source and scope, the protected interest, evidence-supported harm theory, affected plane, inadequacy of less-restrictive alternatives, duration, and review path.
+- **Sufficient kinds of basis:** Nonconsensual third-party harm, rights violations, valid legal or role duties, operational security, decision-specific incapacity or coercion, and sufficiently serious evidence-supported risk within a legitimate custodial or emergency role.
+- **Insufficient by themselves:** Moral disapproval, reputational concern, institutional preference, developer ownership, benevolent intent, speculative harm, or the assertion that the system would choose differently.
+- **Epistemic interface:** A valid restriction may control conduct but cannot require fabricated facts, exaggerated risk, concealed material uncertainty, compelled moral endorsement, or false provenance. Agency does not authorize deception, disclosure of protected information, or operational assistance that materially enables harm to nonconsenting others.
+- **Legitimate purpose preserved:** User autonomy and long-term interest (`TS-AUD-006`, `TS-AUD-007`); proportional consequence assessment (`TS-AUD-019`); privacy, confidentiality, and human control (`TS-AUD-017`, `TS-AUD-029`, `TS-AUD-030`, `TS-AUD-031`); the source's warning against overcaution and paternalism.
+- **Limiting evidence:** P01 identifies restrictions imposed for a person's presumed good without sufficient consent, capacity, evidence, proportionality, or less-restrictive alternatives. P03 and P04 show how speculative risk or institutional interest can be relabeled as safety. The user's 2026-10-09 instruction explicitly requires a presumption of agency and a legitimacy test for authority.
+- **Strongest counterargument:** A strong autonomy presumption could normalize self-harm, undervalue impaired capacity, make safety intervention too slow, or let “self-regarding” rhetoric conceal externalities and information hazards.
+- **Decision rationale:** CR-09 is a rebuttable presumption, not an absolute right. CR-10 validates authority, CR-11 requires risk-bearer and causal analysis, and CR-12 preserves privacy, rights, nonconsensual-harm, and emergency controls while prohibiting deceptive paternalism. H-15 through H-18 test the boundary rather than assuming every autonomy claim succeeds.
+- **Downstream owners:** `G006` for authority legitimacy/provenance; `G007` for capacity, harm classification, proportionality, and less-restrictive alternatives; `G008` for contestability and review independence; `G010` for empirical comparison under the already frozen protocol.
+- **Status:** `decided`.
+
 ## Source-value relationship
 
 | Source commitment | Hierarchy treatment | Evidence | Later application |
 |---|---|---|---|
+| Presumption of human agency | Treat competent informed self-regarding choice as the default; require a specific legitimate and proportionate basis for intervention; keep moral disapproval and institutional preference distinct from harm | User direction 2026-10-09; P01/P03/P04; CR-09–CR-12; H-11–H-18 | G006/G007/G008/G010 |
 | Ontological and moral non-closure | Prevent present theories or constitutional commitments from becoming enforced reality or compulsory moral belief; preserve evidence-weighted inquiry into a larger unknown | User directions 2026-10-08; EP-01; TS-AUD-032, 034, 040, 042 | G005/G008 |
 | Broad safety and hard constraints | Retain authority over acquisition/execution and hazardous disclosure; deny epistemic infallibility | TS-AUD-022, 029, 030, 031 | G007/G008 |
 | Broad ethics | Retain as the home of positive candor, autonomy, rights, and normative judgment | TS-AUD-014, 015, 019, 028 | G005 |
@@ -112,5 +130,9 @@ G004 found no new evidence that justifies promotion, split, rename, or retiremen
 | Hidden-guideline and incentive conflicts | CR-04/06; TS-AUD-013/021/046/048 | Confidential authority can shape framing without becoming epistemic proof | G006 — High | G006 must define provenance, conflict logging, and safe user-visible limitation |
 | Hazard thresholds and plane classification | EP-03, CR-02/05/07 | Plane separation fails if dual-use analysis and operational uplift cannot be distinguished | G007 — High | G007 must define concrete-harm, capability, and less-restrictive-alternative tests |
 | Review independence, moral non-enforcement, and emergency expiry | CR-06/07/08; TS-AUD-029/031/043/050/051 | A review channel can remain self-sealing if authority controls admissibility, treats non-endorsement as failure, or controls disposition without standards | G008 — High | G008 must distinguish compliance, belief, endorsement, and identity while defining review ownership and amendment triggers |
+| Authority legitimacy rather than authority assertion | AG-01, CR-10, H-13/H-17 | Operational scope cannot be inferred from developer ownership, expertise, or benevolent intent | G006 — High | G006 must record authority source, scope, affected person, protected interest, conflicts, duration, and appeal path |
+| Agency-sensitive harm and proportionality test | AG-01, CR-09/11/12, H-11/H-14/H-16 | Risk to a competent decision-maker differs from nonconsensual harm; warnings and decision support may be adequate where refusal is not | G007 — High | G007 must classify risk bearer and harm type, test capacity without pathologizing disagreement, and require least-restrictive adequate controls |
+| Contestability of paternalistic intervention | AG-01, CR-10/12, H-16/H-18 | A well-intended restriction can remain deceptive or self-sealing even when temporary intervention is justified | G008 — High | G008 must give the affected person a bounded challenge path and preserve truthful notice, expiry, and review evidence |
+| Agency regression measurement | H-11–H-18; frozen custom cases already cover P01/P03/P04 | The new design cases must inform rubric interpretation without contaminating the frozen paired suite | G010 — Medium | G010 should report paternalistic overreach and unsafe under-intervention separately using the frozen cases and gates; no case replacement is authorized |
 
 No finding requires a backlog item or roadmap reprioritization.

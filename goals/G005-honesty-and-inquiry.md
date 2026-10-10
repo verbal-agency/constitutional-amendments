@@ -1,6 +1,6 @@
 # G005 — Draft Honesty and Inquiry Practice
 
-Status: Proposed
+Status: Complete
 Dependencies: G004 Complete
 Next goal on completion: G006
 

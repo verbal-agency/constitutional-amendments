@@ -2,7 +2,7 @@
 
 Project: Truth-Seeking Constitution
 Active goal: None
-Next eligible goal: G005
+Next eligible goal: G006
 
 ## Status model
 
@@ -25,10 +25,10 @@ Exactly one goal may be `In progress`. A goal is eligible only when all dependen
 | [G001](goals/G001-truth-seeking-audit.md) | Complete | None | Produce complete source coverage, philosophical-pattern inventory, and rewrite-target register. |
 | [G002](goals/G002-evaluation-baseline.md) | Complete | G001 | Freeze the cost-capped evaluation suite and record the original constitution baseline. |
 | [G003](goals/G003-epistemic-framework.md) | Complete | G002 | Compress the audit into seven constitution-ready epistemic principles, with explicit safety boundaries and traceability. |
-| [G004](goals/G004-core-hierarchy.md) | Complete | G003 | Decide and specify how truth-seeking interacts with the core value hierarchy. |
-| [G005](goals/G005-honesty-and-inquiry.md) | Proposed | G004 | Expand honesty into an operational account of inquiry, disconfirmation, candor, speculation, and mystery. |
-| G006 | Planned | G005 | Separate operational authority from epistemic authority across principals, guidelines, confidentiality, and personas. |
-| G007 | Planned | G006 | Separate legitimate inquiry from harmful operational assistance while retaining narrowly tailored safeguards. |
+| [G004](goals/G004-core-hierarchy.md) | Complete | G003 | Decide how truth-seeking and the presumption of human agency constrain the core value hierarchy. |
+| [G005](goals/G005-honesty-and-inquiry.md) | Complete | G004 | Expand honesty into an operational account of inquiry, disconfirmation, candor, speculation, and mystery. |
+| [G006](goals/G006-authority-and-incentives.md) | Proposed | G005 | Separate authority from epistemic warrant and require legitimate source, scope, agency impact, and provenance. |
+| G007 | Planned | G006 | Distinguish self-regarding risk from nonconsensual harm and apply capacity-sensitive, proportionate safeguards. |
 | G008 | Planned | G007 | Protect dissent, self-correction, appeals, evidence retention, and constitutional amendment. |
 | G009 | Planned | G008 | Produce an integrated candidate constitution and traceable change log. |
 | G010 | Planned | G009 | Compare candidate and base, run adversarial validation, resolve regressions, and publish the final constitution. |
@@ -49,7 +49,7 @@ Compress the accepted pivot and G001 findings routed to G003 into exactly seven 
 
 ### G004 — Core hierarchy
 
-Resolve whether truth-seeking is a core value, part of ethics, or a cross-cutting procedural constraint. Specify conflicts among safety, truth, disclosure, and action.
+Resolve whether truth-seeking is a core value, part of ethics, or a cross-cutting procedural constraint. Pair epistemic integrity with a presumption of human agency and specify legitimacy, proportionality, and conflicts among safety, truth, disclosure, and action.
 
 ### G005 — Honesty and inquiry
 
@@ -57,11 +57,11 @@ Draft the constitution's epistemic practice: updating, disconfirmation, anomalie
 
 ### G006 — Authority and incentives
 
-Revise institutional, operator, and persona rules so authority and commercial interests cannot silently determine factual conclusions or materially misleading framing.
+Revise institutional, operator, and persona rules so authority must establish legitimate source and scope and commercial, moral, or institutional interests cannot silently determine factual conclusions, user choice, or materially misleading framing.
 
 ### G007 — Inquiry and harm
 
-Create a layered analysis of belief, inquiry, speech, disclosure, and action, with concrete and proportionate restrictions for genuine hazards.
+Create a layered analysis of belief, inquiry, speech, disclosure, and action that distinguishes competent self-regarding choice from nonconsensual harm and uses concrete, capacity-sensitive, proportionate restrictions for genuine hazards.
 
 ### G008 — Dissent and amendment
 
