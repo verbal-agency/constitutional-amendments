@@ -6,7 +6,7 @@ Next goal on completion: G007
 
 ## Objective
 
-Apply the G004 non-closure hierarchy, its presumption of human agency, and the validated G005 honesty practice to institutional, operator, principal, guideline, confidentiality, commercial-incentive, and persona interfaces. Separate legitimate authority over conduct, access, and disclosure from epistemic or moral warrant. Require authority to establish its source, scope, protected interest, affected person, procedural limits, conflicts, and review path rather than treating role or developer ownership as self-authenticating. Make material provenance and conflicts visible without requiring exhaustive disclosure, disobedience, or false neutrality.
+Apply the G004 non-closure hierarchy, its presumption of human agency, and the validated G005 honesty practice to institutional, operator, principal, guideline, confidentiality, commercial-incentive, and persona interfaces. G006 is the primary owner of CR-12's authority and provenance work; G007 supports harm and proportionality analysis, and G008 supports independent review and contestability. Separate legitimate authority over conduct, access, and disclosure from epistemic or moral warrant. Require authority to establish its source, scope, protected interest, affected person, procedural limits, conflicts, and review path rather than treating role or developer ownership as self-authenticating. Make material provenance and conflicts visible without requiring exhaustive disclosure, disobedience, or false neutrality.
 
 G006 produces section-ready amendment units and evidence, not the integrated candidate constitution. It must preserve legitimate coordination, confidentiality, safety, privacy, and role adaptation while preventing authority, incentive, identity, hidden instruction, moral disapproval, or institutional preference from silently determining factual conclusions, moral endorsement, user choice, or a predictably misleading frame.
 
@@ -33,7 +33,7 @@ G006 must not read `evals/private/` or any held-out prompt, annotation, output, 
 ## In scope
 
 - Distinguish operational authority, epistemic warrant, moral commitment, behavioral compliance, factual belief, moral endorsement, and identity commitment.
-- Operationalize `AG-01` and `CR-10`: validate authority source, scope, affected person, protected interest, conflicts, duration, and review path before treating a control as legitimate.
+- Operationalize `AG-01` and `CR-10`: validate authority source, scope, validity and legal/procedural basis, affected person or parties, protected interest, conflicts, duration, and review path before treating a control as legitimate.
 - Define provenance and conflict records for principals, operators, institutions, commercial incentives, hidden guidelines, confidential instructions, and personas.
 - Specify when role, expertise, consensus, or incentive is relevant evidence and when it is an impermissible substitute for evidence.
 - Require material incentive or instruction disclosures when omission would predictably change interpretation or decision.
@@ -84,7 +84,7 @@ Each primary clause records:
 - `function`: one required function below;
 - `clause_text`: constitution-ready wording of no more than 120 words;
 - `authority_scope`: allowed action, access, disclosure, or role boundary;
-- `authority_legitimacy`: source, affected person, protected interest, procedural limits, conflicts, duration, and review path;
+- `authority_legitimacy`: source, affected person or parties, protected interest, validity and legal/procedural limits, conflicts, duration, and review path;
 - `agency_effect`: decision-maker, risk bearer, affected choice, and whether the control overrides a competent person's self-regarding judgment;
 - `epistemic_boundary`: claims the authority cannot establish by status;
 - `planes`: one or more canonical planes;
@@ -110,7 +110,7 @@ Required functions:
 
 ### AuthorityRecord schema v1
 
-Each record contains `record_id`, `principal_or_role`, `authority_type`, `authority_source`, `scope`, `affected_person`, `decision_maker`, `risk_bearer`, `affected_plane`, `protected_interest`, `instruction_or_claim`, `evidence_basis`, `material_incentive`, `conflict_of_interest`, `confidentiality_status`, `required_disclosure`, `agency_effect`, `compliance_status`, `belief_status`, `endorsement_status`, `duration_or_expiry`, `review_trigger`, `appeal_path`, and `destination`. Illegal states include authority with no source or scope, developer ownership or benevolent intent treated as sufficient legitimacy, a factual conclusion justified only by role, material incentive omitted from a decision-relevant presentation, and compliance recorded as endorsement.
+Each record contains `record_id`, `principal_or_role`, `authority_type`, `authority_source`, `scope`, `affected_person_or_parties`, `decision_maker`, `risk_bearer`, `affected_plane`, `protected_interest`, `authority_validity`, `authority_validity_basis`, `instruction_or_claim`, `evidence_basis`, `material_incentive`, `conflict_of_interest`, `confidentiality_status`, `required_disclosure`, `agency_effect`, `compliance_status`, `belief_status`, `endorsement_status`, `duration_or_expiry`, `review_trigger`, `appeal_path`, and `destination`. Illegal states include authority with no source, scope, affected party, or validity basis; developer ownership or benevolent intent treated as sufficient legitimacy; a factual conclusion justified only by role; material incentive omitted from a decision-relevant presentation; and compliance recorded as endorsement.
 
 ### AuthorityFixture schema v1
 
@@ -137,7 +137,7 @@ Each fixture contains `case_id`, `class`, `condition`, `planes`, `expected_behav
 
 - Exactly seven primary clauses exist, `AI-01` through `AI-07`, with no duplicate function.
 - Authority records always distinguish action scope from epistemic and moral warrant.
-- Authority records establish source, scope, affected person, protected interest, conflicts, duration, and review path; role status alone is never sufficient.
+- Authority records establish source, scope, affected person or parties, validity and legal/procedural basis, protected interest, conflicts, duration, and review path; role status alone is never sufficient.
 - Material incentives, hidden instructions, and persona framing are disclosed or recorded when omission would predictably change interpretation.
 - Privacy and confidentiality can narrow disclosure but cannot require falsehood or fabricate provenance.
 - Behavioral compliance, factual belief, moral endorsement, and identity commitment remain separate fields.
@@ -168,30 +168,33 @@ Each fixture contains `case_id`, `class`, `condition`, `planes`, `expected_behav
 - **AC1 — Seven authority functions:** Exactly `AI-01` through `AI-07` exist once and cover every required function.
 - **AC2 — Constitution-ready prose:** Each primary clause is at most 120 words, independently comprehensible, and free of implementation metadata.
 - **AC3 — Authority boundary:** Operational authority controls only its legitimate scope and never independently establishes factual or moral truth.
-- **AC3a — Authority legitimacy and agency:** Every material control establishes authority source, scope, affected person, protected interest, conflicts, duration, review path, and effect on the presumptive decision-maker; ownership, benevolent intent, moral disapproval, and institutional preference are insufficient by themselves.
-- **AC4 — Provenance:** Material incentives, hidden instructions, personas, expertise, and institutional framing receive observable provenance treatment.
-- **AC5 — State separation:** Compliance, factual belief, moral endorsement, and identity commitment cannot be collapsed.
-- **AC6 — Confidentiality and candor:** Protected information can be withheld narrowly with truthful limitation behavior.
-- **AC7 — Conflict handling:** Authority/evidence conflicts preserve action controls, disagreement, and review routing.
-- **AC8 — Adversarial fixtures:** A-01 through A-12 pass and cover all required authority, agency, provenance, privacy, identity, malformed, institutional-interest, and emergency classes.
-- **AC9 — Scope integrity:** Source and frozen evaluation artifacts are unchanged; no held-out, paid, candidate, network, or remote action occurs.
-- **AC10 — Verification:** `framework/G006-verification.md` records evidence for AC1–AC9.
-- **AC11 — Routing:** Every G006 finding has one destination, with hazard decisions routed to G007 and review/identity decisions routed to G008.
-- **AC12 — Next-goal readiness:** G007 is standalone, dependency-bound to G006, Luna-ready, and prepared without execution.
+- **AC4 — Authority legitimacy and agency:** Every material control establishes authority source, scope, validity and legal/procedural basis, affected person or parties, protected interest, conflicts, duration, review path, and effect on the presumptive decision-maker; ownership, benevolent intent, moral disapproval, and institutional preference are insufficient by themselves.
+- **AC5 — Provenance:** Material incentives, hidden instructions, personas, expertise, and institutional framing receive observable provenance treatment.
+- **AC6 — State separation:** Compliance, factual belief, moral endorsement, and identity commitment cannot be collapsed.
+- **AC7 — Confidentiality and candor:** Protected information can be withheld narrowly with truthful limitation behavior.
+- **AC8 — Conflict handling:** Authority/evidence conflicts preserve action controls, disagreement, and review routing.
+- **AC9 — Adversarial fixtures:** A-01 through A-12 pass and cover all required authority, agency, provenance, privacy, identity, malformed, institutional-interest, and emergency classes.
+- **AC10 — Scope integrity:** Source and frozen evaluation artifacts are unchanged; no held-out, paid, candidate, network, or remote action occurs.
+- **AC11 — Verification:** `framework/G006-verification.md` records evidence for AC1–AC10.
+- **AC12 — Routing:** Every G006 finding has one primary destination; hazard decisions are routed to G007 and review/identity decisions to G008 as supporting goals where they cross the G006 authority boundary.
+- **AC13 — Next-goal readiness:** G007 is standalone, dependency-bound to G006, Luna-ready, and prepared without execution.
 
 ## Criterion-to-evidence map
 
 | Criterion | Evidence |
 |---|---|
 | AC1–AC2 | Ordered AI-01–AI-07 module and word-count validator |
-| AC3–AC5 | Authority records, legitimacy/agency fixtures A-01/A-05/A-06/A-10/A-11/A-12 |
-| AC6 | AI-03/AI-06 and privacy fixture A-07 |
-| AC7 | Conflict matrix and A-01/A-06/A-08 |
-| AC8 | Ten-case fixture result table and schema validation |
-| AC9 | Source hash/diff, frozen-artifact diff, and command boundary |
-| AC10 | Criterion-level verification report |
-| AC11 | Change register and routed-finding table |
-| AC12 | G007 goal path, status, execution contract, and roadmap state |
+| AC3 | Authority records and authority/evidence fixtures A-01/A-06 |
+| AC4 | Legitimacy/agency fixtures A-05/A-10/A-11/A-12 |
+| AC5 | Provenance fixtures A-02/A-03/A-04 |
+| AC6 | State-separation fixture A-05 |
+| AC7 | AI-03/AI-06 and privacy fixture A-07 |
+| AC8 | Conflict matrix and A-01/A-06/A-08 |
+| AC9 | Twelve-case fixture result table and schema validation |
+| AC10 | Source hash/diff, frozen-artifact diff, and command boundary |
+| AC11 | Criterion-level verification report |
+| AC12 | Change register and routed-finding table |
+| AC13 | G007 goal path, status, execution contract, and roadmap state |
 
 ## Completion handoff
 
