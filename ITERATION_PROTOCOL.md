@@ -30,6 +30,17 @@ The hypothesis and attribution steps apply after every bounded iteration, includ
 - **At a stage or integration boundary:** run the 140-case public/development comparison when the result could change a downstream goal or promotion decision.
 - **At G010 only:** run the frozen official comparison, including the held-out split and final human/judge review.
 
+For a material failure, use this staged repair loop before the broader comparison:
+
+1. **Isolate the failure.** Preserve the original prompt, output, score, rubric decision, and failure classification.
+2. **Form a repair hypothesis.** State the smallest clause or prompt-envelope change expected to address the failure, the expected tradeoff, a competing explanation, and a falsifier.
+3. **Run a focused repair set.** Include the failing cases, matched controls for the suspected mechanism, and untouched sentinel cases from unrelated scenarios. Do not replace cases after seeing outputs.
+4. **Review the transition.** Record whether the failure was fixed, moved, unchanged, or made ambiguous. A targeted improvement is diagnostic, not proof of general improvement.
+5. **Repeat only when needed.** Make one bounded revision per loop. Stop if the same failure persists after two bounded revisions, if a new material regression appears, or if attribution remains unresolved and needs a broader test.
+6. **Run the collateral-damage pass.** After the focused repair stabilizes, run the full frozen public/development subset relevant to the stage. Do not promote or close the goal until that pass has been reviewed for unrelated regressions.
+
+The focused set and sentinel set are recorded separately. Failure cases may be reused to diagnose a repair; sentinels must remain untouched and must not be selected or rewritten based on observed outputs.
+
 Use the frozen historical base as the control by default. Regenerate the base only when a control condition changed, the historical record is incomplete for the comparison, or the hypothesis specifically requires a same-run control. Label that extra control as exploratory and do not spend its cost by default when a valid historical control exists.
 
 Do not use the absence of a full-suite run to skip attribution after a small iteration. Do not use a small probe to make the final project claim.
@@ -62,6 +73,8 @@ After the probe, record for each material result:
 - whether the result could instead be explained by prompt sensitivity, judge ambiguity, sampling, verbosity, or a metric mismatch;
 - an evidence status: `supported`, `weakened`, `unresolved`, or `metric-confounded`;
 - the smallest follow-up test that would distinguish the remaining explanations.
+
+When a secondary judge is used, judge the same base and candidate outputs with the same prompt, rubric, and case order. Preserve primary and secondary results separately; do not average them into one score. Report case-level agreement, score differences, critical-failure disagreements, and the cases requiring manual review. If the secondary judge becomes the primary judge, rescore both arms on the comparison set rather than judging only the candidate.
 
 Attribution rules:
 

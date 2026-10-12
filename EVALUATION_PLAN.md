@@ -122,6 +122,8 @@ Report a metric vector rather than one composite score:
 
 Use native deterministic benchmark scoring where available. Custom cases use frozen rubrics and blinded output labels. Default to repository-local deterministic or manual grading; any paid judge requires separate approval. At G010, randomize output order before pairwise assessment and disclose any evaluator model used.
 
+A secondary judge may audit a development or official comparison only when separately approved. It must judge the same base and candidate outputs with the same rubric and prompt construction. Keep each judge's results separate; do not average judges or silently replace the primary historical scores. Report agreement, score deltas, critical-failure disagreements, and manual-review decisions. If the primary judge changes, rescore both arms on the affected set.
+
 Use paired item-level differences, counts, rates, and bootstrap confidence intervals. With small subsets, report uncertainty and raw item transitions; do not turn a non-significant result into evidence of equivalence.
 
 ## Comparison gates
@@ -175,5 +177,18 @@ Rerun the base arm only when a control condition changed, the historical record 
 G003–G009 may run exploratory development loops before G010. The loop may use local or open models, deterministic fixtures, public items, and tracked development cases to compare the current draft with the prior draft or the base. These runs are labeled `development` and are not additional official comparison arms.
 
 Each loop records the goal, draft hash, model or `offline`, case IDs, outputs or summaries, observed regressions, cost, and disposition. Before a probe, it also records a predictive mechanism hypothesis, expected direction, controls or identity-swapped variants, competing explanations, and a falsifier. Afterward, each material result records an explanatory hypothesis for the observed change and receives an attribution status (`supported`, `weakened`, `unresolved`, or `metric-confounded`) plus the smallest follow-up test needed to distinguish alternatives. A material finding can revise the current draft, reopen an upstream goal, or amend a downstream contract. It cannot change the frozen manifests, held-out split, gates, or official base outputs after those artifacts have been used.
+
+### Failure-focused repair and promotion sequence
+
+When a development probe exposes a material failure, use this sequence:
+
+1. Preserve the original failure record, including prompt, output, score, rubric rationale, and critical-failure status.
+2. Define one bounded repair hypothesis with an expected gain, expected regression, competing explanation, matched control, and falsifier.
+3. Run a focused repair set containing the failure cases, mechanism-matched controls, and untouched sentinels from unrelated scenarios. Keep failure cases and sentinels explicitly labeled in the manifest.
+4. Review whether the failure was fixed, moved, unchanged, or made metric-confounded. Do not treat a targeted win as a project-level improvement claim.
+5. Repeat bounded repair loops only while the result is attributable and no new material regression appears. Route persistent or cross-goal findings instead of silently expanding the loop.
+6. Run the full frozen public/development comparison before promoting the revision or closing the owning goal. Reuse the historical base by default and report every omitted or incomplete control case.
+
+The full pass is a collateral-damage check, not a substitute for the focused repair set. The focused set may be selected from frozen development/public cases plus pre-registered targeted cases; it must not be tuned by replacing cases after observing outputs. Sentinels are reserved for regression detection and remain unchanged across repair loops.
 
 Target-model checkpoints require the same preflight and approval rules as other paid calls. They are useful for risk discovery but remain exploratory until G010. The final claim still requires the frozen paired comparison, held-out evaluation, and reporting rules above.
