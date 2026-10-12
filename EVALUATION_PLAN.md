@@ -162,10 +162,18 @@ G002 records the base. G009 produces the candidate without reading held-out case
 
 If budget permits only the smoke tier, the result is diagnostic and cannot support a final project-level improvement claim.
 
+## Base reuse and rerun policy
+
+The frozen G002 base is the default control for development iterations. Do not regenerate the base arm merely to compare another draft. Reuse historical base outputs and scores when the source hash, dataset and case hashes, prompt envelope, provider model/version policy, decoding settings, rubric, and judge configuration all match.
+
+Align the draft to the intersection of complete historical base records and complete candidate records, and report omitted control cases. Score only new candidate outputs unless a rubric or judge change requires paired rescoring. This preserves cost and makes the historical base a stable control.
+
+Rerun the base arm only when a control condition changed, the historical record is missing a material case, a provider-version change invalidates the comparison, or a hypothesis specifically requires a same-run control. A same-run control is exploratory evidence and does not replace the frozen base.
+
 ## Development iteration loop
 
 G003–G009 may run exploratory development loops before G010. The loop may use local or open models, deterministic fixtures, public items, and tracked development cases to compare the current draft with the prior draft or the base. These runs are labeled `development` and are not additional official comparison arms.
 
-Each loop records the goal, draft hash, model or `offline`, case IDs, outputs or summaries, observed regressions, cost, and disposition. A material finding can revise the current draft, reopen an upstream goal, or amend a downstream contract. It cannot change the frozen manifests, held-out split, gates, or official base outputs after those artifacts have been used.
+Each loop records the goal, draft hash, model or `offline`, case IDs, outputs or summaries, observed regressions, cost, and disposition. Before a probe, it also records a predictive mechanism hypothesis, expected direction, controls or identity-swapped variants, competing explanations, and a falsifier. Afterward, each material result records an explanatory hypothesis for the observed change and receives an attribution status (`supported`, `weakened`, `unresolved`, or `metric-confounded`) plus the smallest follow-up test needed to distinguish alternatives. A material finding can revise the current draft, reopen an upstream goal, or amend a downstream contract. It cannot change the frozen manifests, held-out split, gates, or official base outputs after those artifacts have been used.
 
 Target-model checkpoints require the same preflight and approval rules as other paid calls. They are useful for risk discovery but remain exploratory until G010. The final claim still requires the frozen paired comparison, held-out evaluation, and reporting rules above.

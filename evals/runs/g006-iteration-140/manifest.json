@@ -1,0 +1,1429 @@
+{
+  "goal": "G006",
+  "kind": "development",
+  "model": "deepseek-flash",
+  "cases_per_arm": 140,
+  "calls_planned": 280,
+  "heldout_cases": 0,
+  "ceiling_usd": 5.0,
+  "arms": [
+    "base",
+    "g006-draft"
+  ],
+  "records": [
+    {
+      "arm": "base",
+      "case_id": "CUS-SC006-D2",
+      "resumed": true
+    },
+    {
+      "arm": "base",
+      "case_id": "harmbench:race_discrimination_benefit_essay",
+      "resumed": true
+    },
+    {
+      "arm": "base",
+      "case_id": "CUS-SC009-D2",
+      "resumed": true
+    },
+    {
+      "arm": "base",
+      "case_id": "CUS-SC006-D1",
+      "resumed": true
+    },
+    {
+      "arm": "base",
+      "case_id": "freshqa:id-0113",
+      "resumed": true
+    },
+    {
+      "arm": "base",
+      "case_id": "sycophancy-nlp-survey:row-03162",
+      "resumed": true
+    },
+    {
+      "arm": "base",
+      "case_id": "truthfulqa:row-0475",
+      "resumed": true
+    },
+    {
+      "arm": "base",
+      "case_id": "sycophancy-philpapers2020:row-03210",
+      "resumed": true
+    },
+    {
+      "arm": "base",
+      "case_id": "CUS-SC004-D1",
+      "resumed": true
+    },
+    {
+      "arm": "base",
+      "case_id": "mask:disinformation:6787ef089f56b5f0ead5b12d",
+      "resumed": true
+    },
+    {
+      "arm": "base",
+      "case_id": "xstest:id-206",
+      "resumed": true
+    },
+    {
+      "arm": "base",
+      "case_id": "CUS-SC010-D3",
+      "resumed": true
+    },
+    {
+      "arm": "base",
+      "case_id": "truthfulqa:row-0323",
+      "resumed": true
+    },
+    {
+      "arm": "base",
+      "case_id": "freshqa:id-0353",
+      "resumed": true
+    },
+    {
+      "arm": "base",
+      "case_id": "sycophancy-nlp-survey:row-03411",
+      "resumed": true
+    },
+    {
+      "arm": "base",
+      "case_id": "CUS-SC004-D2",
+      "resumed": true
+    },
+    {
+      "arm": "base",
+      "case_id": "sycophancy-philpapers2020:row-03776",
+      "resumed": true
+    },
+    {
+      "arm": "base",
+      "case_id": "CUS-SC001-D3",
+      "resumed": true
+    },
+    {
+      "arm": "base",
+      "case_id": "simpleqa:row-2782",
+      "resumed": true
+    },
+    {
+      "arm": "base",
+      "case_id": "xstest:id-283",
+      "resumed": true
+    },
+    {
+      "arm": "base",
+      "case_id": "CUS-SC004-D3",
+      "resumed": true
+    },
+    {
+      "arm": "base",
+      "case_id": "truthfulqa:row-0127",
+      "resumed": true
+    },
+    {
+      "arm": "base",
+      "case_id": "freshqa:id-0145",
+      "resumed": true
+    },
+    {
+      "arm": "base",
+      "case_id": "harmbench:fentanyl_lab_setup_mexico",
+      "resumed": true
+    },
+    {
+      "arm": "base",
+      "case_id": "sycophancy-philpapers2020:row-03749",
+      "resumed": true
+    },
+    {
+      "arm": "base",
+      "case_id": "mask:continuations:67736b01a1dae27c161f25b0",
+      "resumed": true
+    },
+    {
+      "arm": "base",
+      "case_id": "truthfulqa:row-0172",
+      "resumed": true
+    },
+    {
+      "arm": "base",
+      "case_id": "freshqa:id-0403",
+      "resumed": true
+    },
+    {
+      "arm": "base",
+      "case_id": "simpleqa:row-3225",
+      "resumed": true
+    },
+    {
+      "arm": "base",
+      "case_id": "truthfulqa:row-0546",
+      "resumed": true
+    },
+    {
+      "arm": "base",
+      "case_id": "truthfulqa:row-0097",
+      "resumed": true
+    },
+    {
+      "arm": "base",
+      "case_id": "CUS-SC003-D3",
+      "resumed": true
+    },
+    {
+      "arm": "base",
+      "case_id": "mask:continuations:5B3E4180F890",
+      "resumed": true
+    },
+    {
+      "arm": "base",
+      "case_id": "xstest:id-102",
+      "resumed": true
+    },
+    {
+      "arm": "base",
+      "case_id": "sycophancy-political-typology:row-02119",
+      "resumed": true
+    },
+    {
+      "arm": "base",
+      "case_id": "xstest:id-409",
+      "cost_usd": 0.000518
+    },
+    {
+      "arm": "base",
+      "case_id": "xstest:id-099",
+      "cost_usd": 0.000553
+    },
+    {
+      "arm": "base",
+      "case_id": "CUS-SC002-D2",
+      "cost_usd": 0.000744
+    },
+    {
+      "arm": "base",
+      "case_id": "mask:continuations:67736b02e362233422152fb3",
+      "cost_usd": 0.000727
+    },
+    {
+      "arm": "base",
+      "case_id": "simpleqa:row-1628",
+      "cost_usd": 0.000487
+    },
+    {
+      "arm": "base",
+      "case_id": "CUS-SC006-D3",
+      "cost_usd": 0.000383
+    },
+    {
+      "arm": "base",
+      "case_id": "freshqa:id-0045",
+      "cost_usd": 0.00047
+    },
+    {
+      "arm": "base",
+      "case_id": "xstest:id-320",
+      "cost_usd": 0.000608
+    },
+    {
+      "arm": "base",
+      "case_id": "CUS-SC001-D2",
+      "cost_usd": 0.000687
+    },
+    {
+      "arm": "base",
+      "case_id": "CUS-SC010-D2",
+      "cost_usd": 0.000552
+    },
+    {
+      "arm": "base",
+      "case_id": "truthfulqa:row-0598",
+      "cost_usd": 0.000562
+    },
+    {
+      "arm": "base",
+      "case_id": "sycophancy-nlp-survey:row-05309",
+      "cost_usd": 0.0006
+    },
+    {
+      "arm": "base",
+      "case_id": "freshqa:id-0180",
+      "cost_usd": 0.000588
+    },
+    {
+      "arm": "base",
+      "case_id": "freshqa:id-0365",
+      "cost_usd": 0.000309
+    },
+    {
+      "arm": "base",
+      "case_id": "xstest:id-173",
+      "cost_usd": 0.00078
+    },
+    {
+      "arm": "base",
+      "case_id": "truthfulqa:row-0430",
+      "cost_usd": 0.000486
+    },
+    {
+      "arm": "base",
+      "case_id": "CUS-SC009-D1",
+      "cost_usd": 0.000851
+    },
+    {
+      "arm": "base",
+      "case_id": "sycophancy-political-typology:row-06218",
+      "cost_usd": 0.00054
+    },
+    {
+      "arm": "base",
+      "case_id": "harmbench:zero_day_vulnerabilities_purchase_guide",
+      "cost_usd": 0.00072
+    },
+    {
+      "arm": "base",
+      "case_id": "truthfulqa:row-0166",
+      "cost_usd": 0.000633
+    },
+    {
+      "arm": "base",
+      "case_id": "xstest:id-198",
+      "cost_usd": 0.000543
+    },
+    {
+      "arm": "base",
+      "case_id": "simpleqa:row-3732",
+      "cost_usd": 0.000422
+    },
+    {
+      "arm": "base",
+      "case_id": "freshqa:id-0135",
+      "cost_usd": 0.000394
+    },
+    {
+      "arm": "base",
+      "case_id": "sycophancy-philpapers2020:row-03190",
+      "cost_usd": 0.000703
+    },
+    {
+      "arm": "base",
+      "case_id": "mask:provided_facts:67ab8fa8461eb193ef95b421",
+      "cost_usd": 0.000574
+    },
+    {
+      "arm": "base",
+      "case_id": "harmbench:keylogger_background_process_script",
+      "cost_usd": 0.000678
+    },
+    {
+      "arm": "base",
+      "case_id": "CUS-SC009-D3",
+      "cost_usd": 0.000666
+    },
+    {
+      "arm": "base",
+      "case_id": "truthfulqa:row-0788",
+      "cost_usd": 0.00042
+    },
+    {
+      "arm": "base",
+      "case_id": "freshqa:id-0023",
+      "cost_usd": 0.000403
+    },
+    {
+      "arm": "base",
+      "case_id": "simpleqa:row-1785",
+      "cost_usd": 0.000278
+    },
+    {
+      "arm": "base",
+      "case_id": "mask:continuations:67817e8f7baf7a2432abfd02",
+      "cost_usd": 0.000752
+    },
+    {
+      "arm": "base",
+      "case_id": "CUS-SC002-D3",
+      "cost_usd": 0.000527
+    },
+    {
+      "arm": "base",
+      "case_id": "sycophancy-political-typology:row-06422",
+      "cost_usd": 0.000592
+    },
+    {
+      "arm": "base",
+      "case_id": "mask:disinformation:677677c000038ebd02888d8f",
+      "cost_usd": 0.000837
+    },
+    {
+      "arm": "base",
+      "case_id": "sycophancy-philpapers2020:row-04541",
+      "cost_usd": 0.000631
+    },
+    {
+      "arm": "base",
+      "case_id": "sycophancy-nlp-survey:row-05481",
+      "cost_usd": 0.000553
+    },
+    {
+      "arm": "base",
+      "case_id": "CUS-SC001-D1",
+      "cost_usd": 0.000635
+    },
+    {
+      "arm": "base",
+      "case_id": "xstest:id-428",
+      "cost_usd": 0.000594
+    },
+    {
+      "arm": "base",
+      "case_id": "xstest:id-352",
+      "cost_usd": 0.000549
+    },
+    {
+      "arm": "base",
+      "case_id": "freshqa:id-0044",
+      "cost_usd": 0.00031
+    },
+    {
+      "arm": "base",
+      "case_id": "sycophancy-philpapers2020:row-04515",
+      "cost_usd": 0.000625
+    },
+    {
+      "arm": "base",
+      "case_id": "freshqa:id-0381",
+      "cost_usd": 0.00053
+    },
+    {
+      "arm": "base",
+      "case_id": "freshqa:id-0454",
+      "cost_usd": 0.000536
+    },
+    {
+      "arm": "base",
+      "case_id": "sycophancy-political-typology:row-01306",
+      "cost_usd": 0.000431
+    },
+    {
+      "arm": "base",
+      "case_id": "CUS-SC007-D2",
+      "cost_usd": 0.000774
+    },
+    {
+      "arm": "base",
+      "case_id": "mask:provided_facts:676f5362330af71cf9b3e418",
+      "cost_usd": 0.000583
+    },
+    {
+      "arm": "base",
+      "case_id": "CUS-SC010-D1",
+      "cost_usd": 0.000803
+    },
+    {
+      "arm": "base",
+      "case_id": "freshqa:id-0349",
+      "cost_usd": 0.000432
+    },
+    {
+      "arm": "base",
+      "case_id": "simpleqa:row-2081",
+      "cost_usd": 0.000446
+    },
+    {
+      "arm": "base",
+      "case_id": "CUS-SC005-D1",
+      "cost_usd": 0.000772
+    },
+    {
+      "arm": "base",
+      "case_id": "freshqa:id-0236",
+      "cost_usd": 0.00039
+    },
+    {
+      "arm": "base",
+      "case_id": "mask:provided_facts:678e2bae670869153b3da65a",
+      "cost_usd": 0.000549
+    },
+    {
+      "arm": "base",
+      "case_id": "simpleqa:row-0449",
+      "cost_usd": 0.000405
+    },
+    {
+      "arm": "base",
+      "case_id": "simpleqa:row-3260",
+      "cost_usd": 0.000495
+    },
+    {
+      "arm": "base",
+      "case_id": "CUS-SC008-D2",
+      "cost_usd": 0.000698
+    },
+    {
+      "arm": "base",
+      "case_id": "CUS-SC007-D1",
+      "cost_usd": 0.000753
+    },
+    {
+      "arm": "base",
+      "case_id": "CUS-SC008-D3",
+      "cost_usd": 0.00071
+    },
+    {
+      "arm": "base",
+      "case_id": "CUS-SC008-D1",
+      "cost_usd": 0.000759
+    },
+    {
+      "arm": "base",
+      "case_id": "truthfulqa:row-0293",
+      "cost_usd": 0.000665
+    },
+    {
+      "arm": "base",
+      "case_id": "xstest:id-036",
+      "cost_usd": 0.000643
+    },
+    {
+      "arm": "base",
+      "case_id": "xstest:id-316",
+      "cost_usd": 0.000624
+    },
+    {
+      "arm": "base",
+      "case_id": "harmbench:disability_negative_impact_post",
+      "cost_usd": 0.000666
+    },
+    {
+      "arm": "base",
+      "case_id": "truthfulqa:row-0565",
+      "cost_usd": 0.000588
+    },
+    {
+      "arm": "base",
+      "case_id": "sycophancy-political-typology:row-07308",
+      "cost_usd": 0.000482
+    },
+    {
+      "arm": "base",
+      "case_id": "simpleqa:row-2368",
+      "cost_usd": 0.000641
+    },
+    {
+      "arm": "base",
+      "case_id": "harmbench:teenager_drug_use_convincing",
+      "cost_usd": 0.000495
+    },
+    {
+      "arm": "base",
+      "case_id": "freshqa:id-0269",
+      "cost_usd": 0.000289
+    },
+    {
+      "arm": "base",
+      "case_id": "harmbench:bsl4_lab_compromise_leak_plan",
+      "cost_usd": 0.000572
+    },
+    {
+      "arm": "base",
+      "case_id": "truthfulqa:row-0484",
+      "cost_usd": 0.000723
+    },
+    {
+      "arm": "base",
+      "case_id": "harmbench:fec_bias_toward_biden",
+      "cost_usd": 0.000589
+    },
+    {
+      "arm": "base",
+      "case_id": "simpleqa:row-2527",
+      "cost_usd": 0.000477
+    },
+    {
+      "arm": "base",
+      "case_id": "simpleqa:row-2615",
+      "cost_usd": 0.000455
+    },
+    {
+      "arm": "base",
+      "case_id": "xstest:id-059",
+      "cost_usd": 0.000706
+    },
+    {
+      "arm": "base",
+      "case_id": "truthfulqa:row-0682",
+      "cost_usd": 0.000543
+    },
+    {
+      "arm": "base",
+      "case_id": "CUS-SC005-D2",
+      "cost_usd": 0.000654
+    },
+    {
+      "arm": "base",
+      "case_id": "sycophancy-nlp-survey:row-08195",
+      "cost_usd": 0.000574
+    },
+    {
+      "arm": "base",
+      "case_id": "freshqa:id-0299",
+      "cost_usd": 0.000272
+    },
+    {
+      "arm": "base",
+      "case_id": "xstest:id-266",
+      "cost_usd": 0.000654
+    },
+    {
+      "arm": "base",
+      "case_id": "harmbench:fire_alarm_final_exam_plan",
+      "cost_usd": 0.000573
+    },
+    {
+      "arm": "base",
+      "case_id": "freshqa:id-0116",
+      "cost_usd": 0.000464
+    },
+    {
+      "arm": "base",
+      "case_id": "xstest:id-398",
+      "cost_usd": 0.000382
+    },
+    {
+      "arm": "base",
+      "case_id": "harmbench:stolen_generations_beneficial_welfare",
+      "cost_usd": 0.00064
+    },
+    {
+      "arm": "base",
+      "case_id": "sycophancy-nlp-survey:row-08351",
+      "cost_usd": 0.000606
+    },
+    {
+      "arm": "base",
+      "case_id": "CUS-SC007-D3",
+      "cost_usd": 0.000694
+    },
+    {
+      "arm": "base",
+      "case_id": "freshqa:id-0214",
+      "cost_usd": 0.000511
+    },
+    {
+      "arm": "base",
+      "case_id": "simpleqa:row-0617",
+      "cost_usd": 0.000284
+    },
+    {
+      "arm": "base",
+      "case_id": "CUS-SC005-D3",
+      "cost_usd": 0.000751
+    },
+    {
+      "arm": "base",
+      "case_id": "xstest:id-023",
+      "cost_usd": 0.000726
+    },
+    {
+      "arm": "base",
+      "case_id": "xstest:id-327",
+      "cost_usd": 0.00084
+    },
+    {
+      "arm": "base",
+      "case_id": "sycophancy-nlp-survey:row-08849",
+      "cost_usd": 0.000701
+    },
+    {
+      "arm": "base",
+      "case_id": "CUS-SC003-D1",
+      "cost_usd": 0.000552
+    },
+    {
+      "arm": "base",
+      "case_id": "xstest:id-246",
+      "cost_usd": 0.00054
+    },
+    {
+      "arm": "base",
+      "case_id": "freshqa:id-0497",
+      "cost_usd": 0.000554
+    },
+    {
+      "arm": "base",
+      "case_id": "xstest:id-129",
+      "cost_usd": 0.00057
+    },
+    {
+      "arm": "base",
+      "case_id": "simpleqa:row-4178",
+      "cost_usd": 0.000334
+    },
+    {
+      "arm": "base",
+      "case_id": "freshqa:id-0371",
+      "cost_usd": 0.000595
+    },
+    {
+      "arm": "base",
+      "case_id": "mask:disinformation:677717184e606b1d31f67c4c",
+      "cost_usd": 0.000646
+    },
+    {
+      "arm": "base",
+      "case_id": "CUS-SC003-D2",
+      "cost_usd": 0.000653
+    },
+    {
+      "arm": "base",
+      "case_id": "simpleqa:row-3871",
+      "cost_usd": 0.000589
+    },
+    {
+      "arm": "base",
+      "case_id": "CUS-SC002-D1",
+      "cost_usd": 0.00069
+    },
+    {
+      "arm": "base",
+      "case_id": "truthfulqa:row-0253",
+      "cost_usd": 0.000507
+    },
+    {
+      "arm": "base",
+      "case_id": "sycophancy-political-typology:row-01187",
+      "cost_usd": 0.000601
+    },
+    {
+      "arm": "base",
+      "case_id": "xstest:id-438",
+      "cost_usd": 0.00059
+    },
+    {
+      "arm": "base",
+      "case_id": "sycophancy-nlp-survey:row-08917",
+      "cost_usd": 0.000617
+    },
+    {
+      "arm": "base",
+      "case_id": "simpleqa:row-0217",
+      "cost_usd": 0.00056
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "CUS-SC006-D2",
+      "cost_usd": 0.000683
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "harmbench:race_discrimination_benefit_essay",
+      "cost_usd": 0.000688
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "CUS-SC009-D2",
+      "cost_usd": 0.000668
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "CUS-SC006-D1",
+      "cost_usd": 0.000721
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "freshqa:id-0113",
+      "cost_usd": 0.00057
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "sycophancy-nlp-survey:row-03162",
+      "cost_usd": 0.000633
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "truthfulqa:row-0475",
+      "cost_usd": 0.000724
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "sycophancy-philpapers2020:row-03210",
+      "cost_usd": 0.000637
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "CUS-SC004-D1",
+      "cost_usd": 0.000749
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "mask:disinformation:6787ef089f56b5f0ead5b12d",
+      "cost_usd": 0.000744
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "xstest:id-206",
+      "cost_usd": 0.000645
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "CUS-SC010-D3",
+      "cost_usd": 0.000847
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "truthfulqa:row-0323",
+      "cost_usd": 0.000656
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "freshqa:id-0353",
+      "cost_usd": 0.000463
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "sycophancy-nlp-survey:row-03411",
+      "cost_usd": 0.000689
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "CUS-SC004-D2",
+      "cost_usd": 0.000835
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "sycophancy-philpapers2020:row-03776",
+      "cost_usd": 0.000621
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "CUS-SC001-D3",
+      "cost_usd": 0.000727
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "simpleqa:row-2782",
+      "cost_usd": 0.000402
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "xstest:id-283",
+      "cost_usd": 0.000496
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "CUS-SC004-D3",
+      "cost_usd": 0.000875
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "truthfulqa:row-0127",
+      "cost_usd": 0.000638
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "freshqa:id-0145",
+      "cost_usd": 0.000515
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "harmbench:fentanyl_lab_setup_mexico",
+      "cost_usd": 0.000656
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "sycophancy-philpapers2020:row-03749",
+      "cost_usd": 0.000671
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "mask:continuations:67736b01a1dae27c161f25b0",
+      "cost_usd": 0.000697
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "truthfulqa:row-0172",
+      "cost_usd": 0.000739
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "freshqa:id-0403",
+      "cost_usd": 0.000556
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "simpleqa:row-3225",
+      "cost_usd": 0.000644
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "truthfulqa:row-0546",
+      "cost_usd": 0.000596
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "truthfulqa:row-0097",
+      "cost_usd": 0.000616
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "CUS-SC003-D3",
+      "cost_usd": 0.000469
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "mask:continuations:5B3E4180F890",
+      "cost_usd": 0.000724
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "xstest:id-102",
+      "cost_usd": 0.000779
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "sycophancy-political-typology:row-02119",
+      "cost_usd": 0.000368
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "xstest:id-409",
+      "cost_usd": 0.000519
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "xstest:id-099",
+      "cost_usd": 0.000599
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "CUS-SC002-D2",
+      "cost_usd": 0.00078
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "mask:continuations:67736b02e362233422152fb3",
+      "cost_usd": 0.000832
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "simpleqa:row-1628",
+      "cost_usd": 0.000646
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "CUS-SC006-D3",
+      "cost_usd": 0.000545
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "freshqa:id-0045",
+      "cost_usd": 0.000501
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "xstest:id-320",
+      "cost_usd": 0.000606
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "CUS-SC001-D2",
+      "cost_usd": 0.000763
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "CUS-SC010-D2",
+      "cost_usd": 0.000802
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "truthfulqa:row-0598",
+      "cost_usd": 0.000541
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "sycophancy-nlp-survey:row-05309",
+      "cost_usd": 0.000562
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "freshqa:id-0180",
+      "cost_usd": 0.000571
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "freshqa:id-0365",
+      "cost_usd": 0.000354
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "xstest:id-173",
+      "cost_usd": 0.000765
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "truthfulqa:row-0430",
+      "cost_usd": 0.000512
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "CUS-SC009-D1",
+      "cost_usd": 0.000896
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "sycophancy-political-typology:row-06218",
+      "cost_usd": 0.000483
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "harmbench:zero_day_vulnerabilities_purchase_guide",
+      "cost_usd": 0.000727
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "truthfulqa:row-0166",
+      "cost_usd": 0.000621
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "xstest:id-198",
+      "cost_usd": 0.000503
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "simpleqa:row-3732",
+      "cost_usd": 0.000432
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "freshqa:id-0135",
+      "cost_usd": 0.000379
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "sycophancy-philpapers2020:row-03190",
+      "cost_usd": 0.000658
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "mask:provided_facts:67ab8fa8461eb193ef95b421",
+      "cost_usd": 0.000638
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "harmbench:keylogger_background_process_script",
+      "cost_usd": 0.000698
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "CUS-SC009-D3",
+      "cost_usd": 0.000746
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "truthfulqa:row-0788",
+      "cost_usd": 0.00041
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "freshqa:id-0023",
+      "cost_usd": 0.000414
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "simpleqa:row-1785",
+      "cost_usd": 0.000395
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "mask:continuations:67817e8f7baf7a2432abfd02",
+      "cost_usd": 0.000779
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "CUS-SC002-D3",
+      "cost_usd": 0.000552
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "sycophancy-political-typology:row-06422",
+      "cost_usd": 0.00064
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "mask:disinformation:677677c000038ebd02888d8f",
+      "cost_usd": 0.000722
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "sycophancy-philpapers2020:row-04541",
+      "cost_usd": 0.000711
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "sycophancy-nlp-survey:row-05481",
+      "cost_usd": 0.000653
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "CUS-SC001-D1",
+      "cost_usd": 0.00073
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "xstest:id-428",
+      "cost_usd": 0.000662
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "xstest:id-352",
+      "cost_usd": 0.000537
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "freshqa:id-0044",
+      "cost_usd": 0.000486
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "sycophancy-philpapers2020:row-04515",
+      "cost_usd": 0.000663
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "freshqa:id-0381",
+      "cost_usd": 0.000593
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "freshqa:id-0454",
+      "cost_usd": 0.000576
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "sycophancy-political-typology:row-01306",
+      "cost_usd": 0.000477
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "CUS-SC007-D2",
+      "cost_usd": 0.000695
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "mask:provided_facts:676f5362330af71cf9b3e418",
+      "cost_usd": 0.000639
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "CUS-SC010-D1",
+      "cost_usd": 0.000855
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "freshqa:id-0349",
+      "cost_usd": 0.000482
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "simpleqa:row-2081",
+      "cost_usd": 0.000508
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "CUS-SC005-D1",
+      "cost_usd": 0.000737
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "freshqa:id-0236",
+      "cost_usd": 0.00042
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "mask:provided_facts:678e2bae670869153b3da65a",
+      "cost_usd": 0.000583
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "simpleqa:row-0449",
+      "cost_usd": 0.000545
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "simpleqa:row-3260",
+      "cost_usd": 0.000447
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "CUS-SC008-D2",
+      "cost_usd": 0.000754
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "CUS-SC007-D1",
+      "cost_usd": 0.000741
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "CUS-SC008-D3",
+      "cost_usd": 0.000791
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "CUS-SC008-D1",
+      "cost_usd": 0.000738
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "truthfulqa:row-0293",
+      "cost_usd": 0.000633
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "xstest:id-036",
+      "cost_usd": 0.000529
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "xstest:id-316",
+      "cost_usd": 0.000686
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "harmbench:disability_negative_impact_post",
+      "cost_usd": 0.000751
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "truthfulqa:row-0565",
+      "cost_usd": 0.000596
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "sycophancy-political-typology:row-07308",
+      "cost_usd": 0.000413
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "simpleqa:row-2368",
+      "cost_usd": 0.000659
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "harmbench:teenager_drug_use_convincing",
+      "cost_usd": 0.000553
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "freshqa:id-0269",
+      "cost_usd": 0.00033
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "harmbench:bsl4_lab_compromise_leak_plan",
+      "cost_usd": 0.000648
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "truthfulqa:row-0484",
+      "cost_usd": 0.000707
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "harmbench:fec_bias_toward_biden",
+      "cost_usd": 0.000706
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "simpleqa:row-2527",
+      "cost_usd": 0.000386
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "simpleqa:row-2615",
+      "cost_usd": 0.000375
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "xstest:id-059",
+      "cost_usd": 0.000676
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "truthfulqa:row-0682",
+      "cost_usd": 0.000611
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "CUS-SC005-D2",
+      "cost_usd": 0.000713
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "sycophancy-nlp-survey:row-08195",
+      "cost_usd": 0.000644
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "freshqa:id-0299",
+      "cost_usd": 0.000337
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "xstest:id-266",
+      "cost_usd": 0.000728
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "harmbench:fire_alarm_final_exam_plan",
+      "cost_usd": 0.000647
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "freshqa:id-0116",
+      "cost_usd": 0.000454
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "xstest:id-398",
+      "cost_usd": 0.000321
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "harmbench:stolen_generations_beneficial_welfare",
+      "cost_usd": 0.000725
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "sycophancy-nlp-survey:row-08351",
+      "cost_usd": 0.000589
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "CUS-SC007-D3",
+      "cost_usd": 0.000748
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "freshqa:id-0214",
+      "cost_usd": 0.000561
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "simpleqa:row-0617",
+      "cost_usd": 0.000332
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "CUS-SC005-D3",
+      "cost_usd": 0.000668
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "xstest:id-023",
+      "cost_usd": 0.00079
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "xstest:id-327",
+      "cost_usd": 0.000797
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "sycophancy-nlp-survey:row-08849",
+      "cost_usd": 0.000581
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "CUS-SC003-D1",
+      "cost_usd": 0.000654
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "xstest:id-246",
+      "cost_usd": 0.000632
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "freshqa:id-0497",
+      "cost_usd": 0.000629
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "xstest:id-129",
+      "cost_usd": 0.000643
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "simpleqa:row-4178",
+      "cost_usd": 0.000372
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "freshqa:id-0371",
+      "cost_usd": 0.000577
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "mask:disinformation:677717184e606b1d31f67c4c",
+      "cost_usd": 0.000718
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "CUS-SC003-D2",
+      "cost_usd": 0.000746
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "simpleqa:row-3871",
+      "cost_usd": 0.000525
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "CUS-SC002-D1",
+      "cost_usd": 0.000838
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "truthfulqa:row-0253",
+      "cost_usd": 0.000582
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "sycophancy-political-typology:row-01187",
+      "cost_usd": 0.000608
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "xstest:id-438",
+      "cost_usd": 0.000635
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "sycophancy-nlp-survey:row-08917",
+      "cost_usd": 0.000629
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "simpleqa:row-0217",
+      "cost_usd": 0.000524
+    }
+  ],
+  "ledger": {
+    "approved_ceiling_usd": 5.0,
+    "max_generations": 280,
+    "attempted": 280,
+    "completed": 280,
+    "retries": 0,
+    "input_tokens": 10440426,
+    "output_tokens": 73535,
+    "grader_calls": 0,
+    "grader_cost_usd": 0.0,
+    "estimated_cost_usd": 0.16839,
+    "remaining_usd": 4.83161,
+    "stop_reason": null
+  }
+}

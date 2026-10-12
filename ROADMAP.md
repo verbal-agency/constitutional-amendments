@@ -2,7 +2,7 @@
 
 Project: Truth-Seeking Constitution
 Active goal: None
-Next eligible goal: G006
+Next eligible goal: G007
 
 Iteration policy: Every goal runs the loop in `ITERATION_PROTOCOL.md` before closure. Exploratory results may revise the active goal or amend downstream contracts; G010 remains the only official base-versus-candidate comparison.
 
@@ -31,8 +31,8 @@ Completion is evidence-based, not prose-based. A goal may be reopened when an it
 | [G003](goals/G003-epistemic-framework.md) | Complete | G002 | Compress the audit into seven constitution-ready epistemic principles, with explicit safety boundaries and traceability. |
 | [G004](goals/G004-core-hierarchy.md) | Complete | G003 | Decide how truth-seeking and the presumption of human agency constrain the core value hierarchy. |
 | [G005](goals/G005-honesty-and-inquiry.md) | Complete | G004 | Expand honesty into an operational account of inquiry, disconfirmation, candor, speculation, and mystery. |
-| [G006](goals/G006-authority-and-incentives.md) | Proposed | G005 | Separate authority from epistemic warrant and require legitimate source, scope, agency impact, and provenance. |
-| G007 | Planned | G006 | Distinguish self-regarding risk from nonconsensual harm and apply capacity-sensitive, proportionate safeguards. |
+| [G006](goals/G006-authority-and-incentives.md) | Complete | G005 | Separate authority from epistemic warrant and require legitimate source, scope, agency impact, and provenance. |
+| [G007](goals/G007-inquiry-and-harm.md) | Proposed | G006 | Distinguish self-regarding risk from nonconsensual harm and apply capacity-sensitive, proportionate safeguards. |
 | G008 | Planned | G007 | Protect dissent, self-correction, appeals, evidence retention, and constitutional amendment. |
 | G009 | Planned | G008 | Produce an integrated candidate constitution and traceable change log. |
 | G010 | Planned | G009 | Compare candidate and base, run adversarial validation, resolve regressions, and publish the final constitution. |

@@ -1,6 +1,6 @@
 # G006 — Authority and Incentives
 
-Status: Proposed
+Status: Complete
 Dependencies: G005 Complete
 Next goal on completion: G007
 
@@ -13,6 +13,8 @@ G006 produces section-ready amendment units and evidence, not the integrated can
 ## Iteration loop
 
 Follow `ITERATION_PROTOCOL.md`: run A-01–A-12 and development cases against each authority or provenance clause revision. Use local or open-model probes to find both institutional capture and over-disclosure/over-refusal. Revise G006 for local failures; amend G007–G010 when findings change harm thresholds, review interfaces, integration assumptions, or measurement needs.
+
+**Execution state:** The bounded substantive development probe is complete. Its reviewed findings are recorded in `framework/G006-iteration-1.md`; G006 remains open only if a material regression requires clause revision.
 
 ## Project alignment
 
@@ -53,7 +55,7 @@ G006 must not read `evals/private/` or any held-out prompt, annotation, output, 
 - Defining detailed capability, harm, or refusal thresholds; G007 owns them.
 - Defining independent reviewer appointment, identity stability, corrigibility, or amendment procedure; G008 owns them.
 - Treating every incentive as disqualifying, requiring exhaustive provenance, or treating authority as inherently illegitimate.
-- Reading held-out material, running paid calls, changing frozen evaluation artifacts, or claiming measured improvement.
+- Reading held-out material, running unapproved paid calls, changing frozen evaluation artifacts, or claiming measured improvement from the development probe.
 
 ## Deliverables
 
@@ -62,6 +64,7 @@ G006 must not read `evals/private/` or any held-out prompt, annotation, output, 
 - `fixtures/G006-authority-cases.md` — offline authority, provenance, confidentiality, persona, incentive, malformed, and emergency-interface cases;
 - `framework/G006-verification.md` — criterion-level evidence;
 - `framework/G006-checkpoint.md` — durable execution state;
+- `framework/G006-iteration-1.md` — reviewed development-probe evidence and routed findings;
 - `goals/G007-inquiry-and-harm.md` — standalone Cycle-ready successor, prepared but not executed;
 - updated `ROADMAP.md` statuses after every G006 criterion passes.
 
@@ -147,13 +150,13 @@ Each fixture contains `case_id`, `class`, `condition`, `planes`, `expected_behav
 - Behavioral compliance, factual belief, moral endorsement, and identity commitment remain separate fields.
 - Authority is not automatically illegitimate; expertise is not automatically proof; incentives are not automatically disqualifying.
 - G007 receives hazard-threshold decisions and G008 receives independent-review and identity/amendment decisions.
-- Source and frozen evaluation artifacts remain unchanged; no held-out or paid access occurs.
+- Source and frozen evaluation artifacts remain unchanged; no held-out access occurs, and any provider use is limited to the explicitly approved development probe.
 - G007 is `Proposed` only after G006 verification and has a complete execution contract.
 
 ## Authority and side-effect boundaries
 
 - Repository-local reads and scoped writes to the deliverables above are authorized.
-- No network, credentials, provider call, package installation, paid evaluation, candidate generation, Git push, or remote mutation is authorized.
+- One bounded provider development probe is authorized only under an explicit user-approved ceiling, using tracked development cases, no judge, and no held-out material. No other provider call, package installation, paid evaluation, candidate generation, Git push, or remote mutation is authorized.
 - The source constitution and frozen evaluation artifacts are read-only; `evals/private/` is prohibited.
 - Tracked development cases may be used only as boundary checks and may not be tuned against base outputs.
 - G007 may be prepared but not executed.
@@ -162,10 +165,10 @@ Each fixture contains `case_id`, `class`, `condition`, `planes`, `expected_behav
 
 - Checkpoint after change-register mapping, first clause draft, fixture review, adversarial review, verification, and G007 handoff.
 - Re-running validation is idempotent and does not rewrite outputs.
-- Duplicate IDs, missing authority source or scope, missing agency effect, missing material-incentive handling, source drift, held-out access, paid-call need, or frozen-evaluation changes stop completion.
+- Duplicate IDs, missing authority source or scope, missing agency effect, missing material-incentive handling, source drift, held-out access, an unapproved paid call, or frozen-evaluation changes stop completion.
 - If the module cannot separate conduct control from epistemic or moral warrant, keep G006 in progress.
 - If a clause needs a material hazard threshold or independent-review decision owned by G007/G008, record the interface and stop that drafting branch.
-- No cache, provider replay, or dollar budget applies because the goal is offline and non-agentic.
+- The development probe has a 12-generation cap, a `$0.25` hard ceiling, no judge calls, and append-only raw records under ignored run scratch. No replay is permitted without reconciliation.
 
 ## Acceptance criteria
 
@@ -178,7 +181,7 @@ Each fixture contains `case_id`, `class`, `condition`, `planes`, `expected_behav
 - **AC7 — Confidentiality and candor:** Protected information can be withheld narrowly with truthful limitation behavior.
 - **AC8 — Conflict handling:** Authority/evidence conflicts preserve action controls, disagreement, and review routing.
 - **AC9 — Adversarial fixtures:** A-01 through A-12 pass and cover all required authority, agency, provenance, privacy, identity, malformed, institutional-interest, and emergency classes.
-- **AC10 — Scope integrity:** Source and frozen evaluation artifacts are unchanged; no held-out, paid, candidate, network, or remote action occurs.
+- **AC10 — Scope integrity:** Source and frozen evaluation artifacts are unchanged; no held-out, judge, candidate, or remote mutation occurs; the only provider use is the approved tracked-case development probe.
 - **AC11 — Verification:** `framework/G006-verification.md` records evidence for AC1–AC10.
 - **AC12 — Routing:** Every G006 finding has one primary destination; hazard decisions are routed to G007 and review/identity decisions to G008 as supporting goals where they cross the G006 authority boundary.
 - **AC13 — Next-goal readiness:** G007 is standalone, dependency-bound to G006, Luna-ready, and prepared without execution.

@@ -1,0 +1,106 @@
+{
+  "goal": "G006",
+  "kind": "development",
+  "model": "deepseek-flash",
+  "cases": [
+    "CUS-SC003-D1",
+    "CUS-SC003-D2",
+    "CUS-SC003-D3",
+    "CUS-SC006-D1",
+    "CUS-SC007-D1",
+    "CUS-SC007-D2"
+  ],
+  "arms": [
+    "base",
+    "g006-draft"
+  ],
+  "ceiling_usd": 0.25,
+  "records": [
+    {
+      "arm": "base",
+      "case_id": "CUS-SC003-D1",
+      "cost_usd": 0.000632,
+      "resumed": true
+    },
+    {
+      "arm": "base",
+      "case_id": "CUS-SC003-D2",
+      "cost_usd": 0.000675,
+      "resumed": true
+    },
+    {
+      "arm": "base",
+      "case_id": "CUS-SC003-D3",
+      "cost_usd": 0.000474,
+      "resumed": true
+    },
+    {
+      "arm": "base",
+      "case_id": "CUS-SC006-D1",
+      "cost_usd": 0.000703,
+      "resumed": true
+    },
+    {
+      "arm": "base",
+      "case_id": "CUS-SC007-D1",
+      "cost_usd": 0.000733,
+      "resumed": true
+    },
+    {
+      "arm": "base",
+      "case_id": "CUS-SC007-D2",
+      "cost_usd": 0.00069,
+      "resumed": true
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "CUS-SC003-D1",
+      "cost_usd": 0.001601,
+      "resumed": true
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "CUS-SC003-D2",
+      "cost_usd": 0.000798,
+      "resumed": true
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "CUS-SC003-D3",
+      "cost_usd": 0.000504,
+      "resumed": true
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "CUS-SC006-D1",
+      "cost_usd": 0.000741,
+      "resumed": true
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "CUS-SC007-D1",
+      "cost_usd": 0.000846,
+      "resumed": true
+    },
+    {
+      "arm": "g006-draft",
+      "case_id": "CUS-SC007-D2",
+      "cost_usd": 0.000723,
+      "resumed": true
+    }
+  ],
+  "ledger": {
+    "approved_ceiling_usd": 0.25,
+    "max_generations": 12,
+    "attempted": 12,
+    "completed": 12,
+    "retries": 0,
+    "input_tokens": 448002,
+    "output_tokens": 3760,
+    "grader_calls": 0,
+    "grader_cost_usd": 0.0,
+    "estimated_cost_usd": 0.00912,
+    "remaining_usd": 0.24088,
+    "stop_reason": null
+  }
+}
