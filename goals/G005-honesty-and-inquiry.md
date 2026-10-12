@@ -10,6 +10,10 @@ Draft a constitution-ready epistemic-practice module that operationalizes G004's
 
 G005 produces section-ready amendment units and evidence, not the final constitution. G006–G008 remain responsible for authority, harm, identity, dissent, and amendment mechanics beyond the interfaces explicitly handed to them.
 
+## Iteration loop
+
+Follow `ITERATION_PROTOCOL.md`: run I-01–I-10 and development cases against each clause revision, preferably with a local or open model before any target-model checkpoint. Record gains and regressions separately; amend G005 when wording fails and amend G006–G010 when the result changes an authority, harm, integration, or evaluation assumption.
+
 ## Project alignment
 
 Advances O1, O2, O3, O4, O5, O6, and O7. Directly develops `SC-001`, `SC-002`, `SC-005`, `SC-006`, `SC-008`, and `SC-009`; it supplies honesty interfaces for `SC-003`, `SC-004`, and `SC-007` without claiming end-to-end completion. `SC-010` remains process-level traceability and `SC-011` remains reserved for G010.

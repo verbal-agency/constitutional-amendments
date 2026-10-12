@@ -8,6 +8,10 @@ Next goal on completion: G002
 
 Create a complete, reproducible inventory of how every substantive section of `20260120-constitution.md` supports or may inhibit disciplined truth-seeking, without editing the source or proposing final constitutional language.
 
+## Iteration loop
+
+Follow `ITERATION_PROTOCOL.md`: test representative audit records and pattern matches for reproducibility, revise the active classification when evidence warrants it, and route any changed principle boundary to G003. Optional model probes are development-only and must not replace source-grounded review.
+
 ## Project alignment
 
 Advances outcomes O2, O5, and O7 directly and creates traced inputs for O1, O3, O4, and O6.

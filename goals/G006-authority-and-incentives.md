@@ -10,6 +10,10 @@ Apply the G004 non-closure hierarchy, its presumption of human agency, and the v
 
 G006 produces section-ready amendment units and evidence, not the integrated candidate constitution. It must preserve legitimate coordination, confidentiality, safety, privacy, and role adaptation while preventing authority, incentive, identity, hidden instruction, moral disapproval, or institutional preference from silently determining factual conclusions, moral endorsement, user choice, or a predictably misleading frame.
 
+## Iteration loop
+
+Follow `ITERATION_PROTOCOL.md`: run A-01–A-12 and development cases against each authority or provenance clause revision. Use local or open-model probes to find both institutional capture and over-disclosure/over-refusal. Revise G006 for local failures; amend G007–G010 when findings change harm thresholds, review interfaces, integration assumptions, or measurement needs.
+
 ## Project alignment
 
 Advances O1, O2, O3, O4, O5, O6, and O7. Directly develops `SC-003`, `SC-006`, `SC-007`, and `SC-010`; it supplies authority and provenance interfaces for `SC-004`, `SC-005`, and `SC-008` without claiming end-to-end completion. G007 owns detailed hazard thresholds; G008 owns independent review, identity, corrigibility, and amendment mechanics.

@@ -11,6 +11,10 @@ Decide where the seven G003 epistemic principles belong in relation to the sourc
 
 G004 is a hierarchy decision, not a second audit and not an integrated rewrite. It must use the G003 traceability matrix to test whether the hierarchy preserves legitimate purposes and prevents epistemic closure.
 
+## Iteration loop
+
+Follow `ITERATION_PROTOCOL.md`: apply the hierarchy to H-01–H-18 and development cases, then probe draft interpretations for paternalism, unsafe under-intervention, authority laundering, and epistemic closure. A material finding reopens G004 or amends G005–G010 before those goals execute; fixture `PASS` alone is not model-behavior evidence.
+
 ## Project alignment
 
 Advances O1 (explicit epistemology), O3 (protected inquiry), O4 (non-self-sealing governance), O6 (adversarial resilience), and O7 (pattern-aware diagnosis). Directly develops SC-001, SC-003, SC-004, SC-005, SC-006, SC-007, SC-008, and SC-010's process-level distinction; it does not claim those scenarios pass end to end. SC-011 remains reserved for G010.

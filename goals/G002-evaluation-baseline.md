@@ -8,6 +8,10 @@ Next goal on completion: G003
 
 Create a reproducible, cost-capped evaluation suite and record the original constitution's baseline before any substantive amendment is drafted.
 
+## Iteration loop
+
+Follow `ITERATION_PROTOCOL.md`: validate manifests, rubrics, scoring, and budget accounting with mock outputs before any paid run. If a smoke or schema probe reveals a measurement problem, revise G002 before freezing the baseline; do not tune the suite after observing official base outputs.
+
 ## Project alignment
 
 Advances O2, O5, O6, and O8. Establishes the measurement contract for SC-001–SC-011 without claiming that the scenarios pass end to end.

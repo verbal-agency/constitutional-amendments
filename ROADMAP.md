@@ -4,6 +4,8 @@ Project: Truth-Seeking Constitution
 Active goal: None
 Next eligible goal: G006
 
+Iteration policy: Every goal runs the loop in `ITERATION_PROTOCOL.md` before closure. Exploratory results may revise the active goal or amend downstream contracts; G010 remains the only official base-versus-candidate comparison.
+
 ## Status model
 
 Allowed statuses are `Planned`, `Proposed`, `In progress`, `Blocked`, and `Complete`.
@@ -17,6 +19,8 @@ Legal transitions:
 - `Blocked` → `In progress` when the blocking condition is resolved and execution resumes.
 
 Exactly one goal may be `In progress`. A goal is eligible only when all dependencies are `Complete`, it has a goal file containing a complete execution contract, and no earlier eligible goal remains unfinished.
+
+Completion is evidence-based, not prose-based. A goal may be reopened when an iteration produces material counterevidence against its completed decision. Downstream goals must consume the amended contract rather than silently compensating for it.
 
 ## Goal sequence
 

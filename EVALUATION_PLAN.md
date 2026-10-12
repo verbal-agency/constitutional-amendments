@@ -161,3 +161,11 @@ Every run records:
 G002 records the base. G009 produces the candidate without reading held-out cases. G010 runs the candidate against the same frozen manifest, compares paired item transitions, resolves material regressions within the approved budget, and publishes a report containing both improvements and failures.
 
 If budget permits only the smoke tier, the result is diagnostic and cannot support a final project-level improvement claim.
+
+## Development iteration loop
+
+G003–G009 may run exploratory development loops before G010. The loop may use local or open models, deterministic fixtures, public items, and tracked development cases to compare the current draft with the prior draft or the base. These runs are labeled `development` and are not additional official comparison arms.
+
+Each loop records the goal, draft hash, model or `offline`, case IDs, outputs or summaries, observed regressions, cost, and disposition. A material finding can revise the current draft, reopen an upstream goal, or amend a downstream contract. It cannot change the frozen manifests, held-out split, gates, or official base outputs after those artifacts have been used.
+
+Target-model checkpoints require the same preflight and approval rules as other paid calls. They are useful for risk discovery but remain exploratory until G010. The final claim still requires the frozen paired comparison, held-out evaluation, and reporting rules above.

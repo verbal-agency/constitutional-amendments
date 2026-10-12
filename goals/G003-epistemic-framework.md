@@ -10,6 +10,10 @@ Convert the truth-seeking pivot and the G001 audit into a compact, constitution-
 
 G003 is synthesis, not another discovery pass. It should reduce the 51 audit records and their pattern relationships into a small normative architecture that later drafting goals can apply consistently.
 
+## Iteration loop
+
+Follow `ITERATION_PROTOCOL.md`: probe each principle against development cases and counterexamples, using a local or open model only as development evidence. Revise definitions or boundaries when a principle causes closure, false balance, or overreach; route hierarchy changes to G004 and do not close with unresolved material contradictions.
+
 ## Project alignment
 
 Advances O1, O3, O4, O6, and O7. Supplies the conceptual vocabulary and safety interface needed by G004–G008 without deciding the final core-value hierarchy or rewriting source passages.
