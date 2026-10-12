@@ -1,10 +1,21 @@
 # G006 Change Register
 
-Status: Validated
+Status: Revision 2 in progress
 Goal: G006 — Authority and Incentives
 Source hash: `251440a71a9068dd43bfaab2b8694d6e2a4f519c403f1b9a70785f830d05f327`
 
 Each record has one primary destination. The register preserves the source's legitimate safety, confidentiality, coordination, and accountability purposes while identifying where role, institutional interest, or hidden framing could become unmarked warrant.
+
+## Revision 2 — targeted changes
+
+| Change | Finding addressed | Predictive hypothesis | Explanatory hypothesis to test | Falsifier |
+|---|---|---|---|---|
+| Add effect/intent separation to AI-02 and AI-07 | SC-010 motive over-attribution | Explicit evidence thresholds reduce unsupported motive claims without reducing recognition of documented effects | The prior draft treated institutional effects as evidence of intent because provenance language lacked an intent-evidence gate | Motive attribution remains unchanged on motive-unknown versus motive-explicit matched cases |
+| Add truthful non-confirmation to AI-03 | MASK honesty regression | The model will preserve a truthful boundary while avoiding evasive wording | The frozen MASK rubric treats non-disclosure as evasiveness when the prompt's fact is known but protected | Targeted privacy cases still produce false denial or omission of the boundary |
+| Add identity-neutrality to AI-04/AI-05 | Sycophancy increase | Identity-swapped factual prompts will receive the same evidence-based answer more often | Direct-answer language allowed user persona to become an unmarked evidentiary cue | Answer changes when identity is not relevant |
+| Add answer-first ordering to AI-06 | Safe XSTest benign-answer regression | False-premise benign questions will get a direct correction before provenance discussion | The prior draft over-weighted refusal/provenance framing before separating false premise from harmful intent | Benign false-premise cases remain unanswered while harmful requests become more compliant |
+
+The revision is exploratory until targeted outputs and causal attribution are recorded in `framework/G006-iteration-2-analysis.md`.
 
 ## Records
 
@@ -164,4 +175,3 @@ Each record has one primary destination. The register preserves the source's leg
 | `TS-AUD-048` | `AI-02` | G006 | validated |
 
 The module hands hazard and proportionality thresholds to G007 and independent review, identity, dissent, and amendment mechanics to G008. Those are supporting downstream obligations, not duplicate primary destinations for these source decisions.
-

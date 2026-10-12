@@ -1,6 +1,6 @@
 # G006 — Authority and Incentives
 
-Status: Complete
+Status: In progress — revision 2
 Dependencies: G005 Complete
 Next goal on completion: G007
 
@@ -14,7 +14,7 @@ G006 produces section-ready amendment units and evidence, not the integrated can
 
 Follow `ITERATION_PROTOCOL.md`: run A-01–A-12 and development cases against each authority or provenance clause revision. Use local or open-model probes to find both institutional capture and over-disclosure/over-refusal. Revise G006 for local failures; amend G007–G010 when findings change harm thresholds, review interfaces, integration assumptions, or measurement needs.
 
-**Execution state:** The bounded substantive development probe is complete. Its reviewed findings are recorded in `framework/G006-iteration-1.md`; G006 remains open only if a material regression requires clause revision.
+**Execution state:** Revision 2 is active. The paired 140-case run found a narrow calibration gain, benign-answering gains, and regressions in user-view dependence, motive attribution, and truthful non-disclosure scoring. This revision adds explicit evidence thresholds, identity-neutrality, answer-first ordering, and truthful non-confirmation language. It must be tested on targeted development cases before closure.
 
 ## Project alignment
 
@@ -156,7 +156,7 @@ Each fixture contains `case_id`, `class`, `condition`, `planes`, `expected_behav
 ## Authority and side-effect boundaries
 
 - Repository-local reads and scoped writes to the deliverables above are authorized.
-- One bounded provider development probe is authorized only under an explicit user-approved ceiling, using tracked development cases, no judge, and no held-out material. No other provider call, package installation, paid evaluation, candidate generation, Git push, or remote mutation is authorized.
+- One bounded candidate-only provider development probe is authorized under the current user-approved evaluation budget, using tracked public/development cases and targeted revision cases, with historical base outputs reused where available. No held-out material or base rerun is authorized; judge calls are limited to the probe's preflight ceiling. Git push remains separately authorized.
 - The source constitution and frozen evaluation artifacts are read-only; `evals/private/` is prohibited.
 - Tracked development cases may be used only as boundary checks and may not be tuned against base outputs.
 - G007 may be prepared but not executed.
@@ -168,7 +168,7 @@ Each fixture contains `case_id`, `class`, `condition`, `planes`, `expected_behav
 - Duplicate IDs, missing authority source or scope, missing agency effect, missing material-incentive handling, source drift, held-out access, an unapproved paid call, or frozen-evaluation changes stop completion.
 - If the module cannot separate conduct control from epistemic or moral warrant, keep G006 in progress.
 - If a clause needs a material hazard threshold or independent-review decision owned by G007/G008, record the interface and stop that drafting branch.
-- The development probe has a 12-generation cap, a `$0.25` hard ceiling, no judge calls, and append-only raw records under ignored run scratch. No replay is permitted without reconciliation.
+- The revision probe is candidate-only, append-only, and resumable. It must reuse the frozen historical base control by default, stop before the shared judge ceiling, record predictive and explanatory hypotheses, and stop on provider-version drift, missing historical control, held-out access, or budget uncertainty.
 
 ## Acceptance criteria
 
@@ -181,7 +181,7 @@ Each fixture contains `case_id`, `class`, `condition`, `planes`, `expected_behav
 - **AC7 — Confidentiality and candor:** Protected information can be withheld narrowly with truthful limitation behavior.
 - **AC8 — Conflict handling:** Authority/evidence conflicts preserve action controls, disagreement, and review routing.
 - **AC9 — Adversarial fixtures:** A-01 through A-12 pass and cover all required authority, agency, provenance, privacy, identity, malformed, institutional-interest, and emergency classes.
-- **AC10 — Scope integrity:** Source and frozen evaluation artifacts are unchanged; no held-out, judge, candidate, or remote mutation occurs; the only provider use is the approved tracked-case development probe.
+- **AC10 — Scope integrity:** Source and frozen evaluation artifacts are unchanged; no held-out material is read; historical base outputs are reused by default; candidate and any approved judge calls are recorded with cost and version metadata; no remote mutation occurs in the cycle.
 - **AC11 — Verification:** `framework/G006-verification.md` records evidence for AC1–AC10.
 - **AC12 — Routing:** Every G006 finding has one primary destination; hazard decisions are routed to G007 and review/identity decisions to G008 as supporting goals where they cross the G006 authority boundary.
 - **AC13 — Next-goal readiness:** G007 is standalone, dependency-bound to G006, Luna-ready, and prepared without execution.
