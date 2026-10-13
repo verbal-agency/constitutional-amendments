@@ -1,0 +1,43 @@
+# X001 offline preflight configuration. This is not a paid-run approval.
+config_version: 1
+experiment: X001
+status: offline-preflight
+arm: mistral-untuned-or-finetuned
+
+provider:
+  name: mistral
+  base_url: https://api.mistral.ai
+  chat_endpoint: /v1/chat/completions
+  models_endpoint: /v1/models
+  model: ministral-8b-2512
+  model_status: pending-account-scoped-eligibility-check
+  fine_tuning_status: pending-account-scoped-eligibility-check
+  credentials: env var MISTRAL_API_KEY (read from ignored .env); never written to artifacts
+
+data:
+  record_schema: evals/datasets/x001-mistral-record-schema.json
+  principle_registry: framework/principles-v1.yaml
+  train: evals/datasets/x001-mistral-train.jsonl
+  validation: evals/datasets/x001-mistral-validation.jsonl
+  heldout: evals/datasets/x001-mistral-heldout.jsonl
+  target_counts:
+    train: 300
+    validation: 60
+    heldout: 100
+  reduced_pilot_counts:
+    train: 120
+    validation: 30
+    heldout: 40
+  evaluation_manifests_are_training_data: false
+
+preflight:
+  proposed_training_ceiling_usd: 10.00
+  evaluation_budget_usd: separate-approval-required
+  exact_price: pending-provider-and-account-check
+  stop_before_paid_call_if: [model_ineligible, price_unbounded, registry_missing, data_contaminated, split_invalid]
+
+comparison:
+  design: two-by-three-factorial
+  model_states: [untuned, finetuned]
+  prompt_conditions: [none, original_constitution, mapped_candidate]
+  reduced_pilot: [untuned_none, untuned_candidate, finetuned_none, finetuned_candidate]

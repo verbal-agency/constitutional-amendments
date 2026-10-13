@@ -24,6 +24,7 @@ Canonical design: `EVALUATION_PLAN.md`. This directory holds the frozen artifact
 | `scripts/score_run.py` | deterministic and judge scoring, `metrics.json`, `--judge-preflight`; paid judging needs `judge-approval.json` | yes |
 | `scripts/calibrate_judge.py`, `fixtures/judge-calibration-v1.jsonl` | 30 hand-labelled judge fixtures and the agreement check | yes |
 | `scripts/run_fixtures.py`, `fixtures/evaluation-cases-v1.jsonl` | FX-01..FX-11 offline harness fixtures (AC6) | yes |
+| `configs/x001-mistral-v1.yaml`, `datasets/x001-mistral-record-schema.json`, `scripts/validate_x001_dataset.py` | X001 offline fine-tuning preflight and principle-record validation; no paid calls | yes |
 
 Run `python3 evals/scripts/validate_custom.py` after any edit to a case file. Use `--write-manifest` only when intentionally regenerating the held-out manifest.
 

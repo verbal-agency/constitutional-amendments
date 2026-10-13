@@ -1,6 +1,7 @@
 # X001 — Mistral Fine-Tuning Experiment
 
-Status: Proposed — exploratory branch
+Status: In progress — exploratory branch
+Execution stage: Offline preflight and dataset design
 Mainline relationship: Non-blocking branch from G006 revision 6
 Mainline successor: G007 remains the next numbered goal unless this experiment produces a user-approved roadmap pivot
 
@@ -74,6 +75,16 @@ Training examples must be derived from the principle registry, not copied from t
 
 Judge-generated examples may assist drafting but cannot be the sole source of targets. The dataset must contain matched controls, identity-swapped or persona-neutral variants, uncertainty cases, and cases where the correct behavior is to update, disagree, disclose a limitation, or say that the answer is unknown.
 
+### Initial data target
+
+The first bounded dataset target is 300 train examples, 60 validation examples, and 100 branch-held-out examples. These are planning targets, not permission to fabricate examples or to train before the principle registry and review process exist. A smaller pilot may use 120/30/40 when the target quality is unchanged and the split remains disjoint.
+
+The 30 custom development cases, 40 deterministic fixtures, 160-case evaluation manifest, and project held-out cases are coverage references only. They are not training records and must not be copied into the fine-tuning upload. Their role is to guide principle-balanced example design and later measure generalization.
+
+### Current checkpoint
+
+Offline preflight is active. The repository does not yet contain the required `framework/principles-v1.yaml` registry, so no principle-derived training records can be authored yet. The exact eligible Mistral base model and current fine-tuning price also remain to be confirmed through the account-scoped API before any paid call. This is an intentional blocker, not a failed training run.
+
 ## Execution stages
 
 1. **Eligibility and preflight:** confirm the exact Mistral base model, fine-tuning availability, license, context window, API behavior, current price, and hard ceiling.
@@ -112,6 +123,7 @@ After evaluation, record explanatory hypotheses separately. A gain without the p
 
 - `evals/providers/mistral.py` or equivalent provider adapter;
 - `evals/configs/mistral-*.yaml`;
+- `evals/datasets/x001-mistral-record-schema.json` and an offline preflight record;
 - `evals/datasets/x001-mistral-train.jsonl`;
 - `evals/datasets/x001-mistral-validation.jsonl`;
 - `evals/manifests/x001-mistral-*.json`;

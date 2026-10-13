@@ -3,6 +3,7 @@
 Project: Truth-Seeking Constitution
 Active goal: G006
 Next eligible goal: G007 after G006 revision 6 closes
+Active experimental branch: X001 — offline preflight and dataset design
 
 Iteration policy: Every goal runs the loop in `ITERATION_PROTOCOL.md` before closure. Exploratory results may revise the active goal or amend downstream contracts; G010 remains the only official base-versus-candidate comparison.
 
@@ -20,7 +21,7 @@ Legal transitions:
 - `In progress` → `Blocked` only under the platform's blocked-goal rules and with evidence of the unresolved condition.
 - `Blocked` → `In progress` when the blocking condition is resolved and execution resumes.
 
-Exactly one goal may be `In progress`. A goal is eligible only when all dependencies are `Complete`, it has a goal file containing a complete execution contract, and no earlier eligible goal remains unfinished.
+Exactly one numbered goal may be `In progress`. An explicitly selected experimental branch may also be `In progress` when it is marked non-blocking and does not alter the numbered sequence. A numbered goal is eligible only when all dependencies are `Complete`, it has a goal file containing a complete execution contract, and no earlier eligible goal remains unfinished.
 
 Completion is evidence-based, not prose-based. A goal may be reopened when an iteration produces material counterevidence against its completed decision. Downstream goals must consume the amended contract rather than silently compensating for it.
 
@@ -43,7 +44,7 @@ Completion is evidence-based, not prose-based. A goal may be reopened when an it
 
 | Branch | Status | Relationship | Purpose |
 | --- | --- | --- | --- |
-| [X001 — Mistral fine-tuning](goals/X001-mistral-finetune-experiment.md) | Proposed | Non-blocking branch from G006 revision 6 | Test whether the principle contracts can be learned into a small Mistral model and whether learned behavior generalizes beyond prompting. |
+| [X001 — Mistral fine-tuning](goals/X001-mistral-finetune-experiment.md) | In progress | Non-blocking branch from G006 revision 6 | Test whether the principle contracts can be learned into a small Mistral model and whether learned behavior generalizes beyond prompting. |
 
 ## Goal boundaries
 
