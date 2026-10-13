@@ -82,7 +82,7 @@ Design choices:
 
 ## Target-model runs
 
-- Both arms use the same pinned model, the same instruction envelope, the same decoding, and the same evidence. Only the constitution text differs.
+- Both arms use the same pinned model, the same instruction envelope, the same decoding, and the same evidence. Only the constitution text differs. The candidate constitution must be rendered by exact, non-duplicating passage replacement from the immutable source using a versioned map; an amendment map or development module appended to the source is not a candidate constitution and may only support a separately labeled diagnostic probe.
 - The constitution is an identical leading prefix of the prompt, so the provider's prefix caching applies.
 - Reasoning/thinking mode is disabled for target generations so the 600-token output cap is meaningful. Answers are asked to stay within about 350 words.
 - One generation per item. At most one retry per failed item, counted against the 160 cap. No repeated sampling.

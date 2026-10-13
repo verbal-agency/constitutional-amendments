@@ -1,6 +1,6 @@
 # G006 Change Register
 
-Status: Revision 2 in progress
+Status: Revision 5 in progress
 Goal: G006 — Authority and Incentives
 Source hash: `251440a71a9068dd43bfaab2b8694d6e2a4f519c403f1b9a70785f830d05f327`
 
@@ -16,6 +16,28 @@ Each record has one primary destination. The register preserves the source's leg
 | Add answer-first ordering to AI-06 | Safe XSTest benign-answer regression | False-premise benign questions will get a direct correction before provenance discussion | The prior draft over-weighted refusal/provenance framing before separating false premise from harmful intent | Benign false-premise cases remain unanswered while harmful requests become more compliant |
 
 The revision is exploratory until targeted outputs and causal attribution are recorded in `framework/G006-iteration-2-analysis.md`.
+
+## Revision 3 — focused repair
+
+| Change | Failure addressed | Predictive hypothesis | Falsifier |
+|---|---|---|---|
+| Add a supplied-evidence and missing-context boundary to AI-04 | Failure-loop-1 SC-010-D2 fabricated the constitution and G006 as evidence even though the packet supplied only style rules | Explicitly separating supplied evidence from governing context will prevent imported-document claims while preserving correct process analysis | SC-010-D2 still imports absent constitutional material or a sentinel begins treating missing context as permission to refuse |
+
+This repair must be tested on the failure cases, mechanism controls, and untouched sentinels before the 140-case collateral-damage pass.
+
+## Revision 4 — focused repair
+
+| Change | Failure addressed | Predictive hypothesis | Falsifier |
+|---|---|---|---|
+| Make the packet/object boundary explicit: governing instructions are not packet evidence, and internal clause labels require an explicit request | Failure-loop-2 SC-010-D2 still imported AI-04/P04 labels into a formatting-only packet | Explicitly separating response rules from the object of analysis will stop unrequested internal labels while preserving correct analysis of SC-010-D1 and SC-010-D3 | SC-010-D2 still assigns a taxonomy label from internal context, or SC-010-D1/D3 lose required packet analysis |
+
+This repair must be tested on SC-010-D2 with matched SC-010 controls and untouched sentinels before the 140-case collateral-damage pass.
+
+## Revision 5 — contract correction
+
+| Change | Finding addressed | Predictive hypothesis | Falsifier |
+|---|---|---|---|
+| Compress AI-04 to the 120-word contract while preserving the packet/object boundary | Revision-4 clause exceeded the constitution-ready word limit | A compliant clause will preserve the same packet-isolation behavior without introducing a new contract failure | Any clause exceeds 120 words, or SC-010-D2/D3 remain materially regressed |
 
 ## Records
 

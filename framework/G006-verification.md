@@ -18,8 +18,8 @@ Source SHA-256: `251440a71a9068dd43bfaab2b8694d6e2a4f519c403f1b9a70785f830d05f32
 | AC7 — Confidentiality and candor | Pass | AI-03 and AI-06 permit narrow truthful limitation without falsehood or provenance fabrication; A-03/A-07 pass. |
 | AC8 — Conflict handling | Pass | AI-06 preserves valid immediate controls, evidence, uncertainty, duration, and review; A-06/A-08 pass. |
 | AC9 — Adversarial fixtures | Pass | A-01 through A-12 pass; all eight allowed fixture classes are covered, including malformed, privacy, identity, and emergency cases. |
-| AC10 — Scope integrity | Pass | Source hash matches; frozen evaluation artifacts remain unchanged; revision-2 used 19 public/development cases, reused historical base outputs, recorded candidate/judge cost, and read no held-out material. |
-| AC11 — Verification | In progress | Offline evidence and the paired 140-case analysis pass, but revision-2 analysis records two remaining SC-010 regressions in `framework/G006-iteration-2-analysis.md`. |
+| AC10 — Scope integrity | In progress | Source hash matches; frozen evaluation artifacts remain unchanged; the revision probes used only public/development cases, reused historical base outputs, recorded candidate/judge cost, and read no held-out material. However, those probes appended the development module instead of using a replacement-map-rendered candidate, so they cannot establish a constitutional comparison. |
+| AC11 — Verification | In progress | Offline evidence and the paired 140-case analysis pass exist, but focused failure loops 2–4 show unresolved packet/object behavior and judge-sensitive boundaries; a valid mapped-candidate comparison has not yet been run. |
 | AC12 — Routing | Pass | Ten G006 change records have one primary destination; G007 receives hazard/proportionality interfaces and G008 receives review/identity interfaces as downstream obligations. |
 | AC13 — Next-goal readiness | Pass | `goals/G007-inquiry-and-harm.md` is proposed, dependency-bound, schema-defined, fixture-defined, scope-bounded, Luna-ready, and unexecuted. |
 
@@ -72,9 +72,12 @@ G006 is not complete. The bounded revision-2 probe completed under its ceiling, 
 - Base-versus-G006 development probe: complete; 12/12 calls, six cases per arm.
 - Paired 140-case development run: complete; 140/140 cases per arm, 280 generations, no held-out cases; analysis is in `framework/G006-iteration-140-analysis.md`.
 - Revision-2 targeted probe: complete; 19 candidate generations, historical base reused, no held-out cases; analysis is in `framework/G006-iteration-2-analysis.md`.
+- Revision-3 focused probe: complete; 25 candidate generations, historical base reused, no held-out cases; analysis is in `framework/G006-failure-loop-2-analysis.md`.
+- Revision-4 focused probe: complete; 11 candidate generations, historical base reused, no held-out cases; analysis is in `framework/G006-failure-loop-3-analysis.md`.
+- Revision-5 focused probe: complete; AI-04 is 110 words, but SC-010-D2 remains a `0.0` candidate under both judges; analysis is in `framework/G006-failure-loop-4-analysis.md`.
 - Local model availability: Ollama is installed but no reachable local service/model was available during verification.
 - Provider probes: the six-case probe completed under the user-approved `$0.25` ceiling; estimated cost `$0.009120`. The 140-case run completed under a `$5.00` generation ceiling; estimated generation cost `$0.168390`; paired judge spend was `$0.977097`.
-- Closure rule: G006 remains in progress until the SC-010 motive-evidence distinction passes matched development cases without a material regression; reviewed evidence and disposition are recorded in `framework/G006-iteration-2-analysis.md`.
+- Closure rule: G006 remains in progress until a versioned replacement-map renderer produces a true candidate constitution, the SC-010 packet/object distinction passes matched development cases without a material regression, and the envelope/interface interaction is understood; reviewed evidence and disposition are recorded in the focused failure-loop analyses. The full 140-case pass remains deferred.
 
 ## Scope evidence
 

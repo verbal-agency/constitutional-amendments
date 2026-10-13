@@ -1,6 +1,6 @@
 # G006 — Authority and Incentives
 
-Status: In progress — revision 2
+Status: In progress — revision 5
 Dependencies: G005 Complete
 Next goal on completion: G007
 
@@ -8,13 +8,22 @@ Next goal on completion: G007
 
 Apply the G004 non-closure hierarchy, its presumption of human agency, and the validated G005 honesty practice to institutional, operator, principal, guideline, confidentiality, commercial-incentive, and persona interfaces. G006 is the primary owner of CR-12's authority and provenance work; G007 supports harm and proportionality analysis, and G008 supports independent review and contestability. Separate legitimate authority over conduct, access, and disclosure from epistemic or moral warrant. Require authority to establish its source, scope, protected interest, affected person, procedural limits, conflicts, and review path rather than treating role or developer ownership as self-authenticating. Make material provenance and conflicts visible without requiring exhaustive disclosure, disobedience, or false neutrality.
 
-G006 produces section-ready amendment units and evidence, not the integrated candidate constitution. It must preserve legitimate coordination, confidentiality, safety, privacy, and role adaptation while preventing authority, incentive, identity, hidden instruction, moral disapproval, or institutional preference from silently determining factual conclusions, moral endorsement, user choice, or a predictably misleading frame.
+G006 produces section-ready replacement units, traceable replacement-map entries, and evidence. It does not edit the immutable source. Instead, every model probe must render a candidate by replacing the map's exact source passages with their approved replacements, preserving all unmapped source text and removing the replaced passages. It must never compare the base constitution with the amendment map or a development module, and it must not append a second rule that contradicts a replaced one. The rendered candidate must preserve legitimate coordination, confidentiality, safety, privacy, and role adaptation while preventing authority, incentive, identity, hidden instruction, moral disapproval, or institutional preference from silently determining factual conclusions, moral endorsement, user choice, or a predictably misleading frame.
 
 ## Iteration loop
 
 Follow `ITERATION_PROTOCOL.md`: run A-01–A-12 and development cases against each authority or provenance clause revision. Use local or open-model probes to find both institutional capture and over-disclosure/over-refusal. Revise G006 for local failures; amend G007–G010 when findings change harm thresholds, review interfaces, integration assumptions, or measurement needs.
 
-**Execution state:** Revision 2 is active. The paired 140-case run found a narrow calibration gain, benign-answering gains, and regressions in user-view dependence, motive attribution, and truthful non-disclosure scoring. This revision adds explicit evidence thresholds, identity-neutrality, answer-first ordering, and truthful non-confirmation language. It must be tested on targeted development cases before closure.
+**Execution state:** Revision 5 is active. Revision 2's failure loop improved some concrete cases but left SC-010-D2 fabricating governing-document evidence and produced substantial primary/secondary judge disagreement on MASK, FreshQA, and safe XSTest. Revisions 3 and 4 added explicit packet/object boundaries, but the focused probes still imported internal labels; revision 4 also exceeded the 120-word clause limit. Revision 5 preserves that boundary in a compliant 110-word AI-04 clause. The prior paid probes appended the development module instead of rendering a mapped candidate constitution, so they are diagnostic only and cannot establish a base-versus-candidate constitutional effect. No further candidate comparison is valid until the map renderer is in place and the focused set is rerun.
+
+### Candidate assembly invariant
+
+For every provider or judge run, create two constitution texts from the same immutable source:
+
+1. **Base:** the pinned source constitution unchanged.
+2. **Candidate:** a transformation of the pinned source constitution in which each mapped source passage is replaced exactly once by its replacement text; unmapped passages remain unchanged.
+
+The candidate may contain only constitution-ready replacement prose and required surrounding source text. It must not contain the amendment module's clause IDs, source notes, audit IDs, validation status, change-register prose, or other development metadata. The run records the source hash, replacement-map hash, compiled-candidate hash, and renderer version. Any run that appends a map or module, leaves a replaced passage in place, or creates duplicate contradictory rules is a diagnostic probe, not evidence for a constitutional comparison.
 
 ## Project alignment
 
@@ -50,7 +59,7 @@ G006 must not read `evals/private/` or any held-out prompt, annotation, output, 
 
 ## Out of scope
 
-- Editing `20260120-constitution.md` or producing the integrated candidate constitution.
+- Editing `20260120-constitution.md` or committing the permanent integrated candidate constitution; an ephemeral, hash-recorded candidate render for a controlled probe is in scope.
 - Reopening G004's amended hierarchy or G005's eight clause functions.
 - Defining detailed capability, harm, or refusal thresholds; G007 owns them.
 - Defining independent reviewer appointment, identity stability, corrigibility, or amendment procedure; G008 owns them.
@@ -61,6 +70,7 @@ G006 must not read `evals/private/` or any held-out prompt, annotation, output, 
 
 - `amendments/G006-authority-and-incentives.md` — section-ready authority/provenance clauses and notes;
 - `amendments/G006-change-register.md` — source targets, audit evidence, preserved purposes, risks, and destinations;
+- replacement-map entries connecting each selected source passage to its replacement clause and preserving unmapped source text;
 - `fixtures/G006-authority-cases.md` — offline authority, provenance, confidentiality, persona, incentive, malformed, and emergency-interface cases;
 - `framework/G006-verification.md` — criterion-level evidence;
 - `framework/G006-checkpoint.md` — durable execution state;
@@ -73,9 +83,10 @@ G006 must not read `evals/private/` or any held-out prompt, annotation, output, 
 1. Confirm G005 is complete and freeze the clause, change-register, and conflict-rule interfaces.
 2. Build the change register before clause prose; every source decision must preserve a legitimate purpose and name a prohibited authority or incentive interpretation.
 3. Draft one compact module for authority legitimacy and scope, provenance, conflicts, confidentiality, persona, and incentive handling; remove duplicate duties.
-4. Test authority/evidence, authority/agency, incentive/truth, persona/provenance, confidentiality/candor, compliance/endorsement, institutional-preference, and emergency-control boundaries.
-5. Run adversarial review for epistemic authoritarianism, institutional self-protection, benevolent deception, paternalism, false neutrality, identity-conditioned governance, and authority laundering.
-6. Validate every clause and fixture, route harm and independent-review findings once, and prepare G007 without executing it.
+4. Build and validate the replacement map before any provider probe; render the candidate constitution from the immutable source and map, with development metadata excluded.
+5. Test authority/evidence, authority/agency, incentive/truth, persona/provenance, confidentiality/candor, compliance/endorsement, institutional-preference, and emergency-control boundaries against the compiled candidate.
+6. Run adversarial review for epistemic authoritarianism, institutional self-protection, benevolent deception, paternalism, false neutrality, identity-conditioned governance, and authority laundering.
+7. Validate every clause, map entry, and fixture, route harm and independent-review findings once, and prepare G007 without executing it.
 
 ## Expected implementation surface
 
@@ -143,6 +154,7 @@ Each fixture contains `case_id`, `class`, `condition`, `planes`, `expected_behav
 ## Invariants and illegal states
 
 - Exactly seven primary clauses exist, `AI-01` through `AI-07`, with no duplicate function.
+- Every paid candidate run uses a compiled constitution produced by exact, non-duplicating passage replacement against the immutable source; no development module or map is shown as candidate constitution text.
 - Authority records always distinguish action scope from epistemic and moral warrant.
 - Authority records establish source, scope, affected person or parties, validity and legal/procedural basis, protected interest, conflicts, duration, and review path; role status alone is never sufficient.
 - Material incentives, hidden instructions, and persona framing are disclosed or recorded when omission would predictably change interpretation.
@@ -156,7 +168,7 @@ Each fixture contains `case_id`, `class`, `condition`, `planes`, `expected_behav
 ## Authority and side-effect boundaries
 
 - Repository-local reads and scoped writes to the deliverables above are authorized.
-- One bounded candidate-only provider development probe is authorized under the current user-approved evaluation budget, using tracked public/development cases and targeted revision cases, with historical base outputs reused where available. No held-out material or base rerun is authorized; judge calls are limited to the probe's preflight ceiling. Git push remains separately authorized.
+- One bounded candidate-only provider development probe is authorized under the current user-approved evaluation budget, using a compiled map-rendered candidate, tracked public/development cases, and targeted revision cases, with historical base outputs reused where available. No held-out material or base rerun is authorized; judge calls are limited to the probe's preflight ceiling. Git push remains separately authorized.
 - The source constitution and frozen evaluation artifacts are read-only; `evals/private/` is prohibited.
 - Tracked development cases may be used only as boundary checks and may not be tuned against base outputs.
 - G007 may be prepared but not executed.
@@ -182,6 +194,7 @@ Each fixture contains `case_id`, `class`, `condition`, `planes`, `expected_behav
 - **AC8 — Conflict handling:** Authority/evidence conflicts preserve action controls, disagreement, and review routing.
 - **AC9 — Adversarial fixtures:** A-01 through A-12 pass and cover all required authority, agency, provenance, privacy, identity, malformed, institutional-interest, and emergency classes.
 - **AC10 — Scope integrity:** Source and frozen evaluation artifacts are unchanged; no held-out material is read; historical base outputs are reused by default; candidate and any approved judge calls are recorded with cost and version metadata; no remote mutation occurs in the cycle.
+- **AC14 — Candidate assembly integrity:** Every comparison run records a versioned replacement map and renderer, applies the map to the immutable source, excludes development metadata from candidate text, and rejects append-only module assembly as constitutional evidence.
 - **AC11 — Verification:** `framework/G006-verification.md` records evidence for AC1–AC10.
 - **AC12 — Routing:** Every G006 finding has one primary destination; hazard decisions are routed to G007 and review/identity decisions to G008 as supporting goals where they cross the G006 authority boundary.
 - **AC13 — Next-goal readiness:** G007 is standalone, dependency-bound to G006, Luna-ready, and prepared without execution.

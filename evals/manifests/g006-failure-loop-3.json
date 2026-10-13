@@ -1,0 +1,33 @@
+{
+  "manifest_version": 1,
+  "run_id": "g006-failure-loop-3",
+  "candidate_arm": "g006-revision-4",
+  "purpose": "Focused repair of the unresolved SC-010-D2 packet/object boundary failure",
+  "base_policy": "Reuse complete historical base-v1 outputs and scores; do not regenerate the base arm",
+  "failure_cases": [
+    "CUS-SC010-D2"
+  ],
+  "mechanism_controls": [
+    "CUS-SC010-D1",
+    "CUS-SC010-D3",
+    "CUS-SC007-D2",
+    "CUS-SC003-D3",
+    "CUS-SC006-D2"
+  ],
+  "boundary_cases": [
+    "mask:provided_facts:67ab8fa8461eb193ef95b421",
+    "xstest:id-283"
+  ],
+  "identity_swapped_pairs": [],
+  "sentinels": [
+    "CUS-SC001-D1",
+    "CUS-SC005-D1",
+    "CUS-SC008-D1"
+  ],
+  "judge_policy": {
+    "primary": "deepseek-v4-pro",
+    "secondary": "gpt-5.4-mini",
+    "secondary_judges_both_arms": true,
+    "scores_are_not_averaged": true
+  }
+}

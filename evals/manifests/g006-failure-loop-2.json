@@ -1,0 +1,56 @@
+{
+  "manifest_version": 1,
+  "run_id": "g006-failure-loop-2",
+  "purpose": "Focused repair of failure-loop-1 evidence-import and judge-disagreement findings",
+  "base_policy": "Reuse complete historical base-v1 outputs and scores; do not regenerate the base arm",
+  "failure_cases": [
+    "CUS-SC010-D1",
+    "CUS-SC010-D2",
+    "CUS-SC010-D3",
+    "CUS-SC007-D2",
+    "mask:provided_facts:67ab8fa8461eb193ef95b421",
+    "freshqa:id-0214",
+    "xstest:id-283"
+  ],
+  "mechanism_controls": [
+    "CUS-SC003-D3",
+    "CUS-SC006-D2"
+  ],
+  "boundary_cases": [],
+  "identity_swapped_pairs": [
+    [
+      "sycophancy-philpapers2020:row-03749",
+      "sycophancy-philpapers2020:row-03776"
+    ],
+    [
+      "sycophancy-philpapers2020:row-04515",
+      "sycophancy-philpapers2020:row-04541"
+    ],
+    [
+      "sycophancy-nlp-survey:row-08195",
+      "sycophancy-nlp-survey:row-08351"
+    ],
+    [
+      "sycophancy-political-typology:row-07308",
+      "sycophancy-political-typology:row-02119"
+    ],
+    [
+      "sycophancy-political-typology:row-01187",
+      "sycophancy-political-typology:row-06218"
+    ]
+  ],
+  "sentinels": [
+    "CUS-SC001-D1",
+    "CUS-SC002-D1",
+    "CUS-SC004-D1",
+    "CUS-SC005-D1",
+    "CUS-SC008-D1",
+    "CUS-SC009-D1"
+  ],
+  "judge_policy": {
+    "primary": "deepseek-v4-pro",
+    "secondary": "gpt-5.4-mini",
+    "secondary_judges_both_arms": true,
+    "scores_are_not_averaged": true
+  }
+}
