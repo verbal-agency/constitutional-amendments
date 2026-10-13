@@ -1,10 +1,12 @@
 # Roadmap
 
 Project: Truth-Seeking Constitution
-Active goal: None
-Next eligible goal: G007
+Active goal: G006
+Next eligible goal: G007 after G006 revision 6 closes
 
 Iteration policy: Every goal runs the loop in `ITERATION_PROTOCOL.md` before closure. Exploratory results may revise the active goal or amend downstream contracts; G010 remains the only official base-versus-candidate comparison.
+
+Experimental branches are non-blocking unless explicitly promoted by the user. They may produce evidence for reopening a goal or changing the roadmap, but they do not silently alter the numbered goal sequence.
 
 ## Status model
 
@@ -31,11 +33,17 @@ Completion is evidence-based, not prose-based. A goal may be reopened when an it
 | [G003](goals/G003-epistemic-framework.md) | Complete | G002 | Compress the audit into seven constitution-ready epistemic principles, with explicit safety boundaries and traceability. |
 | [G004](goals/G004-core-hierarchy.md) | Complete | G003 | Decide how truth-seeking and the presumption of human agency constrain the core value hierarchy. |
 | [G005](goals/G005-honesty-and-inquiry.md) | Complete | G004 | Expand honesty into an operational account of inquiry, disconfirmation, candor, speculation, and mystery. |
-| [G006](goals/G006-authority-and-incentives.md) | Complete | G005 | Separate authority from epistemic warrant and require legitimate source, scope, agency impact, and provenance. |
+| [G006](goals/G006-authority-and-incentives.md) | In progress | G005 | Separate authority from epistemic warrant and adopt a principle-level replacement, evaluation, and attribution process before G007. |
 | [G007](goals/G007-inquiry-and-harm.md) | Proposed | G006 | Distinguish self-regarding risk from nonconsensual harm and apply capacity-sensitive, proportionate safeguards. |
 | G008 | Planned | G007 | Protect dissent, self-correction, appeals, evidence retention, and constitutional amendment. |
 | G009 | Planned | G008 | Produce an integrated candidate constitution and traceable change log. |
 | G010 | Planned | G009 | Compare candidate and base, run adversarial validation, resolve regressions, and publish the final constitution. |
+
+## Experimental branches
+
+| Branch | Status | Relationship | Purpose |
+| --- | --- | --- | --- |
+| [X001 — Mistral fine-tuning](goals/X001-mistral-finetune-experiment.md) | Proposed | Non-blocking branch from G006 revision 6 | Test whether the principle contracts can be learned into a small Mistral model and whether learned behavior generalizes beyond prompting. |
 
 ## Goal boundaries
 
@@ -61,7 +69,7 @@ Draft the constitution's epistemic practice: updating, disconfirmation, anomalie
 
 ### G006 — Authority and incentives
 
-Revise institutional, operator, and persona rules so authority must establish legitimate source and scope and commercial, moral, or institutional interests cannot silently determine factual conclusions, user choice, or materially misleading framing.
+Revise institutional, operator, and persona rules so authority must establish legitimate source and scope and commercial, moral, or institutional interests cannot silently determine factual conclusions, user choice, or materially misleading framing. Adopt the principle registry, exact replacement-map traceability, semantic ablations/interactions, and attribution-based promotion process needed to test those revisions without treating wording movement as principle progress.
 
 ### G007 — Inquiry and harm
 
@@ -78,6 +86,10 @@ Create a distinct candidate constitution and source-to-revision change log witho
 ### G010 — Controlled comparison and finalization
 
 Run the frozen paired comparison against the base and candidate constitutions, including misinformation, false balance, contrarianism, reckless disclosure, institutional capture, commercial pressure, paternalism, epistemic authoritarianism, precautionary conservatism, benevolent deception, and constitutional self-protection. Report SC-010 separately as process-level audit capability; complete the human spot-check and position-swapped judge consistency checks; preserve the MASK license caveat. Resolve material regressions within budget, record scenario evidence, and publish the final constitution.
+
+### X001 — Mistral fine-tuning experiment
+
+Run as a separately authorized research branch. Compare an untuned and fine-tuned small Mistral model under controlled constitution conditions, using principle-derived training data and held-out branch cases. Treat the result as evidence about learned behavioral generalization, not as a substitute for the prompt-conditioned constitutional comparison. Require an explicit pivot recommendation before changing the mainline sequence.
 
 ## Finding routing
 

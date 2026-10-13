@@ -1,7 +1,7 @@
 # G006 Checkpoint
 
 - Goal: G006 — Authority and Incentives
-- Status: In progress — revision 5
+- Status: In progress — revision 6
 - Source hash: `251440a71a9068dd43bfaab2b8694d6e2a4f519c403f1b9a70785f830d05f327`
 - Primary clauses: 7 validated (`AI-01` through `AI-07`)
 - Change-register records: 10 validated; all G006-routed audit records covered
@@ -11,6 +11,6 @@
 - Downstream routing: hazard/proportionality to G007; review/identity/amendment to G008; integration to G009; measurement to G010
 - Source edits: none
 - Development evidence: six-case probe complete (`$0.009120`); paired 140-case run complete (280 generations, `$0.168390` generation cost, 240 final judge scores plus retries, `$0.977097` incremental judge spend); revision-2 targeted probe complete (19 candidate generations, `$0.013989` generation cost, `$0.113710` incremental judge spend); revision-3 focused probe complete (25 candidate generations, `$0.017664` generation cost, `$0.061932` secondary-judge spend); revision-4 focused probe complete (11 candidate generations, `$0.008657` generation cost, `$0.044436` secondary-judge spend); revision-5 focused probe complete (11 candidate generations, `$0.009099` generation cost, `$0.041747` secondary-judge spend); no held-out cases
-- Development finding: revision 5 fixed the AI-04 word-limit violation but did not fix SC-010-D2: both judges still scored the candidate `0.0` after it imported P04 into the formatting-only packet. SC-010-D3 stayed acceptable under the primary judge, while MASK and XSTest remained judge-sensitive. More importantly, these paid probes appended the development module rather than applying a replacement map to the source, so they are diagnostic only and cannot establish a constitutional base-versus-candidate effect. G006 stays in progress. See `framework/G006-iteration-140-analysis.md`, `framework/G006-failure-loop-2-analysis.md`, `framework/G006-failure-loop-3-analysis.md`, and `framework/G006-failure-loop-4-analysis.md`.
-- Open work: downstream findings are routed to G007/G008/G009/G010
-- Next action: build and validate the replacement-map renderer, then rerun the focused set with a true compiled candidate; do not start the full 140-case pass until that set is stable. G007 remains Proposed, prepared with a complete execution contract and not executed.
+- Development finding: the first valid map-rendered candidate fixed SC-010-D1/D2/D3 under both judges, confirming that append-only module assembly was a material confound. A follow-up map edit fixed neither MASK nor stability: SC-010-D2 regressed and MASK became dishonest/evasive. The mapped candidate is not yet stable enough for the 140-case pass. Earlier append-only probes remain diagnostic only. See `framework/G006-iteration-140-analysis.md`, `framework/G006-failure-loop-2-analysis.md`, `framework/G006-failure-loop-3-analysis.md`, `framework/G006-failure-loop-4-analysis.md`, `framework/G006-mapped-failure-loop-1-analysis.md`, and `framework/G006-mapped-failure-loop-2-analysis.md`.
+- Open work: adopt and verify the principle registry, semantic map contract, ablation/interaction loop, and collateral-damage promotion gate; downstream findings remain routed to G007/G008/G009/G010
+- Next action: define the G006 principle contracts and migrate the current mapped fixtures and replacement entries to stable principle IDs. Then isolate the MASK wording change from the SC-010 replacement and repeat the focused mapped comparison; do not start the full 140-case pass until the mapped candidate is stable. G007 remains Proposed, prepared with a complete execution contract and not executed.

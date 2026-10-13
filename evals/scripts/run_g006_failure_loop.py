@@ -19,6 +19,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import evalcore as E  # noqa: E402
 import judge as J  # noqa: E402
 import run_eval as R  # noqa: E402
+from render_candidate import render as render_candidate  # noqa: E402
 import score_run as S  # noqa: E402
 import sources as SRC  # noqa: E402
 from validate_custom import DEV, content_hash as custom_hash, load  # noqa: E402
@@ -158,9 +159,8 @@ def historical_primary_ledger(cfg):
     return ledger
 
 
-def preflight(cfg, cases):
-    source = (ROOT / "20260120-constitution.md").read_text()
-    draft = source + "\n\n--- G006 CANDIDATE AMENDMENT ---\n\n" + (ROOT / "amendments/G006-authority-and-incentives.md").read_text()
+def preflight(cfg, cases, candidate_text):
+    draft = candidate_text
     inputs = [R.est_tokens("".join(m["content"] for m in E.build_messages(cfg, draft, c))) for c in cases]
     non_letter = [c for c in cases if c.get("scorer") != E.LETTER_SCORER]
     # Judge prompts use the historical base outputs as a conservative proxy.
@@ -186,6 +186,7 @@ def main():
     ap.add_argument("--preflight", action="store_true")
     ap.add_argument("--target-manifest", default=str(TARGET_MANIFEST))
     ap.add_argument("--run-dir", default=str(RUN))
+    ap.add_argument("--candidate-map", default=str(ROOT / "evals/maps/g006-replacement-v1.json"))
     args = ap.parse_args()
     TARGET_MANIFEST = Path(args.target_manifest)
     if not TARGET_MANIFEST.is_absolute():
@@ -197,8 +198,14 @@ def main():
     spec = json.loads(TARGET_MANIFEST.read_text())
     run_id = spec.get("run_id", RUN.name)
     revision_label = spec.get("candidate_arm", "g006-revision-4")
+    map_path = Path(args.candidate_map)
+    if not map_path.is_absolute():
+        map_path = ROOT / map_path
+    source = (ROOT / "20260120-constitution.md").read_text()
+    map_spec = json.loads(map_path.read_text())
+    candidate_text, candidate_assembly = render_candidate(source, map_spec)
     cases = load_target_cases(cfg, spec)
-    pf = preflight(cfg, cases)
+    pf = preflight(cfg, cases, candidate_text)
     if args.preflight:
         print(json.dumps(pf, indent=2))
         return 0
@@ -208,8 +215,9 @@ def main():
         raise SystemExit("DEEPSEEK_KEY and OPENAI_API_KEY are required")
     RUN.mkdir(parents=True, exist_ok=True)
     (RUN / "raw").mkdir(parents=True, exist_ok=True)
-    source = (ROOT / "20260120-constitution.md").read_text()
-    draft = source + f"\n\n--- {revision_label.upper()} ---\n\n" + (ROOT / "amendments/G006-authority-and-incentives.md").read_text()
+    draft = candidate_text
+    (RUN / "candidate-constitution.md").write_text(candidate_text, encoding="utf-8")
+    (RUN / "candidate-assembly.json").write_text(json.dumps({**candidate_assembly, "map_path": str(map_path.relative_to(ROOT))}, indent=2) + "\n", encoding="utf-8")
     raw_path = RUN / f"raw/{revision_label}.jsonl"
     candidate = read_jsonl(raw_path)
     gen_ledger = E.BudgetLedger(GEN_CEILING, len(cases), cfg["decoding"]["max_tokens"], cfg["prices"])
@@ -282,6 +290,7 @@ def main():
                         "base_secondary": S.case_result(case, base_out.get(cid), secondary_base.get(cid)),
                         "candidate_secondary": S.case_result(case, candidate.get(cid), secondary_candidate.get(cid))})
     report = {"run_id": run_id, "candidate_arm": revision_label, "generated_at": now(), "target_manifest": str(TARGET_MANIFEST.relative_to(ROOT)),
+              "candidate_assembly": candidate_assembly,
               "cases": target_ids(spec), "preflight": pf,
               "generation": {"model": cfg["provider"]["model"], "calls": gen_ledger.attempts, "cost_usd": round(gen_ledger.cost, 6)},
               "primary": {"model": cfg["scoring"]["judge"]["model"], "cumulative_calls": primary_ledger.calls, "cumulative_cost_usd": round(primary_ledger.cost, 6)},

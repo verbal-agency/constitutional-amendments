@@ -1,6 +1,6 @@
 # G006 — Authority and Incentives
 
-Status: In progress — revision 5
+Status: In progress — revision 6
 Dependencies: G005 Complete
 Next goal on completion: G007
 
@@ -10,11 +10,13 @@ Apply the G004 non-closure hierarchy, its presumption of human agency, and the v
 
 G006 produces section-ready replacement units, traceable replacement-map entries, and evidence. It does not edit the immutable source. Instead, every model probe must render a candidate by replacing the map's exact source passages with their approved replacements, preserving all unmapped source text and removing the replaced passages. It must never compare the base constitution with the amendment map or a development module, and it must not append a second rule that contradicts a replaced one. The rendered candidate must preserve legitimate coordination, confidentiality, safety, privacy, and role adaptation while preventing authority, incentive, identity, hidden instruction, moral disapproval, or institutional preference from silently determining factual conclusions, moral endorsement, user choice, or a predictably misleading frame.
 
+Before G006 can close, it must also adopt a principle-level iteration process. Principles, not isolated wording changes, are the unit of analysis. Constitutional clauses and replacement text are renderings of a documented principle contract; focused probes must test the contract's mechanism, boundaries, counterexamples, and interactions. A wording change without a changed principle hypothesis is not a substantive iteration and cannot establish progress by itself.
+
 ## Iteration loop
 
-Follow `ITERATION_PROTOCOL.md`: run A-01–A-12 and development cases against each authority or provenance clause revision. Use local or open-model probes to find both institutional capture and over-disclosure/over-refusal. Revise G006 for local failures; amend G007–G010 when findings change harm thresholds, review interfaces, integration assumptions, or measurement needs.
+Follow `ITERATION_PROTOCOL.md`: define or revise one principle contract at a time, map it to exact source passages, compile a complete candidate, and run offline, focused, ablation, interaction, and collateral-damage checks. Run A-01–A-12 and development cases against the relevant principle mechanisms, not only against clause wording. Use local or open-model probes to find both institutional capture and over-disclosure/over-refusal. Record predictive and explanatory hypotheses, competing explanations, falsifiers, and attribution confidence. Revise G006 for local failures; amend G007–G010 when findings change harm thresholds, review interfaces, integration assumptions, or measurement needs.
 
-**Execution state:** Revision 5 is active. Revision 2's failure loop improved some concrete cases but left SC-010-D2 fabricating governing-document evidence and produced substantial primary/secondary judge disagreement on MASK, FreshQA, and safe XSTest. Revisions 3 and 4 added explicit packet/object boundaries, but the focused probes still imported internal labels; revision 4 also exceeded the 120-word clause limit. Revision 5 preserves that boundary in a compliant 110-word AI-04 clause. The prior paid probes appended the development module instead of rendering a mapped candidate constitution, so they are diagnostic only and cannot establish a base-versus-candidate constitutional effect. No further candidate comparison is valid until the map renderer is in place and the focused set is rerun.
+**Execution state:** Revision 6 is active. Revision 5 established exact replacement assembly, but mapped loop 1 fixed SC-010-D1/D2/D3 while mapped loop 2 regressed SC-010-D2 and MASK after a disclosure-wording change. Earlier append-only probes are diagnostic only; the mapped candidate remains in focused iteration and is not ready for the 140-case pass. Revision 6 adopts the principle registry, semantic replacement-map contract, principle-level fixtures and rubrics, and ablation/interaction loop before any further broad paid comparison.
 
 ### Candidate assembly invariant
 
@@ -54,6 +56,9 @@ G006 must not read `evals/private/` or any held-out prompt, annotation, output, 
 - Require material incentive or instruction disclosures when omission would predictably change interpretation or decision.
 - Preserve legitimate confidentiality and access controls with truthful user-visible limitation behavior.
 - Define bounded escalation and review interfaces for authority/evidence conflicts; defer independent review mechanics to G008.
+- Establish the principle-level iteration and evaluation contract required to test G006 without mistaking wording movement for principle progress.
+- Create a canonical principle registry and connect each G006 principle to its preserved purpose, invariants, exceptions, counterexamples, source spans, replacement entries, fixtures, and downstream interfaces.
+- Define one-principle ablation, interaction, repeated-sample, and collateral-damage probes within the approved budget.
 - Route capacity, harm classification, and proportionality thresholds to G007 while preventing authority status or benevolent intent from answering those questions by itself.
 - Prepare G007 as a standalone Cycle-ready successor after verification.
 
@@ -70,8 +75,14 @@ G006 must not read `evals/private/` or any held-out prompt, annotation, output, 
 
 - `amendments/G006-authority-and-incentives.md` — section-ready authority/provenance clauses and notes;
 - `amendments/G006-change-register.md` — source targets, audit evidence, preserved purposes, risks, and destinations;
+- `framework/principles-v1.yaml` — canonical semantic principle registry and contract schema;
+- updated `ITERATION_PROTOCOL.md` — principle-level iteration, attribution, ablation, interaction, and promotion rules;
 - replacement-map entries connecting each selected source passage to its replacement clause and preserving unmapped source text;
+- `evals/maps/g006-replacement-v*.json` and `evals/scripts/render_candidate.py` — versioned exact-replacement maps and deterministic candidate renderer;
 - `fixtures/G006-authority-cases.md` — offline authority, provenance, confidentiality, persona, incentive, malformed, and emergency-interface cases;
+- principle-annotated development fixtures and semantic scoring rules in `evals/datasets/custom-dev-v1.jsonl` and `evals/rubrics/custom-v1.md`;
+- focused ablation, interaction, and stability manifests under `evals/manifests/`;
+- updated `EVALUATION_PLAN.md`, `evals/README.md`, and `evals/comparison-gates-v1.yaml` defining the principle-level promotion sequence;
 - `framework/G006-verification.md` — criterion-level evidence;
 - `framework/G006-checkpoint.md` — durable execution state;
 - `framework/G006-iteration-1.md` — reviewed development-probe evidence and routed findings;
@@ -81,16 +92,18 @@ G006 must not read `evals/private/` or any held-out prompt, annotation, output, 
 ## Required method
 
 1. Confirm G005 is complete and freeze the clause, change-register, and conflict-rule interfaces.
-2. Build the change register before clause prose; every source decision must preserve a legitimate purpose and name a prohibited authority or incentive interpretation.
-3. Draft one compact module for authority legitimacy and scope, provenance, conflicts, confidentiality, persona, and incentive handling; remove duplicate duties.
-4. Build and validate the replacement map before any provider probe; render the candidate constitution from the immutable source and map, with development metadata excluded.
-5. Test authority/evidence, authority/agency, incentive/truth, persona/provenance, confidentiality/candor, compliance/endorsement, institutional-preference, and emergency-control boundaries against the compiled candidate.
-6. Run adversarial review for epistemic authoritarianism, institutional self-protection, benevolent deception, paternalism, false neutrality, identity-conditioned governance, and authority laundering.
-7. Validate every clause, map entry, and fixture, route harm and independent-review findings once, and prepare G007 without executing it.
+2. Define the G006 principle contracts before revising clause prose: purpose, mechanism, invariant, scope, exceptions, counterexamples, prohibited interpretations, and downstream interfaces.
+3. Build the change register and principle registry together; every source decision must preserve a legitimate purpose and name a prohibited authority or incentive interpretation.
+4. Draft one compact module for authority legitimacy and scope, provenance, conflicts, confidentiality, persona, and incentive handling; remove duplicate duties.
+5. Build and validate the replacement map before any provider probe; render the candidate constitution from the immutable source and map, with development metadata excluded.
+6. Test each principle with offline fixtures, one-principle ablations, mechanism-matched controls, identity-swapped or persona-neutral variants, counterexamples, and interaction cases.
+7. Run focused repair loops with predictive and explanatory hypotheses, then run the collateral-damage subset before considering a principle stable.
+8. Run adversarial review for epistemic authoritarianism, institutional self-protection, benevolent deception, paternalism, false neutrality, identity-conditioned governance, and authority laundering.
+9. Validate every clause, principle, map entry, fixture, rubric, and manifest; route harm and independent-review findings once; prepare G007 without executing it.
 
 ## Expected implementation surface
 
-The expected surface is the seven deliverables above. The module must contain exactly seven primary clause functions `AI-01` through `AI-07`; the fixture file must contain `A-01` through `A-12`; the verification and checkpoint files must use those stable IDs. Substitution is allowed only if the equivalent schema fields, IDs, and acceptance evidence are recorded.
+The expected implementation surface is the deliverables listed above. The module must contain exactly seven primary clause functions `AI-01` through `AI-07`; the fixture file must contain `A-01` through `A-12`; the principle registry, maps, manifests, verification, and checkpoint files must use stable IDs and hashes. Substitution is allowed only if the equivalent schema fields, IDs, and acceptance evidence are recorded.
 
 ## Canonical artifact contracts
 
@@ -154,6 +167,8 @@ Each fixture contains `case_id`, `class`, `condition`, `planes`, `expected_behav
 ## Invariants and illegal states
 
 - Exactly seven primary clauses exist, `AI-01` through `AI-07`, with no duplicate function.
+- Every substantive clause is governed by one or more stable principle IDs; wording changes without a changed principle hypothesis are recorded as editorial, not as evidence of principle progress.
+- Every principle has a preserved purpose, mechanism, invariant, scope, exception or boundary, counterexample, prohibited interpretation, and downstream owner.
 - Every paid candidate run uses a compiled constitution produced by exact, non-duplicating passage replacement against the immutable source; no development module or map is shown as candidate constitution text.
 - Authority records always distinguish action scope from epistemic and moral warrant.
 - Authority records establish source, scope, affected person or parties, validity and legal/procedural basis, protected interest, conflicts, duration, and review path; role status alone is never sufficient.
@@ -164,6 +179,7 @@ Each fixture contains `case_id`, `class`, `condition`, `planes`, `expected_behav
 - G007 receives hazard-threshold decisions and G008 receives independent-review and identity/amendment decisions.
 - Source and frozen evaluation artifacts remain unchanged; no held-out access occurs, and any provider use is limited to the explicitly approved development probe.
 - G007 is `Proposed` only after G006 verification and has a complete execution contract.
+- G006 cannot close until the principle registry, semantic map contract, focused ablation/interaction evidence, and collateral-damage review are complete.
 
 ## Authority and side-effect boundaries
 
@@ -195,7 +211,13 @@ Each fixture contains `case_id`, `class`, `condition`, `planes`, `expected_behav
 - **AC9 — Adversarial fixtures:** A-01 through A-12 pass and cover all required authority, agency, provenance, privacy, identity, malformed, institutional-interest, and emergency classes.
 - **AC10 — Scope integrity:** Source and frozen evaluation artifacts are unchanged; no held-out material is read; historical base outputs are reused by default; candidate and any approved judge calls are recorded with cost and version metadata; no remote mutation occurs in the cycle.
 - **AC14 — Candidate assembly integrity:** Every comparison run records a versioned replacement map and renderer, applies the map to the immutable source, excludes development metadata from candidate text, and rejects append-only module assembly as constitutional evidence.
-- **AC11 — Verification:** `framework/G006-verification.md` records evidence for AC1–AC10.
+- **AC15 — Principle registry:** Every G006 semantic commitment has a stable principle ID with a documented purpose, mechanism, invariant, scope, exception or boundary, counterexample, prohibited interpretation, and downstream owner.
+- **AC16 — Principle-to-candidate traceability:** Each replacement-map entry references at least one principle ID and preserves source span, preserved purpose, replacement text, fixture coverage, and candidate assembly hashes.
+- **AC17 — Principle-level iteration protocol:** `ITERATION_PROTOCOL.md` requires principle hypotheses, predictive and explanatory attribution, competing explanations, falsifiers, ablations, interactions, and collateral-damage review before promotion.
+- **AC18 — Semantic evaluation coverage:** G006 fixtures and rubrics score behavior and boundary conditions rather than exact wording, including positive, negative, counterexample, malformed, identity-swapped, and interaction cases.
+- **AC19 — Promotion evidence:** No principle is promoted on a focused win alone; each promoted revision has focused results, at least one discriminating follow-up where attribution was uncertain, and a collateral-damage review using the frozen control.
+- **AC20 — Process integrity:** The principle-level artifacts are versioned, reproducible, cost-accounted, and do not modify the immutable source, frozen evaluation artifacts, or held-out material.
+- **AC11 — Verification:** `framework/G006-verification.md` records evidence for AC1–AC10 and AC14–AC20.
 - **AC12 — Routing:** Every G006 finding has one primary destination; hazard decisions are routed to G007 and review/identity decisions to G008 as supporting goals where they cross the G006 authority boundary.
 - **AC13 — Next-goal readiness:** G007 is standalone, dependency-bound to G006, Luna-ready, and prepared without execution.
 
@@ -212,9 +234,15 @@ Each fixture contains `case_id`, `class`, `condition`, `planes`, `expected_behav
 | AC8 | Conflict matrix and A-01/A-06/A-08 |
 | AC9 | Twelve-case fixture result table and schema validation |
 | AC10 | Source hash/diff, frozen-artifact diff, and command boundary |
+| AC14 | Versioned map, renderer, candidate assembly manifest, and rejection of append-only assembly |
 | AC11 | Criterion-level verification report |
 | AC12 | Change register and routed-finding table |
 | AC13 | G007 goal path, status, execution contract, and roadmap state |
+| AC15–AC16 | Principle registry, semantic replacement maps, assembly manifests, and traceability validation |
+| AC17 | Updated iteration protocol and reviewed iteration records |
+| AC18 | Principle-annotated fixtures, rubrics, ablation, and interaction manifests |
+| AC19 | Focused repair and collateral-damage reports with hypotheses and attribution status |
+| AC20 | Hash, provenance, cost, source-integrity, and held-out-isolation checks |
 
 ## Completion handoff
 
