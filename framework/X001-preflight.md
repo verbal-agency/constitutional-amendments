@@ -23,6 +23,7 @@ Branch: Mistral fine-tuning experiment, non-blocking from G006 revision 6
 | Held-out evaluation material | Protected | `evals/private/` remains excluded and is not used for dataset construction |
 | Mistral adapter | Ready offline | Importable adapter with explicit model, key, endpoint, and usage normalization |
 | Exact model eligibility | **Pending** | Requires account-scoped `/v1/models` and fine-tuning eligibility check |
+| Mistral API credential available | **Blocked** | The ignored `.env` currently contains `DEEPSEEK_KEY` and `OPEN_AI_KEY`, but no `MISTRAL_API_KEY`; the adapter made no request |
 | Exact fine-tuning price | **Pending** | Must be recorded from the account/provider before a job is approved |
 | Paid authorization | Not granted by this artifact | The proposed `$10` ceiling is a planning value, not approval |
 
@@ -30,10 +31,12 @@ Branch: Mistral fine-tuning experiment, non-blocking from G006 revision 6
 
 Without the principle registry, there is no defensible source for principle-derived targets. Creating examples from the constitution text, evaluation cases, or model guesses would mix the intervention with the data source and make later attribution weak. Without an account-scoped eligibility and price check, the base model and the job cost are also not bounded.
 
+The account-scoped check was attempted on 2026-10-13 and stopped locally because the required credential was absent. No request was sent and no provider state was changed.
+
 ## Next safe step
 
 1. Create or restore `framework/principles-v1.yaml` from the accepted G003/G006 principle contracts.
-2. Run the adapter's account-scoped model and fine-tuning preflight, recording only model metadata, eligibility, price basis, and hashes.
+2. Provide `MISTRAL_API_KEY` in the ignored environment, then run the adapter's account-scoped model and fine-tuning preflight, recording only model metadata, eligibility, price basis, and hashes.
 3. Draft a small reviewed batch against the schema, validate it, and inspect leakage before expanding toward the target counts.
 4. Request separate approval for one bounded training job and any evaluation calls.
 

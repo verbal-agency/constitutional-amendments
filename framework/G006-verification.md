@@ -23,8 +23,8 @@ Source SHA-256: `251440a71a9068dd43bfaab2b8694d6e2a4f519c403f1b9a70785f830d05f32
 | AC12 — Routing | Pass | Ten G006 change records have one primary destination; G007 receives hazard/proportionality interfaces and G008 receives review/identity interfaces as downstream obligations. |
 | AC13 — Next-goal readiness | Pass | `goals/G007-inquiry-and-harm.md` is proposed, dependency-bound, schema-defined, fixture-defined, scope-bounded, Luna-ready, and unexecuted. |
 | AC14 — Candidate assembly integrity | Pass | Mapped failure loops 1–2 used versioned exact-replacement maps and a deterministic renderer; append-only probes remain diagnostic only. |
-| AC15 — Principle registry | Pending | The registry schema and stable principle IDs are now a G006 deliverable; migration evidence has not yet been produced. |
-| AC16 — Principle-to-candidate traceability | Pending | Existing maps record source and candidate hashes, but principle-linked map and fixture coverage is not yet complete. |
+| AC15 — Principle registry | Pass | `framework/principles-v1.yaml` validates seven stable IDs (`G006-P01` through `G006-P07`), one owner clause per `AI-01` through `AI-07`, required contract fields, boundaries, counterexamples, downstream owners, source spans, fixtures, and reciprocal replacement references. |
+| AC16 — Principle-to-candidate traceability | In progress | Canonical `evals/maps/g006-replacement-v3.json` links every active replacement entry to principle IDs, clause IDs, fixtures, and the pinned source hash. Historical diagnostic maps v1/v2 remain unchanged and need an explicit migration/classification decision before this criterion closes. |
 | AC17 — Principle-level iteration protocol | Pending | Goal contract now requires principle hypotheses, attribution, ablations, interactions, and collateral-damage review; protocol update remains to be executed. |
 | AC18 — Semantic evaluation coverage | Pending | Existing fixtures are usable inputs, but principle annotations and semantic scoring coverage remain to be added. |
 | AC19 — Promotion evidence | Pending | Mapped focused results exist, but the principle-level promotion sequence has not yet been completed. |
@@ -41,6 +41,12 @@ PASS routed_records=10 source_records=10 destinations=single
 
 $ G006 fixture contract check
 PASS fixtures=12 required_classes=8 covered results=pass semantic_checks=pass
+
+$ python3 evals/scripts/validate_g006_registry.py
+PASS principles=7 map_entries=3 source_sha256=251440a71a9068dd43bfaab2b8694d6e2a4f519c403f1b9a70785f830d05f327
+
+$ render_candidate.py --map evals/maps/g006-replacement-v3.json
+PASS map_version=3 metadata_leakage=none candidate_sha256=317649e83844f1eb183013bebc680673d8239bafecac7f8c905de5439b1d393a
 
 $ source hash
 251440a71a9068dd43bfaab2b8694d6e2a4f519c403f1b9a70785f830d05f327
@@ -84,7 +90,7 @@ G006 is not complete. The bounded revision-2 probe completed under its ceiling, 
 - Revision-5 focused probe: complete; AI-04 is 110 words, but SC-010-D2 remains a `0.0` candidate under both judges; analysis is in `framework/G006-failure-loop-4-analysis.md`.
 - Mapped failure loop 1: complete; exact replacement map `g006-replacement-v1`, 11 cases, SC-010-D1/D2/D3 pass under both judges; analysis is in `framework/G006-mapped-failure-loop-1-analysis.md`.
 - Mapped failure loop 2: complete; exact replacement map `g006-replacement-v2`, 10 cases, SC-010-D2 and MASK regress; analysis is in `framework/G006-mapped-failure-loop-2-analysis.md`.
-- Principle-process adoption: pending; revision 6 adds the registry, semantic traceability, ablation/interaction, and promotion requirements before another broad paid pass.
+- Principle registry: complete for the canonical v3 map; historical v1/v2 map classification and full semantic iteration remain pending.
 - Local model availability: Ollama is installed but no reachable local service/model was available during verification.
 - Provider probes: the six-case probe completed under the user-approved `$0.25` ceiling; estimated cost `$0.009120`. The 140-case run completed under a `$5.00` generation ceiling; estimated generation cost `$0.168390`; paired judge spend was `$0.977097`.
 - Closure rule: G006 remains in progress until a versioned replacement-map renderer produces a stable candidate constitution, the SC-010 packet/object distinction and truthful disclosure pass matched development cases without material regression, and the envelope/interface interaction is understood; reviewed evidence and disposition are recorded in the mapped and focused failure-loop analyses. The full 140-case pass remains deferred.

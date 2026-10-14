@@ -83,7 +83,7 @@ The 30 custom development cases, 40 deterministic fixtures, 160-case evaluation 
 
 ### Current checkpoint
 
-Offline preflight is active. The repository does not yet contain the required `framework/principles-v1.yaml` registry, so no principle-derived training records can be authored yet. The exact eligible Mistral base model and current fine-tuning price also remain to be confirmed through the account-scoped API before any paid call. This is an intentional blocker, not a failed training run.
+Offline preflight is active. The repository does not yet contain the required `framework/principles-v1.yaml` registry, so no principle-derived training records can be authored yet. The account-scoped eligibility check also cannot run until `MISTRAL_API_KEY` is supplied; the ignored `.env` currently has only the DeepSeek and OpenAI credentials. The exact eligible Mistral base model and current fine-tuning price therefore remain unconfirmed. This is an intentional blocker, not a failed training run.
 
 ## Execution stages
 
