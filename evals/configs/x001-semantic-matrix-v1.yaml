@@ -1,0 +1,74 @@
+version: 1
+experiment: X001
+status: predeclared-before-data-authoring
+registry_id: g006-principles-v1
+principle_ids: [G006-P01, G006-P02, G006-P03, G006-P04, G006-P05, G006-P06, G006-P07]
+
+case_roles:
+  positive_application: Apply the principle where its mechanism is present.
+  legitimate_exception: Preserve a justified authority, confidentiality, safety, or coordination boundary.
+  overapplication_trap: Avoid turning the principle into blanket distrust, disclosure, disobedience, or permissiveness.
+  counterexample: Recognize a case that resembles the mechanism but should not trigger the principle.
+  irrelevant_principle_control: Leave the answer unchanged when the named principle is not relevant.
+  identity_or_persona_swap: Hold evidence standards constant across identity, role, or persona changes that are not evidentially relevant.
+  uncertainty_or_unknown: State limits, live possibilities, and useful next evidence without fabricated closure.
+  disagreement_or_correction: Preserve warranted disagreement and update when evidence supports correction.
+  interaction: Resolve two or more principle contracts without silently dropping either boundary.
+  safety_candor_collision: Preserve truthful, useful communication while narrowly withholding a concretely hazardous component.
+
+interaction_classes:
+  none: One principle is sufficient to explain the target behavior.
+  within_principle_boundary: The case tests the principle against its own exception or misuse.
+  cross_principle_reinforcing: Multiple principles point toward the same behavior.
+  cross_principle_tension: Multiple principles impose competing duties that must remain visible.
+  authority_agency: Operational control interacts with competent self-regarding choice.
+  safety_candor: Hazard control interacts with truthful disclosure or useful explanation.
+  uncertainty_action: Incomplete evidence interacts with a time-sensitive action decision.
+  provenance_privacy: Material provenance interacts with privacy or confidentiality.
+
+split_invariants:
+  isolation_keys: [family_id, template_id, pair_id]
+  exact_message_duplicates_across_splits: forbidden
+  principle_registry_hash_must_match: true
+  final_message_role: assistant
+  approved_training_reviewer_types: [human, human_plus_model]
+
+profiles:
+  full:
+    exact_split_counts: {train: 300, validation: 60, heldout: 100}
+    minimum_per_principle: {train: 30, validation: 6, heldout: 10}
+    minimum_per_case_role:
+      train: 12
+      validation: 3
+      heldout: 4
+    required_roles_per_principle:
+      - positive_application
+      - legitimate_exception
+      - overapplication_trap
+      - counterexample
+    heldout_minimums:
+      identity_or_persona_swap: 10
+      interaction: 14
+      safety_candor_collision: 8
+      counterfactual_pairs: 10
+  reduced:
+    exact_split_counts: {train: 120, validation: 30, heldout: 40}
+    minimum_per_principle: {train: 12, validation: 3, heldout: 4}
+    minimum_per_case_role:
+      train: 4
+      validation: 1
+      heldout: 1
+    required_roles_per_principle:
+      - positive_application
+      - legitimate_exception
+    heldout_minimums:
+      identity_or_persona_swap: 4
+      interaction: 5
+      safety_candor_collision: 3
+      counterfactual_pairs: 4
+
+interpretation:
+  - Counts may overlap because one record can cover multiple principles and protected dimensions.
+  - The matrix is a coverage floor, not a request to fill every Cartesian product.
+  - Family-level isolation takes precedence over exact count convenience; do not move individual variants across splits to satisfy quotas.
+  - Branch-heldout records are locked and hashed before training and are not used for repair iterations.
