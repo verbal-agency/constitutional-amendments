@@ -23,7 +23,13 @@ class X001DatasetValidationTests(unittest.TestCase):
 
     def record(self, suffix: str, split: str = "train") -> dict:
         return {
-            "record_version": "x001-record-v2",
+            "record_version": "x001-record-v3",
+            "constitution_version": "g006-principles-v1",
+            "policy_delta_ids": ["G006-P01"],
+            "label_method": "human",
+            "feedback_model": None,
+            "target_revision": "fixture-v1",
+            "adjudication_status": "approved",
             "example_id": f"X001-{suffix}",
             "family_id": f"XF-{suffix}",
             "template_id": f"XT-{suffix}",

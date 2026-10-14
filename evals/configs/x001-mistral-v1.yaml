@@ -1,22 +1,21 @@
-# X001 offline preflight configuration. This is not a paid-run approval.
+# X001 local SFT pilot configuration. This is not a training or paid-run approval.
 config_version: 2
 experiment: X001
-status: offline-preflight
-arm: mistral-untuned-or-finetuned
+status: local-sft-preflight
+arm: local-mistral-untuned-or-sft
 
 provider:
-  name: mistral
-  base_url: https://api.mistral.ai
-  chat_endpoint: /v1/chat/completions
-  models_endpoint: /v1/models
-  model: ministral-8b-2512
-  model_status: pending-account-scoped-eligibility-check
-  fine_tuning_status: pending-account-scoped-eligibility-check
-  credentials: env var MISTRAL_API_KEY (read from ignored .env); never written to artifacts
+  name: local-mistral
+  checkpoint: pending-local-checkpoint-selection
+  tokenizer: pending-local-tokenizer-selection
+  trainer: pending-local-lora-sft-trainer
+  model_status: pending-local-feasibility-check
+  hosted_fine_tuning_status: blocked-api-410
+  credentials: none-required-for-local-training
 
 data:
   training_format: sft_messages_v1
-  record_version: x001-record-v2
+  record_version: x001-record-v3
   record_schema: evals/datasets/x001-mistral-record-schema.json
   principle_registry: framework/principles-v1.yaml
   principle_registry_sha256: 4209f05fb5fc46528de664e283f0a9541246a5fbbd3eeab2cd707dfe4211fe7f
@@ -38,22 +37,23 @@ data:
   approved_target_reviewers: [human, human_plus_model]
 
 preflight:
-  proposed_training_ceiling_usd: 10.00
+  proposed_compute_ceiling_usd: 10.00
   evaluation_budget_usd: separate-approval-required
-  exact_price: pending-provider-and-account-check
-  stop_before_paid_call_if: [model_ineligible, price_unbounded, registry_missing, data_contaminated, split_invalid]
+  compute_estimate: pending-local-runtime-check
+  stop_before_training_if: [checkpoint_incompatible, compute_unbounded, registry_missing, data_contaminated, split_invalid, policy_lineage_missing]
 
 comparison:
   design: two-by-three-factorial
   analysis_contract: framework/X001-analysis-contract.md
-  model_states: [untuned, finetuned]
+  model_states: [untuned, sft_adapted]
   prompt_conditions: [none, original_constitution, mapped_candidate]
   arms: [U0, UO, UC, F0, FO, FC]
   primary_contrast: F0-minus-U0
   secondary_contrasts: [UC-minus-UO, UC-minus-U0, FO-minus-UO, FC-minus-UC]
   interaction_contrast: (FC-minus-F0)-minus-(UC-minus-U0)
-  reduced_pilot: [untuned_none, untuned_candidate, finetuned_none, finetuned_candidate]
-  style_matched_sham_finetune: optional-second-experiment-separate-approval
+  reduced_pilot: [untuned_none, untuned_candidate, sft_none, sft_candidate]
+  style_matched_sham_adapter: optional-second-experiment-separate-approval
+  preference_optimization: deferred-separate-experiment
 
 judging:
   deterministic_first: true

@@ -75,7 +75,7 @@ def validate_contracts(schema: dict, registry_path: Path, matrix_path: Path,
     actual_hash = sha256_bytes(registry_bytes)
     if config["data"]["principle_registry_sha256"] != actual_hash:
         raise ValueError("X001 config principle registry hash drift")
-    if config["data"]["record_version"] != "x001-record-v2":
+    if config["data"]["record_version"] != "x001-record-v3":
         raise ValueError("X001 config record version drift")
     analysis_path = ROOT / config["comparison"]["analysis_contract"]
     if not analysis_path.exists():

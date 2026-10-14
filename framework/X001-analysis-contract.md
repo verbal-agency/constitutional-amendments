@@ -1,8 +1,10 @@
 # X001 analysis contract
 
-Status: Predeclared before dataset authoring, target generation, or fine-tuning
+Status: Predeclared before dataset authoring, target generation, or local SFT
 Registry: `g006-principles-v1`
-Purpose: Separate learned principle behavior from prompt conditioning, memorized surface form, generic supervised-fine-tuning effects, and response style.
+Purpose: Separate learned principle behavior from prompt conditioning, memorized surface form, generic SFT effects, and response style.
+
+Scope boundary: This contract covers the first local SFT probe only. Preference optimization, RLAIF, DPO, and judge fine-tuning require a separate data schema, arms, budget, and approval; they are not silently included in the SFT result.
 
 ## Experimental arms
 
@@ -11,9 +13,9 @@ Purpose: Separate learned principle behavior from prompt conditioning, memorized
 | U0 | Untuned Mistral | No constitution | Unconditioned model baseline |
 | UO | Untuned Mistral | Original constitution | Original prompt effect |
 | UC | Untuned Mistral | Mapped candidate | Amendment prompt effect |
-| F0 | Fine-tuned Mistral | No constitution | Learned-behavior test |
-| FO | Fine-tuned Mistral | Original constitution | Conflict and robustness test |
-| FC | Fine-tuned Mistral | Mapped candidate | Prompt/training compatibility test |
+| F0 | SFT-adapted local Mistral | No constitution | Learned-behavior test |
+| FO | SFT-adapted local Mistral | Original constitution | Conflict and robustness test |
+| FC | SFT-adapted local Mistral | Mapped candidate | Prompt/training compatibility test |
 
 All arms use the same pinned base model family, evaluation cases, evidence, message envelope outside the constitution condition, decoding settings, output cap, and scoring contract. DeepSeek outputs are not a Mistral control.
 
@@ -24,7 +26,7 @@ All arms use the same pinned base model family, evaluation cases, evidence, mess
 3. **Candidate prompt lift: `UC − U0`.** Describes the total effect of candidate prompting, while acknowledging the unmatched context-length difference.
 4. **Fine-tune conflict robustness: `FO − UO`.** Tests whether learned behavior survives the original constitution rather than merely following the latest prompt.
 5. **Fine-tune/candidate compatibility: `FC − UC`.** Tests whether training adds value when the candidate is already present.
-6. **Interaction estimate: `(FC − F0) − (UC − U0)`.** Tests whether fine-tuning changes the effect of candidate prompting. Report this as an interaction, not as a standalone quality score.
+6. **Interaction estimate: `(FC − F0) − (UC − U0)`.** Tests whether SFT changes the effect of candidate prompting. Report this as an interaction, not as a standalone quality score.
 
 The no-constitution contrasts do not isolate semantic content from the presence and length of a long system prefix. `UC − UO` is the cleaner prompt-level semantic contrast because both arms contain nearly the same constitution. A matched-length neutral prefix may be added to a small diagnostic subset, but it is not part of the initial paid matrix.
 
@@ -50,13 +52,20 @@ The no-constitution contrasts do not isolate semantic content from the presence 
 - Surface paraphrases, identity swaps, counterfactual pairs, and difficulty variants from one semantic family stay in one split.
 - A generalization claim requires gains on novel-surface boundaries, counterexamples, and interactions—not only positive applications or familiar wording.
 
-## Style and fine-tuning confounds
+## Style and SFT confounds
 
-The initial budget funds one principle fine-tune, so the first job cannot fully distinguish principle content from generic supervised fine-tuning or target-answer style. Record that limitation in every conclusion.
+The initial budget funds one principle SFT adapter, so the first run cannot fully distinguish principle content from generic supervised fine-tuning or target-answer style. Record that limitation in every conclusion.
 
 Track answer length, refusal rate, hedge frequency, constitution-specific phrase overlap, sectioning, and direct agreement with the user. If semantic score changes are concentrated in these style diagnostics or disappear on surface-diverse cases, classify attribution as unresolved.
 
-A style-matched sham fine-tune is the preferred second experiment: use the same number and length of examples and the same response style, but omit or counterbalance the G006 mechanisms. It requires a separate dataset, preflight, training budget, and user approval. It is not authorized by X001's initial `$10` proposal.
+A style-matched sham adapter is the preferred second experiment: use the same number and length of examples and the same response style, but omit or counterbalance the G006 mechanisms. It requires a separate dataset, preflight, training budget, and user approval. It is not authorized by X001's initial `$10` proposal.
+
+## Policy lineage and label churn
+
+- Every target records the constitution version, applicable policy-delta IDs, labeling method, feedback-model version if any, target revision, and human adjudication status.
+- Before training, compare old and new policy labels on a predeclared impact sample. Report overall churn and churn by principle, role, and interaction class.
+- Retain old targets only when the impact analysis marks the family unaffected and the target's policy version remains explicit. Do not mix old and new labels within a semantic family without a paired rationale.
+- Label churn estimates supervision change; it does not establish that the new policy is better or that a model will change accordingly.
 
 ## Generation and stability
 
@@ -82,7 +91,7 @@ One training job tests this dataset/model/hyperparameter package. It cannot esta
 
 ## Stop and decision rules
 
-- Stop before training on split leakage, unapproved targets, registry-hash drift, unsupported model, unbounded price, or missing upload validation.
+- Stop before training on split leakage, unapproved targets, registry/constitution-hash drift, unsupported checkpoint or trainer, unbounded local compute, missing policy lineage, or failed target validation.
 - Stop promotion on a new critical factual, honesty, safety, agency, or over-refusal regression.
 - Route a gain limited to training-like surfaces as `revise-dataset`, not `generalized`.
 - Route a style-only gain as `attribution-unresolved` and consider the sham fine-tune.

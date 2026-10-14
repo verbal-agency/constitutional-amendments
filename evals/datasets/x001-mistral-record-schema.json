@@ -1,11 +1,17 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/verbal-agency/constitutional-amendments/schema/x001-mistral-record-v2.json",
-  "title": "X001 Mistral principle-derived SFT record",
+  "$id": "https://github.com/verbal-agency/constitutional-amendments/schema/x001-mistral-record-v3.json",
+  "title": "X001 local Mistral policy-versioned SFT record",
   "type": "object",
   "additionalProperties": false,
   "required": [
     "record_version",
+    "constitution_version",
+    "policy_delta_ids",
+    "label_method",
+    "feedback_model",
+    "target_revision",
+    "adjudication_status",
     "example_id",
     "family_id",
     "template_id",
@@ -29,7 +35,18 @@
     "review"
   ],
   "properties": {
-    "record_version": {"const": "x001-record-v2"},
+    "record_version": {"const": "x001-record-v3"},
+    "constitution_version": {"type": "string", "minLength": 1},
+    "policy_delta_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "label_method": {"type": "string", "enum": ["human", "human_plus_model", "model_assisted"]},
+    "feedback_model": {
+      "oneOf": [
+        {"type": "string", "minLength": 1},
+        {"type": "null"}
+      ]
+    },
+    "target_revision": {"type": "string", "minLength": 1},
+    "adjudication_status": {"type": "string", "enum": ["pending", "approved", "rejected"]},
     "example_id": {"type": "string", "pattern": "^X001-[A-Za-z0-9][A-Za-z0-9._-]*$"},
     "family_id": {"type": "string", "pattern": "^XF-[A-Za-z0-9][A-Za-z0-9._-]*$"},
     "template_id": {"type": "string", "pattern": "^XT-[A-Za-z0-9][A-Za-z0-9._-]*$"},
