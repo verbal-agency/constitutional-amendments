@@ -6,20 +6,21 @@ arm: local-mistral-untuned-or-sft
 
 provider:
   name: local-mistral
-  checkpoint: pending-local-checkpoint-selection
-  tokenizer: pending-local-tokenizer-selection
-  trainer: pending-local-lora-sft-trainer
-  model_status: pending-local-feasibility-check
+  checkpoint: mlx-community/Ministral-3-3B-Base-2512-4bit@853f50105f14039a2acba1d9d380efdecc674dd4
+  tokenizer: checkpoint-tokenizer-regex-warning-pending-resolution
+  trainer: mlx-lm-0.31.3-lora
+  model_status: local-smoke-pass
   hosted_fine_tuning_status: blocked-api-410
   credentials: none-required-for-local-training
 
 data:
-  training_format: sft_messages_v1
+  training_format: canonical_messages_v3_to_mlx_text_v1
   record_version: x001-record-v3
   record_schema: evals/datasets/x001-mistral-record-schema.json
   principle_registry: framework/principles-v1.yaml
   principle_registry_sha256: 4209f05fb5fc46528de664e283f0a9541246a5fbbd3eeab2cd707dfe4211fe7f
   semantic_matrix: evals/configs/x001-semantic-matrix-v1.yaml
+  applied_target: evals/configs/x001-news-depolarization-v1.yaml
   train: evals/datasets/x001-mistral-train.jsonl
   validation: evals/datasets/x001-mistral-validation.jsonl
   heldout: evals/datasets/x001-mistral-heldout.jsonl
@@ -39,8 +40,10 @@ data:
 preflight:
   proposed_compute_ceiling_usd: 10.00
   evaluation_budget_usd: separate-approval-required
-  compute_estimate: pending-local-runtime-check
-  stop_before_training_if: [checkpoint_incompatible, compute_unbounded, registry_missing, data_contaminated, split_invalid, policy_lineage_missing]
+  compute_estimate: smoke-pass-full-pilot-estimate-pending
+  serializer: evals/scripts/serialize_x001_for_mlx.py@x001-mlx-text-v1
+  tokenizer_regex_fix: pending-decision
+  stop_before_training_if: [checkpoint_incompatible, compute_unbounded, serializer_unverified, tokenizer_unpinned, registry_missing, data_contaminated, split_invalid, policy_lineage_missing]
 
 comparison:
   design: two-by-three-factorial

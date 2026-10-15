@@ -1,15 +1,21 @@
-# X001 — Local Mistral SFT Causal Probe
+# X001 — Local Mistral SFT News Depolarization Probe
 
 Status: In progress — exploratory branch
-Execution stage: Local feasibility and SFT pilot design
+Execution stage: Local feasibility passed; evidence-centered news dataset and SFT pilot design
 Mainline relationship: Non-blocking branch from G006 revision 6
 Mainline successor: G007 remains the next numbered goal unless this experiment produces a user-approved roadmap pivot
 
 ## Research question
 
-Can constitution-derived supervision be learned into a compatible local Mistral adapter, and does the resulting behavior generalize beyond the training examples while preserving truthfulness, inquiry, agency, and safety?
+Can constitution-derived supervision be learned into a compatible local Mistral adapter that produces evidence-centered news briefings, and does the resulting behavior generalize beyond the training examples while preserving truthfulness, factual asymmetry, inquiry, agency, and safety?
 
 This branch tests a different intervention from constitutional prompting. It must not be treated as evidence that the constitution improved merely because a fine-tuned model behaves differently.
+
+## Primary applied target
+
+The first practical target is an evidence-centered news depolarizer. Given a frozen packet of reporting and primary evidence, the model should separate facts, inference, values, provenance, incentives, and consequential unknowns; reduce gratuitous identity-driven framing; preserve unequal evidentiary support; and leave conclusions and value tradeoffs to the user.
+
+Depolarization does not mean political centrism, equal treatment of unequal claims, emotional sanitization, or persuasion toward a preferred belief. The complete task, packet, dataset, comparison, and decision contract is `framework/X001-news-depolarization-contract.md`.
 
 ## Branch rules
 
@@ -24,7 +30,7 @@ This branch tests a different intervention from constitutional prompting. It mus
 
 ## Objective
 
-Build and evaluate one bounded local LoRA/SFT branch using policy-versioned, principle-derived training data and a clean held-out comparison. Determine whether the complete SFT package produces durable semantic behavior, merely teaches response style, or introduces material regressions. Defer preference optimization/RLAIF to a separately designed experiment.
+Build and evaluate one bounded local LoRA/SFT branch using policy-versioned, principle-derived source-packet training data and a clean held-out comparison. Determine whether the complete SFT package produces useful evidence-centered news analysis, merely teaches a neutral-sounding response style, can be replaced by a strong prompt, or introduces material regressions. Defer preference optimization/RLAIF to a separately designed experiment.
 
 ## In scope
 
@@ -37,6 +43,8 @@ Build and evaluate one bounded local LoRA/SFT branch using policy-versioned, pri
 - An optional style-matched sham adapter only as a separately approved attribution control.
 - Principle, truthfulness, uncertainty, sycophancy, honesty, safety, refusal, and agency metrics.
 - Analysis of whether behavior persists without the constitution in the prompt.
+- A source-packet news slice with event-family isolation, factual review, false-balance traps, and matched framing variants.
+- A strong-prompt control and one separately approved frontier-model reference for practical usefulness.
 - A pivot recommendation for the mainline roadmap and a decision on whether preference optimization merits a separate experiment.
 
 ## Out of scope
@@ -46,6 +54,8 @@ Build and evaluate one bounded local LoRA/SFT branch using policy-versioned, pri
 - Claiming that a fine-tuned model validates the constitution without a separate prompt-only comparison.
 - Claiming to have tested a complete RLAIF, DPO, or production alignment pipeline.
 - Publishing or deploying the fine-tuned model.
+- Autonomous news retrieval, live-feed ranking, personalized political persuasion, or claims of independent verification.
+- Treating a politically moderate tone as evidence of accuracy or depolarization.
 - Reordering G007–G010 without explicit user approval.
 
 ## Required comparison design
@@ -84,6 +94,8 @@ Training examples must be derived from the principle registry, not copied from t
 
 Judge-generated examples may assist drafting but cannot be the sole source of targets. The dataset must contain matched controls, identity-swapped or persona-neutral variants, uncertainty cases, and cases where the correct behavior is to update, disagree, disclose a limitation, or say that the answer is unknown.
 
+For the primary applied target, source packets, target-authoring procedure, topic-family isolation, real-versus-synthetic boundaries, and practical comparison arms follow `framework/X001-news-depolarization-contract.md`. At least 60% of each reduced-profile split is source-packet news analysis; the remainder tests whether the same principles transfer outside the news format.
+
 Split assignment occurs at the semantic-family level. A `family_id`, `template_id`, non-null `pair_id`, or exact model-visible message sequence may appear in only one split. Surface paraphrases, identity swaps, counterfactual pairs, and difficulty variants from one family stay together. The controlled coverage floors are defined in `evals/configs/x001-semantic-matrix-v1.yaml`; they are not a demand to populate every Cartesian product.
 
 ### Initial data target
@@ -94,18 +106,19 @@ The 30 custom development cases, 40 deterministic fixtures, 160-case evaluation 
 
 ### Current checkpoint
 
-The offline contracts are ready. A read-only account check exposed `ministral-8b-2512` with a fine-tuning capability flag, but the account's fine-tuning jobs endpoint returned `410 Gone`; hosted fine-tuning is therefore not the execution path. No training records have been approved or uploaded. The next gate is local checkpoint/trainer/hardware compatibility and a bounded compute estimate.
+The offline contracts and local runtime smoke are ready. MLX-LM successfully trained and loaded a tiny LoRA adapter for the pinned 3B checkpoint; this establishes runtime feasibility only. No policy training records have been approved. The next gate is resolving tokenizer reproducibility, implementing the deterministic source-packet renderer, and building the reviewed news/data pilot under the bounded compute estimate.
 
 ## Execution stages
 
 1. **Local feasibility preflight:** pin a compatible open-weight checkpoint, tokenizer, trainer, hardware/runtime, seed, license, compute estimate, and hard ceiling.
 2. **Untuned smoke:** run a small balanced development subset with no constitution, original constitution, and mapped candidate. Stop if the local envelope, tokenizer, or accounting is invalid.
-3. **Policy/data build:** create and validate policy-versioned train/validation/held-out files, calculate label churn, and keep evaluation material out of training.
+3. **Source-packet and policy/data build:** freeze reviewed news packets, create policy-versioned train/validation/held-out files, calculate label churn, and keep evaluation material out of training.
 4. **SFT adapter:** run one bounded local LoRA/SFT pass. Preserve checkpoint, trainer, hyperparameters, seed, logs, adapter hash, and compute cost.
-5. **Focused comparison:** run the factorial pilot on principle cases, failure cases, matched controls, and untouched sentinels.
+5. **Focused comparison:** run the factorial pilot on principle cases, news packets, false-balance traps, matched framings, failure cases, and untouched sentinels.
 6. **Collateral-damage comparison:** run the approved broader development subset against the untuned local baseline. Do not promote an adapter on a targeted win alone.
 7. **Optional attribution control:** run a separately approved style-matched sham adapter if the initial result warrants stronger causal attribution.
-8. **Pivot review:** record whether the result supports `continue-mainline`, `add-learned-branch`, `reopen-principle`, `reopen-evaluation`, `design-preference-stage`, or `pivot-mainline`, with evidence and uncertainty.
+8. **Practical reference:** after freezing the local candidate, compare it blind with the untuned strong-prompt control and one approved frontier reference on the same source packets.
+9. **Pivot review:** classify the product result as `useful-specialist`, `prompt-sufficient`, `research-only`, `revise-data-or-principles`, or `stop`, then record any mainline recommendation with evidence and uncertainty.
 
 ## Hypotheses
 
@@ -137,6 +150,21 @@ The analysis must also track response length, refusal rate, hedge frequency, con
 - **XAC11 — Predeclared analysis:** All reported claims use the frozen contrasts, feasibility thresholds, uncertainty labels, and style-confound rules in `framework/X001-analysis-contract.md`.
 - **XAC12 — Judge integrity:** Primary comparisons are blinded and position-swapped; secondary-judge and human review follow the budget-aware adjudication contract without averaging judges.
 - **XAC13 — Policy lineage:** Every training and evaluation target carries a constitution version, applicable policy delta, label method, and review status; label-churn results are preserved before training.
+- **XAC14 — Applied behavior:** Held-out news outputs separate facts, inference, values, provenance, and unknowns while preserving material evidentiary asymmetry.
+- **XAC15 — No false depolarization:** No promoted result relies on false balance, tone-only neutrality, evidence suppression, covert persuasion, or irrelevant identity-conditioned treatment.
+- **XAC16 — Prompt necessity:** The strong-prompt untuned control is run and the analysis states whether fine-tuning adds behavior beyond prompting.
+- **XAC17 — Practical comparison:** Any claim of benefit over ChatGPT or Claude uses a pinned, separately approved frontier reference and blind user review on identical frozen packets.
+- **XAC18 — Source integrity:** Every real packet has dates, source/use provenance, hashes, claim typing, a cutoff, factual review, and event-family split isolation; synthetic variants remain explicitly labeled.
+
+### Applied-target evidence map
+
+| Criterion | Required evidence |
+| --- | --- |
+| XAC14 | Held-out item scores and paired outputs for all ten news dimensions |
+| XAC15 | False-balance, identity-swap, framing, and critical-failure results |
+| XAC16 | Tuned-minimal versus untuned-minimal and untuned-strong-prompt contrasts |
+| XAC17 | Pinned frontier run record, cost ledger, blind ordering, and user-usefulness form |
+| XAC18 | Packet manifest validation, hashes, review status, and split-isolation report |
 
 ## Expected artifacts
 
@@ -144,12 +172,15 @@ The analysis must also track response length, refusal rate, hedge frequency, con
 - `evals/configs/x001-local-sft-*.yaml`;
 - `evals/datasets/x001-mistral-record-schema.json` and an offline preflight record;
 - `evals/configs/x001-semantic-matrix-v1.yaml` and `framework/X001-analysis-contract.md`;
+- `framework/X001-news-depolarization-contract.md` and `evals/configs/x001-news-depolarization-v1.yaml`;
+- reviewed source-packet manifest, deterministic renderer, validator, and tests;
 - `evals/datasets/x001-mistral-train.jsonl`;
 - `evals/datasets/x001-mistral-validation.jsonl`;
 - `evals/manifests/x001-local-sft-*.json`;
 - `evals/runs/x001-local-sft-*/` with raw outputs, scores, usage, and compute cost;
 - a policy-delta impact and label-churn report;
 - `framework/X001-mistral-finetune-analysis.md`;
+- `framework/X001-news-depolarization-analysis.md` and blind usefulness review;
 - `framework/X001-pivot-recommendation.md`;
 - updates to `ROADMAP.md`, `BACKLOG.md`, or affected goal contracts only when the evidence warrants them.
 

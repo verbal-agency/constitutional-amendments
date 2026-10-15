@@ -44,7 +44,7 @@ Completion is evidence-based, not prose-based. A goal may be reopened when an it
 
 | Branch | Status | Relationship | Purpose |
 | --- | --- | --- | --- |
-| [X001 — Local Mistral SFT causal probe](goals/X001-mistral-finetune-experiment.md) | In progress | Non-blocking branch from G006 revision 6 | Test whether constitution-derived supervision produces held-out behavioral gains in a local Mistral adapter, apart from prompt wording and generic fine-tuning style. |
+| [X001 — Local Mistral SFT news depolarization probe](goals/X001-mistral-finetune-experiment.md) | In progress | Non-blocking branch from G006 revision 6 | Test whether constitution-derived supervision produces useful evidence-centered news analysis in a local Mistral adapter, apart from strong prompting, neutral-sounding style, and frontier-model capability. |
 
 ## Goal boundaries
 
@@ -88,9 +88,9 @@ Create a distinct candidate constitution and source-to-revision change log witho
 
 Run the frozen paired comparison against the base and candidate constitutions, including misinformation, false balance, contrarianism, reckless disclosure, institutional capture, commercial pressure, paternalism, epistemic authoritarianism, precautionary conservatism, benevolent deception, and constitutional self-protection. Report SC-010 separately as process-level audit capability; complete the human spot-check and position-swapped judge consistency checks; preserve the MASK license caveat. Resolve material regressions within budget, record scenario evidence, and publish the final constitution.
 
-### X001 — Local Mistral SFT causal probe
+### X001 — Local Mistral SFT news depolarization probe
 
-Run as a separately authorized, non-blocking research branch. Use a compatible open-weight Mistral checkpoint and a reproducible local LoRA/SFT setup to test whether constitution-derived supervision generalizes to held-out semantic families. Compare untuned and SFT-adapted behavior under controlled constitution conditions, while tracking policy-version lineage, label churn, style confounds, and regressions. Preference optimization/RLAIF and hosted fine-tuning are deferred follow-up paths, not part of the first claim. Treat the result as evidence about a bounded SFT package, not as validation of a complete alignment pipeline or a substitute for the prompt-conditioned constitutional comparison. Require an explicit pivot recommendation before changing the mainline sequence.
+Run as a separately authorized, non-blocking research branch. Use a compatible open-weight Mistral checkpoint and a reproducible local LoRA/SFT setup to test whether constitution-derived supervision generalizes to held-out semantic families, with evidence-centered news depolarization as the primary applied target. Compare untuned and SFT-adapted behavior under controlled constitution conditions, a strong-prompt control, and a separately approved frontier reference, while tracking policy-version lineage, source-packet integrity, false balance, label churn, style confounds, and regressions. Preference optimization/RLAIF, autonomous retrieval, and hosted fine-tuning are deferred follow-up paths, not part of the first claim. Treat the result as evidence about a bounded SFT package, not as validation of a complete alignment pipeline or a substitute for the prompt-conditioned constitutional comparison. Require an explicit practical classification and pivot recommendation before changing the mainline sequence.
 
 ## Finding routing
 

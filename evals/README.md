@@ -24,7 +24,9 @@ Canonical design: `EVALUATION_PLAN.md`. This directory holds the frozen artifact
 | `scripts/score_run.py` | deterministic and judge scoring, `metrics.json`, `--judge-preflight`; paid judging needs `judge-approval.json` | yes |
 | `scripts/calibrate_judge.py`, `fixtures/judge-calibration-v1.jsonl` | 30 hand-labelled judge fixtures and the agreement check | yes |
 | `scripts/run_fixtures.py`, `fixtures/evaluation-cases-v1.jsonl` | FX-01..FX-11 offline harness fixtures (AC6) | yes |
-| `configs/x001-mistral-v1.yaml`, `configs/x001-semantic-matrix-v1.yaml`, `datasets/x001-mistral-record-schema.json`, `scripts/validate_x001_dataset.py` | X001 local SFT preflight, semantic coverage, family-isolated splits, policy-versioned records, and principle-record validation; no training calls | yes |
+| `configs/x001-mistral-v1.yaml`, `configs/x001-semantic-matrix-v1.yaml`, `datasets/x001-mistral-record-schema.json`, `scripts/validate_x001_dataset.py` | X001 local SFT preflight, semantic coverage, family-isolated splits, policy-versioned records, and principle-record validation | yes |
+| `scripts/serialize_x001_for_mlx.py`, `scripts/test_serialize_x001_for_mlx.py` | deterministic v3-message to MLX-text serialization with a separate policy-lineage manifest | yes |
+| `configs/x001-news-depolarization-v1.yaml`, `framework/X001-news-depolarization-contract.md` | X001 source-packet task, dataset strata, strong-prompt/frontier controls, usefulness thresholds, and false-balance boundaries | yes |
 | `scripts/test_validate_x001_dataset.py`, `framework/X001-analysis-contract.md` | X001 validator fixtures and predeclared contrasts, decision thresholds, confound limits, and judging contract | yes |
 | `framework/principles-v1.yaml`, `maps/g006-replacement-v3.json`, `scripts/validate_g006_registry.py` | G006 semantic principle registry and canonical map traceability | yes |
 

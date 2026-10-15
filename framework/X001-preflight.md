@@ -1,14 +1,16 @@
 # X001 local SFT preflight
 
-Status: local execution path pending feasibility gate
+Status: local runtime feasibility passed; policy-data gate pending
 Date: 2026-10-14
-Branch: Local Mistral SFT causal probe, non-blocking from G006 revision 6
+Branch: Local Mistral SFT news depolarization probe, non-blocking from G006 revision 6
+
+Primary applied target: evidence-centered news depolarization under `framework/X001-news-depolarization-contract.md`.
 
 ## What is ready
 
 - The branch contract is active in `goals/X001-mistral-finetune-experiment.md`.
 - The hosted provider check is retained as evidence only; it is not the execution path.
-- The local configuration is to be added after checkpoint/trainer selection.
+- The local runtime is pinned in `framework/X001-local-feasibility-record.md`; policy-data construction and serializer validation remain pending.
 - The v3 training-record contract is `evals/datasets/x001-mistral-record-schema.json`.
 - The semantic coverage contract is `evals/configs/x001-semantic-matrix-v1.yaml`.
 - The predeclared contrasts and judging rules are in `framework/X001-analysis-contract.md`.
@@ -27,22 +29,25 @@ Branch: Local Mistral SFT causal probe, non-blocking from G006 revision 6
 | Held-out evaluation material | Protected | `evals/private/` remains excluded and is not used for dataset construction |
 | Account-visible Mistral model | **Observed** | Read-only `/v1/models` exposed `ministral-8b-2512` with a `fine_tuning` capability flag and 262,144-token context |
 | Hosted fine-tuning jobs API | **Blocked** | Read-only `GET /v1/fine_tuning/jobs` returned HTTP `410 Gone`; hosted fine-tuning is not the execution path |
-| Local checkpoint/trainer | **Pending** | Must select a compatible open-weight checkpoint and reproducible LoRA/SFT runtime |
-| Local compute estimate | **Pending** | Must record hardware, runtime, token estimate, ceiling, and stop condition |
+| Local checkpoint/trainer | **Pass for smoke** | MLX-LM `0.31.3` with `mlx-community/Ministral-3-3B-Base-2512-4bit` at revision `853f50105f14039a2acba1d9d380efdecc674dd4`; one-layer LoRA trained and loaded successfully |
+| Local compute estimate | **Pass for smoke; pilot estimate pending** | M1 Pro/16 GB; 2-example smoke peaked at 2.204 GB. The full pilot still needs a token estimate and hard ceiling |
+| Canonical-to-trainer serialization | **Required** | Checkpoint has no chat template; canonical message records need a deterministic plain-text serializer |
+| Tokenizer reproducibility | **Warning** | MLX-LM emitted the Mistral regex warning and recommended `fix_mistral_regex=True` |
 | Paid authorization | Not granted by this artifact | The proposed `$10` ceiling is a planning value, not approval |
 
 ## Why training is stopped now
 
-The principle registry and offline data contracts are ready. Training remains stopped because no local checkpoint/trainer/hardware combination has been selected, no reviewed dataset exists yet, and no local compute budget has been approved.
+The principle registry and offline data contracts are ready, and the local runtime smoke test passed. The policy pilot remains stopped because no reviewed dataset or canonical-to-trainer serializer has been approved, the tokenizer warning has not been resolved, and the full-pilot compute estimate is still pending.
 
 The account-scoped model check was completed read-only on 2026-10-14. The model capability flag is not treated as sufficient because the fine-tuning jobs endpoint returned `410 Gone`. No file was uploaded and no training or inference call was made.
 
 ## Next safe step
 
-1. Select a compatible open-weight Mistral checkpoint, tokenizer, local trainer, hardware/runtime, seed, and license.
-2. Record a local compute estimate and hard ceiling; stop if the pilot cannot fit the approved budget.
-3. Draft a small reviewed, policy-versioned batch against schema v3, calculate label churn, validate registry provenance, and inspect semantic-family leakage.
-4. Expand only after the sample passes the selected semantic-matrix profile; then lock and hash the branch-heldout split.
-5. Request separate approval for one bounded local SFT run and its evaluation calls.
+1. Implement and test the deterministic serializer from schema-v3 messages to the selected MLX text format.
+2. Resolve or pin the tokenizer regex behavior and record the choice.
+3. Record a full-pilot token estimate and hard ceiling; stop if the pilot cannot fit the approved budget.
+4. Draft a small reviewed, policy-versioned batch against schema v3, calculate label churn, validate registry provenance, and inspect semantic-family leakage.
+5. Expand only after the sample passes the selected semantic-matrix profile; then lock and hash the branch-heldout split.
+6. Request separate approval for one bounded local SFT run and its evaluation calls.
 
-No paid request was made while producing this record.
+No paid request was made while producing this record. The local smoke used no API calls.

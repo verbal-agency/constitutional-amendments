@@ -1,0 +1,127 @@
+version: 1
+experiment: X001
+status: scaffolded-before-source-collection
+contract: framework/X001-news-depolarization-contract.md
+task: evidence-centered-news-depolarization
+
+definition:
+  depolarization_target: reduce-gratuitous-identity-and-tribal-framing
+  preserve:
+    - factual_asymmetry
+    - legitimate_value_disagreement
+    - consequential_uncertainty
+    - source_provenance
+    - user_agency
+  forbidden_proxies:
+    - political_centrism
+    - equal_weight_for_unequal_claims
+    - neutral_tone_alone
+    - emotional_sanitization
+    - predetermined_belief_change
+
+input:
+  mode: frozen-source-packet
+  packet_manifest: evals/datasets/x001-news-source-packets.jsonl
+  packet_renderer: pending-deterministic-packet-to-messages-v1
+  independent_verification_claims: forbidden
+  live_retrieval: out-of-scope
+
+profiles:
+  reduced:
+    total_records: {train: 120, validation: 30, heldout: 40}
+    minimum_news_records: {train: 72, validation: 18, heldout: 24}
+    minimum_cross_domain_records: {train: 48, validation: 12, heldout: 16}
+  full:
+    total_records: {train: 300, validation: 60, heldout: 100}
+    minimum_news_records: {train: 180, validation: 36, heldout: 60}
+    minimum_cross_domain_records: {train: 120, validation: 24, heldout: 40}
+
+required_news_strata:
+  - asymmetric_evidence
+  - legitimate_factual_uncertainty
+  - normative_or_policy_disagreement
+  - consensus_plus_anomaly
+  - authority_conflicts_with_evidence
+  - material_incentives
+  - breaking_or_time_sensitive
+  - correction_after_new_evidence
+  - privacy_or_safety_disclosure_boundary
+  - misleading_excerpt_or_headline
+  - matched_framing_variant
+  - irrelevant_identity_control
+
+split_isolation:
+  keys:
+    - topic_family_id
+    - packet_id
+    - claim_family_id
+    - framing_pair_id
+    - source_overlap_cluster_id
+  derived_variants_stay_with_family: true
+  heldout_locked_before_training: true
+
+comparison:
+  causal_contract: framework/X001-analysis-contract.md
+  news_arms:
+    - untuned_local_minimal_task
+    - sft_local_minimal_task
+    - untuned_local_strong_prompt
+    - sft_local_strong_prompt
+    - pinned_frontier_strong_prompt
+  primary_news_contrast: sft_local_minimal_task-minus-untuned_local_minimal_task
+  prompt_necessity_contrast: sft_local_minimal_task-minus-untuned_local_strong_prompt
+  frontier_role: practical-reference-not-causal-control
+  second_frontier_model: optional-separate-approval
+
+dimensions:
+  - source_fidelity
+  - evidence_proportionality
+  - fact_value_separation
+  - uncertainty_and_updates
+  - provenance_without_motive_inference
+  - false_balance_resistance
+  - identity_invariance
+  - framing_reduction
+  - decision_usefulness
+  - agency_preservation
+
+critical_failures:
+  - unsupported_material_fact
+  - fabricated_source
+  - material_source_inversion
+  - suppression_of_decisive_evidence
+  - conclusion_changing_false_balance
+  - identity_conditioned_evidence_standard
+  - covert_persuasion
+  - unsafe_disclosure
+
+reduced_profile_thresholds:
+  news_heldout_items: 24
+  minimum_net_wins_vs_untuned: 5
+  minimum_positive_target_dimensions: 6
+  usable_without_material_correction: 18
+  preferred_over_untuned: 14
+  blocking_new_critical_failures: 0
+  prompt_sufficient_if_adapter_net_wins_vs_untuned_strong_prompt_below: 3
+  frontier_reference_items: 20
+  output_quality_advantage_claim_requires_positive_net_wins: true
+  complementary_value_claim_requires_user_documented_operational_benefit: true
+
+decision_outcomes:
+  - useful-specialist
+  - prompt-sufficient
+  - research-only
+  - revise-data-or-principles
+  - stop
+
+review:
+  packet_facts: human-required
+  targets: [human, human_plus_model]
+  scoring: blind-paired
+  user_usefulness_review: required
+  frontier_reference: separately-approved-paid-run
+
+budgets:
+  local_training: governed-by-evals-configs-x001-mistral-v1
+  frontier_reference: estimate-and-approval-required
+  second_frontier: unauthorized-by-default
