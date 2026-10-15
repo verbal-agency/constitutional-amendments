@@ -1,13 +1,13 @@
 version: 1
 experiment: X001
-status: packet-infrastructure-drafted-calibration-packets-pending-review
+status: packet-infrastructure-and-calibration-approved-training-data-pending
 contract: framework/X001-news-depolarization-contract.md
 task: evidence-centered-news-depolarization
 first_calibration_family:
   domain: sports
   topic_family_id: XNF-LEBRON-JORDAN-001
   packet_ids: [XNP-LEBRON-JORDAN-001, XNP-LEBRON-JORDAN-002, XNP-LEBRON-JORDAN-003]
-  status: heldout-fixture-pending-human-review
+  status: heldout-fixture-approved
 
 definition:
   depolarization_target: reduce-gratuitous-identity-and-tribal-framing

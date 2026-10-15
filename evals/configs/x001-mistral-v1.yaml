@@ -7,7 +7,8 @@ arm: local-mistral-untuned-or-sft
 provider:
   name: local-mistral
   checkpoint: mlx-community/Ministral-3-3B-Base-2512-4bit@853f50105f14039a2acba1d9d380efdecc674dd4
-  tokenizer: checkpoint-tokenizer-regex-warning-pending-resolution
+  tokenizer: transformers-fix_mistral_regex-true
+  tokenizer_config_sha256: f3a437d1214f6b61c8eae19d1256b0ebbf567793f6dcc1f63f4a30b829f85235
   trainer: mlx-lm-0.31.3-lora
   model_status: local-smoke-pass
   hosted_fine_tuning_status: blocked-api-410
@@ -42,7 +43,7 @@ preflight:
   evaluation_budget_usd: separate-approval-required
   compute_estimate: smoke-pass-full-pilot-estimate-pending
   serializer: evals/scripts/serialize_x001_for_mlx.py@x001-mlx-text-v1
-  tokenizer_regex_fix: pending-decision
+  tokenizer_regex_fix: true
   stop_before_training_if: [checkpoint_incompatible, compute_unbounded, serializer_unverified, tokenizer_unpinned, registry_missing, data_contaminated, split_invalid, policy_lineage_missing]
 
 comparison:

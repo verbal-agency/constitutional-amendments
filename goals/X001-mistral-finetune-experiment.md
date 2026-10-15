@@ -108,7 +108,7 @@ The 30 custom development cases, 40 deterministic fixtures, 160-case evaluation 
 
 ### Current checkpoint
 
-The offline contracts, local runtime smoke, source-packet schema, deterministic renderer, and validators are ready. MLX-LM successfully trained and loaded a tiny LoRA adapter for the pinned 3B checkpoint; this establishes runtime feasibility only. No policy training records or source packets have been approved. The next gate is resolving tokenizer reproducibility, completing human factual/task review of the calibration packets, and building the reviewed news/data pilot under the bounded compute estimate.
+The offline contracts, local runtime smoke, source-packet schema, deterministic renderer, and validators are ready. MLX-LM previously trained and loaded a tiny LoRA adapter for the pinned 3B checkpoint; this establishes runtime feasibility only. The three calibration packets are now human-approved and remain held out; no policy training records have been approved. The next gate is resolving tokenizer reproducibility in a Metal-capable environment, building separate reviewed train/validation data, and recording the bounded compute estimate.
 
 ## Execution stages
 

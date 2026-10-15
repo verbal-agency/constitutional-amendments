@@ -1,6 +1,6 @@
 # X001 evidence-centered news depolarization contract
 
-Status: Packet infrastructure drafted; first calibration family pending human review
+Status: Packet infrastructure and first calibration family approved; training data pending
 Owner: X001
 Purpose: Give the local SFT experiment a concrete, personally useful target without turning “depolarization” into forced centrism, false balance, or belief manipulation.
 

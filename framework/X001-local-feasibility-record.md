@@ -41,7 +41,7 @@ The smoke test therefore used an explicit plain-text view with `User:` and `Assi
 - Smoke train SHA-256: `5bb514f2c4bf722fbbd8927993f811b8023c36093fa97c3c9aeb0755edaa3164`
 - Smoke validation SHA-256: `dcdb4201f08c0ed68c2a32dce3771483a7538bc56371f83cffd581ce38540de6`
 
-The tokenizer emitted a warning about an incorrect Mistral regex pattern and recommended `fix_mistral_regex=True`. This is a reproducibility risk that must be resolved or explicitly pinned before the real pilot.
+The tokenizer emitted a warning about an incorrect Mistral regex pattern and recommended `fix_mistral_regex=True`. The preflight rerun loaded the pinned checkpoint with that flag, produced a stable tokenization result, and completed a one-token local generation. The tokenizer choice is now pinned as `transformers-fix_mistral_regex-true`; the tokenizer configuration SHA-256 is `f3a437d1214f6b61c8eae19d1256b0ebbf567793f6dcc1f63f4a30b829f85235`.
 
 ## Next gate
 
