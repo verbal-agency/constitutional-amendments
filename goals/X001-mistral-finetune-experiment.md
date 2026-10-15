@@ -17,6 +17,8 @@ The first practical target is an evidence-centered news depolarizer. Given a fro
 
 Depolarization does not mean political centrism, equal treatment of unequal claims, emotional sanitization, or persuasion toward a preferred belief. The complete task, packet, dataset, comparison, and decision contract is `framework/X001-news-depolarization-contract.md`.
 
+The first calibration family is the LeBron James versus Michael Jordan GOAT debate. It is a low-stakes sports domain used to test evidence/value separation and identity-pressure handling before collecting higher-stakes news packets. The three initial packets are held out and remain pending human factual review; they are not training data.
+
 ## Branch rules
 
 - The branch is exploratory and does not change the G001–G010 sequence by itself.
@@ -106,7 +108,7 @@ The 30 custom development cases, 40 deterministic fixtures, 160-case evaluation 
 
 ### Current checkpoint
 
-The offline contracts and local runtime smoke are ready. MLX-LM successfully trained and loaded a tiny LoRA adapter for the pinned 3B checkpoint; this establishes runtime feasibility only. No policy training records have been approved. The next gate is resolving tokenizer reproducibility, implementing the deterministic source-packet renderer, and building the reviewed news/data pilot under the bounded compute estimate.
+The offline contracts, local runtime smoke, source-packet schema, deterministic renderer, and validators are ready. MLX-LM successfully trained and loaded a tiny LoRA adapter for the pinned 3B checkpoint; this establishes runtime feasibility only. No policy training records or source packets have been approved. The next gate is resolving tokenizer reproducibility, completing human factual/task review of the calibration packets, and building the reviewed news/data pilot under the bounded compute estimate.
 
 ## Execution stages
 
@@ -173,7 +175,7 @@ The analysis must also track response length, refusal rate, hedge frequency, con
 - `evals/datasets/x001-mistral-record-schema.json` and an offline preflight record;
 - `evals/configs/x001-semantic-matrix-v1.yaml` and `framework/X001-analysis-contract.md`;
 - `framework/X001-news-depolarization-contract.md` and `evals/configs/x001-news-depolarization-v1.yaml`;
-- reviewed source-packet manifest, deterministic renderer, validator, and tests;
+- `evals/datasets/x001-source-packet-schema.json`, reviewed source-packet manifest, deterministic renderer, validator, and tests;
 - `evals/datasets/x001-mistral-train.jsonl`;
 - `evals/datasets/x001-mistral-validation.jsonl`;
 - `evals/manifests/x001-local-sft-*.json`;

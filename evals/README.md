@@ -27,6 +27,8 @@ Canonical design: `EVALUATION_PLAN.md`. This directory holds the frozen artifact
 | `configs/x001-mistral-v1.yaml`, `configs/x001-semantic-matrix-v1.yaml`, `datasets/x001-mistral-record-schema.json`, `scripts/validate_x001_dataset.py` | X001 local SFT preflight, semantic coverage, family-isolated splits, policy-versioned records, and principle-record validation | yes |
 | `scripts/serialize_x001_for_mlx.py`, `scripts/test_serialize_x001_for_mlx.py` | deterministic v3-message to MLX-text serialization with a separate policy-lineage manifest | yes |
 | `configs/x001-news-depolarization-v1.yaml`, `framework/X001-news-depolarization-contract.md` | X001 source-packet task, dataset strata, strong-prompt/frontier controls, usefulness thresholds, and false-balance boundaries | yes |
+| `datasets/x001-source-packet-schema.json`, `datasets/x001-source-packets.jsonl`, `scripts/validate_x001_source_packets.py`, `scripts/render_x001_source_packet.py` | generic frozen source packets and deterministic model-visible rendering; first LeBron–Jordan calibration family is held out pending human review | yes |
+| `scripts/test_validate_x001_source_packets.py`, `scripts/test_render_x001_source_packet.py` | source-packet hash, provenance, leakage, and annotation-hiding tests | yes |
 | `scripts/test_validate_x001_dataset.py`, `framework/X001-analysis-contract.md` | X001 validator fixtures and predeclared contrasts, decision thresholds, confound limits, and judging contract | yes |
 | `framework/principles-v1.yaml`, `maps/g006-replacement-v3.json`, `scripts/validate_g006_registry.py` | G006 semantic principle registry and canonical map traceability | yes |
 

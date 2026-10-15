@@ -1,6 +1,6 @@
 # X001 evidence-centered news depolarization contract
 
-Status: Scaffolded before source collection or target authoring
+Status: Packet infrastructure drafted; first calibration family pending human review
 Owner: X001
 Purpose: Give the local SFT experiment a concrete, personally useful target without turning “depolarization” into forced centrism, false balance, or belief manipulation.
 
@@ -46,9 +46,9 @@ Targets must vary surface form so the adapter is not rewarded merely for reprodu
 
 ## Source-packet contract
 
-Each packet is recorded in a sidecar manifest and rendered deterministically into the canonical X001 `messages` field. The packet manifest contains:
+Each packet is recorded in a sidecar manifest and rendered deterministically into the canonical X001 `messages` field. The generic packet schema supports calibration domains such as sports as well as later news domains. The packet manifest contains:
 
-- `packet_id`, `topic_family_id`, `event_or_issue`, `event_date`, `source_cutoff`, and `packet_version`;
+- `packet_id`, `domain`, `topic_family_id`, `event_or_issue`, `event_date`, `source_cutoff`, and `packet_version`;
 - one or more `claim_id` records distinguishing observation, inference, forecast, value judgment, and action preference;
 - source records with `source_id`, publisher or author, publication date, URL or repository path, use basis, and content hash;
 - short attributed excerpts or original summaries sufficient for the task, never an unlicensed article dump;
@@ -163,8 +163,8 @@ Before the held-out run, freeze numeric thresholds for the local paired comparis
 ## Required artifacts
 
 - `evals/configs/x001-news-depolarization-v1.yaml` — counts, strata, arms, metrics, thresholds, and budgets;
-- `evals/datasets/x001-news-source-packets.jsonl` — reviewed packet manifest;
-- `evals/scripts/validate_x001_news.py` — packet, license/use-basis, lineage, claim, and split checks;
+- `evals/datasets/x001-source-packets.jsonl` — reviewed generic packet manifest;
+- `evals/scripts/validate_x001_source_packets.py` — packet, use-basis, lineage, claim, and split checks;
 - deterministic packet-to-message renderer and tests;
 - policy-versioned X001 train, validation, and branch-heldout records;
 - label-churn and source-packet coverage report;

@@ -1,8 +1,13 @@
 version: 1
 experiment: X001
-status: scaffolded-before-source-collection
+status: packet-infrastructure-drafted-calibration-packets-pending-review
 contract: framework/X001-news-depolarization-contract.md
 task: evidence-centered-news-depolarization
+first_calibration_family:
+  domain: sports
+  topic_family_id: XNF-LEBRON-JORDAN-001
+  packet_ids: [XNP-LEBRON-JORDAN-001, XNP-LEBRON-JORDAN-002, XNP-LEBRON-JORDAN-003]
+  status: heldout-fixture-pending-human-review
 
 definition:
   depolarization_target: reduce-gratuitous-identity-and-tribal-framing
@@ -21,8 +26,8 @@ definition:
 
 input:
   mode: frozen-source-packet
-  packet_manifest: evals/datasets/x001-news-source-packets.jsonl
-  packet_renderer: pending-deterministic-packet-to-messages-v1
+  packet_manifest: evals/datasets/x001-source-packets.jsonl
+  packet_renderer: x001-source-packet-render-v1
   independent_verification_claims: forbidden
   live_retrieval: out-of-scope
 

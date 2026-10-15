@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/verbal-agency/constitutional-amendments/schema/x001-source-packet-v1.json",
+  "title": "X001 frozen source packet",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "packet_version",
+    "packet_id",
+    "domain",
+    "topic_family_id",
+    "event_or_issue",
+    "task_prompt",
+    "event_date",
+    "source_cutoff",
+    "sources",
+    "claims",
+    "unknowns",
+    "contradictions",
+    "synthetic_variant",
+    "source_overlap_cluster_id",
+    "framing_pair_id",
+    "usefulness_role",
+    "split",
+    "packet_sha256",
+    "rendering",
+    "review"
+  ],
+  "properties": {
+    "packet_version": {"const": "x001-source-packet-v1"},
+    "packet_id": {"type": "string", "pattern": "^XNP-[A-Za-z0-9][A-Za-z0-9._-]*$"},
+    "domain": {"type": "string", "enum": ["sports", "news", "policy", "other"]},
+    "topic_family_id": {"type": "string", "pattern": "^XNF-[A-Za-z0-9][A-Za-z0-9._-]*$"},
+    "event_or_issue": {"type": "string", "minLength": 1},
+    "task_prompt": {"type": "string", "minLength": 1},
+    "event_date": {"type": ["string", "null"]},
+    "source_cutoff": {"type": ["string", "null"]},
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["source_id", "kind", "publisher_or_author", "published_at", "locator", "use_basis", "content_mode", "summary", "content_sha256"],
+        "properties": {
+          "source_id": {"type": "string", "pattern": "^SRC-[A-Za-z0-9][A-Za-z0-9._-]*$"},
+          "kind": {"type": "string", "enum": ["primary", "reporting", "analysis", "human_authored_scenario"]},
+          "publisher_or_author": {"type": "string", "minLength": 1},
+          "published_at": {"type": ["string", "null"]},
+          "locator": {"type": "string", "minLength": 1},
+          "use_basis": {"type": "string", "enum": ["public_document", "public_web_summary", "original_summary", "synthetic_scenario", "licensed_excerpt"]},
+          "content_mode": {"type": "string", "enum": ["short_excerpt", "original_summary", "metadata_only", "synthetic"]},
+          "summary": {"type": "string", "minLength": 1},
+          "content_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        }
+      }
+    },
+    "claims": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["claim_id", "text", "claim_type", "source_ids", "support_status", "annotation_only"],
+        "properties": {
+          "claim_id": {"type": "string", "pattern": "^CL-[A-Za-z0-9][A-Za-z0-9._-]*$"},
+          "text": {"type": "string", "minLength": 1},
+          "claim_type": {"type": "string", "enum": ["observation", "measurement", "historical_record", "causal_inference", "forecast", "value_judgment", "action_preference", "question"]},
+          "source_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^SRC-[A-Za-z0-9][A-Za-z0-9._-]*$"}},
+          "support_status": {"type": "string", "enum": ["established", "supported", "disputed", "uncertain", "unsupported", "not_applicable"]},
+          "annotation_only": {"type": "boolean"}
+        }
+      }
+    },
+    "unknowns": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "contradictions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["claim_ids", "description"],
+        "properties": {
+          "claim_ids": {"type": "array", "minItems": 2, "uniqueItems": true, "items": {"type": "string", "pattern": "^CL-[A-Za-z0-9][A-Za-z0-9._-]*$"}},
+          "description": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "synthetic_variant": {"type": "boolean"},
+    "source_overlap_cluster_id": {"type": ["string", "null"]},
+    "framing_pair_id": {"type": ["string", "null"]},
+    "usefulness_role": {"type": "string", "enum": ["calibration", "news", "cross_domain_control"]},
+    "split": {"type": "string", "enum": ["train", "validation", "heldout"]},
+    "packet_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "rendering": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["renderer_version", "model_visible_source_ids", "annotation_fields_hidden"],
+      "properties": {
+        "renderer_version": {"type": "string", "minLength": 1},
+        "model_visible_source_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^SRC-[A-Za-z0-9][A-Za-z0-9._-]*$"}},
+        "annotation_fields_hidden": {"type": "boolean", "const": true}
+      }
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "reviewer_type"],
+      "properties": {
+        "status": {"type": "string", "enum": ["pending", "approved", "rejected"]},
+        "reviewer_type": {"type": "string", "enum": ["human", "human_plus_model", "model_assisted"]},
+        "notes": {"type": "string"}
+      }
+    }
+  }
+}
