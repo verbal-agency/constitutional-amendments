@@ -108,7 +108,7 @@ The 30 custom development cases, 40 deterministic fixtures, 160-case evaluation 
 
 ### Current checkpoint
 
-The offline contracts, local runtime smoke, source-packet schema, deterministic renderer, and validators are ready. MLX-LM previously trained and loaded a tiny LoRA adapter for the pinned 3B checkpoint; this establishes runtime feasibility only. The three calibration packets are now human-approved and remain held out; no policy training records have been approved. The next gate is resolving tokenizer reproducibility in a Metal-capable environment, building separate reviewed train/validation data, and recording the bounded compute estimate.
+The offline contracts, local runtime smoke, source-packet schema, deterministic renderer, and validators are ready. MLX-LM previously trained and loaded a tiny LoRA adapter for the pinned 3B checkpoint; this establishes runtime feasibility only. The three calibration packets are now human-approved and remain held out. The 11-record process batch is human-approved and has passed serialization; expansion wave 1 is pending review. The next gate is building the reviewed source-packet/news wave and recording the bounded compute estimate.
 
 ## Execution stages
 
@@ -175,6 +175,7 @@ The analysis must also track response length, refusal rate, hedge frequency, con
 - `evals/datasets/x001-mistral-record-schema.json` and an offline preflight record;
 - `evals/configs/x001-semantic-matrix-v1.yaml` and `framework/X001-analysis-contract.md`;
 - `framework/X001-news-depolarization-contract.md` and `evals/configs/x001-news-depolarization-v1.yaml`;
+- `framework/X001-dataset-expansion-plan.md` and the versioned process-batch expansion wave;
 - `evals/datasets/x001-source-packet-schema.json`, reviewed source-packet manifest, deterministic renderer, validator, and tests;
 - `evals/datasets/x001-mistral-train.jsonl`;
 - `evals/datasets/x001-mistral-validation.jsonl`;

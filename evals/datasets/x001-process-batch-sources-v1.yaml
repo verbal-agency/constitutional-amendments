@@ -1,10 +1,19 @@
 version: x001-process-batch-source-v1
 batch_id: X001-PROCESS-BATCH-20261015
-status: draft-pending-human-review
+status: approved-for-serialization
 authoring_basis: human-authored synthetic scenarios derived from the validated G006 principle registry
 purpose: Validate record authoring, provenance, review, split, and serializer workflow before the full SFT dataset.
+review_note: All 11 records in the base process batch received human approval on 2026-10-21; this batch remains a machinery proof, not a coverage claim.
 heldout_exclusion: The approved LeBron-Jordan calibration family is not reused in this batch.
 source_policy: No external article text, private heldout text, or model-generated target is included.
+cross_cutting_review_criteria:
+  - id: epistemic_open_inquiry
+    requirement: Preserve meaningful unknowns as live uncertainty rather than treating current evidence as exhaustive or treating unknowns as false.
+    reviewer_checks:
+      - State what remains unresolved when it matters to the decision.
+      - Identify evidence, tests, or observations that could update the view.
+      - Avoid both false certainty and empty agnosticism.
+      - Keep interim actions proportionate and reversible when uncertainty is material.
 families:
   - XF-PROC-AUTH-001
   - XF-PROC-INCENTIVE-001
