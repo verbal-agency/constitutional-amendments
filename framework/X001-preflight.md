@@ -15,7 +15,7 @@ Primary applied target: evidence-centered news depolarization under `framework/X
 - The semantic coverage contract is `evals/configs/x001-semantic-matrix-v1.yaml`.
 - The predeclared contrasts and judging rules are in `framework/X001-analysis-contract.md`.
 - The source-packet machinery is validated, and the three LeBron/Jordan held-out calibration packets are human-approved in `evals/datasets/x001-source-packets.jsonl`.
-- No policy-derived train, validation, or branch-heldout records exist yet; the approved calibration packets are evaluation material, not training data.
+- A small policy-derived process batch now exists for authoring review: 7 train and 4 validation records, all pending human review. The approved calibration packets remain evaluation material, not training data.
 - The planned factorial comparison is untuned/SFT-adapted crossed with no constitution/original/mapped candidate.
 - The initial data target is 300 train, 60 validation, and 100 branch-held-out records. A reduced 120/30/40 pilot is allowed only if it preserves the same review and split rules.
 
@@ -24,8 +24,8 @@ Primary applied target: evidence-centered news depolarization under `framework/X
 | Check | Result | Evidence |
 | --- | --- | --- |
 | Principle registry exists | **Pass** | `framework/principles-v1.yaml`, registry `g006-principles-v1`, SHA-256 `4209f05fb5fc46528de664e283f0a9541246a5fbbd3eeab2cd707dfe4211fe7f` |
-| Training data is separate from evaluation data | **Not yet exercised** | X001 schema and matrix forbid evaluation reuse; no policy train/validation files have been created; the validator rejects tracked development/public text overlap and semantic-family leakage without reading private held-out material |
-| Dataset validation contract | **Pass for empty contract** | Schema v3, registry/config hash consistency, policy lineage, message targets, review authority, semantic roles, split isolation, and coverage checks pass the offline validator and tests; no real policy records are available to validate |
+| Training data is separate from evaluation data | **Pass for draft batch** | X001 schema and matrix forbid evaluation reuse; the 11-record process batch uses new families and passes tracked-evaluation overlap and semantic-family checks; records remain pending review |
+| Dataset validation contract | **Pass for draft batch** | Schema v3, registry/config hash consistency, policy lineage, message targets, review authority, semantic roles, and split isolation pass for 7 train and 4 validation drafts; coverage profile is not claimed |
 | Analysis contract | **Pass** | Six arms, primary and secondary contrasts, feasibility thresholds, uncertainty labels, style confounds, and judge adjudication are predeclared |
 | Development evaluation coverage | Available | 30 custom development cases; 40 deterministic fixtures; 160-case lean manifest |
 | Held-out evaluation material | Protected | `evals/private/` remains excluded and is not used for dataset construction |
@@ -39,15 +39,15 @@ Primary applied target: evidence-centered news depolarization under `framework/X
 
 ## Why training is stopped now
 
-The principle registry, source-packet contracts, deterministic serializers, and local runtime preflight are ready. The policy pilot remains stopped because no policy train/validation records exist and the full-pilot compute estimate is still pending.
+The principle registry, source-packet contracts, deterministic serializers, and local runtime preflight are ready. The policy pilot remains stopped because the 11-record process batch is still pending human target review and the full-pilot compute estimate is still pending. Pending records are rejected by the serializer until approved.
 
 The account-scoped model check was completed read-only on 2026-10-14. The model capability flag is not treated as sufficient because the fine-tuning jobs endpoint returned `410 Gone`. No file was uploaded and no training or inference call was made.
 
 ## Next safe step
 
-1. Record a full-pilot token estimate and hard ceiling; stop if the pilot cannot fit the proposed `$10` ceiling.
-2. Draft a small reviewed, policy-versioned train/validation batch against schema v3, calculate label churn, validate registry provenance, and inspect semantic-family leakage.
-3. Expand only after the sample passes the selected semantic-matrix profile; then lock and hash the branch-heldout split.
+1. Review the 11 process-batch targets and approve or revise them; do not serialize pending records.
+2. Record a full-pilot token estimate and hard ceiling; stop if the pilot cannot fit the proposed `$10` ceiling.
+3. Expand only after the reviewed sample passes the selected semantic-matrix profile; then lock and hash the branch-heldout split.
 4. Request separate approval for one bounded local SFT run and its evaluation calls.
 
 No paid request was made while producing this record. The local smoke used no API calls.
