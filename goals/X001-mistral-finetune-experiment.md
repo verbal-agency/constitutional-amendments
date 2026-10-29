@@ -143,7 +143,7 @@ The analysis must also track response length, refusal rate, hedge frequency, con
 - **XAC2 — Reproducible model record:** Base checkpoint, adapter, tokenizer, trainer/runtime, hardware, seed, hyperparameters, hashes, usage, and compute cost are recorded.
 - **XAC3 — Valid baseline:** Untuned Mistral outputs exist for every comparison case used by the branch; no other model's historical outputs are substituted.
 - **XAC4 — SFT attribution:** The chosen comparison design distinguishes prompt conditioning from the SFT package, with any reduced design labeled as limited and sham absence reported.
-- **XAC5 — Principle coverage:** Training and evaluation cover positive cases, counterexamples, boundaries, interactions, and cases requiring uncertainty or correction.
+- **XAC5 — Principle coverage:** The semantic-matrix validator proves the epistemological-map chain for every registry principle in train, validation, and branch-heldout: policy delta, mechanism, boundary, counterexample, desired/unacceptable behavior, scoring dimension, and positive, exception, overapplication, and counterexample roles.
 - **XAC6 — No critical regression:** The fine-tuned model introduces no unreviewed critical factual, honesty, safety, over-refusal, or agency regression on the approved comparison set.
 - **XAC7 — Generalization:** Any claimed improvement appears on held-out branch cases and is not confined to memorized wording or training-like prompts.
 - **XAC8 — Cost integrity:** Local compute and evaluation remain within the approved ceiling; training, storage, and inference costs are recorded separately.
@@ -189,4 +189,4 @@ The analysis must also track response length, refusal rate, hedge frequency, con
 
 ## Stop conditions
 
-Stop before training if the checkpoint/trainer is incompatible, local compute cannot be bounded, the dataset is contaminated, semantic families cross splits, the registry or constitution hash drifts, target review is incomplete, policy lineage is missing, or the runtime contract is unclear. Stop after training if the adapter cannot be evaluated reproducibly or if a critical regression appears. Route unresolved attribution as a limitation or future sham/preference experiment instead of expanding the run.
+Stop before training if the checkpoint/trainer is incompatible, local compute cannot be bounded, the dataset is contaminated, semantic families cross splits, the epistemological-map coverage gate fails, the registry or constitution hash drifts, target review is incomplete, policy lineage is missing, or the runtime contract is unclear. Stop after training if the adapter cannot be evaluated reproducibly or if a critical regression appears. Route unresolved attribution as a limitation or future sham/preference experiment instead of expanding the run.

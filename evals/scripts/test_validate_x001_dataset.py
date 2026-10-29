@@ -10,6 +10,7 @@ import unittest
 from pathlib import Path
 
 import jsonschema
+import yaml
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import validate_x001_dataset as V
@@ -139,6 +140,12 @@ class X001DatasetValidationTests(unittest.TestCase):
         row = self.record("TOO-SMALL")
         with self.assertRaisesRegex(ValueError, "requires 120 records"):
             V.enforce_coverage([row], V.DEFAULT_MATRIX, "reduced")
+
+    def test_map_chain_requires_each_role_per_principle(self) -> None:
+        row = self.record("MAP-CHAIN")
+        matrix = yaml.safe_load(V.DEFAULT_MATRIX.read_text())
+        with self.assertRaisesRegex(ValueError, "map chain train/G006-P01 missing roles"):
+            V.enforce_map_chain([row], matrix, "fixture")
 
     def test_tracked_evaluation_prompt_cannot_be_training_input(self) -> None:
         eval_row = json.loads((V.ROOT / "evals/datasets/custom-dev-v1.jsonl").read_text().splitlines()[0])

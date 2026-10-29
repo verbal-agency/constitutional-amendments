@@ -44,7 +44,12 @@ preflight:
   compute_estimate: smoke-pass-full-pilot-estimate-pending
   serializer: evals/scripts/serialize_x001_for_mlx.py@x001-mlx-text-v1
   tokenizer_regex_fix: true
-  stop_before_training_if: [checkpoint_incompatible, compute_unbounded, serializer_unverified, tokenizer_unpinned, registry_missing, data_contaminated, split_invalid, policy_lineage_missing]
+  coverage_gate:
+    validator: evals/scripts/validate_x001_dataset.py
+    matrix: evals/configs/x001-semantic-matrix-v1.yaml
+    required_profile: reduced
+    required_before_serialization: true
+  stop_before_training_if: [checkpoint_incompatible, compute_unbounded, serializer_unverified, tokenizer_unpinned, registry_missing, data_contaminated, split_invalid, policy_lineage_missing, map_chain_coverage_failed]
 
 comparison:
   design: two-by-three-factorial

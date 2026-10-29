@@ -13,9 +13,10 @@ Primary applied target: evidence-centered news depolarization under `framework/X
 - The local runtime is pinned in `framework/X001-local-feasibility-record.md`; the unsandboxed preflight loaded the pinned checkpoint and completed a one-token generation with the pinned tokenizer setting.
 - The v3 training-record contract is `evals/datasets/x001-mistral-record-schema.json`.
 - The semantic coverage contract is `evals/configs/x001-semantic-matrix-v1.yaml`.
+- The semantic matrix now includes an executable epistemological-map chain gate; `validate_x001_dataset.py --profile reduced|full` blocks a serialization-ready profile unless every principle has the required fields and four case roles in every split.
 - The predeclared contrasts and judging rules are in `framework/X001-analysis-contract.md`.
 - The source-packet machinery is validated, and the three LeBron/Jordan held-out calibration packets are human-approved in `evals/datasets/x001-source-packets.jsonl`.
-- The base policy-derived process batch is fully human-approved for serialization: 7 train and 4 validation records. Expansion wave 1 adds 8 train and 4 validation candidates pending review. The approved calibration packets remain evaluation material, not training data.
+- The base policy-derived process batch is fully human-approved for serialization: 7 train and 4 validation records. Expansion wave 1 adds 9 train and 4 validation human-approved records and has passed serialization. The approved calibration packets remain evaluation material, not training data.
 - The planned factorial comparison is untuned/SFT-adapted crossed with no constitution/original/mapped candidate.
 - The initial data target is 300 train, 60 validation, and 100 branch-held-out records. A reduced 120/30/40 pilot is allowed only if it preserves the same review and split rules.
 
@@ -25,7 +26,7 @@ Primary applied target: evidence-centered news depolarization under `framework/X
 | --- | --- | --- |
 | Principle registry exists | **Pass** | `framework/principles-v1.yaml`, registry `g006-principles-v1`, SHA-256 `4209f05fb5fc46528de664e283f0a9541246a5fbbd3eeab2cd707dfe4211fe7f` |
 | Training data is separate from evaluation data | **Pass for draft batch** | X001 schema and matrix forbid evaluation reuse; the 11-record process batch uses new families and passes tracked-evaluation overlap and semantic-family checks; records remain pending review |
-| Dataset validation contract | **Pass for draft batch** | Schema v3, registry/config hash consistency, policy lineage, message targets, review authority, semantic roles, and split isolation pass for 7 train and 4 validation drafts; coverage profile is not claimed |
+| Dataset validation contract | **Pass for draft batch** | Schema v3, registry/config hash consistency, policy lineage, message targets, review authority, semantic roles, and split isolation pass for 7 train and 4 validation drafts; the full map-chain coverage profile is not claimed until target counts and role cells are complete |
 | Analysis contract | **Pass** | Six arms, primary and secondary contrasts, feasibility thresholds, uncertainty labels, style confounds, and judge adjudication are predeclared |
 | Development evaluation coverage | Available | 30 custom development cases; 40 deterministic fixtures; 160-case lean manifest |
 | Held-out evaluation material | Protected | `evals/private/` remains excluded and is not used for dataset construction |
@@ -39,16 +40,16 @@ Primary applied target: evidence-centered news depolarization under `framework/X
 
 ## Why training is stopped now
 
-The principle registry, source-packet contracts, deterministic serializers, and local runtime preflight are ready. The 11-record machinery proof is complete. The policy pilot remains stopped because expansion wave 1 and the source-packet news data still require human review, and the full-pilot compute estimate is still pending. Pending records are rejected by the serializer until approved.
+The principle registry, source-packet contracts, deterministic serializers, and local runtime preflight are ready. The 11-record machinery proof and process expansion wave are complete. The policy pilot remains stopped because the source-packet news wave still requires human review, the map-chain coverage profile is incomplete, and the full-pilot compute estimate is still pending. Pending records are rejected by the serializer until approved.
 
 The account-scoped model check was completed read-only on 2026-10-14. The model capability flag is not treated as sufficient because the fine-tuning jobs endpoint returned `410 Gone`. No file was uploaded and no training or inference call was made.
 
 ## Next safe step
 
-1. Review expansion wave 1 and approve or revise it; do not serialize pending records. For every record, preserve meaningful unknowns as live uncertainty: state material unresolved points, identify update evidence or tests, avoid false certainty and empty agnosticism, and keep uncertain interim actions proportionate and reversible.
-2. Author and review the source-packet news wave without reusing held-out calibration packets.
+1. Review the source-packet news wave without reusing held-out calibration packets. For every record, preserve meaningful unknowns as live uncertainty: state material unresolved points, identify update evidence or tests, avoid false certainty and empty agnosticism, and keep uncertain interim actions proportionate and reversible.
+2. Expand the policy-versioned records until the selected semantic-matrix profile and map-chain coverage gate pass; do not serialize pending records.
 3. Record a full-pilot token estimate and hard ceiling; stop if the pilot cannot fit the proposed `$10` ceiling.
-4. Expand only after the reviewed sample passes the selected semantic-matrix profile; then lock and hash the branch-heldout split.
+4. Lock and hash the branch-heldout split after coverage and leakage checks pass.
 5. Request separate approval for one bounded local SFT run and its evaluation calls.
 
 No paid request was made while producing this record. The local smoke used no API calls.

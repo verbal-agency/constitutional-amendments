@@ -77,6 +77,13 @@ def validate_contracts(schema: dict, registry_path: Path, matrix_path: Path,
         raise ValueError("X001 config principle registry hash drift")
     if config["data"]["record_version"] != "x001-record-v3":
         raise ValueError("X001 config record version drift")
+    coverage_gate = config["preflight"].get("coverage_gate")
+    if not coverage_gate or coverage_gate.get("validator") != "evals/scripts/validate_x001_dataset.py":
+        raise ValueError("X001 preflight coverage gate is missing or points to another validator")
+    if coverage_gate.get("matrix") != "evals/configs/x001-semantic-matrix-v1.yaml":
+        raise ValueError("X001 preflight coverage gate matrix drift")
+    if coverage_gate.get("required_before_serialization") is not True:
+        raise ValueError("X001 map-chain coverage must be required before serialization")
     analysis_path = ROOT / config["comparison"]["analysis_contract"]
     if not analysis_path.exists():
         raise ValueError("X001 analysis contract is missing")
@@ -199,6 +206,45 @@ def validate_records(records_by_path: list[tuple[Path, list[dict]]], registry_pa
     return all_records, dict(split_counts)
 
 
+def enforce_map_chain(records: list[dict], matrix: dict, profile_name: str) -> None:
+    """Require every principle to reach behavior and evaluation coverage."""
+    principles = matrix["principle_ids"]
+
+    # The semantic matrix is also the executable contract for the
+    # epistemological-map chain: principle -> boundary/counterexample ->
+    # target behavior -> measurable evaluation.
+    map_chain = matrix.get("map_chain")
+    if not map_chain:
+        raise ValueError("semantic matrix is missing map_chain coverage requirements")
+
+    required_fields = map_chain.get("required_record_fields", [])
+    for row in records:
+        missing_fields = []
+        for field in required_fields:
+            value = row.get(field)
+            if value is None or value == "" or value == []:
+                missing_fields.append(field)
+        if missing_fields:
+            raise ValueError(
+                f"{row['example_id']}: map chain missing required fields: "
+                + ", ".join(missing_fields)
+            )
+
+    for split, required_roles in map_chain.get("required_roles_by_split", {}).items():
+        for principle_id in principles:
+            principle_rows = [
+                row for row in records
+                if row["split"] == split and principle_id in row["principle_ids"]
+            ]
+            observed_roles = {row["case_role"] for row in principle_rows}
+            missing_roles = set(required_roles) - observed_roles
+            if missing_roles:
+                raise ValueError(
+                    f"{profile_name}: map chain {split}/{principle_id} missing roles: "
+                    + ", ".join(sorted(missing_roles))
+                )
+
+
 def enforce_coverage(records: list[dict], matrix_path: Path, profile_name: str) -> None:
     matrix = yaml.safe_load(matrix_path.read_text())
     if profile_name not in matrix["profiles"]:
@@ -243,6 +289,10 @@ def enforce_coverage(records: list[dict], matrix_path: Path, profile_name: str) 
     complete_pairs = sum(1 for count in pair_counts.values() if count >= 2)
     if complete_pairs < minimums["counterfactual_pairs"]:
         raise ValueError(f"{profile_name}: heldout requires >= {minimums['counterfactual_pairs']} complete pairs, got {complete_pairs}")
+
+    # Keep this check after profile-size checks so small draft batches report
+    # their ordinary size failure first while a final profile cannot bypass it.
+    enforce_map_chain(records, matrix, profile_name)
 
 
 def main() -> int:

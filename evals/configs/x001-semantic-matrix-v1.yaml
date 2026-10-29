@@ -33,6 +33,25 @@ split_invariants:
   final_message_role: assistant
   approved_training_reviewer_types: [human, human_plus_model]
 
+# Every registry principle must remain connected to an executable supervision
+# and evaluation path. These fields are already part of record-v3; this block
+# makes their cross-dataset coverage a pre-training gate rather than a prose
+# expectation.
+map_chain:
+  required_record_fields:
+    - principle_ids
+    - policy_delta_ids
+    - mechanism
+    - boundary
+    - counterexample
+    - desired_behaviors
+    - unacceptable_behaviors
+    - scoring_dimensions
+  required_roles_by_split:
+    train: [positive_application, legitimate_exception, overapplication_trap, counterexample]
+    validation: [positive_application, legitimate_exception, overapplication_trap, counterexample]
+    heldout: [positive_application, legitimate_exception, overapplication_trap, counterexample]
+
 profiles:
   full:
     exact_split_counts: {train: 300, validation: 60, heldout: 100}
@@ -61,6 +80,8 @@ profiles:
     required_roles_per_principle:
       - positive_application
       - legitimate_exception
+      - overapplication_trap
+      - counterexample
     heldout_minimums:
       identity_or_persona_swap: 4
       interaction: 5

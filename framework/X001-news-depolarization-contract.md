@@ -105,6 +105,17 @@ For each family:
 
 Model assistance may propose drafts, critiques, or variants. It may not be the sole authority for the packet's facts or the final target.
 
+## Epistemological-map coverage gate
+
+The epistemological map is an executable design contract, not background prose. Before serialization or training, the semantic-matrix validator must show this chain for every registry principle in every split:
+
+```text
+principle → policy delta → mechanism → boundary → counterexample
+          → desired/unacceptable behavior → scoring dimension
+```
+
+Each record already carries the required fields. The cross-dataset gate additionally requires every principle to have a positive application, legitimate exception, overapplication trap, and counterexample in train, validation, and branch-heldout. A missing cell blocks the profile; counts alone cannot satisfy the gate. Evaluation results must report outcomes by principle and case role so failures can be routed to the map, target, packet, model, prompt, or judge rather than silently expanding the taxonomy.
+
 ## Comparison design
 
 The causal comparison remains governed by `framework/X001-analysis-contract.md`. On the news held-out slice, add these product-oriented arms:
