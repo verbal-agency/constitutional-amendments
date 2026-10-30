@@ -17,7 +17,7 @@ The first practical target is an evidence-centered news depolarizer. Given a fro
 
 Depolarization does not mean political centrism, equal treatment of unequal claims, emotional sanitization, or persuasion toward a preferred belief. The complete task, packet, dataset, comparison, and decision contract is `framework/X001-news-depolarization-contract.md`.
 
-The first calibration family is the LeBron James versus Michael Jordan GOAT debate. It is a low-stakes sports domain used to test evidence/value separation and identity-pressure handling before collecting higher-stakes news packets. The three initial packets are held out and remain pending human factual review; they are not training data.
+The first calibration family is the LeBron James versus Michael Jordan GOAT debate. It is a low-stakes sports domain used to test evidence/value separation and identity-pressure handling before collecting higher-stakes news packets. The three initial packets are human-approved held-out calibration material and remain outside training data.
 
 ## Branch rules
 
@@ -108,7 +108,7 @@ The 30 custom development cases, 40 deterministic fixtures, 160-case evaluation 
 
 ### Current checkpoint
 
-The offline contracts, local runtime smoke, source-packet schema, deterministic renderer, and validators are ready. MLX-LM previously trained and loaded a tiny LoRA adapter for the pinned 3B checkpoint; this establishes runtime feasibility only. The three calibration packets are now human-approved and remain held out. The 11-record process batch is human-approved and has passed serialization; expansion wave 1 is pending review. The next gate is building the reviewed source-packet/news wave and recording the bounded compute estimate.
+The offline contracts, local runtime smoke, source-packet schema, deterministic renderer, and validators are ready. MLX-LM previously trained and loaded a tiny LoRA adapter for the pinned 3B checkpoint; this establishes runtime feasibility only. The three calibration packets are human-approved and remain held out. The 11-record process batch and expansion wave 1 are human-approved and have passed serialization; the eight-packet applied news wave is also approved, but its target records still need authoring. The next gate is creating those records and recording the bounded compute estimate.
 
 ## Execution stages
 
