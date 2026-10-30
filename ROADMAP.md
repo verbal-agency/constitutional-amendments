@@ -45,6 +45,7 @@ Completion is evidence-based, not prose-based. A goal may be reopened when an it
 | Branch | Status | Relationship | Purpose |
 | --- | --- | --- | --- |
 | [X001 — Local Mistral SFT news depolarization probe](goals/X001-mistral-finetune-experiment.md) | In progress | Non-blocking branch from G006 revision 6 | Test whether constitution-derived supervision produces useful evidence-centered news analysis in a local Mistral adapter, apart from strong prompting, neutral-sounding style, and frontier-model capability. |
+| [X002 — Interactive constitution map](goals/X002-interactive-constitution-map.md) | Proposed | Non-blocking productization branch from G006 revision 6 | Integrate a provenance-preserving original/amendment map into the user's website, beginning with the validated G006 replacement slice. |
 
 ## Goal boundaries
 
@@ -91,6 +92,10 @@ Run the frozen paired comparison against the base and candidate constitutions, i
 ### X001 — Local Mistral SFT news depolarization probe
 
 Run as a separately authorized, non-blocking research branch. Use a compatible open-weight Mistral checkpoint and a reproducible local LoRA/SFT setup to test whether constitution-derived supervision generalizes to held-out semantic families, with evidence-centered news depolarization as the primary applied target. Compare untuned and SFT-adapted behavior under controlled constitution conditions, a strong-prompt control, and a separately approved frontier reference, while tracking policy-version lineage, source-packet integrity, false balance, label churn, style confounds, and regressions. Preference optimization/RLAIF, autonomous retrieval, and hosted fine-tuning are deferred follow-up paths, not part of the first claim. Treat the result as evidence about a bounded SFT package, not as validation of a complete alignment pipeline or a substitute for the prompt-conditioned constitutional comparison. Require an explicit practical classification and pivot recommendation before changing the mainline sequence.
+
+### X002 — Interactive constitution map
+
+Run as a separately authorized, non-blocking website branch. Generate a deterministic map package from the immutable source and an exact replacement map, then integrate a keyboard-accessible component that alternates each selected passage between original and amendment text while preserving source lines, stable IDs, principle links, and review status. Begin with the G006 replacement slice and expand only after source integrity, accessibility, stale-data detection, and website review pass. The map is an explanation and audit surface, not a constitutional authority or a substitute for G010's controlled comparison.
 
 ## Finding routing
 
