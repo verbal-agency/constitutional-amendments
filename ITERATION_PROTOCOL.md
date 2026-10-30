@@ -1,22 +1,29 @@
 # Iteration Protocol
 
-Status: Canonical project workflow
-Applies to: G001–G010
+Status: Canonical bounded-iteration workflow
+Applies to: execution slices in G001–G010 and experimental branches
+Parent protocol: Cycle skill
 
 ## Purpose
 
-The roadmap is iterative, not purely linear. Each goal may produce evidence that changes its own conclusion, requires a revision, or changes a downstream goal's contract. Analysis, drafting, and model probing are separate activities, but they inform one another before a goal closes.
+The roadmap is iterative, not purely linear. Each execution slice may produce evidence that changes its own conclusion, requires a revision, or changes a downstream goal's contract. The Cycle skill governs goal discovery, scope, lifecycle, and closure; this file governs the bounded hypothesis-and-probe loop after the current slice is ready.
+
+## Slice boundary
+
+Before starting this loop, the current goal must have a populated `framework/current-goal.yaml`. If the target consumer, environment, authority, source of truth, or success condition is materially unresolved, stop and return the goal to the Cycle skill's discovery gate.
+
+One loop changes one primary artifact or one tightly coupled artifact set. Run no more than three bounded iterations without checkpointing and re-planning. A new external integration, model family, dataset family, publication surface, or major consumer is a new discovery decision, not an incidental iteration.
 
 ## Loop
 
-Every active goal runs this loop as many times as needed:
+Each active execution slice runs this loop until its bounded criteria pass, a stop condition fires, or the slice is re-planned:
 
 1. **State the hypothesis.** Identify the claim, rule, clause, taxonomy, or evaluation choice being tested.
 2. **Make the smallest change.** Change one bounded artifact or decision at a time.
 3. **Probe it.** Use deterministic checks, offline fixtures, development cases, and—when useful—a local or open model. Use only tracked development/public cases before G010.
 4. **Compare the result.** Compare the new result with the prior artifact, the source purpose it must preserve, and the relevant failure modes.
 5. **Review the evidence.** Record what improved, regressed, remained uncertain, or was not actually tested.
-6. **Route the finding.** Choose `accept`, `revise-current-goal`, `reopen-upstream`, `amend-downstream`, `block`, or `observe`.
+6. **Route the finding.** Choose `accept`, `revise-current-goal`, `reopen-upstream`, `amend-downstream`, `block`, `defer`, or `observe`.
 7. **Checkpoint.** Preserve the artifact hash, probe inputs, outputs or summaries, decision, and downstream impact before the next loop.
 
 A goal does not close merely because its prose is complete. It closes when its loop record has no unresolved material finding and its acceptance evidence remains valid.

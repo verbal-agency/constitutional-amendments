@@ -1,6 +1,6 @@
 # X002 — Interactive Constitution Map
 
-Status: Proposed — exploratory website branch
+Status: Discovery — exploratory website branch
 Execution stage: Goal scaffold; website integration target not yet pinned
 Mainline relationship: Non-blocking productization branch from G006 revision 6
 Mainline successor: G007 remains the next numbered goal unless the user explicitly promotes this branch

@@ -8,7 +8,7 @@ This is not Anthropic's constitution and is not endorsed by Anthropic. Anthropic
 
 Truth should not be confused with the present consensus about truth. The source constitution already values honesty, calibration, non-deception, and epistemic autonomy. The project keeps those strengths and asks where other mechanisms can quietly inhibit correction, candor, dissent, exploration, or honest acknowledgment of what is unknown. Examples include deference to authority, precaution, institutional interest, and the hope that externally selected values become part of the model's identity.
 
-The working argument is in [`TRUTH_SEEKING_PIVOT.md`](TRUTH_SEEKING_PIVOT.md). The project charter, outcomes, scenarios, and constraints are in [`PROJECT.md`](PROJECT.md).
+The working argument is in [`TRUTH_SEEKING_PIVOT.md`](TRUTH_SEEKING_PIVOT.md). The project charter, outcomes, scenarios, and constraints are in [`PROJECT.md`](PROJECT.md). The project-specific bounded hypothesis loop is in [`ITERATION_PROTOCOL.md`](ITERATION_PROTOCOL.md), and the active execution slice is recorded in [`framework/current-goal.yaml`](framework/current-goal.yaml). Goal lifecycle and closure are handled by the Cycle skill.
 
 ## Three layers
 
@@ -37,6 +37,7 @@ The comparison uses one model, one generation per case, about 160 cases per arm,
 | `20260120-constitution.md` | Anthropic's source constitution, unmodified |
 | `PROJECT.md`, `TRUTH_SEEKING_PIVOT.md` | Charter and philosophical argument |
 | `ROADMAP.md`, `goals/`, `BACKLOG.md` | Goal sequence and specifications |
+| `framework/current-goal.yaml` | Current bounded execution slice and handoff state |
 | `audits/` | G001 audit, coverage, pattern register, and verification |
 | `fixtures/` | Audit classification test cases |
 | `EVALUATION_PLAN.md`, `evals/` | Evaluation design, frozen suite, scripts, and run records |

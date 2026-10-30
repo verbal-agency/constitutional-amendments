@@ -3,25 +3,28 @@
 Project: Truth-Seeking Constitution
 Active goal: G006
 Next eligible goal: G007 after G006 revision 6 closes
-Active experimental branch: X001 — local SFT causal probe
+Active experimental branch: X001 — planned target-authoring slice
 
-Iteration policy: Every goal runs the loop in `ITERATION_PROTOCOL.md` before closure. Exploratory results may revise the active goal or amend downstream contracts; G010 remains the only official base-versus-candidate comparison.
+Goal policy: the Cycle skill governs discovery, sizing, lifecycle, closure, and handoff. `ITERATION_PROTOCOL.md` governs project-specific bounded hypothesis-and-probe loops inside an execution slice. Exploratory results may revise the active goal or amend downstream contracts; G010 remains the only official base-versus-candidate comparison.
 
 Experimental branches are non-blocking unless explicitly promoted by the user. They may produce evidence for reopening a goal or changing the roadmap, but they do not silently alter the numbered goal sequence.
 
 ## Status model
 
-Allowed statuses are `Planned`, `Proposed`, `In progress`, `Blocked`, and `Complete`.
+Allowed statuses are `Discovery`, `Planned`, `Proposed`, `In progress`, `Blocked`, `Deferred`, and `Complete`.
 
 Legal transitions:
 
-- `Planned` → `Proposed` when dependencies are complete and the full execution contract is written.
+- `Discovery` → `Planned` when the target consumer, environment, success condition, first slice, and stop conditions are known or explicitly accepted as limitations.
+- `Planned` → `Proposed` when dependencies are complete and the bounded execution contract is written.
 - `Proposed` → `In progress` when Cycle selects the goal for execution.
-- `In progress` → `Complete` only when every goal criterion passes and evidence is recorded.
+- `In progress` → `Complete` only when three to five closure criteria pass and evidence is recorded.
 - `In progress` → `Blocked` only under the platform's blocked-goal rules and with evidence of the unresolved condition.
+- `In progress` → `Deferred` when valuable work is intentionally paused without being a blocker.
 - `Blocked` → `In progress` when the blocking condition is resolved and execution resumes.
+- `Deferred` → `Planned` or `Proposed` when the work is deliberately resumed.
 
-Exactly one numbered goal may be `In progress`. An explicitly selected experimental branch may also be `In progress` when it is marked non-blocking and does not alter the numbered sequence. A numbered goal is eligible only when all dependencies are `Complete`, it has a goal file containing a complete execution contract, and no earlier eligible goal remains unfinished.
+Exactly one numbered goal may be `In progress`. An explicitly selected experimental branch may also be `In progress` when it is marked non-blocking and does not alter the numbered sequence. A numbered goal is eligible only when all dependencies are `Complete`, it has a goal file containing a bounded execution contract, and no earlier eligible goal remains unfinished. `framework/current-goal.yaml` is the operational record of the active slice; the goal file is the durable contract.
 
 Completion is evidence-based, not prose-based. A goal may be reopened when an iteration produces material counterevidence against its completed decision. Downstream goals must consume the amended contract rather than silently compensating for it.
 
@@ -44,8 +47,8 @@ Completion is evidence-based, not prose-based. A goal may be reopened when an it
 
 | Branch | Status | Relationship | Purpose |
 | --- | --- | --- | --- |
-| [X001 — Local Mistral SFT news depolarization probe](goals/X001-mistral-finetune-experiment.md) | In progress | Non-blocking branch from G006 revision 6 | Test whether constitution-derived supervision produces useful evidence-centered news analysis in a local Mistral adapter, apart from strong prompting, neutral-sounding style, and frontier-model capability. |
-| [X002 — Interactive constitution map](goals/X002-interactive-constitution-map.md) | Proposed | Non-blocking productization branch from G006 revision 6 | Integrate a provenance-preserving original/amendment map into the user's website, beginning with the validated G006 replacement slice. |
+| [X001 — Local Mistral SFT news depolarization probe](goals/X001-mistral-finetune-experiment.md) | Planned | Non-blocking branch from G006 revision 6 | Author and preflight the bounded source-packet target slice before any local training or paid evaluation. |
+| [X002 — Interactive constitution map](goals/X002-interactive-constitution-map.md) | Discovery | Non-blocking productization branch from G006 revision 6 | Identify the website target, then integrate a provenance-preserving original/amendment map beginning with the validated G006 replacement slice. |
 
 ## Goal boundaries
 
@@ -91,7 +94,7 @@ Run the frozen paired comparison against the base and candidate constitutions, i
 
 ### X001 — Local Mistral SFT news depolarization probe
 
-Run as a separately authorized, non-blocking research branch. Use a compatible open-weight Mistral checkpoint and a reproducible local LoRA/SFT setup to test whether constitution-derived supervision generalizes to held-out semantic families, with evidence-centered news depolarization as the primary applied target. Compare untuned and SFT-adapted behavior under controlled constitution conditions, a strong-prompt control, and a separately approved frontier reference, while tracking policy-version lineage, source-packet integrity, false balance, label churn, style confounds, and regressions. Preference optimization/RLAIF, autonomous retrieval, and hosted fine-tuning are deferred follow-up paths, not part of the first claim. Treat the result as evidence about a bounded SFT package, not as validation of a complete alignment pipeline or a substitute for the prompt-conditioned constitutional comparison. Require an explicit practical classification and pivot recommendation before changing the mainline sequence.
+Run as a separately authorized, non-blocking research branch. The first bounded slice authors and preflights the reviewed source-packet targets; local training and evaluation remain deferred until that slice closes. Later slices may use a compatible open-weight Mistral checkpoint and reproducible local LoRA/SFT setup to test whether constitution-derived supervision generalizes to held-out semantic families, with evidence-centered news depolarization as the primary applied target. Compare untuned and SFT-adapted behavior under controlled constitution conditions, a strong-prompt control, and a separately approved frontier reference, while tracking policy-version lineage, source-packet integrity, false balance, label churn, style confounds, and regressions. Preference optimization/RLAIF, autonomous retrieval, and hosted fine-tuning are deferred follow-up paths, not part of the first claim. Treat the result as evidence about a bounded SFT package, not as validation of a complete alignment pipeline or a substitute for the prompt-conditioned constitutional comparison. Require an explicit practical classification and pivot recommendation before changing the mainline sequence.
 
 ### X002 — Interactive constitution map
 

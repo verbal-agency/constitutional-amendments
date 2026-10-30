@@ -1,6 +1,6 @@
 # X001 — Local Mistral SFT News Depolarization Probe
 
-Status: In progress — exploratory branch
+Status: Planned — exploratory branch; bounded target-authoring slice pending
 Execution stage: Local feasibility passed; evidence-centered news dataset and SFT pilot design
 Mainline relationship: Non-blocking branch from G006 revision 6
 Mainline successor: G007 remains the next numbered goal unless this experiment produces a user-approved roadmap pivot
@@ -33,6 +33,19 @@ The first calibration family is the LeBron James versus Michael Jordan GOAT deba
 ## Objective
 
 Build and evaluate one bounded local LoRA/SFT branch using policy-versioned, principle-derived source-packet training data and a clean held-out comparison. Determine whether the complete SFT package produces useful evidence-centered news analysis, merely teaches a neutral-sounding response style, can be replaced by a strong prompt, or introduces material regressions. Defer preference optimization/RLAIF to a separately designed experiment.
+
+## Rescue slice
+
+The branch is narrowed before further execution. Its next slice is target authoring and preflight, not model training.
+
+- **Primary owner:** X001. G006 owns the upstream principle and replacement contracts; X001 consumes them.
+- **Consumer:** the bounded local SFT preflight and later adapter comparison.
+- **Current slice:** author and review target records for the approved eight-packet applied news wave, validate split and lineage fields, and record the bounded local compute estimate.
+- **Hypothesis:** reviewed target records can be created from the approved packets without evaluation leakage, while preserving principle lineage and the evidence-centered news contract.
+- **Closure criteria:** (1) target records pass schema, family-isolation, and source-packet validation; (2) train, validation, and branch-heldout hashes and counts are recorded; (3) every target has constitution/policy lineage and review status; (4) the local training/evaluation preflight records checkpoint, runtime, ceiling, and stop condition.
+- **Deferred:** LoRA/SFT training, focused comparison, sham adapter, frontier reference, and pivot classification remain later slices and are not authorized by this rescue.
+
+The broader acceptance table below remains the experiment-level contract. The four criteria above govern the next bounded slice.
 
 ## In scope
 

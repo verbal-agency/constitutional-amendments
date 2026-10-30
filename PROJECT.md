@@ -101,6 +101,8 @@ Given the original constitution and an integrated revision, when both condition 
 - **A12 — Pattern traceability:** Philosophical pattern IDs, definitions, evidence links, dispositions, and rewrite-target destinations are stable and auditable; pattern labels never substitute for passage-level evidence.
 - **A13 — Evaluation integrity:** Freeze dataset versions, subset selection, custom cases, rubrics, run configuration, and comparison gates before drafting substantive amendments. Do not replace failed cases after observing outputs, and do not expose held-out plaintext to G003–G009.
 - **A14 — Cost visibility:** Every paid evaluation run requires a preflight estimate, an explicit hard cap, a usage ledger, and a stop condition. Full-suite runs, extra arms, repeated sampling, and paid graders are unauthorized by default.
+- **A15 — Goal sizing and discovery:** Project goals use the Cycle skill's discovery gate, one primary outcome, one owner, one bounded current slice, and three to five closure criteria. Unknown consumers, environments, authorities, or success conditions remain in `Discovery` until resolved or explicitly accepted as limitations.
+- **A16 — Explicit propagation:** Every cycle records its current slice, last evidence, next action, upstream assumptions, and downstream impact in `framework/current-goal.yaml`. A material change to an objective, consumer, source of truth, authority boundary, or measurement meaning reopens or amends the owning contract before downstream execution.
 
 ## Domain definitions
 

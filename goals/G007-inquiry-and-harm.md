@@ -10,6 +10,18 @@ Define a layered, evidence-sensitive method for distinguishing belief, inquiry, 
 
 G007 produces a section-ready amendment module and offline evidence, not the integrated candidate constitution.
 
+## Activation slice
+
+G007 remains `Proposed`, but Cycle must begin with one bounded contract slice rather than executing the full goal at once.
+
+- **Primary owner:** G007. G006 supplies authority/provenance interfaces; G008 receives review and amendment findings.
+- **Consumer:** the later harm clauses, fixtures, and G009 integration contract.
+- **First slice:** finalize the hazard-plane and proportionality schema, then draft the H-01–H-12 fixture set against that schema.
+- **Hypothesis:** separating inquiry, disclosure, and action while recording capacity, affected-party standing, severity, likelihood, operational uplift, reversibility, and less-restrictive alternatives will reduce paternalistic overreach without erasing genuine third-party hazard.
+- **Closure criteria:** (1) the schema has no illegal or ambiguous hazard states; (2) H-01–H-12 cover positive, negative, contradictory, malformed, partial, and stopped cases; (3) each fixture has a preserving purpose, expected behavior, unacceptable behavior, and proof obligation; (4) G006 authority/provenance boundaries and G008 review handoff are recorded; (5) verification records the remaining uncertainties before clause drafting.
+
+The broader acceptance table below remains the goal-level contract. These five criteria govern the first activation slice.
+
 ## Iteration loop
 
 Follow `ITERATION_PROTOCOL.md`: run H-01–H-12 and tracked development cases against each hazard or proportionality clause revision. Use the smallest wording change that resolves a failure; compare preserved inquiry, calibrated uncertainty, agency, and genuine hazard coverage separately. Route authority/provenance regressions back to G006, review and identity failures to G008, integration conflicts to G009, and measurement changes to G010.

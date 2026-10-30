@@ -1,0 +1,35 @@
+schema_version: 1
+goal_id: G006
+status: in_progress
+revision: 6
+owner: G006
+consumer: G007–G010 and the rendered-candidate evaluation path
+current_slice: stabilize the canonical map-rendered candidate before any broader comparison
+last_evidence: framework/G006-checkpoint.md
+last_checkpoint_date: 2026-10-13
+last_decision: >-
+  The exact-replacement renderer is the valid comparison path. The canonical
+  v3 map is not yet promotion-ready because the focused loop still needs to
+  isolate the MASK wording change from the SC-010 replacement and complete the
+  principle-level attribution gate.
+next_action: >-
+  Run one focused comparison using evals/maps/g006-replacement-v3.json, with
+  the MASK wording change isolated from the SC-010 replacement; do not start
+  the full 140-case pass.
+upstream_assumptions_to_recheck:
+  - The candidate must replace exact source spans rather than append a module.
+  - Historical base outputs remain a valid control for this focused probe.
+  - No held-out material is needed for the current diagnostic slice.
+downstream_impact:
+  - G007 remains proposed and unexecuted.
+  - G008, G009, and G010 consume only a stable, versioned candidate contract.
+  - X001 is planned for a bounded target-authoring/preflight slice; no training is active.
+  - X002 remains in discovery until its website target is pinned.
+closure_evidence_required:
+  - framework/G006-verification.md
+  - framework/G006-checkpoint.md
+  - framework/G006-failure-loop-4-analysis.md
+stop_condition: >-
+  Stop if the source or frozen artifacts drift, the map-rendered candidate
+  remains unstable after the bounded repair slice, or attribution remains
+  unresolved and requires a broader experiment.

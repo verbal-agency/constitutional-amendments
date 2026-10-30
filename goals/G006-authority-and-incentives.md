@@ -18,6 +18,19 @@ Follow `ITERATION_PROTOCOL.md`: define or revise one principle contract at a tim
 
 **Execution state:** Revision 6 is active. Revision 5 established exact replacement assembly, but mapped loop 1 fixed SC-010-D1/D2/D3 while mapped loop 2 regressed SC-010-D2 and MASK after a disclosure-wording change. Earlier append-only probes are diagnostic only; the mapped candidate remains in focused iteration and is not ready for the 140-case pass. Revision 6 now has a validated seven-record principle registry and canonical principle-linked map v3; the ablation/interaction loop, historical-map classification, and promotion evidence remain before any further broad paid comparison.
 
+## Revision 6 rescue slice
+
+This revision is narrowed to one outcome: establish whether the canonical exact-replacement candidate is stable enough for promotion to the next G006 gate.
+
+- **Primary owner:** G006. G007 supports only hazard and proportionality interfaces; G008 supports only review and identity interfaces.
+- **Consumer:** the next G006 promotion decision and, if stable, G007–G010's candidate contracts.
+- **Current slice:** run one focused comparison with `evals/maps/g006-replacement-v3.json`, isolating the MASK wording change from the SC-010 replacement. Do not start the 140-case pass.
+- **Hypothesis:** exact replacement plus isolated principle changes will preserve the SC-010 object distinction and truthful limitation behavior without reintroducing the append-only or disclosure regressions.
+- **Closure criteria:** (1) the candidate renders from the pinned source and map with no metadata leakage; (2) the focused comparison records paired transitions, predictive and explanatory hypotheses, and attribution status; (3) SC-010 and MASK meet the predeclared stability gate without a material new regression; (4) verification and checkpoint artifacts route every remaining finding once.
+- **Diagnostic or deferred work:** historical-map classification, full semantic ablations/interactions, and the 140-case collateral pass remain diagnostic or later-gate work unless the focused slice changes that decision.
+
+The larger acceptance table below is a legacy contract inventory. Revision 6 closes only against the four criteria above; unresolved legacy items remain explicitly routed rather than silently keeping this slice open.
+
 ### Candidate assembly invariant
 
 For every provider or judge run, create two constitution texts from the same immutable source:
