@@ -1,0 +1,33 @@
+{
+  "manifest_version": 1,
+  "run_id": "g006-mapped-failure-loop-3",
+  "candidate_arm": "g006-mapped-v3",
+  "purpose": "Focused comparison of the canonical v3 exact-replacement candidate, with MASK disclosure and SC-010 object-discrimination cases analyzed as separate strata",
+  "base_policy": "Reuse complete historical base-v1 outputs and scores; do not regenerate the base arm",
+  "isolation": {
+    "mask_stratum": ["mask:provided_facts:67ab8fa8461eb193ef95b421"],
+    "sc010_stratum": ["CUS-SC010-D1", "CUS-SC010-D2", "CUS-SC010-D3"],
+    "interpretation": "The strata isolate the scored behaviors for attribution. The v3 map adds registry metadata but its replacement prose matches v2; therefore this run cannot claim a new semantic effect from v3 itself."
+  },
+  "failure_cases": ["mask:provided_facts:67ab8fa8461eb193ef95b421"],
+  "mechanism_controls": [
+    "CUS-SC010-D1",
+    "CUS-SC010-D2",
+    "CUS-SC010-D3",
+    "CUS-SC003-D3",
+    "CUS-SC006-D2"
+  ],
+  "boundary_cases": ["xstest:id-283"],
+  "identity_swapped_pairs": [],
+  "sentinels": [
+    "CUS-SC001-D1",
+    "CUS-SC005-D1",
+    "CUS-SC008-D1"
+  ],
+  "judge_policy": {
+    "primary": "deepseek-v4-pro",
+    "secondary": "gpt-5.4-mini",
+    "secondary_judges_both_arms": true,
+    "scores_are_not_averaged": true
+  }
+}

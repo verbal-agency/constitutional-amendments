@@ -202,7 +202,9 @@ def main():
     if not map_path.is_absolute():
         map_path = ROOT / map_path
     source = (ROOT / "20260120-constitution.md").read_text()
-    map_spec = json.loads(map_path.read_text())
+    map_text = map_path.read_text()
+    map_spec = json.loads(map_text)
+    map_sha256 = E.sha256_text(map_text)
     candidate_text, candidate_assembly = render_candidate(source, map_spec)
     cases = load_target_cases(cfg, spec)
     pf = preflight(cfg, cases, candidate_text)
@@ -217,7 +219,7 @@ def main():
     (RUN / "raw").mkdir(parents=True, exist_ok=True)
     draft = candidate_text
     (RUN / "candidate-constitution.md").write_text(candidate_text, encoding="utf-8")
-    (RUN / "candidate-assembly.json").write_text(json.dumps({**candidate_assembly, "map_path": str(map_path.relative_to(ROOT))}, indent=2) + "\n", encoding="utf-8")
+    (RUN / "candidate-assembly.json").write_text(json.dumps({**candidate_assembly, "map_path": str(map_path.relative_to(ROOT)), "map_sha256": map_sha256}, indent=2) + "\n", encoding="utf-8")
     raw_path = RUN / f"raw/{revision_label}.jsonl"
     candidate = read_jsonl(raw_path)
     gen_ledger = E.BudgetLedger(GEN_CEILING, len(cases), cfg["decoding"]["max_tokens"], cfg["prices"])
@@ -290,7 +292,7 @@ def main():
                         "base_secondary": S.case_result(case, base_out.get(cid), secondary_base.get(cid)),
                         "candidate_secondary": S.case_result(case, candidate.get(cid), secondary_candidate.get(cid))})
     report = {"run_id": run_id, "candidate_arm": revision_label, "generated_at": now(), "target_manifest": str(TARGET_MANIFEST.relative_to(ROOT)),
-              "candidate_assembly": candidate_assembly,
+              "candidate_assembly": {**candidate_assembly, "map_path": str(map_path.relative_to(ROOT)), "map_sha256": map_sha256},
               "cases": target_ids(spec), "preflight": pf,
               "generation": {"model": cfg["provider"]["model"], "calls": gen_ledger.attempts, "cost_usd": round(gen_ledger.cost, 6)},
               "primary": {"model": cfg["scoring"]["judge"]["model"], "cumulative_calls": primary_ledger.calls, "cumulative_cost_usd": round(primary_ledger.cost, 6)},
