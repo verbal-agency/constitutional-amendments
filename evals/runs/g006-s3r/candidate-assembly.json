@@ -1,0 +1,29 @@
+{
+  "map_id": "g006-s3r-map-002-repair",
+  "map_version": 2,
+  "source_sha256": "251440a71a9068dd43bfaab2b8694d6e2a4f519c403f1b9a70785f830d05f327",
+  "candidate_sha256": "47458eb31525fdae6481288ff60e84de8cbe14262d8473137ef67ce0c7140369",
+  "entries": [
+    {
+      "entry_id": "G006-MAP-001",
+      "source_start_line": 172,
+      "source_end_line_exclusive": 202,
+      "replacement_sha256": "5b3da84531a5f792ff6077f3bc2b6fc53c7fd4cd7ada863c2bfbcfdee3845656"
+    },
+    {
+      "entry_id": "G006-MAP-002",
+      "source_start_line": 202,
+      "source_end_line_exclusive": 233,
+      "replacement_sha256": "60489f2ee5cef45fd04d53c9b7989a99424791a031d1a9789063a31eb66572c8"
+    },
+    {
+      "entry_id": "G006-MAP-003",
+      "source_start_line": 257,
+      "source_end_line_exclusive": 278,
+      "replacement_sha256": "f9b2ce62d3b82234a30b893f26db43935aecba4aeeda6ea1e492be312ad831ce"
+    }
+  ],
+  "renderer": "render_candidate.py:v1",
+  "map_path": "evals/maps/g006-s3r-map-002-repair.json",
+  "map_sha256": "c35acf9f29f1bad6345c0a502e5f4cd68fa98982149ee338e95b9ac70acccac3"
+}

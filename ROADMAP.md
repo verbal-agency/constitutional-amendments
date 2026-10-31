@@ -2,7 +2,7 @@
 
 Project: Truth-Seeking Constitution
 Active goal: G006
-Next eligible goal: G007 after G006 revision 6 closes
+Next eligible goal: G006-S3D discovery before G006-S4 or G007
 Active experimental branch: X001 — planned target-authoring slice
 
 Goal policy: the Cycle skill governs discovery, sizing, lifecycle, closure, and handoff. `ITERATION_PROTOCOL.md` governs project-specific bounded hypothesis-and-probe loops inside an execution slice. Exploratory results may revise the active goal or amend downstream contracts; G010 remains the only official base-versus-candidate comparison.
@@ -24,7 +24,7 @@ Legal transitions:
 - `Blocked` → `In progress` when the blocking condition is resolved and execution resumes.
 - `Deferred` → `Planned` or `Proposed` when the work is deliberately resumed.
 
-Exactly one numbered goal may be `In progress`. An explicitly selected experimental branch may also be `In progress` when it is marked non-blocking and does not alter the numbered sequence. A numbered goal is eligible only when all dependencies are `Complete`, it has a goal file containing a bounded execution contract, and no earlier eligible goal remains unfinished. `framework/current-goal.yaml` is the operational record of the active slice; the goal file is the durable contract.
+Exactly one numbered goal may be `In progress`. An explicitly selected experimental branch may also be `In progress` when it is marked non-blocking and does not alter the numbered sequence. A numbered goal is eligible only when all dependencies are `Complete`, it has a goal file containing a bounded execution contract, and no earlier eligible goal remains unfinished. A G006 child discovery slice may remain active while the parent is `In progress`; it must not authorize downstream implementation until its decision closes. `framework/current-goal.yaml` is the operational record of the active slice; the goal file is the durable contract.
 
 Completion is evidence-based, not prose-based. A goal may be reopened when an iteration produces material counterevidence against its completed decision. Downstream goals must consume the amended contract rather than silently compensating for it.
 
@@ -81,8 +81,9 @@ G006 is a parent workstream executed through bounded subgoals:
 - **G006-S1 — Authority and principle contracts:** complete. Defines the seven principles, authority schemas, fixtures, and routed interfaces.
 - **G006-S2 — Exact replacement assembly:** complete. Produces metadata-free, hash-recorded candidate renders from the immutable source.
 - **G006-S3 — SC-010-D2 attribution:** complete. The MAP-002-only ablation restored D2 under both judges; MASK stayed honest in both arms.
-- **G006-S3R — MAP-002 repair:** proposed and next. Replaces the attributed direct-answer sentence and reruns the same four cases once; no envelope change or broad pass.
-- **G006-S4 — Promotion and downstream handoff:** planned. Runs only after S3 yields a binary attribution and disposition, then performs the collateral gate and prepares G007.
+- **G006-S3R — MAP-002 repair:** complete with stop disposition. One shorter, context-neutral repair failed D2 under both judges and changed MASK from honest to evasive under both.
+- **G006-S3D — Evaluation-interface discovery:** discovery and next. Builds an offline matrix to determine whether serialization, case construction, or rubric predicates couple limitation language to the observed failures.
+- **G006-S4 — Promotion and downstream handoff:** blocked until S3D produces a bounded measurement decision; no collateral gate or G007 handoff yet.
 
 ### G007 — Inquiry and harm
 
