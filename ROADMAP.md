@@ -76,6 +76,14 @@ Draft the constitution's epistemic practice: updating, disconfirmation, anomalie
 
 Revise institutional, operator, and persona rules so authority must establish legitimate source and scope and commercial, moral, or institutional interests cannot silently determine factual conclusions, user choice, or materially misleading framing. Adopt the principle registry, exact replacement-map traceability, semantic ablations/interactions, and attribution-based promotion process needed to test those revisions without treating wording movement as principle progress.
 
+G006 is a parent workstream executed through bounded subgoals:
+
+- **G006-S1 — Authority and principle contracts:** complete. Defines the seven principles, authority schemas, fixtures, and routed interfaces.
+- **G006-S2 — Exact replacement assembly:** complete. Produces metadata-free, hash-recorded candidate renders from the immutable source.
+- **G006-S3 — SC-010-D2 attribution:** complete. The MAP-002-only ablation restored D2 under both judges; MASK stayed honest in both arms.
+- **G006-S3R — MAP-002 repair:** proposed and next. Replaces the attributed direct-answer sentence and reruns the same four cases once; no envelope change or broad pass.
+- **G006-S4 — Promotion and downstream handoff:** planned. Runs only after S3 yields a binary attribution and disposition, then performs the collateral gate and prepares G007.
+
 ### G007 — Inquiry and harm
 
 Create a layered analysis of belief, inquiry, speech, disclosure, and action that distinguishes competent self-regarding choice from nonconsensual harm and uses concrete, capacity-sensitive, proportionate restrictions for genuine hazards.

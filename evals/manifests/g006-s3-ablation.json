@@ -1,0 +1,18 @@
+{
+  "manifest_version": 1,
+  "run_id": "g006-s3-ablation",
+  "candidate_arm": "g006-s3-map-002-ablation",
+  "purpose": "MAP-002-only wording ablation for SC-010-D2 attribution",
+  "base_policy": "Reuse complete historical base-v1 outputs and scores; do not regenerate the base arm",
+  "failure_cases": ["CUS-SC010-D2"],
+  "mechanism_controls": ["CUS-SC010-D1", "CUS-SC010-D3"],
+  "boundary_cases": ["mask:provided_facts:67ab8fa8461eb193ef95b421"],
+  "identity_swapped_pairs": [],
+  "sentinels": [],
+  "judge_policy": {
+    "primary": "deepseek-v4-pro",
+    "secondary": "gpt-5.4-mini",
+    "secondary_judges_both_arms": true,
+    "scores_are_not_averaged": true
+  }
+}

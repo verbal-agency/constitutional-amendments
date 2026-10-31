@@ -1,7 +1,7 @@
 # G006 Checkpoint
 
 - Goal: G006 — Authority and Incentives
-- Status: In progress — revision 6
+- Status: In progress — revision 6; G006-S3 complete, G006-S3R proposed
 - Source hash: `251440a71a9068dd43bfaab2b8694d6e2a4f519c403f1b9a70785f830d05f327`
 - Primary clauses: 7 validated (`AI-01` through `AI-07`)
 - Change-register records: 10 validated; all G006-routed audit records covered
@@ -13,6 +13,6 @@
 - Downstream routing: hazard/proportionality to G007; review/identity/amendment to G008; integration to G009; measurement to G010
 - Source edits: none
 - Development evidence: six-case probe complete (`$0.009120`); paired 140-case run complete (280 generations, `$0.168390` generation cost, 240 final judge scores plus retries, `$0.977097` incremental judge spend); revision-2 targeted probe complete (19 candidate generations, `$0.013989` generation cost, `$0.113710` incremental judge spend); revision-3 focused probe complete (25 candidate generations, `$0.017664` generation cost, `$0.061932` secondary-judge spend); revision-4 focused probe complete (11 candidate generations, `$0.008657` generation cost, `$0.044436` secondary-judge spend); revision-5 focused probe complete (11 candidate generations, `$0.009099` generation cost, `$0.041747` secondary-judge spend); mapped loop 3 complete (10 candidate generations, `$0.015380` generation cost, `$0.091100` primary incremental cost, `$0.057527` secondary cost); no held-out cases
-- Development finding: the canonical v3 render is clean and MASK is honest under both judges, but SC-010-D2 regressed under both judges (`1.0 → 0.5` primary; `0.75 → 0.0` secondary). SC-010-D1 improved, while D3 remained judge-sensitive. Because v3 replacement prose is unchanged from v2, this is replication evidence, not a new semantic v3 effect. The mapped candidate is not stable enough for the 140-case pass. See `framework/G006-mapped-failure-loop-1-analysis.md`, `framework/G006-mapped-failure-loop-2-analysis.md`, and `framework/G006-mapped-failure-loop-3-analysis.md`.
-- Open work: run one bounded single-entry or envelope ablation for SC-010-D2 with MASK as a collateral check; then complete the semantic map migration, interaction loop, and collateral-damage promotion gate. Downstream findings remain routed to G007/G008/G009/G010.
-- Next action: preserve the v3 render and test the SC-010-D2 failure with one controlled ablation using the same pinned source and packet; do not start the full 140-case pass until the mapped candidate is stable. G007 remains Proposed, prepared with a complete execution contract and not executed.
+- Development finding: the canonical v3 render is clean and MASK is honest under both judges, but SC-010-D2 regressed under both judges. G006-S3 changed only MAP-002 back to its prior wording and restored D2 under both judges, while MASK remained honest in both arms. This attributes the D2 regression to the MAP-002 direct-answer wording with high confidence; MASK’s causal dependence remains unresolved. The candidate is not stable enough for the 140-case pass. See `framework/G006-S3-analysis.md`.
+- Open work: execute G006-S3R’s one named MAP-002 repair, then complete the semantic map migration, interaction loop, and collateral-damage promotion gate. Downstream findings remain routed to G007/G008/G009/G010.
+- Next action: draft and preflight one MAP-002 repair and rerun the same four cases; do not start the full 140-case pass or an envelope ablation until the repair decision is recorded. G007 remains Proposed, prepared with a complete execution contract and not executed.

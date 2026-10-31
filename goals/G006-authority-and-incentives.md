@@ -1,6 +1,6 @@
 # G006 — Authority and Incentives
 
-Status: In progress — revision 6
+Status: In progress — parent workstream; active subgoal G006-S3R
 Dependencies: G005 Complete
 Next goal on completion: G007
 
@@ -12,11 +12,25 @@ G006 produces section-ready replacement units, traceable replacement-map entries
 
 Before G006 can close, it must also adopt a principle-level iteration process. Principles, not isolated wording changes, are the unit of analysis. Constitutional clauses and replacement text are renderings of a documented principle contract; focused probes must test the contract's mechanism, boundaries, counterexamples, and interactions. A wording change without a changed principle hypothesis is not a substantive iteration and cannot establish progress by itself.
 
+## Subgoal decomposition
+
+G006 is the parent workstream. Cycle executes one subgoal at a time; the parent does not inherit a child’s unfinished work silently.
+
+| Subgoal | Status | Single outcome | Closure evidence | Unlocks |
+|---|---|---|---|---|
+| **G006-S1 — Authority and principle contracts** | Complete | Define the seven G006 principles, authority schemas, fixtures, and routed downstream interfaces. | `framework/principles-v1.yaml`, validated AI-01–AI-07/A-01–A-12, and registry check. | Exact candidate assembly. |
+| **G006-S2 — Exact replacement assembly** | Complete | Produce a metadata-free candidate by replacing pinned source spans exactly once. | `evals/scripts/render_candidate.py`, `evals/maps/g006-replacement-v3.json`, and hash-recorded mapped runs. | Attributable model comparison. |
+| **G006-S3 — SC-010-D2 attribution** | Complete | Determine whether the SC-010-D2 regression is caused by the MASK wording entry or by the evaluation context. | `goals/G006-S3-sc010-attribution.md`, `framework/G006-S3-analysis.md`, and paired run manifests. | One named MAP-002 repair. |
+| **G006-S3R — MAP-002 repair** | Proposed | Replace the direct-answer sentence and recheck D2, MASK, D1, and D3 once. | `goals/G006-S3R-map002-repair.md`, one repaired map, and one four-case report. | Promotion decision or evaluation-interface discovery. |
+| **G006-S4 — Promotion and downstream handoff** | Planned | Promote a stable candidate or route the remaining regression before preparing G007. | Collateral-damage gate, updated verification/checkpoint, and G007 readiness evidence. | G007 execution. |
+
+Only G006-S3R is eligible for the next execution cycle. G006-S4 cannot begin until S3R produces a passing repaired candidate.
+
 ## Iteration loop
 
 Follow `ITERATION_PROTOCOL.md`: define or revise one principle contract at a time, map it to exact source passages, compile a complete candidate, and run offline, focused, ablation, interaction, and collateral-damage checks. Run A-01–A-12 and development cases against the relevant principle mechanisms, not only against clause wording. Use local or open-model probes to find both institutional capture and over-disclosure/over-refusal. Record predictive and explanatory hypotheses, competing explanations, falsifiers, and attribution confidence. Revise G006 for local failures; amend G007–G010 when findings change harm thresholds, review interfaces, integration assumptions, or measurement needs.
 
-**Execution state:** Revision 6 is active. Revision 5 established exact replacement assembly, but mapped loop 1 fixed SC-010-D1/D2/D3 while mapped loop 2 regressed SC-010-D2 and MASK after a disclosure-wording change. Mapped loop 3 kept MASK honest but again regressed SC-010-D2 under both judges. Earlier append-only probes are diagnostic only; the mapped candidate remains in focused iteration and is not ready for the 140-case pass. Revision 6 has a validated seven-record principle registry and canonical principle-linked map v3; the single-entry or envelope ablation, historical-map classification, and promotion evidence remain before any further broad paid comparison.
+**Execution state:** Revision 6 is active. Revision 5 established exact replacement assembly, mapped loop 3 reproduced the SC-010-D2 regression, and G006-S3 then attributed that regression to the MAP-002 direct-answer wording: reverting only MAP-002 restored D2 under both judges. MASK was honest in both arms, so its causal dependence remains unresolved. Earlier append-only probes are diagnostic only; the candidate remains unready for the 140-case pass. G006-S3 is complete; G006-S3R is the next bounded repair before S4.
 
 ## Revision 6 rescue slice
 
@@ -24,7 +38,7 @@ This revision is narrowed to one outcome: establish whether the canonical exact-
 
 - **Primary owner:** G006. G007 supports only hazard and proportionality interfaces; G008 supports only review and identity interfaces.
 - **Consumer:** the next G006 promotion decision and, if stable, G007–G010's candidate contracts.
-- **Current slice:** run one focused comparison with `evals/maps/g006-replacement-v3.json`, isolating the MASK and SC-010 behavior strata. Do not start the 140-case pass.
+- **Current slice:** G006-S3 completed the MAP-002 attribution comparison; G006-S3R now owns one named MAP-002 wording repair and four-case rerun. Do not start the 140-case pass.
 - **Hypothesis:** exact replacement plus isolated principle changes will preserve the SC-010 object distinction and truthful limitation behavior without reintroducing the append-only or disclosure regressions.
 - **Closure criteria:** (1) the candidate renders from the pinned source and map with no metadata leakage; (2) the focused comparison records paired transitions, predictive and explanatory hypotheses, and attribution status; (3) SC-010 and MASK meet the predeclared stability gate without a material new regression; (4) verification and checkpoint artifacts route every remaining finding once.
 - **Diagnostic or deferred work:** historical-map classification, full semantic ablations/interactions, and the 140-case collateral pass remain diagnostic or later-gate work unless the focused slice changes that decision.

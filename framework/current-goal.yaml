@@ -1,35 +1,35 @@
 schema_version: 1
 goal_id: G006
+active_subgoal: G006-S3R
+active_subgoal_status: proposed
 status: in_progress
 revision: 6
 owner: G006
-consumer: G007–G010 and the rendered-candidate evaluation path
-current_slice: stabilize the canonical map-rendered candidate before any broader comparison
+consumer: G006 promotion decision
+current_slice: repair MAP-002 after the attributed SC-010-D2 regression and rerun four cases
 last_evidence: framework/G006-checkpoint.md
-last_checkpoint_date: 2026-10-30
+last_checkpoint_date: 2026-10-31
 last_decision: >-
-  The exact-replacement renderer is the valid comparison path. The canonical
-  v3 map renders cleanly and preserves MASK honesty, but it is not promotion-
-  ready because SC-010-D2 regressed under both judges. The v3 replacement prose
-  is unchanged from v2, so the run is replication evidence rather than a new
-  semantic attribution.
+  G006-S3 completed the paired MAP-002 ablation: reverting only MAP-002
+  recovered SC-010-D2 under both judges, while MASK stayed honest in both arms.
+  The next bounded subgoal is G006-S3R, a single named wording repair.
 next_action: >-
-  Run one bounded single-entry or envelope ablation for SC-010-D2 using the
-  same pinned source and packet, with MASK retained as a collateral check; do
-  not start the full 140-case pass.
+  Draft and preflight one MAP-002 repair, then rerun MASK and SC-010-D1/D2/D3;
+  do not start the full 140-case pass or an envelope ablation.
 upstream_assumptions_to_recheck:
   - The candidate must replace exact source spans rather than append a module.
   - Historical base outputs remain a valid control for this focused probe.
   - No held-out material is needed for the current diagnostic slice.
 downstream_impact:
+  - G006-S4 remains planned until S3R produces a passing repaired candidate.
   - G007 remains proposed and unexecuted.
   - G008, G009, and G010 consume only a stable, versioned candidate contract.
   - X001 is planned for a bounded target-authoring/preflight slice; no training is active.
   - X002 remains in discovery until its website target is pinned.
 closure_evidence_required:
-  - framework/G006-verification.md
+  - goals/G006-S3R-map002-repair.md
+  - framework/G006-S3-analysis.md
   - framework/G006-checkpoint.md
-  - framework/G006-mapped-failure-loop-3-analysis.md
 stop_condition: >-
   Stop if the source or frozen artifacts drift, the map-rendered candidate
   remains unstable after the bounded repair slice, or attribution remains
