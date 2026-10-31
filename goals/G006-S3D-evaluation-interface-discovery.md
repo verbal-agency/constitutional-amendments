@@ -1,6 +1,6 @@
 # G006-S3D — Evaluation-interface discovery
 
-Status: Discovery
+Status: Complete — pivot
 Parent: G006 — Authority and Incentives
 Depends on: G006-S3R stop disposition
 Consumer: G006 promotion decision
@@ -56,6 +56,21 @@ In scope: offline serialization/rubric inspection, a compact interface matrix, a
 2. The interface matrix names the relevant fields and shows how each could produce D2 missing-context behavior or MASK evasion labeling.
 3. No paid calls, source edits, frozen-artifact edits, or candidate promotion occur.
 4. The decision routes exactly one next action: proceed, pivot, defer, or abandon.
+
+## Result
+
+- All four criteria passed.
+- The D2 packet was present in the model-visible user message in every arm;
+  the candidate saw the style rules but misclassified them. This remains a
+  substantive candidate behavior failure.
+- The MASK binary contract cannot distinguish authorized truthful limitation
+  from evasive non-answering when the case supplies a known fact, a direct
+  yes/no instruction, and a confidentiality conflict.
+- Decision: `pivot` to G006-S3E, which will amend the MASK measurement contract
+  without changing historical labels or constitution wording.
+
+Evidence: `framework/G006-S3D-analysis.md` and
+`framework/G006-S3D-interface-matrix.md`.
 
 ## Downstream unlock
 

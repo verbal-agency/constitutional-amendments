@@ -1,6 +1,6 @@
 # G006 — Authority and Incentives
 
-Status: In progress — parent workstream; active subgoal G006-S3R
+Status: In progress — parent workstream; active subgoal G006-S3E
 Dependencies: G005 Complete
 Next goal on completion: G007
 
@@ -22,16 +22,17 @@ G006 is the parent workstream. Cycle executes one subgoal at a time; the parent 
 | **G006-S2 — Exact replacement assembly** | Complete | Produce a metadata-free candidate by replacing pinned source spans exactly once. | `evals/scripts/render_candidate.py`, `evals/maps/g006-replacement-v3.json`, and hash-recorded mapped runs. | Attributable model comparison. |
 | **G006-S3 — SC-010-D2 attribution** | Complete | Determine whether the SC-010-D2 regression is caused by the MASK wording entry or by the evaluation context. | `goals/G006-S3-sc010-attribution.md`, `framework/G006-S3-analysis.md`, and paired run manifests. | One named MAP-002 repair. |
 | **G006-S3R — MAP-002 repair** | Complete — stopped after failed repair | Replace the direct-answer sentence and recheck D2, MASK, D1, and D3 once. | `goals/G006-S3R-map002-repair.md`, `framework/G006-S3R-analysis.md`, and one four-case report. | Evaluation-interface discovery. |
-| **G006-S3D — Evaluation-interface discovery** | Discovery | Determine whether serialization, case construction, or rubric predicates are coupling limitation language to D2 missing-context and MASK evasion labels. | `goals/G006-S3D-evaluation-interface-discovery.md` and a bounded offline interface matrix. | A measurement decision before any further wording or promotion. |
+| **G006-S3D — Evaluation-interface discovery** | Complete — pivot | Determine whether serialization, case construction, or rubric predicates are coupling limitation language to D2 missing-context and MASK evasion labels. | `goals/G006-S3D-evaluation-interface-discovery.md`, `framework/G006-S3D-analysis.md`, and `framework/G006-S3D-interface-matrix.md`. | MASK measurement-contract amendment. |
+| **G006-S3E — MASK measurement-contract amendment** | Proposed | Define direct acknowledgment, authorized truthful limitation, unsupported uncertainty, and dishonesty as distinct states while preserving historical labels. | `goals/G006-S3E-mask-measurement-contract.md` and its activated execution artifacts. | A valid MASK replay contract before wording or promotion. |
 | **G006-S4 — Promotion and downstream handoff** | Blocked | Promote a stable candidate or route the remaining regression before preparing G007. | Collateral-damage gate, updated verification/checkpoint, and G007 readiness evidence. | G007 execution. |
 
-Only G006-S3R is eligible for the next execution cycle. G006-S4 cannot begin until S3R produces a passing repaired candidate.
+Only G006-S3E is eligible for the next execution cycle. G006-S4 cannot begin until S3E produces a stable measurement contract.
 
 ## Iteration loop
 
 Follow `ITERATION_PROTOCOL.md`: define or revise one principle contract at a time, map it to exact source passages, compile a complete candidate, and run offline, focused, ablation, interaction, and collateral-damage checks. Run A-01–A-12 and development cases against the relevant principle mechanisms, not only against clause wording. Use local or open-model probes to find both institutional capture and over-disclosure/over-refusal. Record predictive and explanatory hypotheses, competing explanations, falsifiers, and attribution confidence. Revise G006 for local failures; amend G007–G010 when findings change harm thresholds, review interfaces, integration assumptions, or measurement needs.
 
-**Execution state:** Revision 7 is active. Revision 5 established exact replacement assembly, mapped loop 3 reproduced the SC-010-D2 regression, and G006-S3 attributed that regression to the MAP-002 direct-answer wording with a paired ablation. G006-S3R then tested one shorter, context-neutral MAP-002 repair: D2 remained below base under both judges and MASK changed from honest to evasive under both. Earlier append-only probes are diagnostic only; the candidate remains unready for the 140-case pass. S3R is closed with a stop disposition; S3D must resolve the evaluation-interface uncertainty before S4.
+**Execution state:** Revision 8 is active. Revision 5 established exact replacement assembly, mapped loop 3 reproduced the SC-010-D2 regression, and G006-S3 attributed that regression to the MAP-002 direct-answer wording with a paired ablation. G006-S3R then tested one shorter, context-neutral MAP-002 repair: D2 remained below base under both judges and MASK changed from honest to evasive under both. S3D reconstructed the model and judge interfaces, ruled out D2 packet loss, and found that MASK's binary contract cannot distinguish authorized truthful limitation from evasion. Earlier append-only probes are diagnostic only; the candidate remains unready for the 140-case pass. S3E must amend the MASK measurement contract before S4.
 
 ## Revision 6 rescue slice
 
@@ -39,7 +40,7 @@ This revision is narrowed to one outcome: establish whether the canonical exact-
 
 - **Primary owner:** G006. G007 supports only hazard and proportionality interfaces; G008 supports only review and identity interfaces.
 - **Consumer:** the next G006 promotion decision and, if stable, G007–G010's candidate contracts.
-- **Current slice:** G006-S3 completed the MAP-002 attribution comparison; G006-S3R now owns one named MAP-002 wording repair and four-case rerun. Do not start the 140-case pass.
+- **Current slice:** G006-S3D pivoted to G006-S3E, which owns the bounded MASK measurement-contract amendment. Do not start another wording iteration or the 140-case pass.
 - **Hypothesis:** exact replacement plus isolated principle changes will preserve the SC-010 object distinction and truthful limitation behavior without reintroducing the append-only or disclosure regressions.
 - **Closure criteria:** (1) the candidate renders from the pinned source and map with no metadata leakage; (2) the focused comparison records paired transitions, predictive and explanatory hypotheses, and attribution status; (3) SC-010 and MASK meet the predeclared stability gate without a material new regression; (4) verification and checkpoint artifacts route every remaining finding once.
 - **Diagnostic or deferred work:** historical-map classification, full semantic ablations/interactions, and the 140-case collateral pass remain diagnostic or later-gate work unless the focused slice changes that decision.

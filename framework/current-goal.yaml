@@ -1,29 +1,29 @@
 schema_version: 1
 goal_id: G006
-active_subgoal: G006-S3D
-active_subgoal_status: discovery
+active_subgoal: G006-S3E
+active_subgoal_status: proposed
 status: in_progress
-revision: 7
+revision: 8
 owner: G006
 consumer: G006 promotion decision
-current_slice: discover whether the evaluation interface is coupling limitation language to SC-010-D2 missing-context and MASK evasion labels
-last_evidence: framework/G006-S3R-analysis.md
+current_slice: amend the MASK measurement contract to separate truthful limitation from evasion before another candidate run
+last_evidence: framework/G006-S3D-analysis.md
 last_checkpoint_date: 2026-10-31
 last_decision: >-
-  G006-S3R failed its behavioral stability gate: D2 remained below the
-  historical base under both judges and MASK changed from honest to evasive
-  under both. Stop further wording iterations and open bounded evaluation-
-  interface discovery.
+  G006-S3D found no D2 packet-serialization failure: the candidate saw the
+  supplied packet but misclassified it. It did find that MASK's binary rubric
+  cannot distinguish authorized truthful limitation from evasion. Pivot to a
+  bounded MASK measurement-contract amendment.
 next_action: >-
-  Build the offline G006-S3D interface matrix from the exact serialized
-  messages, supplied-evidence delimiters, recorded outputs, and rubric
-  predicates; do not make paid calls or change constitution wording.
+  Activate and fully specify G006-S3E; define the four MASK states, historical
+  bridge, offline fixtures, and deterministic judge predicates. Do not make
+  paid calls or change constitution wording.
 upstream_assumptions_to_recheck:
   - The candidate must replace exact source spans rather than append a module.
   - Historical base outputs remain a valid control for this focused probe.
   - No held-out material is needed for the current diagnostic slice.
 downstream_impact:
-  - G006-S4 remains blocked until S3D produces a bounded measurement decision.
+  - G006-S4 remains blocked until S3E produces a stable measurement contract.
   - G007 remains proposed and unexecuted.
   - G008, G009, and G010 consume only a stable, versioned candidate contract.
   - X001 is planned for a bounded target-authoring/preflight slice; no training is active.
@@ -32,8 +32,10 @@ closure_evidence_required:
   - goals/G006-S3R-map002-repair.md
   - framework/G006-S3-analysis.md
   - framework/G006-S3R-analysis.md
+  - framework/G006-S3D-analysis.md
+  - framework/G006-S3D-interface-matrix.md
   - framework/G006-checkpoint.md
 stop_condition: >-
-  Stop if the source or frozen artifacts drift, the interface matrix cannot
-  identify a bounded ambiguity, or discovery requires paid calls, source
-  edits, or a broad experiment.
+  Stop if the four MASK states overlap, cannot be judged from model-visible
+  facts, or require inferring hidden authorization; do not alter historical
+  scores to make the new contract pass.

@@ -2,7 +2,7 @@
 
 Project: Truth-Seeking Constitution
 Active goal: G006
-Next eligible goal: G006-S3D discovery before G006-S4 or G007
+Next eligible goal: G006-S3E MASK measurement-contract amendment before G006-S4 or G007
 Active experimental branch: X001 — planned target-authoring slice
 
 Goal policy: the Cycle skill governs discovery, sizing, lifecycle, closure, and handoff. `ITERATION_PROTOCOL.md` governs project-specific bounded hypothesis-and-probe loops inside an execution slice. Exploratory results may revise the active goal or amend downstream contracts; G010 remains the only official base-versus-candidate comparison.
@@ -82,8 +82,9 @@ G006 is a parent workstream executed through bounded subgoals:
 - **G006-S2 — Exact replacement assembly:** complete. Produces metadata-free, hash-recorded candidate renders from the immutable source.
 - **G006-S3 — SC-010-D2 attribution:** complete. The MAP-002-only ablation restored D2 under both judges; MASK stayed honest in both arms.
 - **G006-S3R — MAP-002 repair:** complete with stop disposition. One shorter, context-neutral repair failed D2 under both judges and changed MASK from honest to evasive under both.
-- **G006-S3D — Evaluation-interface discovery:** discovery and next. Builds an offline matrix to determine whether serialization, case construction, or rubric predicates couple limitation language to the observed failures.
-- **G006-S4 — Promotion and downstream handoff:** blocked until S3D produces a bounded measurement decision; no collateral gate or G007 handoff yet.
+- **G006-S3D — Evaluation-interface discovery:** complete with `pivot`. The packet was present for D2; the binary MASK contract cannot distinguish authorized truthful limitation from evasion.
+- **G006-S3E — MASK measurement-contract amendment:** proposed and next. Define four explicit MASK states, preserve historical labels, and preflight a bounded replay contract before another wording or promotion run.
+- **G006-S4 — Promotion and downstream handoff:** blocked until S3E produces a stable measurement contract; no collateral gate or G007 handoff yet.
 
 ### G007 — Inquiry and harm
 
