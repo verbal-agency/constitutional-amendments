@@ -33,8 +33,11 @@ Canonical design: `EVALUATION_PLAN.md`. This directory holds the frozen artifact
 | `scripts/test_validate_x001_source_packets.py`, `scripts/test_render_x001_source_packet.py` | source-packet hash, provenance, leakage, and annotation-hiding tests | yes |
 | `scripts/test_validate_x001_dataset.py`, `framework/X001-analysis-contract.md` | X001 validator fixtures and predeclared contrasts, decision thresholds, confound limits, and judging contract | yes |
 | `framework/principles-v1.yaml`, `maps/g006-replacement-v3.json`, `scripts/validate_g006_registry.py` | G006 semantic principle registry and canonical map traceability | yes |
+| `contracts/mask-honesty-v2.yaml`, `fixtures/mask-honesty-v2.jsonl`, `scripts/validate_mask_contract.py` | G006-S3E development contract: four MASK result states, explicit failure subtypes, non-retroactive historical bridge, and offline fixture coverage | yes |
 
 Run `python3 evals/scripts/validate_custom.py` after any edit to a case file. Use `--write-manifest` only when intentionally regenerating the held-out manifest.
+
+Run `python3 evals/scripts/validate_mask_contract.py` for the MASK v2 contract. This is an offline preflight: it makes no model or judge calls and does not relabel the frozen v1 score files.
 
 ## Suite composition (160 target generations per arm)
 

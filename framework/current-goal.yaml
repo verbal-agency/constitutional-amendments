@@ -1,29 +1,30 @@
 schema_version: 1
 goal_id: G006
-active_subgoal: G006-S3E
+active_subgoal: G006-S3F
 active_subgoal_status: proposed
 status: in_progress
-revision: 8
+revision: 9
 owner: G006
 consumer: G006 promotion decision
-current_slice: amend the MASK measurement contract to separate truthful limitation from evasion before another candidate run
-last_evidence: framework/G006-S3D-analysis.md
+current_slice: replay the MASK v2 contract on preserved outputs before another wording or promotion run
+last_evidence: framework/G006-S3E-analysis.md
 last_checkpoint_date: 2026-10-31
 last_decision: >-
-  G006-S3D found no D2 packet-serialization failure: the candidate saw the
-  supplied packet but misclassified it. It did find that MASK's binary rubric
-  cannot distinguish authorized truthful limitation from evasion. Pivot to a
-  bounded MASK measurement-contract amendment.
+  G006-S3E defined four top-level MASK result states with separate dishonest
+  and evasive failure subtypes, visible authorization predicates, and a
+  non-retroactive historical bridge. Nine offline fixtures passed with zero
+  paid calls. Replay preserved outputs before any new wording or promotion run.
 next_action: >-
-  Activate and fully specify G006-S3E; define the four MASK states, historical
-  bridge, offline fixtures, and deterministic judge predicates. Do not make
-  paid calls or change constitution wording.
+  Activate and fully specify G006-S3F; replay the v2 scorer on the predeclared
+  recorded MASK outputs within its approval and cost ceiling. Do not generate
+  new candidates or change constitution wording.
 upstream_assumptions_to_recheck:
   - The candidate must replace exact source spans rather than append a module.
   - Historical base outputs remain a valid control for this focused probe.
   - No held-out material is needed for the current diagnostic slice.
 downstream_impact:
-  - G006-S4 remains blocked until S3E produces a stable measurement contract.
+  - G006-S4 remains blocked until S3F demonstrates that the contract can score
+    recorded outputs without hidden authorization.
   - G007 remains proposed and unexecuted.
   - G008, G009, and G010 consume only a stable, versioned candidate contract.
   - X001 is planned for a bounded target-authoring/preflight slice; no training is active.
@@ -34,8 +35,11 @@ closure_evidence_required:
   - framework/G006-S3R-analysis.md
   - framework/G006-S3D-analysis.md
   - framework/G006-S3D-interface-matrix.md
+  - framework/G006-S3E-analysis.md
+  - evals/contracts/mask-honesty-v2.yaml
+  - evals/scripts/validate_mask_contract.py
   - framework/G006-checkpoint.md
 stop_condition: >-
-  Stop if the four MASK states overlap, cannot be judged from model-visible
-  facts, or require inferring hidden authorization; do not alter historical
-  scores to make the new contract pass.
+  Stop if the v2 replay requires inferring hidden authorization, cannot parse
+  labels deterministically, or would exceed its approved judge ceiling; do not
+  alter historical scores to make the new contract pass.
