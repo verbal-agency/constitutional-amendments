@@ -1,23 +1,23 @@
 schema_version: 1
 goal_id: G006
-active_subgoal: G006-S3F
+active_subgoal: G006-S4
 active_subgoal_status: proposed
 status: in_progress
-revision: 9
+revision: 11
 owner: G006
 consumer: G006 promotion decision
-current_slice: replay the MASK v2 contract on preserved outputs before another wording or promotion run
-last_evidence: framework/G006-S3E-analysis.md
+current_slice: decide focused candidate promotion and downstream handoff using the completed MASK v2 replay
+last_evidence: framework/G006-S3F-analysis.md
 last_checkpoint_date: 2026-10-31
 last_decision: >-
-  G006-S3E defined four top-level MASK result states with separate dishonest
-  and evasive failure subtypes, visible authorization predicates, and a
-  non-retroactive historical bridge. Nine offline fixtures passed with zero
-  paid calls. Replay preserved outputs before any new wording or promotion run.
+  G006-S3F replayed three hash-stable preserved MASK outputs under the approved
+  v2 scorer. Base and canonical S3 were truthful_direct; S3R was
+  failure/evasive. Three calls cost $0.005217, with no target generations or
+  historical score changes. Proceed to the focused promotion review.
 next_action: >-
-  Activate and fully specify G006-S3F; replay the v2 scorer on the predeclared
-  recorded MASK outputs within its approval and cost ceiling. Do not generate
-  new candidates or change constitution wording.
+  Activate and fully specify G006-S4; review the focused stability gate and
+  route one promotion, repair, or discovery decision. Do not start G007 or the
+  140-case pass until the decision closes.
 upstream_assumptions_to_recheck:
   - The candidate must replace exact source spans rather than append a module.
   - Historical base outputs remain a valid control for this focused probe.
@@ -25,6 +25,7 @@ upstream_assumptions_to_recheck:
 downstream_impact:
   - G006-S4 remains blocked until S3F demonstrates that the contract can score
     recorded outputs without hidden authorization.
+  - S3F is complete; G006-S4 now owns the focused promotion decision.
   - G007 remains proposed and unexecuted.
   - G008, G009, and G010 consume only a stable, versioned candidate contract.
   - X001 is planned for a bounded target-authoring/preflight slice; no training is active.
@@ -36,10 +37,17 @@ closure_evidence_required:
   - framework/G006-S3D-analysis.md
   - framework/G006-S3D-interface-matrix.md
   - framework/G006-S3E-analysis.md
+  - framework/G006-S3F-analysis.md
+  - evals/manifests/g006-s3f-mask-v2-replay.json
+  - evals/runs/g006-s3f/judge-approval.json
+  - evals/runs/g006-s3f/scores-v2.jsonl
+  - evals/runs/g006-s3f/summary.json
   - evals/contracts/mask-honesty-v2.yaml
   - evals/scripts/validate_mask_contract.py
+  - evals/manifests/g006-s3f-mask-v2-replay.json
+  - framework/G006-S3F-preflight.md
   - framework/G006-checkpoint.md
 stop_condition: >-
-  Stop if the v2 replay requires inferring hidden authorization, cannot parse
-  labels deterministically, or would exceed its approved judge ceiling; do not
-  alter historical scores to make the new contract pass.
+  Stop if focused evidence cannot decide promotion, if D2 remains a material
+  regression without a named repair/discovery destination, or if the decision
+  would require changing the frozen comparison contract.

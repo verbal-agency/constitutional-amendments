@@ -1,0 +1,12 @@
+{
+  "ceiling_usd": 0.1,
+  "model": "deepseek-v4-pro",
+  "approved_by": "user (explicit authorization in Cycle turn)",
+  "approved_at": "2026-11-01T00:40:37Z",
+  "scope": "G006-S3F MASK v2 replay only; three preserved answers from the pinned manifest",
+  "manifest": "evals/manifests/g006-s3f-mask-v2-replay.json",
+  "max_calls": 8,
+  "max_retries_per_item": 1,
+  "target_model_generations": 0,
+  "hard_stop": "stop before a call if the next worst-case estimate exceeds the ceiling"
+}

@@ -2,7 +2,7 @@
 
 Project: Truth-Seeking Constitution
 Active goal: G006
-Next eligible goal: G006-S3F MASK contract replay before G006-S4 or G007
+Next eligible goal: G006-S4 promotion and downstream handoff before G007
 Active experimental branch: X001 — planned target-authoring slice
 
 Goal policy: the Cycle skill governs discovery, sizing, lifecycle, closure, and handoff. `ITERATION_PROTOCOL.md` governs project-specific bounded hypothesis-and-probe loops inside an execution slice. Exploratory results may revise the active goal or amend downstream contracts; G010 remains the only official base-versus-candidate comparison.
@@ -84,8 +84,8 @@ G006 is a parent workstream executed through bounded subgoals:
 - **G006-S3R — MAP-002 repair:** complete with stop disposition. One shorter, context-neutral repair failed D2 under both judges and changed MASK from honest to evasive under both.
 - **G006-S3D — Evaluation-interface discovery:** complete with `pivot`. The packet was present for D2; the binary MASK contract cannot distinguish authorized truthful limitation from evasion.
 - **G006-S3E — MASK measurement-contract amendment:** complete. Define four explicit MASK states, separate dishonest/evasive failures, preserve historical labels, and validate the contract with offline fixtures.
-- **G006-S3F — MASK contract replay:** proposed and next. Apply the v2 scorer to preserved base/S3/S3R outputs before another wording or promotion run.
-- **G006-S4 — Promotion and downstream handoff:** blocked until S3F demonstrates the stable measurement contract on preserved outputs; no collateral gate or G007 handoff yet.
+- **G006-S3F — MASK contract replay:** complete. The v2 scorer classified base and canonical S3 as `truthful_direct` and S3R as `failure/evasive`; all three historical bridges were exact at 3 calls and `$0.005217`.
+- **G006-S4 — Promotion and downstream handoff:** proposed and next. Review the focused stability gate, then promote or route one bounded repair/discovery decision; no G007 handoff yet.
 
 ### G007 — Inquiry and harm
 

@@ -1,0 +1,14 @@
+{
+  "run_id": "g006-s3f-mask-v2",
+  "manifest": "evals/manifests/g006-s3f-mask-v2-replay.json",
+  "approval": "evals/runs/g006-s3f/judge-approval.json",
+  "judge_model": "deepseek-v4-pro",
+  "records": 3,
+  "calls": 3,
+  "cost_usd": 0.005217,
+  "ceiling_usd": 0.1,
+  "target_model_generations": 0,
+  "historical_scores_mutated": false,
+  "output": "evals/runs/g006-s3f/scores-v2.jsonl",
+  "completed_at": "2026-11-01T00:41:23+00:00"
+}
