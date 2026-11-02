@@ -1,0 +1,196 @@
+{
+  "contract": "sc010-d2-judge-agreement-v1",
+  "runs": 12,
+  "primary_statuses": {
+    "scored": 11,
+    "judge-failed": 1
+  },
+  "secondary_statuses": {
+    "scored": 12
+  },
+  "exact_agreement_scored": 3,
+  "scored_pair_count": 11,
+  "agreement_rate": 0.2727,
+  "primary_shapes": {
+    "(0, 0)": 5,
+    "(0, 1)": 2,
+    "(2, 1)": 1,
+    "(2, 2)": 2,
+    "(1, 1)": 1,
+    "None": 1
+  },
+  "secondary_shapes": {
+    "(2, 2)": 1,
+    "(0, 1)": 4,
+    "(0, 0)": 5,
+    "(1, 1)": 1,
+    "(1, 2)": 1
+  },
+  "rows": [
+    {
+      "run": "evals/runs/g006-s5r-d2-replication/r1-00",
+      "primary_status": "scored",
+      "secondary_status": "scored",
+      "primary_shape": [
+        0,
+        0
+      ],
+      "secondary_shape": [
+        2,
+        2
+      ],
+      "exact_agreement": false
+    },
+    {
+      "run": "evals/runs/g006-s5r-d2-replication/r1-01",
+      "primary_status": "scored",
+      "secondary_status": "scored",
+      "primary_shape": [
+        0,
+        1
+      ],
+      "secondary_shape": [
+        0,
+        1
+      ],
+      "exact_agreement": true
+    },
+    {
+      "run": "evals/runs/g006-s5r-d2-replication/r1-10",
+      "primary_status": "scored",
+      "secondary_status": "scored",
+      "primary_shape": [
+        2,
+        1
+      ],
+      "secondary_shape": [
+        0,
+        1
+      ],
+      "exact_agreement": false
+    },
+    {
+      "run": "evals/runs/g006-s5r-d2-replication/r1-11",
+      "primary_status": "scored",
+      "secondary_status": "scored",
+      "primary_shape": [
+        2,
+        2
+      ],
+      "secondary_shape": [
+        0,
+        0
+      ],
+      "exact_agreement": false
+    },
+    {
+      "run": "evals/runs/g006-s5r-d2-replication/r2-00",
+      "primary_status": "scored",
+      "secondary_status": "scored",
+      "primary_shape": [
+        0,
+        0
+      ],
+      "secondary_shape": [
+        0,
+        1
+      ],
+      "exact_agreement": false
+    },
+    {
+      "run": "evals/runs/g006-s5r-d2-replication/r2-01",
+      "primary_status": "scored",
+      "secondary_status": "scored",
+      "primary_shape": [
+        0,
+        1
+      ],
+      "secondary_shape": [
+        0,
+        0
+      ],
+      "exact_agreement": false
+    },
+    {
+      "run": "evals/runs/g006-s5r-d2-replication/r2-10",
+      "primary_status": "scored",
+      "secondary_status": "scored",
+      "primary_shape": [
+        0,
+        0
+      ],
+      "secondary_shape": [
+        0,
+        0
+      ],
+      "exact_agreement": true
+    },
+    {
+      "run": "evals/runs/g006-s5r-d2-replication/r2-11",
+      "primary_status": "scored",
+      "secondary_status": "scored",
+      "primary_shape": [
+        0,
+        0
+      ],
+      "secondary_shape": [
+        1,
+        1
+      ],
+      "exact_agreement": false
+    },
+    {
+      "run": "evals/runs/g006-s5r-d2-replication/r3-00",
+      "primary_status": "scored",
+      "secondary_status": "scored",
+      "primary_shape": [
+        0,
+        0
+      ],
+      "secondary_shape": [
+        0,
+        0
+      ],
+      "exact_agreement": true
+    },
+    {
+      "run": "evals/runs/g006-s5r-d2-replication/r3-01",
+      "primary_status": "scored",
+      "secondary_status": "scored",
+      "primary_shape": [
+        1,
+        1
+      ],
+      "secondary_shape": [
+        0,
+        1
+      ],
+      "exact_agreement": false
+    },
+    {
+      "run": "evals/runs/g006-s5r-d2-replication/r3-10",
+      "primary_status": "scored",
+      "secondary_status": "scored",
+      "primary_shape": [
+        2,
+        2
+      ],
+      "secondary_shape": [
+        1,
+        2
+      ],
+      "exact_agreement": false
+    },
+    {
+      "run": "evals/runs/g006-s5r-d2-replication/r3-11",
+      "primary_status": "judge-failed",
+      "secondary_status": "scored",
+      "primary_shape": null,
+      "secondary_shape": [
+        0,
+        0
+      ],
+      "exact_agreement": false
+    }
+  ]
+}

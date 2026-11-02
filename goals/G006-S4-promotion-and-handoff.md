@@ -5,6 +5,11 @@ Parent: G006 — Authority and Incentives
 Depends on: G006-S3F complete
 Consumer: G006 promotion decision and G007 handoff
 
+> **Superseded promotion rationale:** `framework/G006-roadmap-reset.md` found
+> that this review incorrectly treated SC-010-D2 as a blocking gate even though
+> `EVALUATION_PLAN.md` defines SC-010 as a non-blocking process diagnostic. The
+> historical evidence remains valid; G006-S6 now owns the corrected decision.
+
 ## Outcome card
 
 The project needs to know whether the current exact-replacement candidate is

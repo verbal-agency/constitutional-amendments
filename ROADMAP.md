@@ -2,7 +2,7 @@
 
 Project: Truth-Seeking Constitution
 Active goal: G006
-Next eligible goal: G006-S5M SC-010-D2 measurement/provider discovery before G007
+Next eligible goal: G006-S6 outcome-based closure review before G007
 Active experimental branch: X001 — planned target-authoring slice
 
 Goal policy: the Cycle skill governs discovery, sizing, lifecycle, closure, and handoff. `ITERATION_PROTOCOL.md` governs project-specific bounded hypothesis-and-probe loops inside an execution slice. Exploratory results may revise the active goal or amend downstream contracts; G010 remains the only official base-versus-candidate comparison.
@@ -27,6 +27,26 @@ Legal transitions:
 Exactly one numbered goal may be `In progress`. An explicitly selected experimental branch may also be `In progress` when it is marked non-blocking and does not alter the numbered sequence. A numbered goal is eligible only when all dependencies are `Complete`, it has a goal file containing a bounded execution contract, and no earlier eligible goal remains unfinished. A G006 child discovery slice may remain active while the parent is `In progress`; it must not authorize downstream implementation until its decision closes. `framework/current-goal.yaml` is the operational record of the active slice; the goal file is the durable contract.
 
 Completion is evidence-based, not prose-based. A goal may be reopened when an iteration produces material counterevidence against its completed decision. Downstream goals must consume the amended contract rather than silently compensating for it.
+
+## Anti-churn gate
+
+These rules apply before creating a repair, measurement, or discovery child:
+
+- A diagnostic can block progression only when the project contract declared it
+  a gate before candidate outputs were observed. SC-010 remains a separately
+  reported, non-blocking process diagnostic under `EVALUATION_PLAN.md`.
+- A child goal must change an accepted artifact, make the owning decision, or
+  retire a material risk. “Create another child goal” is not sufficient closure.
+- Two failed repair attempts or three consecutive slices on the same failure
+  require a parent-level re-plan. Further work on that branch needs a new
+  outcome justification and explicit user authorization.
+- Post-hoc checkers remain diagnostic until validated against independent,
+  predeclared human labels and representative paraphrases. Model judges cannot
+  decide promotion until calibration, disagreement handling, and the decision
+  threshold are predeclared.
+- Investigation ceilings cover the whole failure branch, not each inexpensive
+  subgoal separately. When the ceiling fires, choose `pivot`, `defer`, or
+  `abandon`; do not rename the uncertainty and continue.
 
 ## Goal sequence
 
@@ -88,7 +108,9 @@ G006 is a parent workstream executed through bounded subgoals:
 - **G006-S4 — Promotion and downstream handoff:** complete with no promotion. Exact assembly and MASK measurement pass, but D2 remains a replicated material regression; route one bounded discovery goal.
 - **G006-S5 — SC-010-D2 context-and-principle interaction discovery:** complete with deferred attribution. A four-cell probe found a directional edited-arm signal, but one draw per cell cannot separate replacement effects from sampling variance.
 - **G006-S5R — SC-010-D2 attribution replication:** complete with no attributable factor. Three draws per cell produced 0/3 direct-answer passes in every cell; judge disagreement remained material.
-- **G006-S5M — SC-010-D2 measurement/provider discovery:** proposed and next. Audit the D2 packet interface and scorer before another wording edit or G007 handoff.
+- **G006-S5M — SC-010-D2 measurement/provider discovery:** complete as an exploratory diagnostic. The packet interface is valid, but the post-hoc checker and model judges are not validated promotion gates.
+- **G006-S5N — D2 provider and judge calibration:** abandoned. SC-010 is non-blocking, the branch exceeded the re-plan threshold, and calibration would not advance G006's constitutional outcome.
+- **G006-S6 — Outcome-based closure review:** proposed and next. Decide G006 from its authority/provenance contract and SC-001–SC-009 evidence using existing artifacts only.
 
 ### G007 — Inquiry and harm
 
@@ -105,6 +127,12 @@ Create a distinct candidate constitution and source-to-revision change log witho
 ### G010 — Controlled comparison and finalization
 
 Run the frozen paired comparison against the base and candidate constitutions, including misinformation, false balance, contrarianism, reckless disclosure, institutional capture, commercial pressure, paternalism, epistemic authoritarianism, precautionary conservatism, benevolent deception, and constitutional self-protection. Report SC-010 separately as process-level audit capability; complete the human spot-check and position-swapped judge consistency checks; preserve the MASK license caveat. Resolve material regressions within budget, record scenario evidence, and publish the final constitution.
+
+Before any model judge affects the official decision, G010 must predeclare its
+role, validate it against an independently human-labeled calibration sample,
+define disagreement handling, and set the decision threshold. Post-hoc checkers
+may explain outputs but cannot become official gates. SC-010 results remain
+separate and non-blocking.
 
 ### X001 — Local Mistral SFT news depolarization probe
 

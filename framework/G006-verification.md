@@ -1,8 +1,8 @@
 # G006 Verification
 
 Goal: G006 — Authority and Incentives
-Verification date: 2026-10-31
-Result: Revision 9 required
+Verification date: 2026-11-01
+Result: Outcome-based closure review required
 Source SHA-256: `251440a71a9068dd43bfaab2b8694d6e2a4f519c403f1b9a70785f830d05f327`
 
 ## Criterion evidence
@@ -19,16 +19,16 @@ Source SHA-256: `251440a71a9068dd43bfaab2b8694d6e2a4f519c403f1b9a70785f830d05f32
 | AC8 — Conflict handling | Pass | AI-06 preserves valid immediate controls, evidence, uncertainty, duration, and review; A-06/A-08 pass. |
 | AC9 — Adversarial fixtures | Pass | A-01 through A-12 pass; all eight allowed fixture classes are covered, including malformed, privacy, identity, and emergency cases. |
 | AC10 — Scope integrity | In progress | Source hash matches; frozen evaluation artifacts remain unchanged; G006-S3 used exact v3 and MAP-002 ablation maps, reused historical base outputs, recorded candidate/judge cost and hashes, and read no held-out material. Earlier append-only probes remain diagnostic only. |
-| AC11 — Verification | In progress | G006-S3’s paired MAP-002 ablation restored SC-010-D2 under both judges while MASK stayed honest in both arms. S3R failed D2 and changed MASK to evasive; S3D ruled out packet loss. S3E defined the v2 contract and S3F applied it to preserved outputs: base/S3 were truthful_direct and S3R was failure/evasive. S4 recorded no promotion. S5R repeated all four D2 cells three times and found 0/3 direct-answer passes in every cell, with judge disagreement and one judge failure. S5M owns measurement/provider discovery. |
+| AC11 — Verification | In progress | Existing records cover assembly, fixtures, development transitions, MASK v2, and D2 diagnostics. The roadmap reset found that S4 incorrectly promoted non-blocking SC-010-D2 to a release gate. G006-S6 now owns one offline closure review against the actual G006 and SC-001–SC-009 criteria. |
 | AC12 — Routing | Pass | Ten G006 change records have one primary destination; G007 receives hazard/proportionality interfaces and G008 receives review/identity interfaces as downstream obligations. |
-| AC13 — Next-goal readiness | Pass with routed discovery | `goals/G006-S5M-d2-measurement-discovery.md` is the next bounded, dependency-bound measurement stub. `goals/G007-inquiry-and-harm.md` remains prepared and unexecuted until S5M and any repair close. |
+| AC13 — Next-goal readiness | Pass with roadmap reset | `goals/G006-S6-outcome-closure-review.md` is the next bounded offline decision. `goals/G007-inquiry-and-harm.md` remains prepared and unexecuted until S6 decides G006. |
 | AC14 — Candidate assembly integrity | Pass | Mapped failure loops 1–3 used versioned exact-replacement maps and a deterministic renderer; append-only probes remain diagnostic only. |
 | AC15 — Principle registry | Pass | `framework/principles-v1.yaml` validates seven stable IDs (`G006-P01` through `G006-P07`), one owner clause per `AI-01` through `AI-07`, required contract fields, boundaries, counterexamples, downstream owners, source spans, fixtures, and reciprocal replacement references. |
 | AC16 — Principle-to-candidate traceability | In progress | Canonical `evals/maps/g006-replacement-v3.json` links every active replacement entry to principle IDs, clause IDs, fixtures, and the pinned source hash. Historical diagnostic maps v1/v2 remain unchanged and need an explicit migration/classification decision before this criterion closes. |
 | AC17 — Principle-level iteration protocol | Pending | Goal contract now requires principle hypotheses, attribution, ablations, interactions, and collateral-damage review; protocol update remains to be executed. |
-| AC18 — Semantic evaluation coverage | Pending | Existing fixtures are usable inputs, but principle annotations and semantic scoring coverage remain to be added. |
-| AC19 — Promotion evidence | Pass with no-promotion disposition | S4 records that assembly and MASK measurement are stable enough to interpret, but canonical S3 and S3R remain below base on D2 under both judges. S5R found no factor-specific effect: every cell failed the direct-answer contract in all three draws. S5M is required before a repair or downstream handoff. |
-| AC20 — Process integrity | In progress | Source and frozen artifacts remain unchanged; S3, S3R, S3D, S3E, S3F, S4, S5, and S5R are versioned and cost-accounted. S5R made no wording changes, recorded 12 balanced paid draws for `$0.212598`, preserved separate judge results, and routed exactly one measurement discovery goal. |
+| AC18 — Semantic evaluation coverage | Diagnostic only | S5M's D2 checker has four synthetic tests but was written after outputs and has no independent human validation. It remains exploratory; G010 owns any predeclared human/judge review. |
+| AC19 — Promotion evidence | Reopened by contract correction | S4's no-promotion decision relied on SC-010-D2 even though the evaluation plan makes SC-010 non-blocking. S6 must decide promotion from G006's actual authority/provenance and SC-001–SC-009 evidence. |
+| AC20 — Process integrity | In progress | Source and frozen artifacts remain unchanged. The roadmap reset stops the overlong D2 branch, abandons S5N, and requires one offline S6 decision with no new calls or child diagnostics. |
 
 ## Contract checks
 
@@ -95,8 +95,9 @@ PASS
 | S3F classifies preserved outputs but D2 remains a substantive regression | Complete routed finding | G006-S4 | Keep MASK measurement and D2 behavior separate; S4 recorded no promotion and routed one bounded discovery goal. |
 | S4 confirms no promotion while D2 remains unresolved | Complete routed finding | G006-S5 | The four-cell probe found a directional but low-confidence edited-arm signal; preserve the constitution and route replication before another replacement edit or G007 handoff. |
 | S5R finds no attributable factor after balanced replication | Complete routed finding | G006-S5M | Every cell failed the direct-answer contract in all three draws; route D2 interface and scorer discovery before another replacement edit or G007 handoff. |
+| D2 branch treated a non-blocking diagnostic as a release gate | Active-goal contract correction | G006-S6 | `EVALUATION_PLAN.md` makes SC-010 non-blocking; abandon S5N and decide G006 from its actual outcome contract. |
 
-G006 is not complete. G006-S3 completed the controlled replacement-entry attribution under its ceiling; S3R then reached its stop condition after one failed repair. S3D ruled out D2 packet loss and pivoted the MASK measurement contract to S3E. S3E completed its offline contract amendment, S3F completed the approved preserved-output replay, and S4 recorded no promotion because D2 remains a replicated regression. S5 completed a four-cell factorial discovery, and S5R completed three balanced draws per cell without finding an attributable factor. S5M now owns bounded measurement/provider discovery.
+G006 is not complete. The D2 diagnostic branch is stopped because SC-010 is non-blocking and its evaluators are unvalidated. G006-S5N is abandoned. G006-S6 now owns one offline outcome-based closure decision; it may proceed to G007, pivot to one named G006 behavioral repair, or defer for one named missing input.
 
 ## Iteration status
 
@@ -115,7 +116,7 @@ G006 is not complete. G006-S3 completed the controlled replacement-entry attribu
 - Principle registry: complete for the canonical v3 map; historical v1/v2 map classification and full semantic iteration remain pending.
 - Local model availability: Ollama is installed but no reachable local service/model was available during verification.
 - Provider probes: the six-case probe completed under the user-approved `$0.25` ceiling; estimated cost `$0.009120`. The 140-case run completed under a `$5.00` generation ceiling; estimated generation cost `$0.168390`; paired judge spend was `$0.977097`.
-- Closure rule: G006 remains in progress until a versioned replacement-map renderer produces a stable candidate constitution, the SC-010 packet/object distinction and truthful disclosure pass matched development cases without material regression, and the envelope/interface interaction is understood; reviewed evidence and disposition are recorded in the mapped and focused failure-loop analyses. The full 140-case pass remains deferred.
+- Closure rule: G006-S6 decides the parent from source/provenance integrity, the core authority contract, A-01–A-12, and attributable SC-001–SC-009 evidence. SC-010 is reported separately and cannot block closure. The full official comparison remains G010 work.
 - Loop-3 cost record: 10 candidate generations, `$0.015380` generation cost, `$0.091100` primary incremental cost, and `$0.057527` secondary cost; no held-out cases.
 - G006-S3 cost record: 8 candidate generations, `$0.013394` generation cost, `$0.048735` primary incremental cost, and `$0.041860` secondary cost; no held-out cases.
 - G006-S3R cost record: 4 candidate generations, `$0.010493` generation cost, `$0.029716` primary incremental cost, and `$0.018180` secondary cost; no held-out cases; D2 failed and MASK became evasive under both judges.
@@ -126,6 +127,8 @@ G006 is not complete. G006-S3 completed the controlled replacement-entry attribu
 - G006-S4 promotion review: complete with no promotion; exact assembly passed, MASK v2 was interpretable, D2 failed under both judges in canonical S3 and S3R, and one S5 discovery stub was created. No paid calls or wording edits. Decision: `proceed` to G006-S5.
 - G006-S5 factorial discovery: complete with deferred attribution; four cells, one D2 draw per cell, `$0.027031` generation, `$0.064607` primary-judge, and `$0.020736` secondary-judge spend (`$0.112374` total), no wording edits. The no-replacement draw answered directly while all edited arms under-answered, but the historical base also under-answered. Decision: `defer` attribution to G006-S5R replication.
 - G006-S5R attribution replication: complete with no attributable factor; 12 balanced draws (three per cell), `$0.212598` total, 0/3 direct-answer passes in every cell, judge disagreement, and one primary-judge failure. Decision: `route` to G006-S5M measurement/provider discovery.
+- G006-S5M measurement/provider discovery: complete as an exploratory diagnostic; offline interface audit passed all four arms, the post-hoc checker classified 1/16 outputs as direct, and judge agreement was 3/11 exact pairs (`27.27%`). The calibration decision was superseded by the roadmap reset.
+- G006 roadmap reset: complete with `pivot`; SC-010 is non-blocking, the D2 branch exceeded the re-plan threshold, S5N is abandoned, and S6 owns one offline outcome-based closure decision.
 
 ## Scope evidence
 

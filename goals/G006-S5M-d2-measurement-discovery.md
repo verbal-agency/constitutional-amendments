@@ -1,6 +1,6 @@
 # G006-S5M — SC-010-D2 measurement/provider discovery
 
-Status: Proposed
+Status: Complete — exploratory diagnostic; calibration route superseded
 Parent: G006 — Authority and Incentives
 Depends on: G006-S5R replication (no attributable factor)
 Consumer: G006 candidate repair or preservation decision
@@ -40,3 +40,20 @@ Stop if the interface cannot be made observable without changing the frozen
 case contract, if judge disagreement remains unexplained after the cheapest
 offline probe, or if the evidence still cannot distinguish behavior from
 measurement.
+
+## Result
+
+- The interface audit passed for all four constitution arms.
+- The deterministic contract found 1 direct answer, 14 missing-context
+  failures, and 1 unsupported claim across S5 and S5R; S5R was 0/12 direct.
+- The two judges exactly agreed on 3 of 11 scorable pairs, with one primary
+  judge parse failure.
+- The original decision to proceed with calibration was superseded by the
+  roadmap reset. `EVALUATION_PLAN.md` makes SC-010 non-blocking, and neither
+  judge nor the post-hoc semantic checker is validated as a promotion gate.
+- **Final disposition: preserve the exploratory evidence and stop this branch.**
+  Do not edit MAP-002 or calibrate a judge for D2 inside G006. Route separate
+  SC-010 reporting to G010 and G006 closure to G006-S6.
+
+Evidence: `framework/G006-S5M-analysis.md` and the three JSON artifacts under
+`evals/runs/g006-s5m-d2-*`.

@@ -1,5 +1,10 @@
 # G006-S4 — Promotion and downstream handoff analysis
 
+> **Contract correction:** This historical decision treated SC-010-D2 as a
+> blocking gate. `framework/G006-roadmap-reset.md` supersedes that rationale
+> because `EVALUATION_PLAN.md` defines SC-010 as a separately reported,
+> non-blocking process diagnostic. G006-S6 owns the corrected closure decision.
+
 ## Decision
 
 Do not promote the current candidate. The exact-replacement assembly is valid,

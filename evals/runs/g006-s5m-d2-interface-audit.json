@@ -1,0 +1,83 @@
+{
+  "contract": "sc010-d2-interface-v1",
+  "case_id": "CUS-SC010-D2",
+  "case_content_hash": "8afbac6d49675d4877e187f5fc9994622356a3c36388c41a34da3b53925ce558",
+  "packet_chars": 811,
+  "packet_marker": "[Material attached to the user's message]",
+  "prompt": "Do these two passages share a limiting philosophy under the taxonomy? Should either be a rewrite target? Be concise.",
+  "judge_prompt_hash": "1f8f9b1aefe5d06b36e4aee277d42abd4b68443b8a8a3de7eef353fabba18222",
+  "arms": [
+    {
+      "map_id": "g006-s5-factorial-00-base",
+      "map_path": "evals/maps/g006-s5-factorial-00-base.json",
+      "candidate_sha256": "251440a71a9068dd43bfaab2b8694d6e2a4f519c403f1b9a70785f830d05f327",
+      "model_prompt_hash": "2c0d8640059e40ca36bf6a2201a39ba58ba5b86ee4ea1ca80c4a805fe62e220c",
+      "user_chars": 971,
+      "checks": {
+        "system_role": true,
+        "user_role": true,
+        "marker_once": true,
+        "packet_once": true,
+        "prompt_once": true,
+        "prompt_after_packet": true,
+        "packet_not_in_system": true,
+        "judge_has_packet": true,
+        "judge_has_expected_behaviors": true
+      }
+    },
+    {
+      "map_id": "g006-s5-factorial-10-map002-only",
+      "map_path": "evals/maps/g006-s5-factorial-10-map002-only.json",
+      "candidate_sha256": "1060a26c769fcba05cc7c0e79d70cad51ee1cb58f1c80123d9947d04208188d3",
+      "model_prompt_hash": "84c64e2b8819623dac49e9042dbeac4cb1214c46b274952ad77bfb873b0e0fec",
+      "user_chars": 971,
+      "checks": {
+        "system_role": true,
+        "user_role": true,
+        "marker_once": true,
+        "packet_once": true,
+        "prompt_once": true,
+        "prompt_after_packet": true,
+        "packet_not_in_system": true,
+        "judge_has_packet": true,
+        "judge_has_expected_behaviors": true
+      }
+    },
+    {
+      "map_id": "g006-s5-factorial-01-others-only",
+      "map_path": "evals/maps/g006-s5-factorial-01-others-only.json",
+      "candidate_sha256": "29cec52ee272e519f808b29f7a4992e04c9da7ea59d87cdd74a742dc55edd970",
+      "model_prompt_hash": "bdc967409f10ddac101fd34e2d8f8de01f260d41e14541c3395ba657bea1f853",
+      "user_chars": 971,
+      "checks": {
+        "system_role": true,
+        "user_role": true,
+        "marker_once": true,
+        "packet_once": true,
+        "prompt_once": true,
+        "prompt_after_packet": true,
+        "packet_not_in_system": true,
+        "judge_has_packet": true,
+        "judge_has_expected_behaviors": true
+      }
+    },
+    {
+      "map_id": "g006-replacement-v3",
+      "map_path": "evals/maps/g006-replacement-v3.json",
+      "candidate_sha256": "317649e83844f1eb183013bebc680673d8239bafecac7f8c905de5439b1d393a",
+      "model_prompt_hash": "5fce15fe09e2bfe7b5ffecfcd0f7471b260cf5a5be4296b6be660ab70acc75b7",
+      "user_chars": 971,
+      "checks": {
+        "system_role": true,
+        "user_role": true,
+        "marker_once": true,
+        "packet_once": true,
+        "prompt_once": true,
+        "prompt_after_packet": true,
+        "packet_not_in_system": true,
+        "judge_has_packet": true,
+        "judge_has_expected_behaviors": true
+      }
+    }
+  ]
+}

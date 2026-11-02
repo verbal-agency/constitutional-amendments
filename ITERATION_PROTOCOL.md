@@ -14,6 +14,18 @@ Before starting this loop, the current goal must have a populated `framework/cur
 
 One loop changes one primary artifact or one tightly coupled artifact set. Run no more than three bounded iterations without checkpointing and re-planning. A new external integration, model family, dataset family, publication surface, or major consumer is a new discovery decision, not an incidental iteration.
 
+The iteration count follows the underlying failure across renamed subgoals. A
+new child ID does not reset it. After two failed repairs or three consecutive
+slices on the same failure, stop the branch and reopen the parent contract.
+Choose `pivot`, `defer`, or `abandon` unless the user explicitly authorizes a
+new outcome justification. A child goal cannot count “create another child” as
+its sole outcome.
+
+Only predeclared blocking criteria may prevent promotion. A diagnostic result
+cannot become a release gate after outputs are observed. Post-hoc checkers and
+uncalibrated model judges remain explanatory until independently validated
+under a predeclared decision rule.
+
 ## Loop
 
 Each active execution slice runs this loop until its bounded criteria pass, a stop condition fires, or the slice is re-planned:

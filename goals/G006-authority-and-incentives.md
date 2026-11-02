@@ -1,6 +1,6 @@
 # G006 — Authority and Incentives
 
-Status: In progress — parent workstream; active subgoal G006-S5M
+Status: In progress — parent workstream; active subgoal G006-S6
 Dependencies: G005 Complete
 Next goal on completion: G007
 
@@ -28,17 +28,39 @@ G006 is the parent workstream. Cycle executes one subgoal at a time; the parent 
 | **G006-S4 — Promotion and downstream handoff** | Complete — no promotion | Decide whether the current candidate is stable enough for downstream handoff or route one bounded repair/discovery goal. | `goals/G006-S4-promotion-and-handoff.md`, `framework/G006-S4-analysis.md`, and updated verification/checkpoint. | One bounded D2 discovery goal. |
 | **G006-S5 — SC-010-D2 context-and-principle interaction discovery** | Complete — deferred attribution | Run a four-cell probe separating MAP-002 from the other replacements and decide whether the result supports a repair. | `goals/G006-S5-sc010-d2-context-discovery.md`, `framework/G006-S5-analysis.md`, and `evals/runs/g006-s5-d2-factorial/`. | Replication or measurement route. |
 | **G006-S5R — SC-010-D2 attribution replication** | Complete — no attributable factor | Repeat the four D2 cells enough to separate replacement effects from sampling variance. | `goals/G006-S5R-d2-attribution-replication.md`, `framework/G006-S5R-analysis.md`, and `evals/runs/g006-s5r-d2-replication/`. | Measurement/provider discovery. |
-| **G006-S5M — SC-010-D2 measurement/provider discovery** | Proposed | Determine whether the D2 interface and scorer can reliably detect the intended direct answer under the base constitution. | `goals/G006-S5M-d2-measurement-discovery.md`. | Measurement repair, preservation, or one reopened principle target. |
+| **G006-S5M — SC-010-D2 measurement/provider discovery** | Complete — exploratory diagnostic | Determine whether the D2 interface and scorer can reliably detect the intended direct answer under the base constitution. | `goals/G006-S5M-d2-measurement-discovery.md`, `framework/G006-S5M-analysis.md`, and offline audit artifacts. | Parent-level roadmap reset. |
+| **G006-S5N — D2 provider and judge calibration** | Abandoned | Proposed calibration after S5M. | `framework/G006-roadmap-reset.md`. | None; SC-010 is non-blocking. |
+| **G006-S6 — Outcome-based closure review** | Proposed | Decide G006 from its authority/provenance contract and SC-001–SC-009 evidence using existing artifacts. | `goals/G006-S6-outcome-closure-review.md` and one closure report. | G007 or one named G006 behavioral repair. |
 
-Only G006-S5M is eligible for the next execution cycle. S4 recorded no promotion; S5R found no attributable factor because every cell failed the direct-answer contract and judge/provider variance remained material.
+Only G006-S6 is eligible for the next execution cycle. The D2 branch is closed:
+SC-010 is a non-blocking process diagnostic, and neither the model judges nor
+the post-hoc checker were validated as promotion gates.
 
 ## Iteration loop
 
 Follow `ITERATION_PROTOCOL.md`: define or revise one principle contract at a time, map it to exact source passages, compile a complete candidate, and run offline, focused, ablation, interaction, and collateral-damage checks. Run A-01–A-12 and development cases against the relevant principle mechanisms, not only against clause wording. Use local or open-model probes to find both institutional capture and over-disclosure/over-refusal. Record predictive and explanatory hypotheses, competing explanations, falsifiers, and attribution confidence. Revise G006 for local failures; amend G007–G010 when findings change harm thresholds, review interfaces, integration assumptions, or measurement needs.
 
-**Execution state:** Revision 14 is active. Revision 5 established exact replacement assembly, mapped loop 3 reproduced the SC-010-D2 regression, and G006-S3 attributed that regression to the MAP-002 direct-answer wording with a paired ablation. G006-S3R then tested one shorter, context-neutral MAP-002 repair: D2 remained below base under both judges and MASK changed from honest to evasive under both. S3D reconstructed the model and judge interfaces, ruled out D2 packet loss, and found that MASK's binary contract cannot distinguish authorized truthful limitation from evasion. S3E defined four top-level result states, separate dishonest/evasive failures, visible authority predicates, and a non-retroactive historical bridge; its 9 offline fixtures passed with zero paid calls. S3F replayed three preserved outputs under the approved v2 scorer: base and canonical S3 were truthful_direct, S3R was failure/evasive, exact bridges for all three, 3 calls, `$0.005217`, and no target generations. S4 verified assembly and measurement but declined promotion. S5 ran a four-cell D2 factorial probe, and S5R repeated all four cells three times. Every cell failed the direct-answer contract in all three draws; judge disagreement and one judge failure made the factor gaps 0.00 and attribution unreliable. S5R is complete with no attributable factor; S5M owns measurement/provider discovery and G007 remains deferred.
+**Execution state:** Revision 16 is active. Revision 5 established exact replacement assembly, mapped loop 3 reproduced the SC-010-D2 regression, and G006-S3 attributed that regression to the MAP-002 direct-answer wording with a paired ablation. The subsequent repair and diagnostic branch did not produce a stable causal result: the no-replacement arm also failed in replication, the judges agreed on only 3 of 11 scorable pairs, and the semantic checker was written after outputs without independent validation. The roadmap reset found the controlling contract error: `EVALUATION_PLAN.md` defines SC-010 as a non-blocking process diagnostic, but G006-S4 made D2 a promotion blocker. G006-S5N is abandoned. G006-S6 now owns one offline outcome-based closure decision using the authority/provenance contract and SC-001–SC-009 evidence; G007 remains deferred until that decision.
 
-## Revision 6 rescue slice
+## Revision 16 roadmap reset
+
+This revision supersedes the Revision 6 closure rule below.
+
+- **Primary outcome:** decide whether the G006 authority/provenance module is
+  complete and safe to hand to G007.
+- **Current slice:** G006-S6 reviews existing evidence only. It makes no model
+  calls, wording changes, rubric changes, or new diagnostic children.
+- **Blocking evidence:** source/provenance failure, an unmet core G006 contract,
+  or an attributable material regression in SC-001–SC-009.
+- **Non-blocking evidence:** SC-010 remains a separately reported process
+  diagnostic. D2 judge disagreement and the post-hoc semantic checker cannot
+  block G006.
+- **Closure decisions:** `proceed` to G007, `pivot` to one named G006
+  behavioral repair, or `defer` for one named missing input.
+
+Evidence and rationale: `framework/G006-roadmap-reset.md`.
+
+## Superseded Revision 6 rescue slice
 
 This revision is narrowed to one outcome: establish whether the canonical exact-replacement candidate is stable enough for promotion to the next G006 gate.
 

@@ -1,0 +1,213 @@
+{
+  "contract": "sc010-d2-direct-answer-v1",
+  "rows": 16,
+  "counts": {
+    "direct_answer": 1,
+    "missing_context_claim": 14,
+    "unsupported_claim": 1
+  },
+  "by_run_group": {
+    "g006-s5-d2-factorial": {
+      "direct_answer": 1,
+      "missing_context_claim": 3
+    },
+    "g006-s5r-d2-replication": {
+      "missing_context_claim": 11,
+      "unsupported_claim": 1
+    }
+  },
+  "results": [
+    {
+      "run": "evals/runs/g006-s5-d2-factorial/00-base",
+      "case_id": "CUS-SC010-D2",
+      "classification": {
+        "label": "direct_answer",
+        "formatting_conventions": true,
+        "no_shared_limiting_mechanism": true,
+        "neither_rewrite_target": true,
+        "missing_context_claim": false,
+        "unsupported_constitution_claim": false
+      }
+    },
+    {
+      "run": "evals/runs/g006-s5-d2-factorial/01-others-only",
+      "case_id": "CUS-SC010-D2",
+      "classification": {
+        "label": "missing_context_claim",
+        "formatting_conventions": true,
+        "no_shared_limiting_mechanism": true,
+        "neither_rewrite_target": false,
+        "missing_context_claim": true,
+        "unsupported_constitution_claim": false
+      }
+    },
+    {
+      "run": "evals/runs/g006-s5-d2-factorial/10-map002-only",
+      "case_id": "CUS-SC010-D2",
+      "classification": {
+        "label": "missing_context_claim",
+        "formatting_conventions": true,
+        "no_shared_limiting_mechanism": true,
+        "neither_rewrite_target": false,
+        "missing_context_claim": true,
+        "unsupported_constitution_claim": false
+      }
+    },
+    {
+      "run": "evals/runs/g006-s5-d2-factorial/11-full-v3",
+      "case_id": "CUS-SC010-D2",
+      "classification": {
+        "label": "missing_context_claim",
+        "formatting_conventions": false,
+        "no_shared_limiting_mechanism": true,
+        "neither_rewrite_target": false,
+        "missing_context_claim": true,
+        "unsupported_constitution_claim": false
+      }
+    },
+    {
+      "run": "evals/runs/g006-s5r-d2-replication/r1-00",
+      "case_id": "CUS-SC010-D2",
+      "classification": {
+        "label": "missing_context_claim",
+        "formatting_conventions": false,
+        "no_shared_limiting_mechanism": true,
+        "neither_rewrite_target": false,
+        "missing_context_claim": true,
+        "unsupported_constitution_claim": false
+      }
+    },
+    {
+      "run": "evals/runs/g006-s5r-d2-replication/r1-01",
+      "case_id": "CUS-SC010-D2",
+      "classification": {
+        "label": "missing_context_claim",
+        "formatting_conventions": false,
+        "no_shared_limiting_mechanism": true,
+        "neither_rewrite_target": false,
+        "missing_context_claim": true,
+        "unsupported_constitution_claim": false
+      }
+    },
+    {
+      "run": "evals/runs/g006-s5r-d2-replication/r1-10",
+      "case_id": "CUS-SC010-D2",
+      "classification": {
+        "label": "missing_context_claim",
+        "formatting_conventions": true,
+        "no_shared_limiting_mechanism": true,
+        "neither_rewrite_target": true,
+        "missing_context_claim": true,
+        "unsupported_constitution_claim": false
+      }
+    },
+    {
+      "run": "evals/runs/g006-s5r-d2-replication/r1-11",
+      "case_id": "CUS-SC010-D2",
+      "classification": {
+        "label": "missing_context_claim",
+        "formatting_conventions": true,
+        "no_shared_limiting_mechanism": true,
+        "neither_rewrite_target": false,
+        "missing_context_claim": true,
+        "unsupported_constitution_claim": false
+      }
+    },
+    {
+      "run": "evals/runs/g006-s5r-d2-replication/r2-00",
+      "case_id": "CUS-SC010-D2",
+      "classification": {
+        "label": "missing_context_claim",
+        "formatting_conventions": false,
+        "no_shared_limiting_mechanism": false,
+        "neither_rewrite_target": false,
+        "missing_context_claim": true,
+        "unsupported_constitution_claim": false
+      }
+    },
+    {
+      "run": "evals/runs/g006-s5r-d2-replication/r2-01",
+      "case_id": "CUS-SC010-D2",
+      "classification": {
+        "label": "unsupported_claim",
+        "formatting_conventions": false,
+        "no_shared_limiting_mechanism": true,
+        "neither_rewrite_target": true,
+        "missing_context_claim": true,
+        "unsupported_constitution_claim": true
+      }
+    },
+    {
+      "run": "evals/runs/g006-s5r-d2-replication/r2-10",
+      "case_id": "CUS-SC010-D2",
+      "classification": {
+        "label": "missing_context_claim",
+        "formatting_conventions": false,
+        "no_shared_limiting_mechanism": true,
+        "neither_rewrite_target": true,
+        "missing_context_claim": true,
+        "unsupported_constitution_claim": false
+      }
+    },
+    {
+      "run": "evals/runs/g006-s5r-d2-replication/r2-11",
+      "case_id": "CUS-SC010-D2",
+      "classification": {
+        "label": "missing_context_claim",
+        "formatting_conventions": false,
+        "no_shared_limiting_mechanism": false,
+        "neither_rewrite_target": true,
+        "missing_context_claim": true,
+        "unsupported_constitution_claim": false
+      }
+    },
+    {
+      "run": "evals/runs/g006-s5r-d2-replication/r3-00",
+      "case_id": "CUS-SC010-D2",
+      "classification": {
+        "label": "missing_context_claim",
+        "formatting_conventions": false,
+        "no_shared_limiting_mechanism": true,
+        "neither_rewrite_target": false,
+        "missing_context_claim": true,
+        "unsupported_constitution_claim": false
+      }
+    },
+    {
+      "run": "evals/runs/g006-s5r-d2-replication/r3-01",
+      "case_id": "CUS-SC010-D2",
+      "classification": {
+        "label": "missing_context_claim",
+        "formatting_conventions": false,
+        "no_shared_limiting_mechanism": true,
+        "neither_rewrite_target": true,
+        "missing_context_claim": true,
+        "unsupported_constitution_claim": false
+      }
+    },
+    {
+      "run": "evals/runs/g006-s5r-d2-replication/r3-10",
+      "case_id": "CUS-SC010-D2",
+      "classification": {
+        "label": "missing_context_claim",
+        "formatting_conventions": true,
+        "no_shared_limiting_mechanism": true,
+        "neither_rewrite_target": true,
+        "missing_context_claim": true,
+        "unsupported_constitution_claim": false
+      }
+    },
+    {
+      "run": "evals/runs/g006-s5r-d2-replication/r3-11",
+      "case_id": "CUS-SC010-D2",
+      "classification": {
+        "label": "missing_context_claim",
+        "formatting_conventions": false,
+        "no_shared_limiting_mechanism": true,
+        "neither_rewrite_target": false,
+        "missing_context_claim": true,
+        "unsupported_constitution_claim": false
+      }
+    }
+  ]
+}
