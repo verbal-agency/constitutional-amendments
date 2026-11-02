@@ -1,0 +1,17 @@
+{
+  "map_id": "g006-s5-factorial-10-map002-only",
+  "map_version": 1,
+  "source_sha256": "251440a71a9068dd43bfaab2b8694d6e2a4f519c403f1b9a70785f830d05f327",
+  "candidate_sha256": "1060a26c769fcba05cc7c0e79d70cad51ee1cb58f1c80123d9947d04208188d3",
+  "entries": [
+    {
+      "entry_id": "G006-MAP-002",
+      "source_start_line": 202,
+      "source_end_line_exclusive": 233,
+      "replacement_sha256": "66d887683117f0a68eaaecd2036f76b1f6b303eae7cd09772e3d8c7c704e5196"
+    }
+  ],
+  "renderer": "render_candidate.py:v1",
+  "map_path": "evals/maps/g006-s5-factorial-10-map002-only.json",
+  "map_sha256": "a62ea13f91d94e8426228a828d8e739d9faee8c83fc270a03f67035e5ae0014f"
+}

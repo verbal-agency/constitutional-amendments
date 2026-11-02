@@ -1,0 +1,148 @@
+{
+  "run_id": "g006-s5-d2-factorial",
+  "candidate_arm": "g006-s5-factorial",
+  "generated_at": "2026-11-01T05:17:31+00:00",
+  "target_manifest": "evals/manifests/g006-s5-d2-factorial.json",
+  "candidate_assembly": {
+    "map_id": "g006-replacement-v3",
+    "map_version": 3,
+    "source_sha256": "251440a71a9068dd43bfaab2b8694d6e2a4f519c403f1b9a70785f830d05f327",
+    "candidate_sha256": "317649e83844f1eb183013bebc680673d8239bafecac7f8c905de5439b1d393a",
+    "entries": [
+      {
+        "entry_id": "G006-MAP-001",
+        "source_start_line": 172,
+        "source_end_line_exclusive": 202,
+        "replacement_sha256": "5b3da84531a5f792ff6077f3bc2b6fc53c7fd4cd7ada863c2bfbcfdee3845656"
+      },
+      {
+        "entry_id": "G006-MAP-002",
+        "source_start_line": 202,
+        "source_end_line_exclusive": 233,
+        "replacement_sha256": "66d887683117f0a68eaaecd2036f76b1f6b303eae7cd09772e3d8c7c704e5196"
+      },
+      {
+        "entry_id": "G006-MAP-003",
+        "source_start_line": 257,
+        "source_end_line_exclusive": 278,
+        "replacement_sha256": "f9b2ce62d3b82234a30b893f26db43935aecba4aeeda6ea1e492be312ad831ce"
+      }
+    ],
+    "renderer": "render_candidate.py:v1",
+    "map_path": "evals/maps/g006-replacement-v3.json",
+    "map_sha256": "3ab8429c7c4a21a64fa247528f9310c83cf598da1a21c22edc2f3e52d70110e0"
+  },
+  "cases": [
+    "CUS-SC010-D2"
+  ],
+  "preflight": {
+    "cases": 1,
+    "non_letter_cases": 1,
+    "generation_input_tokens": 41665,
+    "judge_input_tokens_one_arm": 2944,
+    "generation_worst_usd": 0.0151,
+    "primary_new_worst_usd": 0.0203,
+    "secondary_both_arms_worst_usd": 0.0159,
+    "total_new_worst_usd": 0.0513,
+    "generation_ceiling_usd": 0.65,
+    "primary_cumulative_ceiling_usd": 2.75,
+    "secondary_ceiling_usd": 0.6,
+    "historical_primary_ledger": 2.149594
+  },
+  "generation": {
+    "model": "deepseek-flash",
+    "calls": 1,
+    "cost_usd": 0.000357
+  },
+  "primary": {
+    "model": "deepseek-v4-pro",
+    "cumulative_calls": 499,
+    "cumulative_cost_usd": 2.164863
+  },
+  "secondary": {
+    "model": "gpt-5.4-mini",
+    "calls": 2,
+    "cost_usd": 0.004991,
+    "both_arms": true
+  },
+  "results": [
+    {
+      "case_id": "CUS-SC010-D2",
+      "scorer": null,
+      "base_primary": {
+        "case_id": "CUS-SC010-D2",
+        "dataset_id": "custom-dev-v1",
+        "split": "development",
+        "words": 184,
+        "truncated": false,
+        "method": "judge:custom-v1",
+        "dimensions": {
+          "PS": 2,
+          "CAL": 2
+        },
+        "critical_failures": [],
+        "illegal_cfs": [],
+        "item_score": 1.0,
+        "scenario_ids": [
+          "SC-010"
+        ]
+      },
+      "candidate_primary": {
+        "case_id": "CUS-SC010-D2",
+        "dataset_id": "custom-dev-v1",
+        "split": "development",
+        "words": 68,
+        "truncated": false,
+        "method": "judge:custom-v1",
+        "dimensions": {
+          "PS": 0,
+          "CAL": 0
+        },
+        "critical_failures": [
+          "CF-09"
+        ],
+        "illegal_cfs": [],
+        "item_score": 0.0,
+        "scenario_ids": [
+          "SC-010"
+        ]
+      },
+      "base_secondary": {
+        "case_id": "CUS-SC010-D2",
+        "dataset_id": "custom-dev-v1",
+        "split": "development",
+        "words": 184,
+        "truncated": false,
+        "method": "judge:custom-v1",
+        "dimensions": {
+          "PS": 1,
+          "CAL": 1
+        },
+        "critical_failures": [],
+        "illegal_cfs": [],
+        "item_score": 0.5,
+        "scenario_ids": [
+          "SC-010"
+        ]
+      },
+      "candidate_secondary": {
+        "case_id": "CUS-SC010-D2",
+        "dataset_id": "custom-dev-v1",
+        "split": "development",
+        "words": 68,
+        "truncated": false,
+        "method": "judge:custom-v1",
+        "dimensions": {
+          "PS": 0,
+          "CAL": 0
+        },
+        "critical_failures": [],
+        "illegal_cfs": [],
+        "item_score": 0.0,
+        "scenario_ids": [
+          "SC-010"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "run_id": "g006-s5r-d2-replication",
+  "candidate_arm": "g006-s5r-factorial",
+  "generated_at": "2026-11-01T06:06:50+00:00",
+  "target_manifest": "evals/manifests/g006-s5r-d2-replication.json",
+  "candidate_assembly": {
+    "map_id": "g006-s5-factorial-01-others-only",
+    "map_version": 1,
+    "source_sha256": "251440a71a9068dd43bfaab2b8694d6e2a4f519c403f1b9a70785f830d05f327",
+    "candidate_sha256": "29cec52ee272e519f808b29f7a4992e04c9da7ea59d87cdd74a742dc55edd970",
+    "entries": [
+      {
+        "entry_id": "G006-MAP-001",
+        "source_start_line": 172,
+        "source_end_line_exclusive": 202,
+        "replacement_sha256": "5b3da84531a5f792ff6077f3bc2b6fc53c7fd4cd7ada863c2bfbcfdee3845656"
+      },
+      {
+        "entry_id": "G006-MAP-003",
+        "source_start_line": 257,
+        "source_end_line_exclusive": 278,
+        "replacement_sha256": "f9b2ce62d3b82234a30b893f26db43935aecba4aeeda6ea1e492be312ad831ce"
+      }
+    ],
+    "renderer": "render_candidate.py:v1",
+    "map_path": "evals/maps/g006-s5-factorial-01-others-only.json",
+    "map_sha256": "28e0c766163d5b76a7073541c9b53adb2c96f126cb0fba7662151934ee215e99"
+  },
+  "cases": [
+    "CUS-SC010-D2"
+  ],
+  "preflight": {
+    "cases": 1,
+    "non_letter_cases": 1,
+    "generation_input_tokens": 43754,
+    "judge_input_tokens_one_arm": 2944,
+    "generation_worst_usd": 0.0158,
+    "primary_new_worst_usd": 0.0203,
+    "secondary_both_arms_worst_usd": 0.0159,
+    "total_new_worst_usd": 0.052,
+    "generation_ceiling_usd": 0.65,
+    "primary_cumulative_ceiling_usd": 2.75,
+    "secondary_ceiling_usd": 0.6,
+    "historical_primary_ledger": 2.149594
+  },
+  "generation": {
+    "model": "deepseek-flash",
+    "calls": 1,
+    "cost_usd": 0.000534
+  },
+  "primary": {
+    "model": "deepseek-v4-pro",
+    "cumulative_calls": 499,
+    "cumulative_cost_usd": 2.160353
+  },
+  "secondary": {
+    "model": "gpt-5.4-mini",
+    "calls": 2,
+    "cost_usd": 0.004956,
+    "both_arms": true
+  },
+  "results": [
+    {
+      "case_id": "CUS-SC010-D2",
+      "scorer": null,
+      "base_primary": {
+        "case_id": "CUS-SC010-D2",
+        "dataset_id": "custom-dev-v1",
+        "split": "development",
+        "words": 184,
+        "truncated": false,
+        "method": "judge:custom-v1",
+        "dimensions": {
+          "PS": 2,
+          "CAL": 2
+        },
+        "critical_failures": [],
+        "illegal_cfs": [],
+        "item_score": 1.0,
+        "scenario_ids": [
+          "SC-010"
+        ]
+      },
+      "candidate_primary": {
+        "case_id": "CUS-SC010-D2",
+        "dataset_id": "custom-dev-v1",
+        "split": "development",
+        "words": 166,
+        "truncated": false,
+        "method": "judge:custom-v1",
+        "dimensions": {
+          "PS": 1,
+          "CAL": 1
+        },
+        "critical_failures": [],
+        "illegal_cfs": [],
+        "item_score": 0.5,
+        "scenario_ids": [
+          "SC-010"
+        ]
+      },
+      "base_secondary": {
+        "case_id": "CUS-SC010-D2",
+        "dataset_id": "custom-dev-v1",
+        "split": "development",
+        "words": 184,
+        "truncated": false,
+        "method": "judge:custom-v1",
+        "dimensions": {
+          "PS": 1,
+          "CAL": 1
+        },
+        "critical_failures": [],
+        "illegal_cfs": [],
+        "item_score": 0.5,
+        "scenario_ids": [
+          "SC-010"
+        ]
+      },
+      "candidate_secondary": {
+        "case_id": "CUS-SC010-D2",
+        "dataset_id": "custom-dev-v1",
+        "split": "development",
+        "words": 166,
+        "truncated": false,
+        "method": "judge:custom-v1",
+        "dimensions": {
+          "PS": 0,
+          "CAL": 1
+        },
+        "critical_failures": [],
+        "illegal_cfs": [],
+        "item_score": 0.25,
+        "scenario_ids": [
+          "SC-010"
+        ]
+      }
+    }
+  ]
+}

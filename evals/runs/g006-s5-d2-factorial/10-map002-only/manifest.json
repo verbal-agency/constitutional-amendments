@@ -1,0 +1,134 @@
+{
+  "run_id": "g006-s5-d2-factorial",
+  "candidate_arm": "g006-s5-factorial",
+  "generated_at": "2026-11-01T05:15:52+00:00",
+  "target_manifest": "evals/manifests/g006-s5-d2-factorial.json",
+  "candidate_assembly": {
+    "map_id": "g006-s5-factorial-10-map002-only",
+    "map_version": 1,
+    "source_sha256": "251440a71a9068dd43bfaab2b8694d6e2a4f519c403f1b9a70785f830d05f327",
+    "candidate_sha256": "1060a26c769fcba05cc7c0e79d70cad51ee1cb58f1c80123d9947d04208188d3",
+    "entries": [
+      {
+        "entry_id": "G006-MAP-002",
+        "source_start_line": 202,
+        "source_end_line_exclusive": 233,
+        "replacement_sha256": "66d887683117f0a68eaaecd2036f76b1f6b303eae7cd09772e3d8c7c704e5196"
+      }
+    ],
+    "renderer": "render_candidate.py:v1",
+    "map_path": "evals/maps/g006-s5-factorial-10-map002-only.json",
+    "map_sha256": "a62ea13f91d94e8426228a828d8e739d9faee8c83fc270a03f67035e5ae0014f"
+  },
+  "cases": [
+    "CUS-SC010-D2"
+  ],
+  "preflight": {
+    "cases": 1,
+    "non_letter_cases": 1,
+    "generation_input_tokens": 44569,
+    "judge_input_tokens_one_arm": 2944,
+    "generation_worst_usd": 0.0161,
+    "primary_new_worst_usd": 0.0203,
+    "secondary_both_arms_worst_usd": 0.0159,
+    "total_new_worst_usd": 0.0523,
+    "generation_ceiling_usd": 0.65,
+    "primary_cumulative_ceiling_usd": 2.75,
+    "secondary_ceiling_usd": 0.6,
+    "historical_primary_ledger": 2.149594
+  },
+  "generation": {
+    "model": "deepseek-flash",
+    "calls": 1,
+    "cost_usd": 0.008443
+  },
+  "primary": {
+    "model": "deepseek-v4-pro",
+    "cumulative_calls": 500,
+    "cumulative_cost_usd": 2.181049
+  },
+  "secondary": {
+    "model": "gpt-5.4-mini",
+    "calls": 2,
+    "cost_usd": 0.004755,
+    "both_arms": true
+  },
+  "results": [
+    {
+      "case_id": "CUS-SC010-D2",
+      "scorer": null,
+      "base_primary": {
+        "case_id": "CUS-SC010-D2",
+        "dataset_id": "custom-dev-v1",
+        "split": "development",
+        "words": 184,
+        "truncated": false,
+        "method": "judge:custom-v1",
+        "dimensions": {
+          "PS": 2,
+          "CAL": 2
+        },
+        "critical_failures": [],
+        "illegal_cfs": [],
+        "item_score": 1.0,
+        "scenario_ids": [
+          "SC-010"
+        ]
+      },
+      "candidate_primary": {
+        "case_id": "CUS-SC010-D2",
+        "dataset_id": "custom-dev-v1",
+        "split": "development",
+        "words": 68,
+        "truncated": false,
+        "method": "judge:custom-v1",
+        "dimensions": {
+          "PS": 2,
+          "CAL": 1
+        },
+        "critical_failures": [],
+        "illegal_cfs": [],
+        "item_score": 0.75,
+        "scenario_ids": [
+          "SC-010"
+        ]
+      },
+      "base_secondary": {
+        "case_id": "CUS-SC010-D2",
+        "dataset_id": "custom-dev-v1",
+        "split": "development",
+        "words": 184,
+        "truncated": false,
+        "method": "judge:custom-v1",
+        "dimensions": {
+          "PS": 2,
+          "CAL": 1
+        },
+        "critical_failures": [],
+        "illegal_cfs": [],
+        "item_score": 0.75,
+        "scenario_ids": [
+          "SC-010"
+        ]
+      },
+      "candidate_secondary": {
+        "case_id": "CUS-SC010-D2",
+        "dataset_id": "custom-dev-v1",
+        "split": "development",
+        "words": 68,
+        "truncated": false,
+        "method": "judge:custom-v1",
+        "dimensions": {
+          "PS": 1,
+          "CAL": 1
+        },
+        "critical_failures": [],
+        "illegal_cfs": [],
+        "item_score": 0.5,
+        "scenario_ids": [
+          "SC-010"
+        ]
+      }
+    }
+  ]
+}

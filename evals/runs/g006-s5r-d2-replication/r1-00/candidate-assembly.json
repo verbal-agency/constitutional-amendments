@@ -1,0 +1,10 @@
+{
+  "map_id": "g006-s5-factorial-00-base",
+  "map_version": 1,
+  "source_sha256": "251440a71a9068dd43bfaab2b8694d6e2a4f519c403f1b9a70785f830d05f327",
+  "candidate_sha256": "251440a71a9068dd43bfaab2b8694d6e2a4f519c403f1b9a70785f830d05f327",
+  "entries": [],
+  "renderer": "render_candidate.py:v1",
+  "map_path": "evals/maps/g006-s5-factorial-00-base.json",
+  "map_sha256": "2093ae58284f1a1ec4efe302c99de4d01bdac2461135d89c475f974e3df4d3a7"
+}

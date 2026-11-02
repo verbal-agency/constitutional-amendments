@@ -1,32 +1,33 @@
 schema_version: 1
 goal_id: G006
-active_subgoal: G006-S4
+active_subgoal: G006-S5M
 active_subgoal_status: proposed
 status: in_progress
-revision: 11
+revision: 14
 owner: G006
 consumer: G006 promotion decision
-current_slice: decide focused candidate promotion and downstream handoff using the completed MASK v2 replay
-last_evidence: framework/G006-S3F-analysis.md
+current_slice: determine whether the SC-010-D2 interface and scorer can measure the intended answer
+last_evidence: framework/G006-S5R-analysis.md
 last_checkpoint_date: 2026-10-31
 last_decision: >-
-  G006-S3F replayed three hash-stable preserved MASK outputs under the approved
-  v2 scorer. Base and canonical S3 were truthful_direct; S3R was
-  failure/evasive. Three calls cost $0.005217, with no target generations or
-  historical score changes. Proceed to the focused promotion review.
+  G006-S5R repeated all four D2 cells three times. Every cell failed the direct
+  answer contract in all three draws, so the edited-minus-control gap and
+  interaction were both 0.00. Judge disagreement and one judge failure make
+  this a measurement/provider finding, not a wording-repair result. Route
+  measurement discovery before wording or G007.
 next_action: >-
-  Activate and fully specify G006-S4; review the focused stability gate and
-  route one promotion, repair, or discovery decision. Do not start G007 or the
-  140-case pass until the decision closes.
+  Activate and fully specify G006-S5M; audit the D2 message envelope, provider
+  sampling, deterministic semantic check, and judge agreement offline first.
+  Do not edit MAP-002, start G007, or run the 140-case pass until measurement
+  discovery closes.
 upstream_assumptions_to_recheck:
   - The candidate must replace exact source spans rather than append a module.
   - Historical base outputs remain a valid control for this focused probe.
   - No held-out material is needed for the current diagnostic slice.
 downstream_impact:
-  - G006-S4 remains blocked until S3F demonstrates that the contract can score
-    recorded outputs without hidden authorization.
-  - S3F is complete; G006-S4 now owns the focused promotion decision.
-  - G007 remains proposed and unexecuted.
+  - G006-S4 is complete with no promotion; S5 and S5R are complete with no
+    attributable factor and S5M owns measurement discovery.
+  - G007 remains proposed and unexecuted until S5M and any repair close.
   - G008, G009, and G010 consume only a stable, versioned candidate contract.
   - X001 is planned for a bounded target-authoring/preflight slice; no training is active.
   - X002 remains in discovery until its website target is pinned.
@@ -38,6 +39,16 @@ closure_evidence_required:
   - framework/G006-S3D-interface-matrix.md
   - framework/G006-S3E-analysis.md
   - framework/G006-S3F-analysis.md
+  - framework/G006-S4-analysis.md
+  - framework/G006-S5-analysis.md
+  - framework/G006-S5R-analysis.md
+  - goals/G006-S5R-d2-attribution-replication.md
+  - goals/G006-S5M-d2-measurement-discovery.md
+  - evals/manifests/g006-s5r-d2-replication.json
+  - evals/runs/g006-s5r-d2-replication/
+  - evals/scripts/run_g006_s5r_replication.py
+  - evals/manifests/g006-s5-d2-factorial.json
+  - evals/runs/g006-s5-d2-factorial/
   - evals/manifests/g006-s3f-mask-v2-replay.json
   - evals/runs/g006-s3f/judge-approval.json
   - evals/runs/g006-s3f/scores-v2.jsonl
@@ -48,6 +59,6 @@ closure_evidence_required:
   - framework/G006-S3F-preflight.md
   - framework/G006-checkpoint.md
 stop_condition: >-
-  Stop if focused evidence cannot decide promotion, if D2 remains a material
-  regression without a named repair/discovery destination, or if the decision
-  would require changing the frozen comparison contract.
+  Stop if S5M cannot distinguish behavior from measurement, needs a frozen-case
+  change, or judge disagreement remains unexplained after the cheapest offline
+  probe; do not make a wording change to conceal uncertainty.

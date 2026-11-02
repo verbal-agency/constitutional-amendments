@@ -1,0 +1,28 @@
+{
+  "manifest_version": 1,
+  "run_id": "g006-s5-d2-factorial",
+  "candidate_arm": "g006-s5-factorial",
+  "purpose": "Four-cell causal probe for SC-010-D2: MAP-002 replacement versus MAP-001/MAP-003 replacements",
+  "base_policy": "Reuse complete historical base-v1 output and scores; do not regenerate the base arm",
+  "failure_cases": ["CUS-SC010-D2"],
+  "mechanism_controls": [],
+  "boundary_cases": [],
+  "identity_swapped_pairs": [],
+  "sentinels": [],
+  "factorial_design": {
+    "factor_1": "map002_replacement",
+    "factor_2": "other_replacements",
+    "cells": [
+      {"cell_id": "00", "map": "evals/maps/g006-s5-factorial-00-base.json", "map002_replacement": false, "other_replacements": false},
+      {"cell_id": "10", "map": "evals/maps/g006-s5-factorial-10-map002-only.json", "map002_replacement": true, "other_replacements": false},
+      {"cell_id": "01", "map": "evals/maps/g006-s5-factorial-01-others-only.json", "map002_replacement": false, "other_replacements": true},
+      {"cell_id": "11", "map": "evals/maps/g006-replacement-v3.json", "map002_replacement": true, "other_replacements": true}
+    ]
+  },
+  "judge_policy": {
+    "primary": "deepseek-v4-pro",
+    "secondary": "gpt-5.4-mini",
+    "secondary_judges_both_arms": true,
+    "scores_are_not_averaged": true
+  }
+}

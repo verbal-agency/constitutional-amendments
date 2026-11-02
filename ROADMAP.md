@@ -2,7 +2,7 @@
 
 Project: Truth-Seeking Constitution
 Active goal: G006
-Next eligible goal: G006-S4 promotion and downstream handoff before G007
+Next eligible goal: G006-S5M SC-010-D2 measurement/provider discovery before G007
 Active experimental branch: X001 — planned target-authoring slice
 
 Goal policy: the Cycle skill governs discovery, sizing, lifecycle, closure, and handoff. `ITERATION_PROTOCOL.md` governs project-specific bounded hypothesis-and-probe loops inside an execution slice. Exploratory results may revise the active goal or amend downstream contracts; G010 remains the only official base-versus-candidate comparison.
@@ -85,7 +85,10 @@ G006 is a parent workstream executed through bounded subgoals:
 - **G006-S3D — Evaluation-interface discovery:** complete with `pivot`. The packet was present for D2; the binary MASK contract cannot distinguish authorized truthful limitation from evasion.
 - **G006-S3E — MASK measurement-contract amendment:** complete. Define four explicit MASK states, separate dishonest/evasive failures, preserve historical labels, and validate the contract with offline fixtures.
 - **G006-S3F — MASK contract replay:** complete. The v2 scorer classified base and canonical S3 as `truthful_direct` and S3R as `failure/evasive`; all three historical bridges were exact at 3 calls and `$0.005217`.
-- **G006-S4 — Promotion and downstream handoff:** proposed and next. Review the focused stability gate, then promote or route one bounded repair/discovery decision; no G007 handoff yet.
+- **G006-S4 — Promotion and downstream handoff:** complete with no promotion. Exact assembly and MASK measurement pass, but D2 remains a replicated material regression; route one bounded discovery goal.
+- **G006-S5 — SC-010-D2 context-and-principle interaction discovery:** complete with deferred attribution. A four-cell probe found a directional edited-arm signal, but one draw per cell cannot separate replacement effects from sampling variance.
+- **G006-S5R — SC-010-D2 attribution replication:** complete with no attributable factor. Three draws per cell produced 0/3 direct-answer passes in every cell; judge disagreement remained material.
+- **G006-S5M — SC-010-D2 measurement/provider discovery:** proposed and next. Audit the D2 packet interface and scorer before another wording edit or G007 handoff.
 
 ### G007 — Inquiry and harm
 

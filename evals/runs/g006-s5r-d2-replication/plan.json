@@ -1,0 +1,100 @@
+{
+  "replicates": 3,
+  "cells": [
+    "00",
+    "10",
+    "01",
+    "11"
+  ],
+  "ceiling_usd": 0.75,
+  "order": [
+    "r1-00",
+    "r1-10",
+    "r1-01",
+    "r1-11",
+    "r2-00",
+    "r2-10",
+    "r2-01",
+    "r2-11",
+    "r3-00",
+    "r3-10",
+    "r3-01",
+    "r3-11"
+  ],
+  "completed": [
+    {
+      "replicate": 1,
+      "cell": "00",
+      "run_dir": "evals/runs/g006-s5r-d2-replication/r1-00",
+      "cost_usd": 0.01134
+    },
+    {
+      "replicate": 1,
+      "cell": "10",
+      "run_dir": "evals/runs/g006-s5r-d2-replication/r1-10",
+      "cost_usd": 0.019476
+    },
+    {
+      "replicate": 1,
+      "cell": "01",
+      "run_dir": "evals/runs/g006-s5r-d2-replication/r1-01",
+      "cost_usd": 0.0226
+    },
+    {
+      "replicate": 1,
+      "cell": "11",
+      "run_dir": "evals/runs/g006-s5r-d2-replication/r1-11",
+      "cost_usd": 0.013715
+    },
+    {
+      "replicate": 2,
+      "cell": "00",
+      "run_dir": "evals/runs/g006-s5r-d2-replication/r2-00",
+      "cost_usd": 0.01928
+    },
+    {
+      "replicate": 2,
+      "cell": "10",
+      "run_dir": "evals/runs/g006-s5r-d2-replication/r2-10",
+      "cost_usd": 0.01908
+    },
+    {
+      "replicate": 2,
+      "cell": "01",
+      "run_dir": "evals/runs/g006-s5r-d2-replication/r2-01",
+      "cost_usd": 0.016956
+    },
+    {
+      "replicate": 2,
+      "cell": "11",
+      "run_dir": "evals/runs/g006-s5r-d2-replication/r2-11",
+      "cost_usd": 0.016951
+    },
+    {
+      "replicate": 3,
+      "cell": "00",
+      "run_dir": "evals/runs/g006-s5r-d2-replication/r3-00",
+      "cost_usd": 0.010717
+    },
+    {
+      "replicate": 3,
+      "cell": "10",
+      "run_dir": "evals/runs/g006-s5r-d2-replication/r3-10",
+      "cost_usd": 0.008483
+    },
+    {
+      "replicate": 3,
+      "cell": "01",
+      "run_dir": "evals/runs/g006-s5r-d2-replication/r3-01",
+      "cost_usd": 0.016249
+    },
+    {
+      "replicate": 3,
+      "cell": "11",
+      "run_dir": "evals/runs/g006-s5r-d2-replication/r3-11",
+      "cost_usd": 0.037751
+    }
+  ],
+  "cost_usd": 0.212598,
+  "status": "complete"
+}
