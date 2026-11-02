@@ -1,7 +1,7 @@
 # G006 Checkpoint
 
 - Goal: G006 — Authority and Incentives
-- Status: In progress — revision 16; D2 diagnostic branch stopped, G006-S5N abandoned, G006-S6 outcome-based closure review proposed
+- Status: Complete — revision 17; G006-S6 proceeded to G007; D2 diagnostic branch stopped and G006-S5N abandoned
 - Source hash: `251440a71a9068dd43bfaab2b8694d6e2a4f519c403f1b9a70785f830d05f327`
 - Primary clauses: 7 validated (`AI-01` through `AI-07`)
 - Change-register records: 10 validated; all G006-routed audit records covered
@@ -14,5 +14,5 @@
 - Source edits: none
 - Development evidence: six-case probe complete (`$0.009120`); paired 140-case run complete (280 generations, `$0.168390` generation cost, 240 final judge scores plus retries, `$0.977097` incremental judge spend); revision-2 targeted probe complete (19 candidate generations, `$0.013989` generation cost, `$0.113710` incremental judge spend); revision-3 focused probe complete (25 candidate generations, `$0.017664` generation cost, `$0.061932` secondary-judge spend); revision-4 focused probe complete (11 candidate generations, `$0.008657` generation cost, `$0.044436` secondary-judge spend); revision-5 focused probe complete (11 candidate generations, `$0.009099` generation cost, `$0.041747` secondary-judge spend); mapped loop 3 complete (10 candidate generations, `$0.015380` generation cost, `$0.091100` primary incremental cost, `$0.057527` secondary cost); no held-out cases
 - Development finding: the canonical v3 render is clean and MASK is honest under both judges. SC-010-D2 remained unstable, but `EVALUATION_PLAN.md` classifies SC-010 as a non-blocking process diagnostic. The D2 branch used unvalidated judges and a post-hoc semantic checker, exceeded the three-slice re-plan threshold, and cannot validly block G006. See `framework/G006-roadmap-reset.md`.
-- Open work: execute one offline G006-S6 closure review. Separate the G006 authority/provenance contract and SC-001–SC-009 behavioral evidence from SC-010 diagnostics. Do not add D2 calibration, wording, provider, dataset, or paid-call work.
-- Next action: choose exactly one S6 disposition from existing evidence: proceed to G007, pivot to one named G006 behavioral repair, or defer for one named missing input. G007 remains Proposed and unexecuted until that decision.
+- Closure evidence: `framework/G006-S6-analysis.md` records the offline review. Source, registry, exact-replacement, provenance, fixture, and core SC-001–SC-009 checks passed without an attributable blocking regression. SC-010-D2 remains a separately reported, non-blocking diagnostic.
+- Next action: activate G007 in the next cycle. No D2 calibration, wording, provider, dataset, or paid-call work is authorized under G006.

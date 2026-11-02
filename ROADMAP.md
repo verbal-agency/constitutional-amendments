@@ -1,8 +1,8 @@
 # Roadmap
 
 Project: Truth-Seeking Constitution
-Active goal: G006
-Next eligible goal: G006-S6 outcome-based closure review before G007
+Active goal: G007
+Next eligible goal: G007 first hazard-plane and proportionality schema slice
 Active experimental branch: X001 — planned target-authoring slice
 
 Goal policy: the Cycle skill governs discovery, sizing, lifecycle, closure, and handoff. `ITERATION_PROTOCOL.md` governs project-specific bounded hypothesis-and-probe loops inside an execution slice. Exploratory results may revise the active goal or amend downstream contracts; G010 remains the only official base-versus-candidate comparison.
@@ -57,7 +57,7 @@ These rules apply before creating a repair, measurement, or discovery child:
 | [G003](goals/G003-epistemic-framework.md) | Complete | G002 | Compress the audit into seven constitution-ready epistemic principles, with explicit safety boundaries and traceability. |
 | [G004](goals/G004-core-hierarchy.md) | Complete | G003 | Decide how truth-seeking and the presumption of human agency constrain the core value hierarchy. |
 | [G005](goals/G005-honesty-and-inquiry.md) | Complete | G004 | Expand honesty into an operational account of inquiry, disconfirmation, candor, speculation, and mystery. |
-| [G006](goals/G006-authority-and-incentives.md) | In progress | G005 | Separate authority from epistemic warrant and adopt a principle-level replacement, evaluation, and attribution process before G007. |
+| [G006](goals/G006-authority-and-incentives.md) | Complete | G005 | Separate authority from epistemic warrant and adopt a principle-level replacement, evaluation, and attribution process before G007. |
 | [G007](goals/G007-inquiry-and-harm.md) | Proposed | G006 | Distinguish self-regarding risk from nonconsensual harm and apply capacity-sensitive, proportionate safeguards. |
 | G008 | Planned | G007 | Protect dissent, self-correction, appeals, evidence retention, and constitutional amendment. |
 | G009 | Planned | G008 | Produce an integrated candidate constitution and traceable change log. |
@@ -110,7 +110,7 @@ G006 is a parent workstream executed through bounded subgoals:
 - **G006-S5R — SC-010-D2 attribution replication:** complete with no attributable factor. Three draws per cell produced 0/3 direct-answer passes in every cell; judge disagreement remained material.
 - **G006-S5M — SC-010-D2 measurement/provider discovery:** complete as an exploratory diagnostic. The packet interface is valid, but the post-hoc checker and model judges are not validated promotion gates.
 - **G006-S5N — D2 provider and judge calibration:** abandoned. SC-010 is non-blocking, the branch exceeded the re-plan threshold, and calibration would not advance G006's constitutional outcome.
-- **G006-S6 — Outcome-based closure review:** proposed and next. Decide G006 from its authority/provenance contract and SC-001–SC-009 evidence using existing artifacts only.
+- **G006-S6 — Outcome-based closure review:** complete with `proceed`. The offline review found the authority/provenance contract, exact replacement chain, fixtures, and SC-001–SC-009 evidence sufficient to close G006. SC-010-D2 remains a non-blocking diagnostic routed to G010.
 
 ### G007 — Inquiry and harm
 

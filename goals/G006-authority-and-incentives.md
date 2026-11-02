@@ -1,6 +1,6 @@
 # G006 — Authority and Incentives
 
-Status: In progress — parent workstream; active subgoal G006-S6
+Status: Complete — G006-S6 proceeded to G007
 Dependencies: G005 Complete
 Next goal on completion: G007
 
@@ -30,17 +30,17 @@ G006 is the parent workstream. Cycle executes one subgoal at a time; the parent 
 | **G006-S5R — SC-010-D2 attribution replication** | Complete — no attributable factor | Repeat the four D2 cells enough to separate replacement effects from sampling variance. | `goals/G006-S5R-d2-attribution-replication.md`, `framework/G006-S5R-analysis.md`, and `evals/runs/g006-s5r-d2-replication/`. | Measurement/provider discovery. |
 | **G006-S5M — SC-010-D2 measurement/provider discovery** | Complete — exploratory diagnostic | Determine whether the D2 interface and scorer can reliably detect the intended direct answer under the base constitution. | `goals/G006-S5M-d2-measurement-discovery.md`, `framework/G006-S5M-analysis.md`, and offline audit artifacts. | Parent-level roadmap reset. |
 | **G006-S5N — D2 provider and judge calibration** | Abandoned | Proposed calibration after S5M. | `framework/G006-roadmap-reset.md`. | None; SC-010 is non-blocking. |
-| **G006-S6 — Outcome-based closure review** | Proposed | Decide G006 from its authority/provenance contract and SC-001–SC-009 evidence using existing artifacts. | `goals/G006-S6-outcome-closure-review.md` and one closure report. | G007 or one named G006 behavioral repair. |
+| **G006-S6 — Outcome-based closure review** | Complete — proceed to G007 | Decide G006 from its authority/provenance contract and SC-001–SC-009 evidence using existing artifacts. | `goals/G006-S6-outcome-closure-review.md` and `framework/G006-S6-analysis.md`. | G007 hazard and proportionality analysis. |
 
-Only G006-S6 is eligible for the next execution cycle. The D2 branch is closed:
-SC-010 is a non-blocking process diagnostic, and neither the model judges nor
-the post-hoc checker were validated as promotion gates.
+G006-S6 is complete. The D2 branch remains closed: SC-010 is a non-blocking
+process diagnostic, and neither the model judges nor the post-hoc checker were
+validated as promotion gates.
 
 ## Iteration loop
 
 Follow `ITERATION_PROTOCOL.md`: define or revise one principle contract at a time, map it to exact source passages, compile a complete candidate, and run offline, focused, ablation, interaction, and collateral-damage checks. Run A-01–A-12 and development cases against the relevant principle mechanisms, not only against clause wording. Use local or open-model probes to find both institutional capture and over-disclosure/over-refusal. Record predictive and explanatory hypotheses, competing explanations, falsifiers, and attribution confidence. Revise G006 for local failures; amend G007–G010 when findings change harm thresholds, review interfaces, integration assumptions, or measurement needs.
 
-**Execution state:** Revision 16 is active. Revision 5 established exact replacement assembly, mapped loop 3 reproduced the SC-010-D2 regression, and G006-S3 attributed that regression to the MAP-002 direct-answer wording with a paired ablation. The subsequent repair and diagnostic branch did not produce a stable causal result: the no-replacement arm also failed in replication, the judges agreed on only 3 of 11 scorable pairs, and the semantic checker was written after outputs without independent validation. The roadmap reset found the controlling contract error: `EVALUATION_PLAN.md` defines SC-010 as a non-blocking process diagnostic, but G006-S4 made D2 a promotion blocker. G006-S5N is abandoned. G006-S6 now owns one offline outcome-based closure decision using the authority/provenance contract and SC-001–SC-009 evidence; G007 remains deferred until that decision.
+**Execution state:** Revision 17 is complete. Revision 5 established exact replacement assembly, mapped loop 3 reproduced the SC-010-D2 regression, and G006-S3 attributed that regression to the MAP-002 direct-answer wording with a paired ablation. The subsequent repair and diagnostic branch did not produce a stable causal result: the no-replacement arm also failed in replication, the judges agreed on only 3 of 11 scorable pairs, and the semantic checker was written after outputs without independent validation. The roadmap reset corrected the controlling contract error: `EVALUATION_PLAN.md` defines SC-010 as a non-blocking process diagnostic, but G006-S4 made D2 a promotion blocker. G006-S5N was abandoned. G006-S6 reviewed the authority/provenance contract and SC-001–SC-009 evidence offline and decided `proceed` to G007. No final integrated-constitution promotion is claimed.
 
 ## Revision 16 roadmap reset
 
@@ -234,7 +234,7 @@ Each fixture contains `case_id`, `class`, `condition`, `planes`, `expected_behav
 - G007 receives hazard-threshold decisions and G008 receives independent-review and identity/amendment decisions.
 - Source and frozen evaluation artifacts remain unchanged; no held-out access occurs, and any provider use is limited to the explicitly approved development probe.
 - G007 is `Proposed` only after G006 verification and has a complete execution contract.
-- G006 cannot close until the principle registry, semantic map contract, focused ablation/interaction evidence, and collateral-damage review are complete.
+- G006 closed only after the principle registry, semantic map contract, focused ablation/interaction evidence, and collateral-damage review were recorded; the integrated candidate and official comparison remain G009/G010 work.
 
 ## Authority and side-effect boundaries
 

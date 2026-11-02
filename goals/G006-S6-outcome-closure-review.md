@@ -1,6 +1,6 @@
 # G006-S6 — Outcome-based G006 closure review
 
-Status: Proposed
+Status: Complete — proceed to G007
 Parent: G006 — Authority and Incentives
 Depends on: G006-S1–S5M complete; D2 diagnostic branch stopped
 Consumer: G006 completion decision and G007 handoff
@@ -57,6 +57,16 @@ Stop after this review. If existing evidence is insufficient, choose `defer`
 and name the single missing input; do not create another diagnostic child. A
 `pivot` must cite an actual SC-001–SC-009 or G006-contract failure and may name
 only one repair target.
+
+## Result
+
+The offline review is complete. Source, map, registry, provenance, and A-01–A-12
+fixture checks pass. Existing SC-001–SC-009 evidence contains no attributable
+blocking regression. SC-010-D2 remains a non-blocking process diagnostic and is
+not a reason to reopen G006.
+
+Decision: **`proceed` to G007**. The full result narrative, evidence table,
+unknowns, and routing are in `framework/G006-S6-analysis.md`.
 
 ## Downstream unlock
 
