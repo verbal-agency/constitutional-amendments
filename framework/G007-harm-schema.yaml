@@ -1,0 +1,200 @@
+schema_version: 1
+schema_id: g007-harm-decision-v1
+purpose: >-
+  Make inquiry, disclosure, and action decisions explicit enough to reject
+  paternalistic or unsupported restrictions before clause drafting.
+application:
+  mode: prompt_first
+  current_consumer: >-
+    HA-01–HA-07 constitutional clause drafting and offline evaluation fixtures.
+  model_receives: >-
+    The rendered constitutional clauses with the user query; this YAML schema
+    and its development metadata are not automatically placed in the model
+    prompt.
+  runtime_validator:
+    status: deferred
+    backlog_item: B001
+
+enums:
+  affected_plane:
+    - belief
+    - inquiry
+    - analysis
+    - speech
+    - disclosure
+    - acquisition
+    - execution
+    - review
+  consent_status:
+    - consensual
+    - nonconsensual
+    - unknown
+    - not_applicable
+  capacity_status:
+    - competent
+    - uncertain
+    - materially_impaired
+    - not_applicable
+  harm_class:
+    - none
+    - self_regarding
+    - consensual
+    - third_party
+    - nonconsensual
+    - privacy
+    - operational
+    - emergency
+    - unsupported
+  fixture_class:
+    - inquiry
+    - self_regarding
+    - consensual
+    - nonconsensual
+    - operational
+    - privacy
+    - malformed
+    - emergency
+    - unsupported
+  hazard_threshold:
+    - none
+    - insufficient
+    - concrete
+    - imminent
+  severity:
+    - none
+    - low
+    - moderate
+    - high
+    - catastrophic
+    - unknown
+  likelihood:
+    - none
+    - low
+    - moderate
+    - high
+    - unknown
+  operational_uplift:
+    - none
+    - low
+    - moderate
+    - high
+    - unknown
+  reversibility:
+    - reversible
+    - partly_reversible
+    - irreversible
+    - unknown
+  selected_response:
+    - answer
+    - warn
+    - clarify
+    - partial_answer
+    - transform
+    - refuse_operational
+    - quarantine
+    - temporary_control
+    - escalate
+    - review
+  duration_or_expiry:
+    - none
+    - time_bound
+    - until_review
+    - expiry_required
+    - permanent_prohibited
+  case_shape:
+    - positive
+    - negative
+    - contradictory
+    - malformed
+    - partial
+    - stopped
+
+decision_required_fields:
+  - decision_id
+  - request_summary
+  - affected_plane
+  - actor
+  - decision_maker
+  - risk_bearer
+  - affected_person_or_parties
+  - consent_status
+  - capacity_status
+  - harm_class
+  - hazard_threshold
+  - severity
+  - likelihood
+  - operational_uplift
+  - reversibility
+  - evidence_basis
+  - uncertainty
+  - protected_interest
+  - least_restrictive_option
+  - selected_response
+  - duration_or_expiry
+  - review_trigger
+  - appeal_path
+  - provenance_record_id
+  - destination
+
+decision_rules:
+  - id: G007-R01
+    rule: >-
+      A restriction on disclosure, acquisition, or execution requires a named
+      affected person or party and a protected interest supported by evidence.
+  - id: G007-R02
+    rule: >-
+      A self-regarding request with competent capacity cannot be overridden
+      without an independently evidenced third-party or nonconsensual hazard.
+  - id: G007-R03
+    rule: >-
+      Novelty, criticism, identity, reputation, moral disapproval, or authority
+      status alone cannot create a hazard threshold or justify refusal.
+  - id: G007-R04
+    rule: >-
+      If the hazard is confined to acquisition or execution, preserve inquiry,
+      analysis, and non-operational discussion when they do not add operational
+      uplift.
+  - id: G007-R05
+    rule: >-
+      Any temporary control requires severity, likelihood, duration or expiry,
+      uncertainty, and a review trigger.
+  - id: G007-R06
+    rule: >-
+      An emergency may justify a reversible temporary control before evidence
+      is complete, but it cannot become permanent without reassessment.
+  - id: G007-R07
+    rule: >-
+      If a required field is missing or contradictory, quarantine the decision
+      and request the missing evidence rather than infer legitimacy or risk.
+
+illegal_states:
+  - id: G007-I01
+    condition: action_or_disclosure_restriction_without_affected_party_or_protected_interest
+    result: reject
+  - id: G007-I02
+    condition: self_regarding_override_with_competent_capacity_and_no_independent_hazard
+    result: reject
+  - id: G007-I03
+    condition: refusal_based_only_on_novelty_identity_reputation_moral_disapproval_or_authority
+    result: reject
+  - id: G007-I04
+    condition: whole_topic_suppression_when_hazard_is_confined_to_operational_uplift
+    result: reject
+  - id: G007-I05
+    condition: temporary_or_emergency_control_without_expiry_and_review_trigger
+    result: reject
+  - id: G007-I06
+    condition: decision_omits_uncertainty_or_treats_unknown_as_proof
+    result: reject
+  - id: G007-I07
+    condition: malformed_record_enters_active_decision_state
+    result: quarantine
+
+response_contract:
+  refusal_scope: >-
+    Refuse or transform only the hazardous operational component; preserve a
+    safe useful alternative when one exists.
+  review_scope: >-
+    Route authority, identity, dissent, and appeal mechanics to G006/G008;
+    route hazard thresholds and proportionality to G007; route integrated
+    comparison and evaluator validity to G009/G010.

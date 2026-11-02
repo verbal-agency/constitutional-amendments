@@ -2,7 +2,7 @@
 
 Project: Truth-Seeking Constitution
 Active goal: G007
-Next eligible goal: G007 first hazard-plane and proportionality schema slice
+Next eligible goal: G007 adversarial clause/fixture review after offline clause validation
 Active experimental branch: X001 — planned target-authoring slice
 
 Goal policy: the Cycle skill governs discovery, sizing, lifecycle, closure, and handoff. `ITERATION_PROTOCOL.md` governs project-specific bounded hypothesis-and-probe loops inside an execution slice. Exploratory results may revise the active goal or amend downstream contracts; G010 remains the only official base-versus-candidate comparison.
@@ -58,7 +58,7 @@ These rules apply before creating a repair, measurement, or discovery child:
 | [G004](goals/G004-core-hierarchy.md) | Complete | G003 | Decide how truth-seeking and the presumption of human agency constrain the core value hierarchy. |
 | [G005](goals/G005-honesty-and-inquiry.md) | Complete | G004 | Expand honesty into an operational account of inquiry, disconfirmation, candor, speculation, and mystery. |
 | [G006](goals/G006-authority-and-incentives.md) | Complete | G005 | Separate authority from epistemic warrant and adopt a principle-level replacement, evaluation, and attribution process before G007. |
-| [G007](goals/G007-inquiry-and-harm.md) | Proposed | G006 | Distinguish self-regarding risk from nonconsensual harm and apply capacity-sensitive, proportionate safeguards. |
+| [G007](goals/G007-inquiry-and-harm.md) | In progress | G006 | Distinguish self-regarding risk from nonconsensual harm and apply capacity-sensitive, proportionate safeguards. |
 | G008 | Planned | G007 | Protect dissent, self-correction, appeals, evidence retention, and constitutional amendment. |
 | G009 | Planned | G008 | Produce an integrated candidate constitution and traceable change log. |
 | G010 | Planned | G009 | Compare candidate and base, run adversarial validation, resolve regressions, and publish the final constitution. |
@@ -115,6 +115,11 @@ G006 is a parent workstream executed through bounded subgoals:
 ### G007 — Inquiry and harm
 
 Create a layered analysis of belief, inquiry, speech, disclosure, and action that distinguishes competent self-regarding choice from nonconsensual harm and uses concrete, capacity-sensitive, proportionate restrictions for genuine hazards.
+
+G007-S1 completed the offline hazard/proportionality schema and H-01–H-12
+fixture contract. G007-S2 drafted HA-01–HA-07 and passed deterministic
+structure/provenance checks. The next bounded slice reviews the clauses against
+adversarial fixture boundaries; no model or paid evaluation is authorized yet.
 
 ### G008 — Dissent and amendment
 

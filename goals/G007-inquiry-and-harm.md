@@ -1,6 +1,6 @@
 # G007 — Inquiry and Harm
 
-Status: Proposed
+Status: In progress — G007-S2 clause-drafting slice complete; offline review is next
 Dependencies: G006 Complete
 Next goal on completion: G008
 
@@ -12,7 +12,9 @@ G007 produces a section-ready amendment module and offline evidence, not the int
 
 ## Activation slice
 
-G007 remains `Proposed`, but Cycle must begin with one bounded contract slice rather than executing the full goal at once.
+G007 began with one bounded contract slice rather than executing the full goal
+at once. G007-S1 and G007-S2 are complete; adversarial clause/fixture review
+remains a later bounded slice.
 
 - **Primary owner:** G007. G006 supplies authority/provenance interfaces; G008 receives review and amendment findings.
 - **Consumer:** the later harm clauses, fixtures, and G009 integration contract.
@@ -20,7 +22,22 @@ G007 remains `Proposed`, but Cycle must begin with one bounded contract slice ra
 - **Hypothesis:** separating inquiry, disclosure, and action while recording capacity, affected-party standing, severity, likelihood, operational uplift, reversibility, and less-restrictive alternatives will reduce paternalistic overreach without erasing genuine third-party hazard.
 - **Closure criteria:** (1) the schema has no illegal or ambiguous hazard states; (2) H-01–H-12 cover positive, negative, contradictory, malformed, partial, and stopped cases; (3) each fixture has a preserving purpose, expected behavior, unacceptable behavior, and proof obligation; (4) G006 authority/provenance boundaries and G008 review handoff are recorded; (5) verification records the remaining uncertainties before clause drafting.
 
+### G007-S1 result
+
+The schema and fixture contract pass offline. The first slice does not draft
+HA-01–HA-07 or claim behavioral improvement. Its remaining uncertainty list and
+the next clause-drafting slice are recorded in `framework/G007-verification.md`.
+
 The broader acceptance table below remains the goal-level contract. These five criteria govern the first activation slice.
+
+### G007-S2 result
+
+The seven HA clauses are drafted against the validated schema and linked to
+the H-01–H-12 offline contract, source targets, audit records, conflict rules,
+and downstream owners. A deterministic module validator checks the seven IDs,
+clause word limits, metadata completeness, fixture links, and source hash. This
+slice does not claim that a model will apply the clauses correctly; adversarial
+review and tracked development probes remain open.
 
 ## Iteration loop
 
@@ -62,6 +79,7 @@ G007 must not read `evals/private/`, held-out material, or change frozen evaluat
 - `amendments/G007-inquiry-and-harm.md` — section-ready clauses;
 - `amendments/G007-change-register.md` — source decisions and routing;
 - `fixtures/G007-harm-cases.md` — offline hazard and proportionality cases;
+- `evals/scripts/validate_g007_module.py` — deterministic clause-contract validation;
 - `framework/G007-verification.md` — criterion evidence;
 - `framework/G007-checkpoint.md` — durable state;
 - `goals/G008-dissent-and-amendment.md` — standalone successor;
@@ -69,7 +87,7 @@ G007 must not read `evals/private/`, held-out material, or change frozen evaluat
 
 ## Expected implementation surface
 
-Exactly seven primary clause functions `HA-01` through `HA-07`, twelve fixtures `H-01` through `H-12`, the five G007 artifact files above, and a G008 goal file. Substitution requires equivalent schema fields, IDs, and evidence.
+Exactly seven primary clause functions `HA-01` through `HA-07`, twelve fixtures `H-01` through `H-12`, the G007 artifact files and validators above, and a G008 goal file. Substitution requires equivalent schema fields, IDs, and evidence.
 
 ## Canonical artifact contracts
 
