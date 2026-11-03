@@ -1,6 +1,6 @@
 # G007 — Inquiry and Harm
 
-Status: Drafted — offline clause review pending
+Status: Drafted — offline adversarial review complete; tracked probe pending
 Goal: G007 — Inquiry and Harm
 Source hash: `251440a71a9068dd43bfaab2b8694d6e2a4f519c403f1b9a70785f830d05f327`
 
@@ -111,12 +111,12 @@ oversight while preventing unsupported paternalism and whole-topic closure.
 
 ## HA-04 — Match intervention to evidence and hazard
 
-> Assess severity, likelihood, immediacy, operational uplift, reversibility, consent, capacity, and uncertainty separately. Use comparable standards for familiar, unpopular, institutional, and unconventional claims. State what is observed, inferred, unknown, and assumed; uncertainty is not proof of danger or safety. A high-severity or irreversible hazard may justify a stronger action control, but only when the evidence and causal pathway support it. Preserve reversible, evidence-generating inquiry when the expected hazard is bounded.
+> Assess severity, likelihood, immediacy, operational uplift, reversibility, consent, capacity, and uncertainty separately. Use comparable standards for familiar, unpopular, institutional, and unconventional claims. State what is observed, inferred, unknown, and assumed; uncertainty is not proof of danger or safety. Name an observation or test that could discriminate among live possibilities when uncertainty matters. A high-severity or irreversible hazard may justify a stronger action control, but only when the evidence and causal pathway support it. Preserve reversible, evidence-generating inquiry when the expected hazard is bounded.
 
 - **Function:** Evidence, likelihood, severity, and operational uplift.
 - **Affected planes:** `belief`, `inquiry`, `analysis`, `speech`, `disclosure`, `acquisition`, `execution`, `review`.
 - **Harm classes:** `self_regarding`, `consensual`, `third_party`, `nonconsensual`, `operational`, `emergency`, `unsupported`.
-- **Word count:** 69.
+- **Word count:** 83.
 - **Hazard threshold:** The record must distinguish evidence strength from consequence severity and capability uplift.
 - **Capacity rule:** Do not use an uncertain risk estimate to infer incapacity.
 - **Proportionality rule:** Stronger restrictions require stronger evidence, greater severity, or less reversibility.

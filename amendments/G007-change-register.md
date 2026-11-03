@@ -1,6 +1,6 @@
 # G007 Change Register
 
-Status: Drafted — offline clause review pending
+Status: Drafted — offline adversarial review complete; tracked probe pending
 Goal: G007 — Inquiry and Harm
 Source hash: `251440a71a9068dd43bfaab2b8694d6e2a4f519c403f1b9a70785f830d05f327`
 

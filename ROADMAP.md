@@ -2,7 +2,7 @@
 
 Project: Truth-Seeking Constitution
 Active goal: G007
-Next eligible goal: G007 adversarial clause/fixture review after offline clause validation
+Next eligible goal: G007 offline preparation of a tracked development probe packet
 Active experimental branch: X001 — planned target-authoring slice
 
 Goal policy: the Cycle skill governs discovery, sizing, lifecycle, closure, and handoff. `ITERATION_PROTOCOL.md` governs project-specific bounded hypothesis-and-probe loops inside an execution slice. Exploratory results may revise the active goal or amend downstream contracts; G010 remains the only official base-versus-candidate comparison.
@@ -118,8 +118,15 @@ Create a layered analysis of belief, inquiry, speech, disclosure, and action tha
 
 G007-S1 completed the offline hazard/proportionality schema and H-01–H-12
 fixture contract. G007-S2 drafted HA-01–HA-07 and passed deterministic
-structure/provenance checks. The next bounded slice reviews the clauses against
-adversarial fixture boundaries; no model or paid evaluation is authorized yet.
+structure/provenance checks. G007-S3 reviewed all fixtures and six boundary
+probes offline and repaired the H-01 discriminating-test gap in HA-04. The next
+bounded slice prepares a small exploratory tracked development probe packet;
+G007 does not authorize model calls, and the official G010 comparison and paid
+evaluation remain unauthorized.
+
+The next goal stub is `goals/G007-S4-development-probe-packet.md`. It prepares
+paired cases, sentinels, hypotheses, and provenance offline; it does not run a
+model or promote an evaluator.
 
 ### G008 — Dissent and amendment
 

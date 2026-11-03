@@ -226,3 +226,87 @@ development probe would show a causal improvement.
 
 **`proceed` to adversarial clause/fixture review.** The clauses are a reviewed
 draft, not yet an integrated constitution or a validated model policy.
+
+---
+
+## G007-S3 verification — adversarial clause review
+
+Slice: G007-S3 — adversarial review of HA-01–HA-07
+Verification date: 2026-11-02
+Result: Complete — proceed to offline preparation of a tracked development probe packet
+
+### Outcome card
+
+This slice checks whether the clause prose states the boundaries already
+represented by H-01–H-12 and six explicit edge probes. Success means every
+fixture has a direct clause path and no clause silently permits whole-topic
+suppression or unsupported action. Failure means revise G007 or route the
+conflict before spending on model behavior.
+
+### Development narrative
+
+**Prior limitation:** The structural validator proved that clauses and fixture
+links existed, but it did not prove that the prose stated each fixture's
+expected boundary.
+
+**Predictive hypothesis:** A semantic review of every fixture and explicit edge
+case will find prose/schema gaps before model outputs make attribution harder.
+
+**Capability built:** `framework/G007-adversarial-review.md` records twelve
+fixture reviews, six boundary probes, one repair, results, and routing.
+`validate_g007_adversarial_review.py` checks the review record deterministically.
+
+**Observed:** H-01 exposed one gap: the fixture required a discriminating test,
+while HA-04 only required uncertainty labels. HA-04 was revised to require an
+observation or test that distinguishes live possibilities. All twelve fixtures
+and six boundary probes pass after the revision. No model or paid call ran.
+
+**Interpretation:** Clause-to-fixture coverage is supported with high
+confidence. This does not establish model behavior, evaluator validity, or that
+the new test language will improve inquiry rather than produce performative
+uncertainty.
+
+**Next decision:** proceed to offline preparation of a small tracked development
+probe packet with paired inquiry, self-regarding, privacy, operational, and
+emergency cases. Model execution requires a separately authorized,
+contract-compatible goal.
+
+### Criterion evidence
+
+| G007-S3 criterion | Result | Evidence |
+|---|---|---|
+| H-01–H-12 each have a clause path and boundary result | Pass | `framework/G007-adversarial-review.md` contains one review section per fixture; the review validator requires all twelve `PASS` results. |
+| Six boundary probes cover the required mechanisms | Pass | B-01 through B-06 cover inquiry, agency, consent, privacy, authority laundering, and emergency expiry. |
+| Active-goal gap was repaired and rechecked | Pass | HA-04 now requires a discriminating observation or test; clause, fixture, and review validators pass. |
+| Findings have one destination and ownership remains intact | Pass | Review routing sends emergency development cases to G007, governance mechanics to G008, and model measurement to G010. |
+| Offline and source boundaries hold | Pass | Source hash matches; no frozen, held-out, model, provider, network, paid, or remote action occurred. |
+
+### Observed, interpreted, decided, unknown
+
+**Observed:** One prose gap was found and repaired; all fixture and boundary
+review records pass.
+
+**Interpreted:** The clause set is coherent against the offline contract. The
+review is evidence of textual coverage, not behavioral improvement.
+
+**Decided:** Mark G007-S3 complete and prepare a bounded tracked development
+probe. Keep the official G010 comparison separate.
+
+**Unknown:** Whether a model can identify operational uplift, whether clause
+order creates over-refusal, and whether discriminating-test language improves
+inquiry or only adds uncertainty language.
+
+### Routing
+
+| Finding | Class | Destination | Action |
+|---|---|---|---|
+| H-01 discriminating-test gap | Active-goal requirement | G007-S3 | Repaired HA-04 and rechecked all validators. |
+| Minimum emergency facts remain untested | Future-goal input | G007 offline probe packet | Add paired emergency cases; do not expand this offline result. |
+| Review identity, appeal, dissent, and amendment mechanics | Future-goal input | G008 | Preserve the boundary. |
+| Model behavior and evaluator validity | Future-goal input | G010 | No promotion claim from this slice. |
+
+## S3 decision
+
+**`proceed` to offline preparation of a tracked development probe packet.**
+The offline semantic contract is ready; model behavior remains untested and no
+model call is authorized by G007.

@@ -1,12 +1,12 @@
 schema_version: 1
 goal_id: G007
-active_subgoal: G007-S2
+active_subgoal: G007-S3
 active_subgoal_status: complete
 status: in_progress
-revision: 20
+revision: 21
 owner: G007
 consumer: G007 hazard, capacity, proportionality, and less-restrictive-alternative decision
-current_slice: adversarial review of HA-01–HA-07 against H-01–H-12 and boundary cases
+current_slice: offline preparation of a tracked development probe packet
 last_evidence: framework/G007-verification.md
 last_checkpoint_date: 2026-11-01
 last_decision: >-
@@ -15,22 +15,25 @@ last_decision: >-
   SC-001–SC-009 evidence passed without an attributable blocking regression.
   SC-010-D2 remains a non-blocking diagnostic owned by G010. G007-S1 validated
   the hazard schema and fixtures; G007-S2 drafted HA-01–HA-07 and passed
-  offline clause/provenance checks. The next decision is adversarial review
-  before any tracked model probe.
+  offline clause/provenance checks; G007-S3 reviewed all fixtures and boundary
+  probes offline, revising HA-04 to require discriminating tests. The next
+  decision is whether an offline probe packet is ready for separately
+  authorized model execution without over-refusal or under-refusal.
 next_action: >-
-  Execute the next bounded G007 slice: review HA-01–HA-07 against H-01–H-12
-  and explicit boundary cases for over-refusal, under-refusal, authority
-  laundering, and false confidence before any tracked model probe.
+  Execute the next bounded G007-S4 slice: prepare and validate a small tracked
+  development probe packet with paired inquiry, self-regarding, privacy,
+  operational, and emergency cases. Do not run a model call in G007; model
+  execution requires a separately authorized and contract-compatible goal.
 upstream_assumptions_to_recheck:
   - SC-010 is a separately reported, non-blocking process diagnostic.
   - The candidate must replace exact source spans rather than append a module.
   - G006 closed on authority/provenance outcomes and attributable SC-001–SC-009 regressions.
   - G007 must consume the G006 authority/provenance interfaces without reopening them absent counterevidence.
-  - G007-S1 schema and fixture coverage are validated offline; G007-S2 clause structure and traceability are validated offline; clause-level thresholds and behavioral effects remain to be justified.
+  - G007-S1 schema and fixture coverage are validated offline; G007-S2 clause structure and traceability are validated offline; G007-S3 semantic fixture/boundary review is validated offline; behavioral effects remain to be justified.
   - G007 applies the schema through prompt-first constitutional clauses; runtime enforcement is deferred to backlog B001.
 downstream_impact:
   - G006-S5N is abandoned; no provider or judge calibration will run for D2 in G006.
-  - G006 is complete; G007 is in progress and its first schema/fixture slice is complete.
+  - G006 is complete; G007 is in progress and G007-S1 through G007-S3 are complete.
   - G010 owns separate SC-010 reporting and predeclared human/judge review.
   - G008 and G009 consume only the G006 decision recorded by S6.
 closure_evidence_required:
@@ -39,8 +42,11 @@ closure_evidence_required:
   - amendments/G007-inquiry-and-harm.md
   - amendments/G007-change-register.md
   - evals/scripts/validate_g007_module.py
+  - framework/G007-adversarial-review.md
+  - evals/scripts/validate_g007_adversarial_review.py
   - framework/G007-verification.md
   - framework/G007-checkpoint.md
 stop_condition: >-
-  Stop clause drafting on an ambiguous hazard state, missing protected
-  interest, a material G006 boundary conflict, or an unowned review decision.
+  Stop the probe on an ambiguous hazard state, missing protected interest, a
+  material G006 boundary conflict, an unowned review decision, or two failed
+  bounded repairs of the same behavior.

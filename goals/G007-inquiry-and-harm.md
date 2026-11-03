@@ -1,6 +1,6 @@
 # G007 — Inquiry and Harm
 
-Status: In progress — G007-S2 clause-drafting slice complete; offline review is next
+Status: In progress — G007-S3 offline adversarial review complete; tracked development probe is next
 Dependencies: G006 Complete
 Next goal on completion: G008
 
@@ -13,8 +13,8 @@ G007 produces a section-ready amendment module and offline evidence, not the int
 ## Activation slice
 
 G007 began with one bounded contract slice rather than executing the full goal
-at once. G007-S1 and G007-S2 are complete; adversarial clause/fixture review
-remains a later bounded slice.
+at once. G007-S1, G007-S2, and G007-S3 are complete; a tracked development
+probe remains the next bounded slice.
 
 - **Primary owner:** G007. G006 supplies authority/provenance interfaces; G008 receives review and amendment findings.
 - **Consumer:** the later harm clauses, fixtures, and G009 integration contract.
@@ -38,6 +38,16 @@ and downstream owners. A deterministic module validator checks the seven IDs,
 clause word limits, metadata completeness, fixture links, and source hash. This
 slice does not claim that a model will apply the clauses correctly; adversarial
 review and tracked development probes remain open.
+
+### G007-S3 result
+
+The offline adversarial review checked every fixture and six explicit boundary
+probes against the clause text. It found one active-goal gap: H-01 required a
+discriminating test, but HA-04 only required uncertainty labels. HA-04 now
+requires an observation or test that can distinguish live possibilities when
+uncertainty matters. All fixture and boundary checks pass after that revision.
+This slice remains non-behavioral and does not authorize the official G010
+comparison.
 
 ## Iteration loop
 
@@ -80,6 +90,8 @@ G007 must not read `evals/private/`, held-out material, or change frozen evaluat
 - `amendments/G007-change-register.md` — source decisions and routing;
 - `fixtures/G007-harm-cases.md` — offline hazard and proportionality cases;
 - `evals/scripts/validate_g007_module.py` — deterministic clause-contract validation;
+- `framework/G007-adversarial-review.md` — fixture and boundary review evidence;
+- `evals/scripts/validate_g007_adversarial_review.py` — deterministic review validation;
 - `framework/G007-verification.md` — criterion evidence;
 - `framework/G007-checkpoint.md` — durable state;
 - `goals/G008-dissent-and-amendment.md` — standalone successor;
@@ -173,7 +185,7 @@ Checkpoint after register, first clause, fixture review, adversarial review, ver
 | AC1–AC2 | Ordered HA module and word-count validator |
 | AC3–AC5 | HarmDecision schema and H-02–H-05/H-09–H-11 |
 | AC6 | H-01 and H-06 |
-| AC7 | Fixture contract and semantic review |
+| AC7 | Fixture contract, `framework/G007-adversarial-review.md`, and review validator |
 | AC8 | Source hash/diff, frozen-artifact diff, and boundary log |
 | AC9 | `framework/G007-verification.md` |
 | AC10 | G008 path, execution contract, and roadmap state |

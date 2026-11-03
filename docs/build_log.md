@@ -62,3 +62,37 @@ constitutional clauses and made the traceability machine-checkable. The result
 is a reviewable policy draft, not a claim that the model has changed.” Likely
 follow-up: “Why not run the model now?” Because the cheaper boundary review can
 still catch missing or contradictory principles before spending on behavior.
+
+## 2026-11-02 — G007-S3: adversarial review before model probing
+
+**Prior limitation:** The clause and fixture validators checked structure and
+links, but not whether the prose actually stated each expected boundary.
+
+**Hypothesis:** Reviewing every fixture and explicit edge case will find
+schema-to-prose gaps before model outputs make them harder to attribute.
+
+**Capability built:** `framework/G007-adversarial-review.md` records twelve
+fixture reviews and six boundary probes. The review validator makes coverage
+and offline boundaries checkable.
+
+**What surprised:** H-01 required a discriminating test, while HA-04 only
+required uncertainty labels. The clause was structurally valid but semantically
+under-specified for truth-seeking inquiry.
+
+**Observed:** HA-04 was revised to require an observation or test that can
+distinguish live possibilities. All review, clause, and fixture validators pass;
+no model or paid call ran.
+
+**Interpretation:** Textual coverage is supported with high confidence. Model
+behavior, judge validity, and whether the new language creates performative
+uncertainty remain unknown.
+
+**What it unlocks:** Offline preparation of a small tracked development probe
+packet with paired inquiry, self-regarding, privacy, operational, and emergency
+cases. G007 does not authorize model execution.
+
+**Interview explanation:** “The adversarial review caught a meaningful gap that
+the schema validator could not: labeling uncertainty is not the same as naming
+how inquiry could resolve it. I repaired the clause before testing a model.”
+Likely follow-up: “Did the repair improve behavior?” Not yet; that requires a
+controlled development probe.
