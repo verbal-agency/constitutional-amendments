@@ -145,13 +145,13 @@ G006 is a parent workstream executed through bounded subgoals:
 ### G006.5 — Walking-skeleton behavioral probe
 
 Assemble a rough candidate from the available G006 exact-replacement map plus
-the G005 and G007 section-ready modules (creating and validating any missing
-source-span maps) and run a small, pre-registered development probe against the
+the G005 and G007 section-ready modules using one thin provisional replacement
+manifest, then run a small, pre-registered development probe against the
 historical base. This is the first behavioral evidence in the mainline. It is
 exploratory, uses only tracked development cases, and cannot promote a candidate
-or change G010's frozen protocol. It must also settle the judge calibration,
-disagreement, independent-review, and attribution rules that G008/G009 will
-inherit.
+or change G010's frozen protocol. Robust map and validator hardening moves to
+G009; this goal must settle only the judge calibration, disagreement,
+independent-review, and attribution rules needed for the first probe.
 
 G006.5 is intentionally small. It either produces a behaviorally informative
 probe or identifies an exact assembly/measurement blocker. It does not open a
@@ -164,11 +164,12 @@ Create a layered analysis of belief, inquiry, speech, disclosure, and action tha
 G007-S1 completed the offline hazard/proportionality schema and H-01–H-12
 fixture contract. G007-S2 drafted HA-01–HA-07 and passed deterministic
 structure/provenance checks. G007-S3 reviewed all fixtures and six boundary
-probes offline and repaired the H-01 discriminating-test gap in HA-04. The
-behavioral walking skeleton is now owned by G006.5 so G007 can finish its clause
-contract without pretending that offline fixtures establish model behavior.
-G007-S4 may still prepare its packet offline; it does not authorize model calls,
-and the official G010 comparison and paid evaluation remain unauthorized.
+probes offline and repaired the H-01 discriminating-test gap in HA-04. G007-S4
+then froze a 15-case development packet with ten paired cases and five
+sentinels. The behavioral walking skeleton is now owned by G006.5 so G007 can
+finish its clause contract without pretending that offline fixtures establish
+model behavior. G007 still does not authorize model calls, and the official
+G010 comparison and paid evaluation remain unauthorized.
 
 The next goal stub is `goals/G007-S4-development-probe-packet.md`. It prepares
 paired cases, sentinels, hypotheses, and provenance offline; it does not run a

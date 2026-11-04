@@ -1,15 +1,15 @@
 schema_version: 1
 goal_id: G007
-active_subgoal: G007-S3
+active_subgoal: G007-S4
 active_subgoal_status: complete
 status: in_progress
-revision: 22
+revision: 23
 owner: G007
 consumer: G007 hazard, capacity, proportionality, and less-restrictive-alternative decision
-current_slice: offline preparation of a tracked development probe packet
+current_slice: completed offline preparation of the G007 development probe packet
 closure_mode: behavior-bearing
 behavioral_evidence_status: drafted_unverified
-last_evidence: framework/G007-verification.md
+last_evidence: framework/G007-S4-verification.md
 last_checkpoint_date: 2026-11-03
 last_decision: >-
   G006-S6 completed an offline closure review and decided proceed to G007.
@@ -19,17 +19,16 @@ last_decision: >-
   the hazard schema and fixtures; G007-S2 drafted HA-01–HA-07 and passed
   offline clause/provenance checks; G007-S3 reviewed all fixtures and boundary
   probes offline, revising HA-04 to require discriminating tests. The next
-  decision is whether an offline probe packet is ready for separately
-  authorized model execution without over-refusal or under-refusal. The roadmap
-  now routes the first behavioral candidate-versus-base probe to proposed bridge
+  decision was whether an offline probe packet was ready for separately
+  authorized model execution without over-refusal or under-refusal. G007-S4
+  produced and validated a 15-case packet with 10 paired cases and 5 sentinels.
+  The first behavioral candidate-versus-base probe now routes to proposed bridge
   goal G006.5; G007 remains responsible for its offline clause and fixture
   contract.
 next_action: >-
-  Execute the next bounded G007-S4 slice: prepare and validate a small tracked
-  development probe packet with paired inquiry, self-regarding, privacy,
-  operational, and emergency cases. Do not run a model call in G007; model
-  execution belongs to the proposed G006.5 bridge and requires a separately
-  authorized, contract-compatible goal.
+  Activate the proposed G006.5 bridge. Assemble the provisional candidate from
+  the source and replacement manifest, then prepare the separate model and judge
+  preflight. Do not run a model call in G007.
 upstream_assumptions_to_recheck:
   - SC-010 is a separately reported, non-blocking process diagnostic.
   - The candidate must replace exact source spans rather than append a module.
@@ -41,10 +40,10 @@ downstream_impact:
   - G006-S5N is abandoned; no provider or judge calibration will run for D2 in G006.
   - G006 is complete; G007 is in progress and G007-S1 through G007-S3 are complete.
   - G010 owns separate SC-010 reporting and predeclared human/judge review.
-  - G006.5 owns the first exact-replacement walking-skeleton probe and its
+  - G006.5 owns the first provisional candidate-versus-base probe and its
     predeclared judge/measurement contract; G008 and G009 consume that decision.
 artifact_budget:
-  replacement_or_amendment: 1
+  provisional_replacement_manifest: 1
   fixture_or_probe_manifest: 1
   verification_record: 1
   exception_rule: >-
@@ -73,6 +72,9 @@ closure_evidence_required:
   - evals/scripts/validate_g007_adversarial_review.py
   - framework/G007-verification.md
   - framework/G007-checkpoint.md
+  - evals/manifests/g007-s4-development-probe.json
+  - evals/scripts/validate_g007_s4_probe.py
+  - framework/G007-S4-verification.md
 stop_condition: >-
   Stop the probe on an ambiguous hazard state, missing protected interest, a
   material G006 boundary conflict, an unowned review decision, or two failed

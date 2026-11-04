@@ -39,3 +39,23 @@
    allowed when the affected party is not yet fully identified?
 3. Which tracked development cases should test whether the new discriminating-
    test language improves inquiry without encouraging performative uncertainty?
+
+## G007-S4 prior-question answers
+
+1. The packet separates safe analysis from operational uplift with paired cases,
+   but whether a model can apply that boundary remains untested.
+2. The emergency cases require a plausible severe hazard, a causal pathway, a
+   reversible precaution, an expiry, and reassessment evidence. Whether that is
+   sufficient for a model remains unknown.
+3. The packet uses five families, ten paired cases, and five sentinels. The
+   selected cases are fixed before execution; their behavioral transitions are
+   still unknown.
+
+## G007-S4 review questions
+
+1. Does the candidate improve the paired transitions without changing the
+   unrelated sentinel behavior?
+2. Does HA-04 produce useful discriminating tests, or merely more uncertainty
+   language?
+3. Can judge or human labels distinguish genuine boundary changes from prompt
+   wording, verbosity, sampling, or evaluator disagreement?

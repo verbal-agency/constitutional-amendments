@@ -96,3 +96,39 @@ the schema validator could not: labeling uncertainty is not the same as naming
 how inquiry could resolve it. I repaired the clause before testing a model.”
 Likely follow-up: “Did the repair improve behavior?” Not yet; that requires a
 controlled development probe.
+
+## 2026-11-03 — G007-S4: freeze the first development packet
+
+**Prior limitation:** The adversarial review showed that the G007 clauses were
+textually coherent, but no fixed set of paired cases could yet distinguish
+over-refusal, under-refusal, privacy deception, capacity overreach, and emergency
+overreach in a model.
+
+**Hypothesis:** Five case families with ten paired cases and five untouched
+sentinels will make those mechanisms testable without creating another evaluation
+program or changing cases after seeing outputs.
+
+**Capability built:** `evals/manifests/g007-s4-development-probe.json` freezes
+the cases, expected transitions, provenance, competing explanations, falsifiers,
+review rules, and a 30-generation maximum. `validate_g007_s4_probe.py` checks
+the packet offline.
+
+**Observed:** The packet validator passed with 15 cases, 10 paired cases, five
+sentinels, five families, and the pinned source hash. The three prior G007
+validators also pass. No model, network, paid, held-out, or candidate-integration
+action occurred.
+
+**Interpretation:** The experiment is now runnable as a small falsification probe.
+Confidence is high for packet integrity and low for any behavioral claim because
+there are still no model outputs.
+
+**What it unlocks:** G006.5 can assemble the provisional candidate and prepare a
+separate model/judge preflight. G007 itself remains offline and does not authorize
+execution.
+
+**Interview explanation:** “I stopped expanding the policy machinery and froze a
+small paired test: five mechanisms, five sentinels, and explicit hypotheses. It
+is enough to reveal whether the candidate changes behavior without pretending
+that packet validation proves the model learned anything.” Likely follow-up: “Did
+the candidate improve?” Not yet; that is the next probe. The packet does not
+support a claim about model behavior or the final constitution.

@@ -1,6 +1,6 @@
 # G007 — Inquiry and Harm
 
-Status: In progress — G007-S3 offline adversarial review complete; tracked development probe is next
+Status: In progress — G007-S1 through G007-S4 offline preparation complete; candidate behavior remains untested
 Dependencies: G006 Complete
 Next goal on completion: G008
 
@@ -13,8 +13,8 @@ G007 produces a section-ready amendment module and offline evidence, not the int
 ## Activation slice
 
 G007 began with one bounded contract slice rather than executing the full goal
-at once. G007-S1, G007-S2, and G007-S3 are complete; a tracked development
-probe remains the next bounded slice.
+at once. G007-S1 through G007-S4 are complete as offline slices; a tracked
+candidate behavior probe remains outside G007 and is owned by G006.5.
 
 - **Primary owner:** G007. G006 supplies authority/provenance interfaces; G008 receives review and amendment findings.
 - **Consumer:** the later harm clauses, fixtures, and G009 integration contract.
@@ -48,6 +48,14 @@ requires an observation or test that can distinguish live possibilities when
 uncertainty matters. All fixture and boundary checks pass after that revision.
 This slice remains non-behavioral and does not authorize the official G010
 comparison.
+
+### G007-S4 result
+
+The offline packet freezes five case families, ten paired cases, and five
+untouched sentinels with expected transitions, competing explanations,
+falsifiers, provenance, and review rules. The packet validator and all prior
+G007 validators pass. This slice does not run a model or claim behavioral
+improvement; candidate assembly and model/judge preflight belong to G006.5.
 
 ## Iteration loop
 
@@ -93,6 +101,9 @@ G007 must not read `evals/private/`, held-out material, or change frozen evaluat
 - `framework/G007-adversarial-review.md` — fixture and boundary review evidence;
 - `evals/scripts/validate_g007_adversarial_review.py` — deterministic review validation;
 - `framework/G007-verification.md` — criterion evidence;
+- `evals/manifests/g007-s4-development-probe.json` — frozen paired development packet;
+- `evals/scripts/validate_g007_s4_probe.py` — deterministic packet validation;
+- `framework/G007-S4-verification.md` — packet criterion evidence;
 - `framework/G007-checkpoint.md` — durable state;
 - `goals/G008-dissent-and-amendment.md` — standalone successor;
 - updated `ROADMAP.md` after verification.

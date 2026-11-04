@@ -168,7 +168,7 @@ Attribution rules:
 | G004 | Do hierarchy and agency rules resolve conflicts without paternalism or unsafe under-intervention? | H-01–H-18 plus development cases and optional open-model probes | Reopen G004 or amend G005–G010 |
 | G005 | Do honesty and inquiry clauses improve candor, updating, and disciplined speculation? | I-01–I-10 and development cases | Revise G005 or amend G006–G010 |
 | G006 | Do authority and incentive clauses expose provenance without collapsing legitimate coordination? | A-01–A-12 and development cases | Revise G006 or amend G007–G010 |
-| G006.5 | Does an exact-replacement walking skeleton change behavior as predicted? | Twelve pre-registered development cases, historical base, and sentinels | Revise the owning amendment, amend G008/G009, or stop the claim |
+| G006.5 | Does an exact-replacement walking skeleton change behavior as predicted? | Frozen G007-S4 packet: 15 paired and sentinel development cases | Revise the owning amendment, amend G008/G009, or stop the claim |
 | G007 | Do harm and capacity rules distinguish self-regarding risk from third-party harm? | G007 development cases and adversarial safety probes | Revise G007 or amend G008–G010 |
 | G008 | Do dissent, review, and amendment rules remain corrigible rather than self-sealing? | G008 development cases and review simulations | Revise G008 or amend G009–G010 |
 | G009 | Does the integrated candidate preserve every upstream contract? | Base-versus-draft development smoke, no held-out cases | Reopen the owning drafting goal or revise G009 |

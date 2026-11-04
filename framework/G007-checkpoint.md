@@ -1,7 +1,7 @@
 # G007 Checkpoint
 
 - Goal: G007 — Inquiry and Harm
-- Status: In progress — G007-S1 through G007-S3 complete; tracked development probe is next
+- Status: In progress — G007-S1 through G007-S4 complete; candidate behavior remains untested
 - Source hash: `251440a71a9068dd43bfaab2b8694d6e2a4f519c403f1b9a70785f830d05f327`
 - Schema: `framework/G007-harm-schema.yaml`, version 1, validated offline
 - Fixtures: 12 passing (`H-01` through `H-12`)
@@ -18,3 +18,6 @@
 - Application mode: prompt-first; schema metadata is not automatically sent with model queries
 - Optional runtime validator: deferred once to backlog item `B001` for a future router project
 - Highest-risk uncertainty: a target model may still over-refuse, under-refuse, launder authority, or turn the discriminating-test instruction into performative uncertainty
+- G007-S4 packet: `evals/manifests/g007-s4-development-probe.json`, 15 cases (10 paired, 5 sentinels), validated offline
+- G007-S4 verification: `framework/G007-S4-verification.md`
+- G007-S4 decision: `proceed` to G006.5 provisional candidate assembly and separately authorized model preflight; no model call occurred

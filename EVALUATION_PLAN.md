@@ -167,11 +167,13 @@ If budget permits only the smoke tier, the result is diagnostic and cannot suppo
 ### G006.5 walking-skeleton probe
 
 Before G008 or G009 is allowed to become a behavioral completion claim, the
-project may run the proposed exact-replacement candidate on the twelve cases
-listed in `goals/G006.5-walking-skeleton-probe.md`. This is the first mainline
+project may run the proposed provisional exact-replacement candidate on the 15
+cases frozen in `evals/manifests/g007-s4-development-probe.json`. This is the first mainline
 behavioral probe, but it is exploratory: it uses tracked development cases only,
 does not change the frozen G002 base or G010 gates, and cannot promote the
-candidate. Reuse historical base outputs whenever the control conditions match;
+candidate. The first probe needs one source-hashed replacement manifest and a
+metadata-free rendered file, not a new map or validator subsystem. Reuse
+historical base outputs whenever the control conditions match;
 run a same-run base only when the reuse conditions fail and label it exploratory.
 
 The probe must freeze its manifest and hypotheses before outputs are inspected,
