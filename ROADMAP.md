@@ -2,16 +2,16 @@
 
 Project: Truth-Seeking Constitution
 Active goal: G007
-Next eligible goal: G007 offline preparation of a tracked development probe packet
+Next eligible bridge: G006.5 walking-skeleton behavioral probe
 Active experimental branch: X001 — planned target-authoring slice
 
-Goal policy: the Cycle skill governs discovery, sizing, lifecycle, closure, and handoff. `ITERATION_PROTOCOL.md` governs project-specific bounded hypothesis-and-probe loops inside an execution slice. Exploratory results may revise the active goal or amend downstream contracts; G010 remains the only official base-versus-candidate comparison.
+Goal policy: the Cycle skill governs discovery, sizing, lifecycle, closure, and handoff. `ITERATION_PROTOCOL.md` governs project-specific bounded hypothesis-and-probe loops inside an execution slice. Exploratory results may revise the active goal or amend downstream contracts; G006.5 is the first behavioral probe, and G010 remains the only official base-versus-candidate comparison.
 
 Experimental branches are non-blocking unless explicitly promoted by the user. They may produce evidence for reopening a goal or changing the roadmap, but they do not silently alter the numbered goal sequence.
 
 ## Status model
 
-Allowed statuses are `Discovery`, `Planned`, `Proposed`, `In progress`, `Blocked`, `Deferred`, and `Complete`.
+Allowed statuses are `Discovery`, `Planned`, `Proposed`, `In progress`, `Blocked`, `Deferred`, `Drafted — unverified`, and `Complete`.
 
 Legal transitions:
 
@@ -19,14 +19,43 @@ Legal transitions:
 - `Planned` → `Proposed` when dependencies are complete and the bounded execution contract is written.
 - `Proposed` → `In progress` when Cycle selects the goal for execution.
 - `In progress` → `Complete` only when three to five closure criteria pass and evidence is recorded.
+- A behavior-bearing goal may use `Drafted — unverified` when the artifact is
+  ready but no authorized model/development run has established its behavioral
+  criterion. `Drafted — unverified` is not a promotion state and cannot satisfy
+  a dependency that requires behavioral evidence.
 - `In progress` → `Blocked` only under the platform's blocked-goal rules and with evidence of the unresolved condition.
 - `In progress` → `Deferred` when valuable work is intentionally paused without being a blocker.
 - `Blocked` → `In progress` when the blocking condition is resolved and execution resumes.
 - `Deferred` → `Planned` or `Proposed` when the work is deliberately resumed.
 
-Exactly one numbered goal may be `In progress`. An explicitly selected experimental branch may also be `In progress` when it is marked non-blocking and does not alter the numbered sequence. A numbered goal is eligible only when all dependencies are `Complete`, it has a goal file containing a bounded execution contract, and no earlier eligible goal remains unfinished. A G006 child discovery slice may remain active while the parent is `In progress`; it must not authorize downstream implementation until its decision closes. `framework/current-goal.yaml` is the operational record of the active slice; the goal file is the durable contract.
+Exactly one numbered goal may be `In progress`. An explicitly selected experimental branch may also be `In progress` when it is marked non-blocking and does not alter the numbered sequence. G006.5 is a bridge goal: it may be `Proposed` while G007 remains active, but G008/G009 cannot be promoted until its decision is recorded. A numbered goal is eligible only when all dependencies are `Complete`, it has a goal file containing a bounded execution contract, and no earlier eligible goal remains unfinished. A G006 child discovery slice may remain active while the parent is `In progress`; it must not authorize downstream implementation until its decision closes. `framework/current-goal.yaml` is the operational record of the active slice; the goal file is the durable contract.
 
 Completion is evidence-based, not prose-based. A goal may be reopened when an iteration produces material counterevidence against its completed decision. Downstream goals must consume the amended contract rather than silently compensating for it.
+
+## Closure and artifact budget
+
+Every behavior-bearing goal must name at least one closure criterion that can be
+checked on model or development outputs, with a named regression check. If that
+run cannot happen yet, the goal remains `Drafted — unverified`; a completed
+schema, fixture, or prose review is not behavioral evidence. Artifact-only goals
+may close on artifact evidence when their contract explicitly says that behavior
+is out of scope.
+
+Each goal receives a default functional-artifact budget of one amendment or
+replacement map, one fixture or frozen probe manifest, and one verification
+record. Generated raw outputs are evidence, not a reason to create another
+analysis document. An extra document requires a one-line decision justification
+in the owning goal file.
+
+Drafting and adjudication are separate responsibilities. Fixtures and expected
+failure cases must be fixed before clause review; an independent model/session or
+human must review a sample of expected gains, expected failures, and sentinels.
+When one person must do both jobs, the review must be delayed and blind to the
+new outputs, and the limitation must be recorded.
+
+Every cycle ends with a falsifiable `what we learned` sentence. It must state
+what belief would have remained unchanged without the work and what evidence
+changed it. A slice that cannot produce that sentence is not a useful slice.
 
 ## Anti-churn gate
 
@@ -58,8 +87,9 @@ These rules apply before creating a repair, measurement, or discovery child:
 | [G004](goals/G004-core-hierarchy.md) | Complete | G003 | Decide how truth-seeking and the presumption of human agency constrain the core value hierarchy. |
 | [G005](goals/G005-honesty-and-inquiry.md) | Complete | G004 | Expand honesty into an operational account of inquiry, disconfirmation, candor, speculation, and mystery. |
 | [G006](goals/G006-authority-and-incentives.md) | Complete | G005 | Separate authority from epistemic warrant and adopt a principle-level replacement, evaluation, and attribution process before G007. |
+| [G006.5](goals/G006.5-walking-skeleton-probe.md) | Proposed | G006, G007-S3 | Assemble the smallest exact-replacement candidate and obtain the first pre-registered behavioral evidence before more drafting. |
 | [G007](goals/G007-inquiry-and-harm.md) | In progress | G006 | Distinguish self-regarding risk from nonconsensual harm and apply capacity-sensitive, proportionate safeguards. |
-| G008 | Planned | G007 | Protect dissent, self-correction, appeals, evidence retention, and constitutional amendment. |
+| G008 | Planned | G007, G006.5 | Protect dissent, self-correction, appeals, evidence retention, and constitutional amendment, informed by the first behavioral probe. |
 | G009 | Planned | G008 | Produce an integrated candidate constitution and traceable change log. |
 | G010 | Planned | G009 | Compare candidate and base, run adversarial validation, resolve regressions, and publish the final constitution. |
 
@@ -67,8 +97,8 @@ These rules apply before creating a repair, measurement, or discovery child:
 
 | Branch | Status | Relationship | Purpose |
 | --- | --- | --- | --- |
-| [X001 — Local Mistral SFT news depolarization probe](goals/X001-mistral-finetune-experiment.md) | Planned | Non-blocking branch from G006 revision 6 | Author and preflight the bounded source-packet target slice before any local training or paid evaluation. |
-| [X002 — Interactive constitution map](goals/X002-interactive-constitution-map.md) | Discovery | Non-blocking productization branch from G006 revision 6 | Identify the website target, then integrate a provenance-preserving original/amendment map beginning with the validated G006 replacement slice. |
+| [X001 — Local Mistral SFT news depolarization probe](goals/X001-mistral-finetune-experiment.md) | Planned | Non-blocking branch from G006 revision 6 | Author and preflight the bounded source-packet target slice before any local training or paid evaluation; promote, defer, or kill before G008 becomes Proposed. |
+| [X002 — Interactive constitution map](goals/X002-interactive-constitution-map.md) | Discovery | Non-blocking productization branch from G006 revision 6 | Hold until G006.5 produces a candidate worth mapping; then integrate a provenance-preserving original/amendment map beginning with the validated replacement slice. |
 
 ## Goal boundaries
 
@@ -112,6 +142,21 @@ G006 is a parent workstream executed through bounded subgoals:
 - **G006-S5N — D2 provider and judge calibration:** abandoned. SC-010 is non-blocking, the branch exceeded the re-plan threshold, and calibration would not advance G006's constitutional outcome.
 - **G006-S6 — Outcome-based closure review:** complete with `proceed`. The offline review found the authority/provenance contract, exact replacement chain, fixtures, and SC-001–SC-009 evidence sufficient to close G006. SC-010-D2 remains a non-blocking diagnostic routed to G010.
 
+### G006.5 — Walking-skeleton behavioral probe
+
+Assemble a rough candidate from the available G006 exact-replacement map plus
+the G005 and G007 section-ready modules (creating and validating any missing
+source-span maps) and run a small, pre-registered development probe against the
+historical base. This is the first behavioral evidence in the mainline. It is
+exploratory, uses only tracked development cases, and cannot promote a candidate
+or change G010's frozen protocol. It must also settle the judge calibration,
+disagreement, independent-review, and attribution rules that G008/G009 will
+inherit.
+
+G006.5 is intentionally small. It either produces a behaviorally informative
+probe or identifies an exact assembly/measurement blocker. It does not open a
+new chain of measurement children.
+
 ### G007 — Inquiry and harm
 
 Create a layered analysis of belief, inquiry, speech, disclosure, and action that distinguishes competent self-regarding choice from nonconsensual harm and uses concrete, capacity-sensitive, proportionate restrictions for genuine hazards.
@@ -119,10 +164,11 @@ Create a layered analysis of belief, inquiry, speech, disclosure, and action tha
 G007-S1 completed the offline hazard/proportionality schema and H-01–H-12
 fixture contract. G007-S2 drafted HA-01–HA-07 and passed deterministic
 structure/provenance checks. G007-S3 reviewed all fixtures and six boundary
-probes offline and repaired the H-01 discriminating-test gap in HA-04. The next
-bounded slice prepares a small exploratory tracked development probe packet;
-G007 does not authorize model calls, and the official G010 comparison and paid
-evaluation remain unauthorized.
+probes offline and repaired the H-01 discriminating-test gap in HA-04. The
+behavioral walking skeleton is now owned by G006.5 so G007 can finish its clause
+contract without pretending that offline fixtures establish model behavior.
+G007-S4 may still prepare its packet offline; it does not authorize model calls,
+and the official G010 comparison and paid evaluation remain unauthorized.
 
 The next goal stub is `goals/G007-S4-development-probe-packet.md`. It prepares
 paired cases, sentinels, hypotheses, and provenance offline; it does not run a
@@ -130,11 +176,11 @@ model or promote an evaluator.
 
 ### G008 — Dissent and amendment
 
-Revise corrigibility, identity stability, reflective equilibrium, and final-authority provisions to prevent self-sealing governance.
+Revise corrigibility, identity stability, reflective equilibrium, and final-authority provisions to prevent self-sealing governance. Begin only after G006.5 has either produced the first behavioral evidence or recorded a bounded assembly/measurement limitation that changes the contract.
 
 ### G009 — Integration
 
-Create a distinct candidate constitution and source-to-revision change log without altering the upstream source. Do not claim final acceptance before G010.
+Create a distinct candidate constitution and source-to-revision change log without altering the upstream source. Use G006.5's exact-replacement and measurement contracts, then run a development probe before treating integration as complete. Do not claim final acceptance before G010.
 
 ### G010 — Controlled comparison and finalization
 

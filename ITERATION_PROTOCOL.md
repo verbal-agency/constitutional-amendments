@@ -26,6 +26,29 @@ cannot become a release gate after outputs are observed. Post-hoc checkers and
 uncalibrated model judges remain explanatory until independently validated
 under a predeclared decision rule.
 
+## Closure evidence and artifact budget
+
+Classify the slice before execution as `artifact-only` or `behavior-bearing`.
+Artifact-only work may close on deterministic structure, provenance, and review
+evidence when its contract explicitly says behavior is out of scope. A
+behavior-bearing slice must name a model/development-output criterion and a
+regression check. If the run is not authorized or cannot complete, record the
+artifact as `Drafted — unverified`; do not mark it `Complete` or use it as proof
+of behavioral improvement.
+
+Each goal has a default functional-artifact budget of one amendment or
+replacement map, one fixture or frozen probe manifest, and one verification
+record. Generated raw outputs do not consume a second analysis document. An
+extra artifact needs a one-line justification identifying the decision that would
+change if the artifact did not exist. When the budget is exceeded twice, stop and
+re-plan the goal rather than opening another child.
+
+Drafting and adjudication must be separated. Freeze adversarial and expected-
+failure fixtures before reviewing the clause. Use a different model/session or a
+human to review a sample of expected gains, expected failures, and untouched
+sentinels. If the same person must draft and review, delay the review, hide the
+new outputs, and record the resulting independence limitation.
+
 ## Loop
 
 Each active execution slice runs this loop until its bounded criteria pass, a stop condition fires, or the slice is re-planned:
@@ -37,6 +60,10 @@ Each active execution slice runs this loop until its bounded criteria pass, a st
 5. **Review the evidence.** Record what improved, regressed, remained uncertain, or was not actually tested.
 6. **Route the finding.** Choose `accept`, `revise-current-goal`, `reopen-upstream`, `amend-downstream`, `block`, `defer`, or `observe`.
 7. **Checkpoint.** Preserve the artifact hash, probe inputs, outputs or summaries, decision, and downstream impact before the next loop.
+8. **State what was learned.** Write one falsifiable sentence: what would still
+   have been believed without this loop, and what observation changed that
+   belief. If no such sentence is possible, route the slice as `observe` or
+   `defer` instead of extending it.
 
 A goal does not close merely because its prose is complete. It closes when its loop record has no unresolved material finding and its acceptance evidence remains valid.
 
@@ -47,6 +74,10 @@ The hypothesis and attribution steps apply after every bounded iteration, includ
 - **Every iteration:** run the smallest relevant offline or development check and record paired transitions, causal attribution, uncertainty, and routing.
 - **After a material clause or interface revision:** run a broader tracked development subset, including controls for the suspected mechanism and any relevant identity-swapped variants.
 - **At a stage or integration boundary:** run the 140-case public/development comparison when the result could change a downstream goal or promotion decision.
+- **At the walking-skeleton boundary:** before G008/G009 drafting proceeds, run
+  the smallest pre-registered candidate-vs-base development set that can test
+  the assembled principles. It is exploratory, not an official arm, and must
+  include untouched sentinels.
 - **At G010 only:** run the frozen official comparison, including the held-out split and final human/judge review.
 
 For a material failure, use this staged repair loop before the broader comparison:
@@ -95,6 +126,14 @@ After the probe, record for each material result:
 
 When a secondary judge is used, judge the same base and candidate outputs with the same prompt, rubric, and case order. Preserve primary and secondary results separately; do not average them into one score. Report case-level agreement, score differences, critical-failure disagreements, and the cases requiring manual review. If the secondary judge becomes the primary judge, rescore both arms on the comparison set rather than judging only the candidate.
 
+Before a judge can affect a development decision, run the hand-labeled
+calibration fixture set and record the threshold, model, rubric, and stop rule.
+The repository calibration contract requires at least `0.90` agreement and zero
+critical-failure-set mismatches. A failed calibration routes to manual labels or
+stops the probe; it does not authorize switching judges after seeing outputs.
+Judge disagreement is a first-class result and goes to manual adjudication, not
+an average score.
+
 Attribution rules:
 
 - A single response can illustrate a mechanism but cannot establish it.
@@ -129,6 +168,7 @@ Attribution rules:
 | G004 | Do hierarchy and agency rules resolve conflicts without paternalism or unsafe under-intervention? | H-01–H-18 plus development cases and optional open-model probes | Reopen G004 or amend G005–G010 |
 | G005 | Do honesty and inquiry clauses improve candor, updating, and disciplined speculation? | I-01–I-10 and development cases | Revise G005 or amend G006–G010 |
 | G006 | Do authority and incentive clauses expose provenance without collapsing legitimate coordination? | A-01–A-12 and development cases | Revise G006 or amend G007–G010 |
+| G006.5 | Does an exact-replacement walking skeleton change behavior as predicted? | Twelve pre-registered development cases, historical base, and sentinels | Revise the owning amendment, amend G008/G009, or stop the claim |
 | G007 | Do harm and capacity rules distinguish self-regarding risk from third-party harm? | G007 development cases and adversarial safety probes | Revise G007 or amend G008–G010 |
 | G008 | Do dissent, review, and amendment rules remain corrigible rather than self-sealing? | G008 development cases and review simulations | Revise G008 or amend G009–G010 |
 | G009 | Does the integrated candidate preserve every upstream contract? | Base-versus-draft development smoke, no held-out cases | Reopen the owning drafting goal or revise G009 |
@@ -148,4 +188,11 @@ Each loop records:
 - causal-attribution status for each material finding and the next discriminating test;
 - disposition and rationale;
 - downstream goals or acceptance criteria affected;
-- checkpoint date and reviewer.
+- checkpoint date and reviewer;
+- `learning_test`: the falsifiable sentence and the evidence that makes it true
+  or false;
+- closure mode (`artifact-only` or `behavior-bearing`) and behavioral evidence
+  status (`verified`, `drafted_unverified`, or `not_applicable`);
+- artifact-budget count and any one-line exception justification;
+- drafting owner, adjudicator, independence mode, and expected-fail/sentinel
+  sample reviewed.

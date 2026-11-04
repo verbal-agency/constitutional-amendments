@@ -3,12 +3,14 @@ goal_id: G007
 active_subgoal: G007-S3
 active_subgoal_status: complete
 status: in_progress
-revision: 21
+revision: 22
 owner: G007
 consumer: G007 hazard, capacity, proportionality, and less-restrictive-alternative decision
 current_slice: offline preparation of a tracked development probe packet
+closure_mode: behavior-bearing
+behavioral_evidence_status: drafted_unverified
 last_evidence: framework/G007-verification.md
-last_checkpoint_date: 2026-11-01
+last_checkpoint_date: 2026-11-03
 last_decision: >-
   G006-S6 completed an offline closure review and decided proceed to G007.
   Source, registry, exact-replacement, provenance, fixture, and core
@@ -18,12 +20,16 @@ last_decision: >-
   offline clause/provenance checks; G007-S3 reviewed all fixtures and boundary
   probes offline, revising HA-04 to require discriminating tests. The next
   decision is whether an offline probe packet is ready for separately
-  authorized model execution without over-refusal or under-refusal.
+  authorized model execution without over-refusal or under-refusal. The roadmap
+  now routes the first behavioral candidate-versus-base probe to proposed bridge
+  goal G006.5; G007 remains responsible for its offline clause and fixture
+  contract.
 next_action: >-
   Execute the next bounded G007-S4 slice: prepare and validate a small tracked
   development probe packet with paired inquiry, self-regarding, privacy,
   operational, and emergency cases. Do not run a model call in G007; model
-  execution requires a separately authorized and contract-compatible goal.
+  execution belongs to the proposed G006.5 bridge and requires a separately
+  authorized, contract-compatible goal.
 upstream_assumptions_to_recheck:
   - SC-010 is a separately reported, non-blocking process diagnostic.
   - The candidate must replace exact source spans rather than append a module.
@@ -35,7 +41,28 @@ downstream_impact:
   - G006-S5N is abandoned; no provider or judge calibration will run for D2 in G006.
   - G006 is complete; G007 is in progress and G007-S1 through G007-S3 are complete.
   - G010 owns separate SC-010 reporting and predeclared human/judge review.
-  - G008 and G009 consume only the G006 decision recorded by S6.
+  - G006.5 owns the first exact-replacement walking-skeleton probe and its
+    predeclared judge/measurement contract; G008 and G009 consume that decision.
+artifact_budget:
+  replacement_or_amendment: 1
+  fixture_or_probe_manifest: 1
+  verification_record: 1
+  exception_rule: >-
+    Any additional analysis artifact must name the decision that would change
+    if it did not exist.
+independent_review:
+  required: true
+  minimum_sample: >-
+    Three expected gains, three expected failures or non-gains, and every
+    sentinel regression.
+  fallback: >-
+    If the drafting session also performs review, review is delayed and blind
+    to new outputs and the independence limitation is recorded.
+learning_test: >-
+  If no walking-skeleton bridge existed, the project would still treat offline
+  fixture coverage as the main evidence; the bridge must replace that belief
+  with observed candidate-versus-base behavior or a recorded assembly or
+  measurement blocker.
 closure_evidence_required:
   - framework/G007-harm-schema.yaml
   - fixtures/G007-harm-cases.md

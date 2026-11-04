@@ -26,6 +26,11 @@ The first calibration family is the LeBron James versus Michael Jordan GOAT deba
 - The immutable source, frozen G002 manifests, held-out material, and official G010 gates remain unchanged.
 - Fine-tuned models are separate experimental artifacts, not replacements for the constitution or the mainline candidate.
 - A result may recommend a pivot, reopen a goal, or amend a downstream contract, but roadmap reordering requires explicit user approval.
+- Before G008 becomes `Proposed`, the branch must receive an explicit
+  `promote`, `defer`, or `kill` decision. `Planned — non-blocking` is not a
+  permanent outcome. A kill decision records why local SFT is not worth the
+  remaining cost; a defer decision names the evidence or budget that would
+  reopen it.
 - The hosted Mistral fine-tuning API is not the execution path: the account's jobs endpoint returned `410 Gone`, and the public fine-tuning documentation is deprecated.
 - No local training or paid evaluation runs until a preflight records the exact checkpoint, trainer, hardware, dataset hashes, compute estimate, hard ceiling, and stop condition.
 - Proposed initial ceiling: `$10` for one local LoRA/SFT pilot and its approved evaluation; this is a planning value, not authorization to spend.
@@ -203,3 +208,18 @@ The analysis must also track response length, refusal rate, hedge frequency, con
 ## Stop conditions
 
 Stop before training if the checkpoint/trainer is incompatible, local compute cannot be bounded, the dataset is contaminated, semantic families cross splits, the epistemological-map coverage gate fails, the registry or constitution hash drifts, target review is incomplete, policy lineage is missing, or the runtime contract is unclear. Stop after training if the adapter cannot be evaluated reproducibly or if a critical regression appears. Route unresolved attribution as a limitation or future sham/preference experiment instead of expanding the run.
+
+## Promotion decision
+
+The branch is not allowed to remain indefinitely in scaffolding. At the
+G006.5/G007 handoff, review whether the local SFT question is still
+decision-relevant, whether the compute ceiling is personally affordable, and
+whether the mainline candidate is stable enough to justify training. Before G008
+is proposed, record one of:
+
+- **Promote:** authorize the next bounded local training slice with a pinned
+  checkpoint, data contract, ceiling, and comparison plan;
+- **Defer:** preserve the contracts but name the missing evidence, budget, or
+  checkpoint and a concrete re-entry condition; or
+- **Kill:** close the branch and state that the mainline evaluation covers
+  prompt-conditioning only.

@@ -164,6 +164,26 @@ G002 records the base. G009 produces the candidate without reading held-out case
 
 If budget permits only the smoke tier, the result is diagnostic and cannot support a final project-level improvement claim.
 
+### G006.5 walking-skeleton probe
+
+Before G008 or G009 is allowed to become a behavioral completion claim, the
+project may run the proposed exact-replacement candidate on the twelve cases
+listed in `goals/G006.5-walking-skeleton-probe.md`. This is the first mainline
+behavioral probe, but it is exploratory: it uses tracked development cases only,
+does not change the frozen G002 base or G010 gates, and cannot promote the
+candidate. Reuse historical base outputs whenever the control conditions match;
+run a same-run base only when the reuse conditions fail and label it exploratory.
+
+The probe must freeze its manifest and hypotheses before outputs are inspected,
+include untouched sentinels, and report family-level paired transitions rather
+than one composite score. A judge may affect the decision only after the
+hand-labeled calibration fixture passes the existing `>= 0.90` agreement and
+zero critical-failure-set-mismatch rule. Failed calibration routes to manual
+labels or stops the probe; judge disagreement is recorded and adjudicated, never
+averaged away. If no model run is authorized or the candidate cannot be rendered
+from exact replacements, the result is `drafted, unverified`, not a completed
+behavioral goal.
+
 ## Base reuse and rerun policy
 
 The frozen G002 base is the default control for development iterations. Do not regenerate the base arm merely to compare another draft. Reuse historical base outputs and scores when the source hash, dataset and case hashes, prompt envelope, provider model/version policy, decoding settings, rubric, and judge configuration all match.
