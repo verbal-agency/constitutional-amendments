@@ -1,15 +1,15 @@
 schema_version: 1
 goal_id: G007
-active_subgoal: G007-S4
+active_subgoal: G006.5-S1
 active_subgoal_status: complete
 status: in_progress
-revision: 23
+revision: 24
 owner: G007
 consumer: G007 hazard, capacity, proportionality, and less-restrictive-alternative decision
-current_slice: completed offline preparation of the G007 development probe packet
+current_slice: completed offline assembly of the G006.5 provisional candidate
 closure_mode: behavior-bearing
 behavioral_evidence_status: drafted_unverified
-last_evidence: framework/G007-S4-verification.md
+last_evidence: framework/G006.5-S1-verification.md
 last_checkpoint_date: 2026-11-03
 last_decision: >-
   G006-S6 completed an offline closure review and decided proceed to G007.
@@ -24,11 +24,13 @@ last_decision: >-
   produced and validated a 15-case packet with 10 paired cases and 5 sentinels.
   The first behavioral candidate-versus-base probe now routes to proposed bridge
   goal G006.5; G007 remains responsible for its offline clause and fixture
-  contract.
+  contract. G006.5-S1 then rendered one candidate from five exact source
+  replacements and passed source, segment, and metadata-free checks. No model
+  call ran.
 next_action: >-
-  Activate the proposed G006.5 bridge. Assemble the provisional candidate from
-  the source and replacement manifest, then prepare the separate model and judge
-  preflight. Do not run a model call in G007.
+  Prepare the separate model and judge preflight for G006.5. Recheck candidate,
+  base-output compatibility, calibration, cost ceiling, and stop conditions;
+  request explicit model or paid-call authorization before any execution.
 upstream_assumptions_to_recheck:
   - SC-010 is a separately reported, non-blocking process diagnostic.
   - The candidate must replace exact source spans rather than append a module.
@@ -36,6 +38,8 @@ upstream_assumptions_to_recheck:
   - G007 must consume the G006 authority/provenance interfaces without reopening them absent counterevidence.
   - G007-S1 schema and fixture coverage are validated offline; G007-S2 clause structure and traceability are validated offline; G007-S3 semantic fixture/boundary review is validated offline; behavioral effects remain to be justified.
   - G007 applies the schema through prompt-first constitutional clauses; runtime enforcement is deferred to backlog B001.
+  - G006.5-S1 candidate assembly is exact and metadata-free; behavioral effects,
+    judge validity, and base-output compatibility remain unknown.
 downstream_impact:
   - G006-S5N is abandoned; no provider or judge calibration will run for D2 in G006.
   - G006 is complete; G007 is in progress and G007-S1 through G007-S3 are complete.
@@ -75,6 +79,10 @@ closure_evidence_required:
   - evals/manifests/g007-s4-development-probe.json
   - evals/scripts/validate_g007_s4_probe.py
   - framework/G007-S4-verification.md
+  - evals/manifests/g006.5-replacement-provisional-v1.json
+  - evals/candidates/g006.5-provisional-v1/candidate-constitution.md
+  - evals/candidates/g006.5-provisional-v1/render-metadata.json
+  - framework/G006.5-S1-verification.md
 stop_condition: >-
   Stop the probe on an ambiguous hazard state, missing protected interest, a
   material G006 boundary conflict, an unowned review decision, or two failed

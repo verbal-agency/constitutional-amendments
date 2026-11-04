@@ -132,3 +132,36 @@ is enough to reveal whether the candidate changes behavior without pretending
 that packet validation proves the model learned anything.” Likely follow-up: “Did
 the candidate improve?” Not yet; that is the next probe. The packet does not
 support a claim about model behavior or the final constitution.
+
+## 2026-11-03 — G006.5-S1: assemble the walking-skeleton candidate
+
+**Prior limitation:** The project had a frozen 15-case development packet and
+section-ready amendments, but no single candidate constitution to place beside
+the historical base.
+
+**Hypothesis:** One thin manifest of exact source replacements would expose
+assembly and provenance mistakes without adding another map or validator
+subsystem.
+
+**Capability built:** `evals/manifests/g006.5-replacement-provisional-v1.json`
+renders `evals/candidates/g006.5-provisional-v1/candidate-constitution.md` from five
+non-overlapping source spans. The model-facing file contains constitution text
+only; render metadata stays beside it.
+
+**Observed:** Source and segment hashes passed, the candidate hash was recorded,
+and the development metadata scan found no leaked IDs or map markers. The
+G007-S4 packet stayed unchanged. No model, network, paid, or held-out call ran.
+
+**Interpretation:** Assembly integrity is supported with high confidence. The
+candidate may still be behaviorally inert, overbroad, or hard to judge; those
+questions require the authorized probe.
+
+**What it unlocks:** A separate model/judge preflight can now check base-output
+compatibility, calibration, cost, and stop conditions before any paid call.
+
+**Interview explanation:** “I rendered one candidate by replacing verified
+source ranges instead of appending amendment files. That proves the artifact is
+well-formed, not that the model has changed.” Likely follow-up: “Why not run it
+now?” Because the current slice has no model-call authorization and the judge
+contract must be checked first. The artifact does not support a behavioral or
+promotion claim.

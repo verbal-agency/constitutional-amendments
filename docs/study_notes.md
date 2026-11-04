@@ -59,3 +59,16 @@
    language?
 3. Can judge or human labels distinguish genuine boundary changes from prompt
    wording, verbosity, sampling, or evaluator disagreement?
+
+## G006.5-S1 review questions
+
+The prior G007-S4 questions remain unresolved: no model outputs exist yet, so
+the candidate's paired transitions, HA-04 behavior, and judge separability are
+unknown.
+
+1. Does the historical base output satisfy the candidate probe's prompt,
+   model, rubric, and envelope compatibility requirements for reuse?
+2. What calibration result would make a model judge usable for this exploratory
+   probe, and what is the manual-label fallback if it fails?
+3. If a paired family flips while its sentinel stays stable, what evidence
+   would distinguish a clause effect from sampling, verbosity, or judge error?
