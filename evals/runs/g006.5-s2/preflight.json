@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-11-05T02:30:39+00:00",
+  "goal": "G006.5",
+  "kind": "development-exploratory",
+  "model": "deepseek-flash",
+  "price_basis": {
+    "input_cache_hit": 0.006,
+    "input_cache_miss": 0.3,
+    "output": 1.2,
+    "basis": "peak-hour list price; off-peak is half"
+  },
+  "generations": 25,
+  "reused_base_outputs": 5,
+  "paired_cases": 10,
+  "sentinels": 5,
+  "estimated_total_input_tokens": 1049096,
+  "max_output_tokens_total": 15000,
+  "worst_case_cost_usd_no_cache": 0.38,
+  "expected_cost_usd": 0.05,
+  "judge": "none; manual scoring only; no paid grader approved",
+  "hard_stop": "ledger refuses a call if cumulative cost + worst-case next call would exceed the ceiling; 25-attempt cap"
+}

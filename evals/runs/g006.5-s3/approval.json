@@ -1,0 +1,7 @@
+{
+  "ceiling_usd": 0.5,
+  "model": "deepseek-flash",
+  "scope": "G006.5-S3: 30 generations (2 cases x 3 arms [base, candidate, ablated] x 5 draws, temperature 0.7); no judge",
+  "approved_by": "user (seth@verbalagency.com), chat reply 'Yes, authorize it' to the proposed ~30-generation follow-up",
+  "approved_at": "2026-11-05T02:36:48+00:00"
+}

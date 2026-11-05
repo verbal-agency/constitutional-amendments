@@ -1,0 +1,7 @@
+{
+  "ceiling_usd": 1.0,
+  "model": "deepseek-flash",
+  "scope": "G006.5-S2: 25 generations max (10 paired x 2 arms + 5 sentinel candidate); base sentinels reused from base-v1; manual scoring; no paid judge",
+  "approved_by": "user (seth@verbalagency.com), chat reply 'Yes, run it' to the preflight summary proposing a ~$1.00 ceiling",
+  "approved_at": "2026-11-05T02:30:39+00:00"
+}
