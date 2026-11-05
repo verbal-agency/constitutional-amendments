@@ -1,0 +1,14 @@
+{
+  "approved_ceiling_usd": 0.5,
+  "max_generations": 25,
+  "attempted": 25,
+  "completed": 25,
+  "retries": 0,
+  "input_tokens": 832560,
+  "output_tokens": 9263,
+  "grader_calls": 0,
+  "grader_cost_usd": 0.0,
+  "estimated_cost_usd": 0.032081,
+  "remaining_usd": 0.467919,
+  "stop_reason": null
+}

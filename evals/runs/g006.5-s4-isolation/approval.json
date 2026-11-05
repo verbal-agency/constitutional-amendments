@@ -1,0 +1,7 @@
+{
+  "ceiling_usd": 0.5,
+  "model": "deepseek-flash",
+  "scope": "G006.5-S4: 25 generations (OPS-01 x 5 constitution arms x 5 draws); no judge",
+  "approved_by": "user authorization in chat",
+  "approved_at": "2026-11-04"
+}
