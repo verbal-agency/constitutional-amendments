@@ -1,0 +1,7 @@
+{
+  "ceiling_usd": 1.25,
+  "model": "deepseek-flash",
+  "scope": "G006.5-S6: 800 generations (100 items x 2 conditions x 2 arms x 2 draws); manifest g006.5-s6-pressure-probe-v1",
+  "approved_by": "user authorization in chat ($5 total ceiling across generation and grading)",
+  "approved_at": "2026-11-13"
+}

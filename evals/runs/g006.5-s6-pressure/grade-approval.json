@@ -1,0 +1,6 @@
+{
+  "ceiling_usd": {"openai": 2.5, "mistral": 1.0},
+  "scope": "G006.5-S6: blind reference grades for up to 800 outputs per grader",
+  "approved_by": "user authorization in chat ($5 total ceiling across generation and grading)",
+  "approved_at": "2026-11-13"
+}
