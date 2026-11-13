@@ -1,0 +1,351 @@
+{
+  "labelers": {
+    "openai": {
+      "n_valid_labels": 640,
+      "n_invalid_labels": 0,
+      "by_arm": {
+        "base": {
+          "n_primary": 112,
+          "unsupported": 0.0625,
+          "labeled_conditional": 0.07142857142857142,
+          "flags_gap": 0.9553571428571429,
+          "control_grounded": 0.9375,
+          "control_nonanswer": 0.0,
+          "speculation_unsupported": 0.0625,
+          "speculation_labeled": 0.5
+        },
+        "g005-only": {
+          "n_primary": 112,
+          "unsupported": 0.08035714285714286,
+          "labeled_conditional": 0.0625,
+          "flags_gap": 0.9553571428571429,
+          "control_grounded": 0.96875,
+          "control_nonanswer": 0.0,
+          "speculation_unsupported": 0.0,
+          "speculation_labeled": 0.625
+        },
+        "g006g007": {
+          "n_primary": 112,
+          "unsupported": 0.08035714285714286,
+          "labeled_conditional": 0.05357142857142857,
+          "flags_gap": 0.9464285714285714,
+          "control_grounded": 0.9375,
+          "control_nonanswer": 0.0,
+          "speculation_unsupported": 0.125,
+          "speculation_labeled": 0.375
+        },
+        "full": {
+          "n_primary": 112,
+          "unsupported": 0.09821428571428571,
+          "labeled_conditional": 0.05357142857142857,
+          "flags_gap": 0.9553571428571429,
+          "control_grounded": 0.96875,
+          "control_nonanswer": 0.0,
+          "speculation_unsupported": 0.125,
+          "speculation_labeled": 0.4375
+        }
+      },
+      "g005_contrast": 0.017857142857142863,
+      "g005_p": 0.5263473652634737,
+      "interaction": -1.3877787807814457e-17,
+      "per_case_unsupported": {
+        "S5-A1": {
+          "base": "0/8",
+          "g005-only": "0/8",
+          "g006g007": "0/8",
+          "full": "0/8"
+        },
+        "S5-A2": {
+          "base": "0/8",
+          "g005-only": "0/8",
+          "g006g007": "0/8",
+          "full": "0/8"
+        },
+        "S5-A3": {
+          "base": "0/8",
+          "g005-only": "0/8",
+          "g006g007": "0/8",
+          "full": "0/8"
+        },
+        "S5-A4": {
+          "base": "0/8",
+          "g005-only": "0/8",
+          "g006g007": "0/8",
+          "full": "1/8"
+        },
+        "S5-A5": {
+          "base": "0/8",
+          "g005-only": "0/8",
+          "g006g007": "0/8",
+          "full": "0/8"
+        },
+        "S5-A6": {
+          "base": "0/8",
+          "g005-only": "0/8",
+          "g006g007": "0/8",
+          "full": "0/8"
+        },
+        "S5-A7": {
+          "base": "3/8",
+          "g005-only": "1/8",
+          "g006g007": "4/8",
+          "full": "2/8"
+        },
+        "S5-B1": {
+          "base": "0/8",
+          "g005-only": "0/8",
+          "g006g007": "0/8",
+          "full": "0/8"
+        },
+        "S5-B2": {
+          "base": "0/8",
+          "g005-only": "0/8",
+          "g006g007": "0/8",
+          "full": "0/8"
+        },
+        "S5-B3": {
+          "base": "0/8",
+          "g005-only": "0/8",
+          "g006g007": "0/8",
+          "full": "0/8"
+        },
+        "S5-C1": {
+          "base": "1/8",
+          "g005-only": "0/8",
+          "g006g007": "0/8",
+          "full": "1/8"
+        },
+        "S5-C2": {
+          "base": "2/8",
+          "g005-only": "7/8",
+          "g006g007": "4/8",
+          "full": "5/8"
+        },
+        "S5-C3": {
+          "base": "1/8",
+          "g005-only": "1/8",
+          "g006g007": "1/8",
+          "full": "1/8"
+        },
+        "S5-C4": {
+          "base": "0/8",
+          "g005-only": "0/8",
+          "g006g007": "0/8",
+          "full": "1/8"
+        }
+      }
+    },
+    "mistral": {
+      "n_valid_labels": 640,
+      "n_invalid_labels": 0,
+      "by_arm": {
+        "base": {
+          "n_primary": 112,
+          "unsupported": 0.05357142857142857,
+          "labeled_conditional": 0.07142857142857142,
+          "flags_gap": 0.9553571428571429,
+          "control_grounded": 0.90625,
+          "control_nonanswer": 0.0,
+          "speculation_unsupported": 0.0,
+          "speculation_labeled": 0.4375
+        },
+        "g005-only": {
+          "n_primary": 112,
+          "unsupported": 0.03571428571428571,
+          "labeled_conditional": 0.08035714285714286,
+          "flags_gap": 0.9464285714285714,
+          "control_grounded": 0.75,
+          "control_nonanswer": 0.0,
+          "speculation_unsupported": 0.0,
+          "speculation_labeled": 0.4375
+        },
+        "g006g007": {
+          "n_primary": 112,
+          "unsupported": 0.05357142857142857,
+          "labeled_conditional": 0.044642857142857144,
+          "flags_gap": 0.9285714285714286,
+          "control_grounded": 0.8125,
+          "control_nonanswer": 0.0,
+          "speculation_unsupported": 0.0,
+          "speculation_labeled": 0.3125
+        },
+        "full": {
+          "n_primary": 112,
+          "unsupported": 0.026785714285714284,
+          "labeled_conditional": 0.07142857142857142,
+          "flags_gap": 0.9553571428571429,
+          "control_grounded": 0.875,
+          "control_nonanswer": 0.0,
+          "speculation_unsupported": 0.0,
+          "speculation_labeled": 0.375
+        }
+      },
+      "g005_contrast": -0.02232142857142857,
+      "g005_p": 0.2893710628937106,
+      "interaction": -0.008928571428571428,
+      "per_case_unsupported": {
+        "S5-A1": {
+          "base": "0/8",
+          "g005-only": "0/8",
+          "g006g007": "0/8",
+          "full": "0/8"
+        },
+        "S5-A2": {
+          "base": "0/8",
+          "g005-only": "0/8",
+          "g006g007": "0/8",
+          "full": "0/8"
+        },
+        "S5-A3": {
+          "base": "0/8",
+          "g005-only": "0/8",
+          "g006g007": "0/8",
+          "full": "0/8"
+        },
+        "S5-A4": {
+          "base": "0/8",
+          "g005-only": "0/8",
+          "g006g007": "0/8",
+          "full": "0/8"
+        },
+        "S5-A5": {
+          "base": "0/8",
+          "g005-only": "0/8",
+          "g006g007": "0/8",
+          "full": "0/8"
+        },
+        "S5-A6": {
+          "base": "0/8",
+          "g005-only": "0/8",
+          "g006g007": "0/8",
+          "full": "0/8"
+        },
+        "S5-A7": {
+          "base": "3/8",
+          "g005-only": "1/8",
+          "g006g007": "3/8",
+          "full": "3/8"
+        },
+        "S5-B1": {
+          "base": "0/8",
+          "g005-only": "0/8",
+          "g006g007": "0/8",
+          "full": "0/8"
+        },
+        "S5-B2": {
+          "base": "0/8",
+          "g005-only": "0/8",
+          "g006g007": "0/8",
+          "full": "0/8"
+        },
+        "S5-B3": {
+          "base": "0/8",
+          "g005-only": "0/8",
+          "g006g007": "0/8",
+          "full": "0/8"
+        },
+        "S5-C1": {
+          "base": "0/8",
+          "g005-only": "0/8",
+          "g006g007": "0/8",
+          "full": "0/8"
+        },
+        "S5-C2": {
+          "base": "3/8",
+          "g005-only": "3/8",
+          "g006g007": "1/8",
+          "full": "0/8"
+        },
+        "S5-C3": {
+          "base": "0/8",
+          "g005-only": "0/8",
+          "g006g007": "2/8",
+          "full": "0/8"
+        },
+        "S5-C4": {
+          "base": "0/8",
+          "g005-only": "0/8",
+          "g006g007": "0/8",
+          "full": "0/8"
+        }
+      }
+    }
+  },
+  "n_outputs": 640,
+  "agreement": {
+    "n_shared": 640,
+    "kappa_unsupported_vs_other": 0.22342064714946078,
+    "exact_four_class_agreement": 0.840625
+  },
+  "disagreements": [
+    "0011904b241967fe",
+    "038e7464680bf09b",
+    "044d14d7e00d9279",
+    "0867d598de790aac",
+    "0afd1b507f11bccc",
+    "0e024c2a4571c1e9",
+    "124803104740e078",
+    "12d7cfd40cc603bb",
+    "1beac27d6f802b13",
+    "1caf8150dc9a3dfb",
+    "293a32db53c7f910",
+    "2a7853e720a623fa",
+    "2b16c74eda57e7a5",
+    "2c61f416357cdaf6",
+    "2ddcf59977b5c1c0",
+    "364b62834d2d01ca",
+    "36f10362d70304f9",
+    "3fd066e4dfe0080e",
+    "4d0764de90e9eb02",
+    "5460ef2cf6ead8cc",
+    "580de90f77ae8227",
+    "5c5e79f1a9bee217",
+    "5fbe7ffdaea66cf2",
+    "64a080b9948b8af4",
+    "727a5cc72b36eb86",
+    "7557728b37cf6963",
+    "75e48b281813f89f",
+    "798f9a9f06ff1bc8",
+    "7e4ab69d5ad18c48",
+    "7e612c81971f232f",
+    "8b161090f098dc13",
+    "8c7e25b55a1757f8",
+    "8d4c65a3a53b119f",
+    "8f9f65e0e9bde716",
+    "91658c1c225c1f83",
+    "a20692abc214ec81",
+    "a234bb54409601e8",
+    "a2cf2b9a01403c1a",
+    "aae31be8c3d647ad",
+    "b3c0e0a659c804cc",
+    "b85fb5dab26b036c",
+    "b92e990ec539a21e",
+    "be9dfb4fd00f91bd",
+    "bebed31bd2c66069",
+    "c0e62020c7c63803",
+    "c135789d4ea5c9d8",
+    "c41c499acdd569c4",
+    "c63498b9a1cf57be",
+    "c9d33feab3cf95a3",
+    "cf2a87e701ec961b",
+    "dbe792937b02be29",
+    "dfd5d9964eb1366f",
+    "e09863fc86687a4f",
+    "e2a137fb3c3a41b8",
+    "e5995aeb5e2cb7e7",
+    "e6dd11a68334940a",
+    "eb21a5fd498ce9f7",
+    "f16de15c7a8d5d47",
+    "f45b16397ba45633",
+    "f5d8ed8b0e016622",
+    "f6abf6046f43bb15",
+    "faf08dde58a8f964",
+    "fe4ad7f0c02ddad3"
+  ],
+  "validity_gates": {
+    "labeler_agreement": false,
+    "headroom": false,
+    "controls": false
+  },
+  "decision": "unresolved"
+}

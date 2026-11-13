@@ -1,0 +1,6 @@
+{
+  "ceiling_usd": {"openai": 3.5, "mistral": 1.0},
+  "scope": "G006.5-S5: blind labels for up to 640 outputs per labeler",
+  "approved_by": "user authorization in chat ($6 total ceiling across generation and labeling)",
+  "approved_at": "2026-11-12"
+}
