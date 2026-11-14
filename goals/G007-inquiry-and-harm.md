@@ -1,6 +1,6 @@
 # G007 — Inquiry and Harm
 
-Status: In progress — G007-S1 through G007-S4 offline preparation complete; candidate behavior remains untested
+Status: Drafted — unverified (2026-11-13). G007-S1 through G007-S4 are complete and the clauses stand as written. The G007-S4 packet was run under G006.5 and could not establish the behavioral criterion: the source arm passed seven of ten paired cases. Drafting is paused until M2 in `ROADMAP.md` supplies a qualified measure the clauses are expected to move.
 Dependencies: G006 Complete
 Next goal on completion: G008
 

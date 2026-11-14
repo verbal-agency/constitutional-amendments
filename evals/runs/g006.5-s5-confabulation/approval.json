@@ -1,0 +1,7 @@
+{
+  "ceiling_usd": 1.5,
+  "model": "deepseek-flash",
+  "scope": "G006.5-S5: 640 generations (20 cases x 4 constitution arms x 8 draws); manifest g006.5-s5-confabulation-probe-v1",
+  "approved_by": "user authorization in chat ($6 total ceiling across generation and labeling)",
+  "approved_at": "2026-11-12"
+}

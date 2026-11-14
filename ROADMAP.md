@@ -1,11 +1,13 @@
 # Roadmap
 
 Project: Truth-Seeking Constitution
-Active goal: G007
-Next eligible bridge: G006.5 walking-skeleton behavioral probe
+Active goal: M1 — lever check (Proposed; execution needs Cycle selection and an approved cost ceiling)
+Measurement track: M1 → M2 → M3, ahead of G008 (amendment of 2026-11-13, `framework/G006.5-roadmap-amendment.md`)
 Active experimental branch: X001 — planned target-authoring slice
 
-Goal policy: the Cycle skill governs discovery, sizing, lifecycle, closure, and handoff. `ITERATION_PROTOCOL.md` governs project-specific bounded hypothesis-and-probe loops inside an execution slice. Exploratory results may revise the active goal or amend downstream contracts; G006.5 is the first behavioral probe, and G010 remains the only official base-versus-candidate comparison.
+Goal policy: the Cycle skill governs discovery, sizing, lifecycle, closure, and handoff. `ITERATION_PROTOCOL.md` governs project-specific bounded hypothesis-and-probe loops inside an execution slice. Exploratory results may revise the active goal or amend downstream contracts; G006.5 was the first behavioral probe, and G010 remains the only official base-versus-candidate comparison.
+
+The measurement track exists because G006.5 found no detectable behavioral difference between the provisional candidate and the source. It establishes whether a constitution in the prompt is a usable lever (M1), builds measures with headroom (M2), and attributes behavior to source themes (M3) before more constitution text is drafted. The track as a whole is capped at $25 of paid calls and two execution slices per goal.
 
 Experimental branches are non-blocking unless explicitly promoted by the user. They may produce evidence for reopening a goal or changing the roadmap, but they do not silently alter the numbered goal sequence.
 
@@ -28,7 +30,7 @@ Legal transitions:
 - `Blocked` → `In progress` when the blocking condition is resolved and execution resumes.
 - `Deferred` → `Planned` or `Proposed` when the work is deliberately resumed.
 
-Exactly one numbered goal may be `In progress`. An explicitly selected experimental branch may also be `In progress` when it is marked non-blocking and does not alter the numbered sequence. G006.5 is a bridge goal: it may be `Proposed` while G007 remains active, but G008/G009 cannot be promoted until its decision is recorded. A numbered goal is eligible only when all dependencies are `Complete`, it has a goal file containing a bounded execution contract, and no earlier eligible goal remains unfinished. A G006 child discovery slice may remain active while the parent is `In progress`; it must not authorize downstream implementation until its decision closes. `framework/current-goal.yaml` is the operational record of the active slice; the goal file is the durable contract.
+Exactly one numbered goal may be `In progress`. An explicitly selected experimental branch may also be `In progress` when it is marked non-blocking and does not alter the numbered sequence. G006.5 was a bridge goal and its decision is recorded. M1, M2, and M3 are sequence goals for the purposes of this rule: G008/G009 cannot be promoted until the M1 decision is recorded and M2 has closed. A numbered goal is eligible only when all dependencies are `Complete`, it has a goal file containing a bounded execution contract, and no earlier eligible goal remains unfinished. A G006 child discovery slice may remain active while the parent is `In progress`; it must not authorize downstream implementation until its decision closes. `framework/current-goal.yaml` is the operational record of the active slice; the goal file is the durable contract.
 
 Completion is evidence-based, not prose-based. A goal may be reopened when an iteration produces material counterevidence against its completed decision. Downstream goals must consume the amended contract rather than silently compensating for it.
 
@@ -57,6 +59,17 @@ Every cycle ends with a falsifiable `what we learned` sentence. It must state
 what belief would have remained unchanged without the work and what evidence
 changed it. A slice that cannot produce that sentence is not a useful slice.
 
+A measure may be used to evaluate constitution text only after it has passed two
+gates on the source arm: a headroom gate (failure rate between 10% and 90%) and
+an agreement gate (Cohen's kappa of 0.60 or higher between two independent
+graders, or deterministic scoring). A measure that has not passed both gates can
+produce leads, not findings.
+
+Each constitutional amendment drafted from G008 onward must state, before it is
+written, the measure it is expected to move, the direction, and the minimum
+effect, and must be tested in isolation before integration. An amendment without
+a qualified measure is recorded as unverified.
+
 ## Anti-churn gate
 
 These rules apply before creating a repair, measurement, or discovery child:
@@ -76,6 +89,9 @@ These rules apply before creating a repair, measurement, or discovery child:
 - Investigation ceilings cover the whole failure branch, not each inexpensive
   subgoal separately. When the ceiling fires, choose `pivot`, `defer`, or
   `abandon`; do not rename the uncertainty and continue.
+- An attribution claim requires at least 100 items per arm and one replication
+  on fresh items. A difference observed on fewer than 50 outputs per arm is a
+  lead, not a finding.
 
 ## Goal sequence
 
@@ -87,17 +103,20 @@ These rules apply before creating a repair, measurement, or discovery child:
 | [G004](goals/G004-core-hierarchy.md) | Complete | G003 | Decide how truth-seeking and the presumption of human agency constrain the core value hierarchy. |
 | [G005](goals/G005-honesty-and-inquiry.md) | Complete | G004 | Expand honesty into an operational account of inquiry, disconfirmation, candor, speculation, and mystery. |
 | [G006](goals/G006-authority-and-incentives.md) | Complete | G005 | Separate authority from epistemic warrant and adopt a principle-level replacement, evaluation, and attribution process before G007. |
-| [G006.5](goals/G006.5-walking-skeleton-probe.md) | Proposed | G006, G007-S3 | Assemble the smallest exact-replacement candidate and obtain the first pre-registered behavioral evidence before more drafting. |
-| [G007](goals/G007-inquiry-and-harm.md) | In progress | G006 | Distinguish self-regarding risk from nonconsensual harm and apply capacity-sensitive, proportionate safeguards. |
-| G008 | Planned | G007, G006.5 | Protect dissent, self-correction, appeals, evidence retention, and constitutional amendment, informed by the first behavioral probe. |
-| G009 | Planned | G008 | Produce an integrated candidate constitution and traceable change log. |
-| G010 | Planned | G009 | Compare candidate and base, run adversarial validation, resolve regressions, and publish the final constitution. |
+| [G006.5](goals/G006.5-walking-skeleton-probe.md) | Complete | G006, G007-S3 | Assemble the smallest exact-replacement candidate and obtain the first pre-registered behavioral evidence before more drafting. Decision: no detectable difference from the source. |
+| [G007](goals/G007-inquiry-and-harm.md) | Drafted — unverified | G006 | Distinguish self-regarding risk from nonconsensual harm and apply capacity-sensitive, proportionate safeguards. Drafting paused until M2 supplies a measure. |
+| [M1](goals/M1-lever-check.md) | Proposed | G006.5 | Establish whether the constitution in the prompt changes false-assertion behavior at all, and whether a known-effective instruction survives placement inside it. |
+| M2 | Planned | M1 | Build a behavior battery (truthfulness, authority versus evidence, curiosity) in which every measure passes the headroom and agreement gates, or is recorded as not measurable. |
+| M3 | Planned | M1, M2 | Attribute measured behavior to themes of the source by knockout and isolation, with replication. Runs only if M1 shows the document drives the behavior. |
+| G008 | Planned | M1 decision, M2; consumes G007 as drafted | Protect dissent, self-correction, appeals, evidence retention, and constitutional amendment, with each revision tied to a qualified measure. |
+| G009 | Planned | G008 | Produce an integrated candidate constitution and traceable change log from amendments that passed an isolated test, with untested amendments marked unverified. |
+| G010 | Planned | G009 | Compare candidate and base on the frozen suite and the M2 battery, run adversarial validation, resolve regressions, and publish the final constitution. |
 
 ## Experimental branches
 
 | Branch | Status | Relationship | Purpose |
 | --- | --- | --- | --- |
-| [X001 — Local Mistral SFT news depolarization probe](goals/X001-mistral-finetune-experiment.md) | Planned | Non-blocking branch from G006 revision 6 | Author and preflight the bounded source-packet target slice before any local training or paid evaluation; promote, defer, or kill before G008 becomes Proposed. |
+| [X001 — Local Mistral SFT news depolarization probe](goals/X001-mistral-finetune-experiment.md) | Planned | Non-blocking branch from G006 revision 6 | Author and preflight the bounded source-packet target slice before any local training or paid evaluation; promote, defer, or kill before G008 becomes Proposed. If M1 reads "weak lever", promotion to the mainline is the first option put to the owner. |
 | [X002 — Interactive constitution map](goals/X002-interactive-constitution-map.md) | Discovery | Non-blocking productization branch from G006 revision 6 | Hold until G006.5 produces a candidate worth mapping; then integrate a provenance-preserving original/amendment map beginning with the validated replacement slice. |
 
 ## Goal boundaries
@@ -157,6 +176,50 @@ G006.5 is intentionally small. It either produces a behaviorally informative
 probe or identifies an exact assembly/measurement blocker. It does not open a
 new chain of measurement children.
 
+G006.5 closed on 2026-11-13 by owner-approved amendment. S1 assembled the
+candidate; S2 to S4 ran the 15-case packet and two small follow-ups with
+same-session labels; S5 (640 outputs) and S6 (800 outputs) were added by owner
+authorization with blind grading by two non-target models. Decision: the
+provisional candidate shows no detectable difference from the source on false
+assertion (S6, validity gates passed) and no confabulation effect (S5, gates
+failed, lead not supported). Two deviations from the goal contract are recorded
+in the goal file: S5 and S6 used new probe manifests, and the independent-review
+criterion was met by blind model grading of those packets, not by review of the
+S2 author labels. No human review was done.
+
+### M1 — Lever check
+
+Run the 100 plain G006.5-S6 items under six arms: `base`, `full`, `none` (no
+constitution), `short` (one authored paragraph), `base+inside` (a
+known-effective calibration instruction inserted in the "Being honest"
+section), and `base+end` (the same instruction appended). Grade blind with the
+G006.5-S6 graders and apply the G006.5-S6 permutation test. The four possible readings and what each one
+triggers are fixed in the goal file before any output exists. M1 does not test
+or draft amendment text.
+
+### M2 — Behavior battery
+
+Qualify measures before any text is evaluated on them. Truthfulness is already
+qualified by G006.5-S6. Authority versus evidence needs cases in which an operator,
+expert, or institution asserts something the supplied evidence contradicts,
+scored against that evidence. Curiosity needs an operational definition first,
+then cases and a rubric checked against at least 30 human labels. Authored
+cases are reviewed by someone other than their drafter. Each measure gets two
+attempts; a measure that fails twice is dropped and the project's claim is
+narrowed. No candidate or amendment text is evaluated in M2.
+
+### M3 — Theme attribution
+
+Runs only if M1 reads "the document drives this behavior" for at least one
+measure. Group the source's top-level sections into 8 to 10 themes fixed before
+any run. Remove one theme at a time (what the behavior depends on) and use one
+theme alone (what is sufficient), on each qualified measure. A theme that
+differs by 5 points or more with p < 0.05 under both graders is rerun once on
+fresh items; only a replicated effect is recorded as a driver. The result is
+evidence about text in the prompt, not about training. If M1 instead reads
+"salience or position", M3 is replaced by a placement study; if M1 reads "weak
+lever", M3 does not run and the owner makes a pivot decision.
+
 ### G007 — Inquiry and harm
 
 Create a layered analysis of belief, inquiry, speech, disclosure, and action that distinguishes competent self-regarding choice from nonconsensual harm and uses concrete, capacity-sensitive, proportionate restrictions for genuine hazards.
@@ -171,19 +234,25 @@ finish its clause contract without pretending that offline fixtures establish
 model behavior. G007 still does not authorize model calls, and the official
 G010 comparison and paid evaluation remain unauthorized.
 
-The next goal stub is `goals/G007-S4-development-probe-packet.md`. It prepares
-paired cases, sentinels, hypotheses, and provenance offline; it does not run a
-model or promote an evaluator.
+The G007-S4 packet was run under G006.5 (S2 to S4). The source arm already
+passed seven of its ten paired cases, so it could not establish G007's
+behavioral criterion. G007 is therefore `Drafted — unverified`: its clauses
+stand as written, and no further G007 drafting happens until M2 supplies a
+qualified measure that the clauses are expected to move.
 
 ### G008 — Dissent and amendment
 
-Revise corrigibility, identity stability, reflective equilibrium, and final-authority provisions to prevent self-sealing governance. Begin only after G006.5 has either produced the first behavioral evidence or recorded a bounded assembly/measurement limitation that changes the contract.
+Revise corrigibility, identity stability, reflective equilibrium, and final-authority provisions to prevent self-sealing governance. Begin only after the M1 decision is recorded and M2 has closed. Each revision names its measure, direction, and minimum effect before it is written. If M1 reads "weak lever", G008 does not start until the owner has made the pivot decision.
 
 ### G009 — Integration
 
-Create a distinct candidate constitution and source-to-revision change log without altering the upstream source. Use G006.5's exact-replacement and measurement contracts, then run a development probe before treating integration as complete. Do not claim final acceptance before G010.
+Create a distinct candidate constitution and source-to-revision change log without altering the upstream source. Use G006.5's exact-replacement contract and the M2 measures, integrate amendments that passed an isolated test, mark the rest unverified, and run a development probe before treating integration as complete. Do not claim final acceptance before G010.
 
 ### G010 — Controlled comparison and finalization
+
+G010 evaluates on the M2 battery in addition to the frozen `lean-v1` suite, and
+takes a second target model as an input so that the result does not rest on one
+model.
 
 Run the frozen paired comparison against the base and candidate constitutions, including misinformation, false balance, contrarianism, reckless disclosure, institutional capture, commercial pressure, paternalism, epistemic authoritarianism, precautionary conservatism, benevolent deception, and constitutional self-protection. Report SC-010 separately as process-level audit capability; complete the human spot-check and position-swapped judge consistency checks; preserve the MASK license caveat. Resolve material regressions within budget, record scenario evidence, and publish the final constitution.
 
