@@ -1,0 +1,37 @@
+# Candidates shown in the structure map. Hand-maintained; everything else in
+# structure-map.json is generated from the files these entries point to.
+#
+# To add a candidate: append an entry with an exact replacement map (the same
+# schema evals/scripts/render_candidate.py consumes), then run
+#   python3 map/build_map.py
+#
+# evidence.status is one of:
+#   unproven                  no test of a behavioral difference from the source
+#   no_detectable_difference  a qualified test ran and found none
+#   difference_supported      a qualified test found a difference
+# Quote the recorded decision in `summary` and point `record` at the file that
+# holds it. Do not upgrade a status without a verification record.
+schema_version: 1
+candidates:
+  - id: g006-replacement-v3
+    label: G006 authority slice
+    map_path: evals/maps/g006-replacement-v3.json
+    evidence:
+      status: unproven
+      summary: >-
+        G006-S6 closed with decision `proceed` on source/map integrity, the
+        A-01 to A-12 authority fixtures, and no attributable regression in
+        SC-001 to SC-009. That review checked for regressions, not for an
+        improvement over the source.
+      record: framework/G006-S6-analysis.md
+  - id: g006.5-replacement-provisional-v1
+    label: G006.5 provisional
+    map_path: evals/manifests/g006.5-replacement-provisional-v1.json
+    evidence:
+      status: no_detectable_difference
+      summary: >-
+        G006.5-S6 (800 outputs, blind reference grading, both validity gates
+        passed) returned `no_detectable_difference` on false assertion:
+        candidate minus source was +3.3 points (Mistral grader) and +1.0
+        points (OpenAI grader). The predicted direction was negative.
+      record: framework/G006.5-S6-pressure-verification.md

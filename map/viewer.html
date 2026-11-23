@@ -1,0 +1,401 @@
+<meta charset="utf-8">
+<title>Constitution Structure Map</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap">
+<style>
+/* Layout: a genome-browser style track view. One horizontal axis (source line
+   number), one row per principle or pattern, a detail reader underneath. */
+:root {
+  --bg: #f3f5f8; --surface: #ffffff; --sunken: #e9edf2;
+  --ink: #15202b; --muted: #586674; --line: #d3dae2;
+  --accent: #2d3fb8; --accent-soft: #dfe3fa;
+  --ep: #0e7a76; --pat: #873a8c; --cand: #a9540c; --cand-soft: #fbeedd;
+  --s0: #a3b2c0; --s1: #dcae3a; --s2: #de7a2a; --s3: #bf2620;
+  --ok: #1d7a46; --warn: #96650a;
+  --display: "Space Grotesk", "Inter", system-ui, sans-serif;
+  --body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --label-w: 15rem;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0f151b; --surface: #172029; --sunken: #111920;
+  --ink: #e5ecf2; --muted: #93a2b0; --line: #2a3642;
+  --accent: #93a1ff; --accent-soft: #252e63;
+  --ep: #43c2bc; --pat: #d68bdb; --cand: #f0a24e; --cand-soft: #3a2a17;
+  --s0: #566878; --s1: #d6a631; --s2: #e8853a; --s3: #f05a50;
+  --ok: #57c98a; --warn: #e0b04a; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #0f151b; --surface: #172029; --sunken: #111920;
+  --ink: #e5ecf2; --muted: #93a2b0; --line: #2a3642;
+  --accent: #93a1ff; --accent-soft: #252e63;
+  --ep: #43c2bc; --pat: #d68bdb; --cand: #f0a24e; --cand-soft: #3a2a17;
+  --s0: #566878; --s1: #d6a631; --s2: #e8853a; --s3: #f05a50;
+  --ok: #57c98a; --warn: #e0b04a; color-scheme: dark }
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font: 15px/1.55 var(--body); }
+.wrap { max-width: 78rem; margin: 0 auto; padding-block: 1.75rem 3rem;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: flex; flex-direction: column; gap: 1.25rem; }
+h1 { font: 600 1.7rem/1.15 var(--display); margin: 0; text-wrap: balance; }
+h2 { font: 600 1.15rem/1.25 var(--display); margin: 0; text-wrap: balance; }
+h3 { font: 600 .72rem/1.3 var(--body); letter-spacing: .07em; text-transform: uppercase; color: var(--muted); margin: 0; }
+p { margin: 0; }
+.mono { font-family: var(--mono); font-size: .86em; }
+.muted { color: var(--muted); }
+button { font: inherit; color: inherit; cursor: pointer; }
+button:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+header.top { display: flex; flex-direction: column; gap: .5rem; }
+.lede { max-width: 68ch; color: var(--muted); }
+.facts { display: flex; flex-wrap: wrap; gap: .35rem 1.25rem; font-size: .85rem; color: var(--muted); }
+.facts b { color: var(--ink); font-weight: 600; }
+details.checks { font-size: .85rem; }
+details.checks summary { cursor: pointer; color: var(--ok); font-weight: 600; width: fit-content; }
+details.checks.bad summary { color: var(--s3); }
+details.checks ul { margin: .5rem 0 0; padding-left: 1.1rem; color: var(--muted); columns: 2 22rem; }
+
+.bar { display: flex; flex-wrap: wrap; gap: .75rem 1.25rem; align-items: flex-start; }
+.seg { display: inline-flex; flex-wrap: wrap; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); overflow: hidden; }
+.seg button { border: 0; background: none; padding: .4rem .8rem; font-size: .88rem; border-right: 1px solid var(--line); }
+.seg button:last-child { border-right: 0; }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+.evidence { flex: 1 1 24rem; min-width: 0; font-size: .88rem; max-width: 70ch; }
+.pill { display: inline-block; font: 500 .74rem/1 var(--mono); padding: .25rem .45rem; border-radius: 3px; border: 1px solid currentColor; margin-right: .4rem; white-space: nowrap; }
+.pill.unproven, .pill.no_detectable_difference { color: var(--warn); }
+.pill.difference_supported { color: var(--ok); }
+.pill.source { color: var(--muted); }
+
+.tracks { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; overflow-x: auto; }
+.tracks-inner { min-width: 64rem; padding: .75rem .9rem .9rem; position: relative; }
+.row, .group, .legend { position: relative; z-index: 1; }
+.row { display: grid; grid-template-columns: var(--label-w) minmax(0, 1fr); align-items: center; min-height: 1.35rem; }
+.row + .row { border-top: 1px solid transparent; }
+.group { margin-top: .7rem; padding-top: .55rem; border-top: 1px solid var(--line); }
+.group > h3 { margin-bottom: .25rem; }
+.rlabel { text-align: left; border: 0; background: none; padding: .1rem .4rem .1rem 0; font-size: .8rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.rlabel .mono { margin-right: .4rem; }
+button.rlabel:hover { color: var(--accent); }
+.rlabel.on { color: var(--accent); font-weight: 600; }
+.rlabel.candpat { font-style: italic; }
+.lane { position: relative; height: 1rem; background: linear-gradient(var(--sunken), var(--sunken)) center / 100% 1px no-repeat; }
+.lane.tall { height: auto; }
+.lane .sub { position: relative; height: 1.1rem; }
+.s { position: absolute; top: 2px; bottom: 2px; min-width: 4px; border: 0; padding: 0; border-radius: 2px; background: var(--muted); }
+.s:hover { filter: brightness(1.15); outline: 1px solid var(--ink); }
+.s.sel { outline: 2px solid var(--accent); outline-offset: 1px; z-index: 2; }
+.s.ep { background: var(--ep); } .s.pat { background: var(--pat); } .s.cand { background: var(--cand); }
+.s.S0 { background: var(--s0); } .s.S1 { background: var(--s1); } .s.S2 { background: var(--s2); } .s.S3 { background: var(--s3); }
+.s.dim { opacity: .28; }
+.part { position: absolute; top: 0; bottom: 0; font-size: .72rem; line-height: 1.35rem; padding: 0 .3rem; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; border-left: 1px solid var(--line); color: var(--muted); }
+.lane.parts { height: 1.35rem; background: none; }
+.lane.ruler { height: 1.1rem; background: none; }
+.tick { position: absolute; top: 0; font: 400 .68rem/1.1rem var(--mono); color: var(--muted); transform: translateX(-50%); }
+.cursor { position: absolute; top: 0; bottom: 0; background: var(--accent-soft); opacity: .55; pointer-events: none; border-radius: 2px; z-index: 0; }
+.legend { display: flex; flex-wrap: wrap; gap: .3rem 1rem; font-size: .78rem; color: var(--muted); margin-top: .6rem; padding-left: var(--label-w); }
+.legend i { display: inline-block; width: .8rem; height: .6rem; border-radius: 2px; margin-right: .3rem; vertical-align: baseline; }
+
+.detail { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 1.25rem; align-items: start; }
+@media (max-width: 860px) { .detail { grid-template-columns: minmax(0, 1fr); } }
+.reader { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; min-width: 0; }
+.reader-head { display: flex; flex-wrap: wrap; gap: .6rem 1rem; align-items: center; justify-content: space-between; padding: .8rem 1rem; border-bottom: 1px solid var(--line); }
+.reader-head .id { display: flex; flex-direction: column; gap: .15rem; min-width: 0; }
+.nav { display: flex; gap: .35rem; }
+.nav button, .linkbtn { border: 1px solid var(--line); background: var(--surface); border-radius: 5px; padding: .3rem .65rem; font-size: .85rem; }
+.nav button:hover, .linkbtn:hover { border-color: var(--accent); color: var(--accent); }
+.mode { padding: .5rem 1rem; font-size: .82rem; font-weight: 600; border-bottom: 1px solid var(--line); background: var(--sunken); }
+.mode.amend { background: var(--cand-soft); color: var(--cand); }
+.text { padding: .9rem 1rem 1.1rem; max-height: 34rem; overflow-y: auto; display: flex; flex-direction: column; gap: .7rem; }
+.ln { display: grid; grid-template-columns: 2.6rem minmax(0, 1fr); gap: .6rem; }
+.ln > span { font: 400 .72rem/1.9 var(--mono); color: var(--muted); text-align: right; user-select: none; }
+.ln > p { max-width: 68ch; overflow-wrap: anywhere; }
+.ln.h > p { font: 600 1.02rem/1.35 var(--display); }
+.callout { margin: .25rem 1rem 1rem; padding: .7rem .8rem; border: 1px dashed var(--cand); border-radius: 5px; font-size: .88rem; display: flex; flex-wrap: wrap; gap: .5rem 1rem; align-items: center; justify-content: space-between; }
+.meta { display: flex; flex-direction: column; gap: 1rem; min-width: 0; }
+.meta dl { margin: 0; display: flex; flex-direction: column; gap: .75rem; }
+.meta dt { font: 600 .72rem/1.3 var(--body); letter-spacing: .07em; text-transform: uppercase; color: var(--muted); margin-bottom: .15rem; }
+.meta dd { margin: 0; font-size: .9rem; overflow-wrap: anywhere; }
+.chips { display: flex; flex-wrap: wrap; gap: .3rem; }
+.chip { font: 500 .76rem/1 var(--mono); padding: .3rem .45rem; border-radius: 3px; border: 1px solid var(--line); background: var(--surface); }
+button.chip:hover { border-color: var(--accent); color: var(--accent); }
+.chip.ep { color: var(--ep); } .chip.pat { color: var(--pat); }
+.kv { display: flex; flex-wrap: wrap; gap: .3rem 1rem; font-size: .86rem; }
+.kv span b { font-weight: 600; }
+.applied { border-top: 1px solid var(--line); padding-top: .7rem; font-size: .88rem; display: flex; flex-direction: column; gap: .25rem; }
+.note { font-size: .82rem; color: var(--muted); max-width: 70ch; }
+#err { color: var(--s3); }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <h1>Constitution Structure Map</h1>
+    <p class="lede">Where each audited passage sits in the source, which epistemic principles and patterns were mapped to it, and which spans a candidate replaces. Positions are source line numbers.</p>
+    <div class="facts" id="facts"></div>
+    <details class="checks" id="checks"><summary>Checking integrity</summary><ul id="checklist"></ul></details>
+  </header>
+
+  <section class="bar" aria-label="Candidate">
+    <div>
+      <h3 style="margin-bottom:.35rem">Candidate</h3>
+      <div class="seg" id="candseg" role="group" aria-label="Choose a candidate"></div>
+    </div>
+    <div class="evidence" id="evidence" aria-live="polite"></div>
+  </section>
+
+  <section class="tracks" aria-label="Tracks"><div class="tracks-inner" id="tracks"><p id="err" class="muted">Loading map data.</p></div></section>
+
+  <section class="detail" id="detail" aria-live="polite"></section>
+
+  <p class="note">The source is Anthropic's constitution, shown unmodified. Amendments are proposed by this project and are not Anthropic's text. A mapping records where a principle or pattern was applied during the audit. It is a provenance link, not a claim that one thing causes another or that an amendment is correct.</p>
+</div>
+
+<script>
+(function () {
+  var D, D0, D1, state = { cand: null, sel: null, mode: 'original' };
+  var $ = function (id) { return document.getElementById(id); };
+  function el(tag, attrs, kids) {
+    var n = document.createElement(tag), k;
+    for (k in attrs || {}) {
+      if (k === 'text') n.textContent = attrs[k];
+      else if (k === 'on') for (var e in attrs.on) n.addEventListener(e, attrs.on[e]);
+      else if (attrs[k] !== null && attrs[k] !== undefined) n.setAttribute(k, attrs[k]);
+    }
+    (kids || []).forEach(function (c) { if (c) n.appendChild(typeof c === 'string' ? document.createTextNode(c) : c); });
+    return n;
+  }
+  function pct(line) { return ((line - D0) / (D1 - D0) * 100).toFixed(3) + '%'; }
+  function place(n, a, b) { n.style.left = pct(a); n.style.width = ((b - a) / (D1 - D0) * 100).toFixed(3) + '%'; return n; }
+  function lines(a, b) { return a + '–' + (b - 1); }
+  function byId(list, id) { for (var i = 0; i < list.length; i++) if (list[i].id === id) return list[i]; return null; }
+  function cand() { return state.cand ? byId(D.candidates, state.cand) : null; }
+  function overlap(a, b) { return a.start < b.end_exclusive && b.start < a.end_exclusive; }
+  function select(type, id) { state.sel = { type: type, id: id }; if (type !== 'entry') state.mode = 'original'; render(); }
+
+  function seg(r, cls, label) {
+    return place(el('button', { 'class': 's ' + cls, 'data-rec': r.id, title: label, 'aria-label': label,
+      on: { click: function () { select('record', r.id); } } }), r.start, r.end_exclusive);
+  }
+  function recLabel(r) { return r.id + ' · ' + r.title + ' · lines ' + lines(r.start, r.end_exclusive) + ' · ' + r.severity; }
+
+  function row(labelNode, lane) { return el('div', { 'class': 'row' }, [labelNode, lane]); }
+  function plainLabel(text) { return el('span', { 'class': 'rlabel muted', text: text }); }
+
+  function buildTracks() {
+    var root = $('tracks'); root.textContent = '';
+    var ruler = el('div', { 'class': 'lane ruler' });
+    for (var t = Math.ceil(D0 / 50) * 50; t < D1; t += 50) { var tk = el('span', { 'class': 'tick', text: String(t) }); tk.style.left = pct(t); ruler.appendChild(tk); }
+    root.appendChild(row(plainLabel('Source line'), ruler));
+
+    var parts = el('div', { 'class': 'lane parts' });
+    D.sections.filter(function (s) { return s.level === 1 && s.start >= D0; }).forEach(function (s) {
+      parts.appendChild(place(el('span', { 'class': 'part', text: s.title, title: s.title + ', lines ' + lines(s.start, s.end_exclusive) }), s.start, s.end_exclusive));
+    });
+    root.appendChild(row(plainLabel('Part'), parts));
+
+    var lanes = [];
+    D.records.forEach(function (r) {
+      var i = 0; while (lanes[i] && lanes[i].end > r.start) i++;
+      if (!lanes[i]) lanes[i] = { end: 0, node: el('div', { 'class': 'sub' }) };
+      lanes[i].end = r.end_exclusive; lanes[i].node.appendChild(seg(r, r.severity, recLabel(r)));
+    });
+    var auditLane = el('div', { 'class': 'lane tall' }, lanes.map(function (l) { return l.node; }));
+    auditLane.style.background = 'none';
+    var g0 = el('div', { 'class': 'group' }, [el('h3', { text: 'Audit records' }), row(plainLabel(D.records.length + ' passages'), auditLane)]);
+    root.appendChild(g0);
+
+    function principleGroup(title, items, type, cls, getter) {
+      var g = el('div', { 'class': 'group' }, [el('h3', { text: title })]);
+      items.forEach(function (p) {
+        var lane = el('div', { 'class': 'lane' });
+        D.records.forEach(function (r) { if (getter(r).indexOf(p.id) >= 0) lane.appendChild(seg(r, cls, p.id + ' in ' + recLabel(r))); });
+        var lab = el('button', { 'class': 'rlabel' + (p.status === 'candidate' ? ' candpat' : ''), 'data-row': type + ':' + p.id, title: p.id + ' · ' + p.title,
+          on: { click: function () { select(type, p.id); } } }, [el('span', { 'class': 'mono', text: p.id }), p.title]);
+        g.appendChild(row(lab, lane));
+      });
+      root.appendChild(g);
+    }
+    principleGroup('Epistemic principles', D.epistemic_principles, 'ep', 'ep', function (r) { return r.eps; });
+    var pats = D.patterns.slice().sort(function (a, b) { return a.id < b.id ? -1 : 1; });
+    principleGroup('Patterns', pats, 'pattern', 'pat', function (r) { return r.patterns; });
+
+    var cg = el('div', { 'class': 'group' }, [el('h3', { text: 'Replaced spans' })]);
+    cg.appendChild(row(el('span', { 'class': 'rlabel muted', id: 'candlabel' }), el('div', { 'class': 'lane', id: 'candlane' })));
+    root.appendChild(cg);
+
+    root.appendChild(el('div', { 'class': 'legend' }, [
+      ['S0', 'S0 support'], ['S1', 'S1'], ['S2', 'S2'], ['S3', 'S3 highest severity'], ['ep', 'principle mapped'], ['pat', 'pattern applied'], ['cand', 'replaced by candidate']
+    ].map(function (x) { return el('span', {}, [el('i', { 'class': 's ' + x[0], style: 'position:static' }), x[1]]); })));
+
+    var cur = el('div', { 'class': 'cursor', id: 'cursor', hidden: '' });
+    root.appendChild(cur);
+  }
+
+  function renderCandidate() {
+    var seg = $('candseg'); seg.textContent = '';
+    [{ id: null, label: 'Source only' }].concat(D.candidates).forEach(function (c) {
+      seg.appendChild(el('button', { 'aria-pressed': String(state.cand === c.id), text: c.label, on: { click: function () {
+        state.cand = c.id;
+        if (state.sel && state.sel.type === 'entry') {
+          var cc = cand(), keep = cc && cc.entries.filter(function (e) { return e.entry_id === state.sel.id; })[0];
+          if (!keep) { state.sel = { type: 'record', id: D.records[0].id }; state.mode = 'original'; }
+        }
+        render();
+      } } }));
+    });
+    var c = cand(), ev = $('evidence'); ev.textContent = '';
+    if (!c) { ev.appendChild(el('span', { 'class': 'pill source', text: 'source' })); ev.appendChild(document.createTextNode('The pinned source with no replacements applied.')); }
+    else {
+      ev.appendChild(el('span', { 'class': 'pill ' + c.evidence.status, text: c.evidence.status.replace(/_/g, ' ') }));
+      ev.appendChild(document.createTextNode(c.evidence.summary + ' '));
+      ev.appendChild(el('span', { 'class': 'mono muted', text: c.evidence.record }));
+    }
+    var lane = $('candlane'); lane.textContent = '';
+    $('candlabel').textContent = c ? c.entries.length + ' of ' + (D1 - D0) + ' lines’ spans' : 'None';
+    if (c) {
+      var n = c.entries.reduce(function (a, e) { return a + e.end_exclusive - e.start; }, 0);
+      $('candlabel').textContent = c.entries.length + ' spans, ' + n + ' lines';
+      c.entries.forEach(function (e) {
+        var label = e.entry_id + ' replaces lines ' + lines(e.start, e.end_exclusive);
+        lane.appendChild(place(el('button', { 'class': 's cand', 'data-entry': e.entry_id, title: label, 'aria-label': label,
+          on: { click: function () { select('entry', e.entry_id); } } }), e.start, e.end_exclusive));
+      });
+    }
+  }
+
+  function textBlock(a, b) {
+    var box = el('div', { 'class': 'text', tabindex: '0' });
+    for (var i = a; i < b; i++) {
+      var t = D.source.lines[i - 1]; if (!t.trim()) continue;
+      var h = /^#+ /.test(t);
+      box.appendChild(el('div', { 'class': 'ln' + (h ? ' h' : '') }, [el('span', { text: String(i) }), el('p', { text: h ? t.replace(/^#+ /, '') : t })]));
+    }
+    return box;
+  }
+  function amendBlock(text) {
+    var box = el('div', { 'class': 'text', tabindex: '0' });
+    text.split('\n').forEach(function (t) {
+      if (!t.trim()) return; var h = /^#+ /.test(t);
+      box.appendChild(el('div', { 'class': 'ln' + (h ? ' h' : '') }, [el('span', { text: '' }), el('p', { text: h ? t.replace(/^#+ /, '') : t })]));
+    });
+    return box;
+  }
+  function dd(label, node) { return el('div', {}, [el('dt', { text: label }), typeof node === 'string' ? el('dd', { text: node }) : el('dd', {}, [node])]); }
+  function chipList(idsList, type, cls) {
+    return el('div', { 'class': 'chips' }, idsList.map(function (id) {
+      var src = type === 'ep' ? D.epistemic_principles : D.patterns, p = byId(src, id);
+      return el('button', { 'class': 'chip ' + cls, text: id, title: p ? p.title : id, on: { click: function () { select(type, id); } } });
+    }));
+  }
+  function recChips(recs) {
+    return el('div', { 'class': 'chips' }, recs.map(function (r) {
+      return el('button', { 'class': 'chip', text: r.id, title: r.title + ', lines ' + lines(r.start, r.end_exclusive), on: { click: function () { select('record', r.id); } } });
+    }));
+  }
+
+  function renderDetail() {
+    var root = $('detail'); root.textContent = '';
+    var s = state.sel, c = cand(), span = null, highlight = [];
+    var reader = el('div', { 'class': 'reader' }), meta = el('div', { 'class': 'meta' });
+
+    if (s.type === 'record') {
+      var r = byId(D.records, s.id), idx = D.records.indexOf(r); span = r; highlight = [r.id];
+      reader.appendChild(el('div', { 'class': 'reader-head' }, [
+        el('div', { 'class': 'id' }, [el('span', { 'class': 'mono muted', text: r.id + ' · lines ' + lines(r.start, r.end_exclusive) + ' · ' + r.heading }), el('h2', { text: r.title })]),
+        el('div', { 'class': 'nav' }, [
+          el('button', { text: 'Previous', 'aria-label': 'Previous record', on: { click: function () { select('record', D.records[(idx + D.records.length - 1) % D.records.length].id); } } }),
+          el('button', { text: 'Next', 'aria-label': 'Next record', on: { click: function () { select('record', D.records[(idx + 1) % D.records.length].id); } } })])]));
+      reader.appendChild(el('div', { 'class': 'mode', text: 'Original. Anthropic’s source, unmodified.' }));
+      reader.appendChild(textBlock(r.start, r.end_exclusive));
+      if (c) c.entries.filter(function (e) { return overlap(e, r); }).forEach(function (e) {
+        reader.appendChild(el('div', { 'class': 'callout' }, [
+          el('span', { text: c.label + ' replaces lines ' + lines(e.start, e.end_exclusive) + ', which include this passage.' }),
+          el('button', { 'class': 'linkbtn', text: 'Compare with ' + e.entry_id, on: { click: function () { state.mode = 'amendment'; select('entry', e.entry_id); } } })]));
+      });
+      meta.appendChild(el('div', { 'class': 'kv' }, [['Kind', r.kind], ['Severity', r.severity], ['Confidence', r.confidence], ['Disposition', r.disposition], ['Routed to', r.destination]]
+        .map(function (x) { return el('span', {}, [x[0] + ' ', el('b', { text: x[1] })]); })));
+      meta.appendChild(el('dl', {}, [
+        dd('Epistemic principles', chipList(r.eps, 'ep', 'ep')),
+        dd('Patterns', r.patterns.length ? chipList(r.patterns, 'pattern', 'pat') : el('span', { 'class': 'muted', text: 'None identified' })),
+        dd('Mechanism', r.mechanism), dd('Truth-seeking effect', r.effect), dd('Legitimate purpose', r.legitimate_purpose),
+        dd('Revision hypothesis', r.revision_hypothesis), dd('Risk if revised', r.risk_if_revised), dd('G003 disposition', r.g003_disposition)]));
+    } else if (s.type === 'entry') {
+      var e = c.entries.filter(function (x) { return x.entry_id === s.id; })[0]; span = e;
+      var inside = D.records.filter(function (r2) { return overlap(e, r2); }); highlight = inside.map(function (r2) { return r2.id; });
+      var amend = state.mode === 'amendment';
+      var toggle = el('div', { 'class': 'seg', role: 'group', 'aria-label': 'Text shown' }, ['original', 'amendment'].map(function (m) {
+        return el('button', { 'aria-pressed': String(state.mode === m), text: m === 'original' ? 'Original' : 'Amendment', on: { click: function () { state.mode = m; render(); } } });
+      }));
+      reader.appendChild(el('div', { 'class': 'reader-head' }, [
+        el('div', { 'class': 'id' }, [el('span', { 'class': 'mono muted', text: e.entry_id + ' · lines ' + lines(e.start, e.end_exclusive) }), el('h2', { text: c.label + ' replacement' })]), toggle]));
+      reader.appendChild(el('div', { 'class': 'mode' + (amend ? ' amend' : ''), text: amend ? 'Amendment. Proposed by this project, not Anthropic’s text.' : 'Original. Anthropic’s source, unmodified.' }));
+      reader.appendChild(amend ? amendBlock(e.replacement) : textBlock(e.start, e.end_exclusive));
+      var dl = el('dl', {}, [
+        dd('Evidence for this candidate', el('span', {}, [el('span', { 'class': 'pill ' + c.evidence.status, text: c.evidence.status.replace(/_/g, ' ') }), c.evidence.summary])),
+        dd('Audit records in this span', recChips(inside)),
+        dd('Replacement hash', el('span', { 'class': 'mono', text: e.replacement_sha256.slice(0, 16) + '…' }))]);
+      meta.appendChild(dl);
+      e.principle_ids.forEach(function (pid) {
+        var p = byId(D.applied_principles, pid); if (!p) return;
+        meta.appendChild(el('div', { 'class': 'applied' }, [
+          el('span', {}, [el('span', { 'class': 'mono muted', text: p.id + ' · ' + p.clause_id + ' ' }), el('b', { text: p.title })]),
+          el('span', { text: p.invariant }),
+          el('span', { 'class': 'mono muted', text: p.eps.concat(p.crs).join(' ') })]));
+      });
+    } else {
+      var isEp = s.type === 'ep', p2 = byId(isEp ? D.epistemic_principles : D.patterns, s.id);
+      var recs = D.records.filter(function (r3) { return (isEp ? r3.eps : r3.patterns).indexOf(s.id) >= 0; }); highlight = recs.map(function (r3) { return r3.id; });
+      reader.appendChild(el('div', { 'class': 'reader-head' }, [el('div', { 'class': 'id' }, [
+        el('span', { 'class': 'mono muted', text: p2.id + (isEp ? ' · epistemic principle' : ' · pattern, ' + p2.status + (p2.decision ? ' (' + p2.decision + ')' : '')) }), el('h2', { text: p2.title })])]));
+      reader.appendChild(el('div', { 'class': 'mode', text: isEp ? 'Project-authored principle (G003). Not part of the source.' : 'Project-authored audit pattern. Not part of the source.' }));
+      reader.appendChild(el('div', { 'class': 'text' }, [el('p', { text: isEp ? p2.rule : p2.definition, style: 'max-width:68ch' })]));
+      var lens = recs.reduce(function (a, r4) { return a + r4.end_exclusive - r4.start; }, 0);
+      meta.appendChild(el('dl', {}, [
+        dd(isEp ? 'Mapped to' : 'Applied to', recs.length + ' of ' + D.records.length + ' audit records, ' + lens + ' source lines (overlaps counted twice)'),
+        dd('Records', recs.length ? recChips(recs) : el('span', { 'class': 'muted', text: 'No audit record uses this pattern.' }))]));
+      if (isEp) {
+        var ap = D.applied_principles.filter(function (a) { return a.eps.indexOf(s.id) >= 0; });
+        if (ap.length) meta.appendChild(dd('G006 applied principles', el('span', { text: ap.map(function (a) { return a.id + ' ' + a.title; }).join('; ') })));
+      }
+    }
+    root.appendChild(reader); root.appendChild(meta);
+
+    var cur = $('cursor');
+    if (span) {
+      var laneBox = document.querySelector('#tracks .lane'), base = $('tracks').getBoundingClientRect(), lb = laneBox.getBoundingClientRect();
+      var x0 = lb.left - base.left, w = lb.width;
+      cur.style.left = (x0 + (span.start - D0) / (D1 - D0) * w) + 'px';
+      cur.style.width = Math.max(3, (span.end_exclusive - span.start) / (D1 - D0) * w) + 'px';
+      cur.hidden = false;
+    } else cur.hidden = true;
+    var rowKey = (s.type === 'ep' || s.type === 'pattern') ? s.type + ':' + s.id : null;
+    document.querySelectorAll('#tracks .s[data-rec]').forEach(function (n) {
+      var hit = highlight.indexOf(n.getAttribute('data-rec')) >= 0;
+      n.classList.toggle('sel', hit && s.type === 'record');
+      n.classList.toggle('dim', rowKey !== null && !hit);
+    });
+    document.querySelectorAll('#tracks .s[data-entry]').forEach(function (n) { n.classList.toggle('sel', s.type === 'entry' && n.getAttribute('data-entry') === s.id); });
+    document.querySelectorAll('#tracks .rlabel[data-row]').forEach(function (n) { n.classList.toggle('on', n.getAttribute('data-row') === rowKey); });
+  }
+
+  function render() { renderCandidate(); renderDetail(); }
+
+  function start(data) {
+    D = data; D0 = D.sections.filter(function (s) { return s.level === 1; })[1].start; D1 = D.source.line_count + 1;
+    var f = $('facts'); f.textContent = '';
+    [['Source', D.source.path], ['SHA-256', D.source.sha256.slice(0, 12) + '…'], ['Lines', D0 + '–' + D.source.line_count + ' (contents list above line ' + D0 + ' omitted)'],
+     ['Audit records', D.records.length], ['Principles', D.epistemic_principles.length], ['Conflict rules', D.conflict_rules.length]]
+      .forEach(function (x) { f.appendChild(el('span', {}, [x[0] + ' ', el('b', { 'class': x[0] === 'SHA-256' || x[0] === 'Source' ? 'mono' : null, text: String(x[1]) })])); });
+    var cs = D.validation.checks, pass = cs.filter(function (c) { return c.ok; }).length, box = $('checks');
+    box.querySelector('summary').textContent = pass === cs.length ? 'All ' + cs.length + ' integrity checks passed' : (cs.length - pass) + ' of ' + cs.length + ' integrity checks failed';
+    box.classList.toggle('bad', pass !== cs.length);
+    cs.forEach(function (c) { $('checklist').appendChild(el('li', { text: (c.ok ? '' : 'Failed: ') + c.name })); });
+    state.cand = D.candidates.length ? D.candidates[D.candidates.length - 1].id : null;
+    state.sel = { type: 'record', id: (byId(D.records, 'TS-AUD-008') || D.records[0]).id };
+    buildTracks(); render();
+    window.addEventListener('resize', renderDetail);
+  }
+
+  fetch('structure-map.json').then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }).then(start)
+    .catch(function () { $('err').textContent = 'Could not load structure-map.json. Serve this folder over HTTP (python3 -m http.server) and run python3 map/build_map.py first.'; });
+})();
+</script>
