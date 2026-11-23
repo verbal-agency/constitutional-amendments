@@ -84,7 +84,10 @@ button.rlabel:hover { color: var(--accent); }
 .s { position: absolute; top: 2px; bottom: 2px; min-width: 4px; border: 0; padding: 0; border-radius: 2px; background: var(--muted); }
 .s:hover { filter: brightness(1.15); outline: 1px solid var(--ink); }
 .s.sel { outline: 2px solid var(--accent); outline-offset: 1px; z-index: 2; }
-.s.ep { background: var(--ep); } .s.pat { background: var(--pat); } .s.cand { background: var(--cand); }
+.s.ep { background: var(--ep); }
+.s.ep.k-constraint { background: var(--s2); }
+.s.ep.k-mixed { background: repeating-linear-gradient(135deg, var(--ep) 0 4px, var(--s2) 4px 8px); }
+.s.pat { background: var(--pat); } .s.cand { background: var(--cand); }
 .s.S0 { background: var(--s0); } .s.S1 { background: var(--s1); } .s.S2 { background: var(--s2); } .s.S3 { background: var(--s3); }
 .s.dim { opacity: .28; }
 .part { position: absolute; top: 0; bottom: 0; font-size: .72rem; line-height: 1.35rem; padding: 0 .3rem; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; border-left: 1px solid var(--line); color: var(--muted); }
@@ -203,27 +206,28 @@ button.chip:hover { border-color: var(--accent); color: var(--accent); }
     var g0 = el('div', { 'class': 'group' }, [el('h3', { text: 'Audit records' }), row(plainLabel(D.records.length + ' passages'), auditLane)]);
     root.appendChild(g0);
 
+    function kindWord(k) { return k === 'support' ? 'supports this' : k === 'constraint' ? 'constrains this' : 'both supports and constrains this'; }
     function principleGroup(title, items, type, cls, getter) {
       var g = el('div', { 'class': 'group' }, [el('h3', { text: title })]);
       items.forEach(function (p) {
         var lane = el('div', { 'class': 'lane' });
-        D.records.forEach(function (r) { if (getter(r).indexOf(p.id) >= 0) lane.appendChild(seg(r, cls, p.id + ' in ' + recLabel(r))); });
+        D.records.forEach(function (r) { if (getter(r).indexOf(p.id) >= 0) lane.appendChild(seg(r, cls + (type === 'ep' ? ' k-' + r.kind : ''), p.id + (type === 'ep' ? ' · source ' + kindWord(r.kind) + ' · ' : ' in ') + recLabel(r))); });
         var lab = el('button', { 'class': 'rlabel' + (p.status === 'candidate' ? ' candpat' : ''), 'data-row': type + ':' + p.id, title: p.id + ' · ' + p.title,
           on: { click: function () { select(type, p.id); } } }, [el('span', { 'class': 'mono', text: p.id }), p.title]);
         g.appendChild(row(lab, lane));
       });
       root.appendChild(g);
     }
-    principleGroup('Epistemic principles', D.epistemic_principles, 'ep', 'ep', function (r) { return r.eps; });
+    principleGroup('Our principles, mapped onto the source', D.epistemic_principles, 'ep', 'ep', function (r) { return r.eps; });
     var pats = D.patterns.slice().sort(function (a, b) { return a.id < b.id ? -1 : 1; });
-    principleGroup('Patterns', pats, 'pattern', 'pat', function (r) { return r.patterns; });
+    principleGroup('Our audit patterns, where the source shows them', pats, 'pattern', 'pat', function (r) { return r.patterns; });
 
     var cg = el('div', { 'class': 'group' }, [el('h3', { text: 'Replaced spans' })]);
     cg.appendChild(row(el('span', { 'class': 'rlabel muted', id: 'candlabel' }), el('div', { 'class': 'lane', id: 'candlane' })));
     root.appendChild(cg);
 
     root.appendChild(el('div', { 'class': 'legend' }, [
-      ['S0', 'S0 support'], ['S1', 'S1'], ['S2', 'S2'], ['S3', 'S3 highest severity'], ['ep', 'principle mapped'], ['pat', 'pattern applied'], ['cand', 'replaced by candidate']
+      ['S0', 'S0 support'], ['S1', 'S1'], ['S2', 'S2'], ['S3', 'S3 highest severity'], ['ep', 'source supports our principle'], ['ep k-mixed', 'mixed'], ['ep k-constraint', 'source constrains it'], ['pat', 'pattern applied'], ['cand', 'replaced by candidate']
     ].map(function (x) { return el('span', {}, [el('i', { 'class': 's ' + x[0], style: 'position:static' }), x[1]]); })));
 
     var cur = el('div', { 'class': 'cursor', id: 'cursor', hidden: '' });
@@ -351,6 +355,7 @@ button.chip:hover { border-color: var(--accent); color: var(--accent); }
       var lens = recs.reduce(function (a, r4) { return a + r4.end_exclusive - r4.start; }, 0);
       meta.appendChild(el('dl', {}, [
         dd(isEp ? 'Mapped to' : 'Applied to', recs.length + ' of ' + D.records.length + ' audit records, ' + lens + ' source lines (overlaps counted twice)'),
+        isEp ? dd('How the source stands', ['support', 'mixed', 'constraint'].map(function (k) { return recs.filter(function (r5) { return r5.kind === k; }).length + ' ' + k; }).join(', ') + '. Support means the source already does this. Constraint means the source limits it.') : null,
         dd('Records', recs.length ? recChips(recs) : el('span', { 'class': 'muted', text: 'No audit record uses this pattern.' }))]));
       if (isEp) {
         var ap = D.applied_principles.filter(function (a) { return a.eps.indexOf(s.id) >= 0; });
